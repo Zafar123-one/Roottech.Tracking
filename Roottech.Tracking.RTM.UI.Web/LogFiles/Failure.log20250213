@@ -1,0 +1,3 @@
+2025-02-13 15:09:44,926 [11] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-13 15:29:02,161 [93] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-13 18:06:25,108 [9] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level

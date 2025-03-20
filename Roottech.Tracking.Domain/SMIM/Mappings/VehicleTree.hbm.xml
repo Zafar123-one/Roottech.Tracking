@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.SMIM.Entities">
+
+  <!--<class name="VehicleTree">
+    <many-to-one name="Parent" class="VehicleTree" column="OrgName" />
+    <set name="ResourceType" cascade="all-delete-orphan" >
+      <key column="ResourceType" />
+      <one-to-many class="ResourceType"/>
+      <set name="Title" cascade="all-delete-orphan" >
+        <key column="Title" />
+        <one-to-many class="VehicleTree"/>
+        <set name="PlateID" cascade="all-delete-orphan" >
+          <key column="PlateID" />
+          <one-to-many class="VehicleTree"/>
+        </set>
+      </set>
+    </set>
+  </class>
+  <resultset name="fresult-resset">
+    <return alias="Match1" class="Match"/>
+    <return alias="Match2" class="Match"/>
+    <return-scalar column="sc" type="int"/>
+  </resultset>
+  
+  <sql-query name="GetVehicleTree">
+
+    <resultset name="fresult-resset">
+      <return alias="Match1" class="Match"/>
+      <return alias="Match2" class="Match"/>
+      <return-scalar column="sc" type="int"/>
+    </resultset>
+    
+    <return class="VehicleTree" >
+      <return-property name="Id" column="Id" />
+      <return-property name="OrgName" column="OrgName" />
+      <return-property name="ReourceType" column="ReourceType" />
+      <return-property name="Title" column="Title" />
+      <return-property name="Description" column="Description" />
+      <return-property name="PlateID" column="PlateID" />
+    </return>
+    exec SMIM.usp_GetVehicleTree @OrgCode = :OrgCode , @UserCode= :UserCode
+  </sql-query>-->
+</hibernate-mapping>

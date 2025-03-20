@@ -1,0 +1,27 @@
+﻿<div class="topTrack">
+    <div class="left itemLogo"><a href="#"><img src="/Images/Common/FuelGEX_Logo.png" style="height: 40px; position: absolute;" /></a></div>
+    <div class="right itemPanel">
+        <div class="left itemCheckList">
+            Street Map&nbsp;<input type="radio" id="roadmap" name="selectMapType"/>&nbsp;Terrian&nbsp;<input type="radio" id="terrain" name="selectMapType"/>
+            &nbsp;Satellite&nbsp;<input type="radio" id="satellite" name="selectMapType"/>&nbsp;Labels&nbsp;<input type="checkbox" id="hybrid" name="satelliteType"/>
+        </div>
+        <div class="left iconyBar">
+            <ul>
+                <li><a href="#" id="setHome" title="Default View"><img src="~/Images/geoFence/home-icon.png" /></a></li>
+                <li><a href="#"  id="mapPan" title="Pan"><img src="~/Images/geoFence/hand_24.png" /></a></li>
+                <li><a href="#" id="zoomIN" title="Zoom In"><img src="~/Images/geoFence/Zoom-In-icon.png" /></a></li>
+                <li><p>Level</p><div id="zoomLevel"></div></li>
+                <li><a href="#" id="zoomOut" title="Zoom Out"><img src="~/Images/geoFence/Zoom-Out-icon.png" /></a></li>
+                <li><a href="#" id="rectangleByZoom" title="Zoom By Rectangle"><img src="~/Images/geoFence/rectanglebyzoom.png"/></a></li>
+                <li><a href="#" id="fitAllToScreen" title="Fit All Assets To Screen"><img src="~/Images/toolBox/map.png" /></a></li>
+                
+                <li></li>
+            </ul>
+        </div>
+        <div class="left welcome">
+            <p class="left">Welcome&nbsp;&nbsp;<span><label id="lblWelcome">@User.Identity.Name</label></span></p>
+        </div>
+        <div class="right logout"><a href="#" onclick="logout()">Logout</a></div>
+    </div>
+    <div class="topSlide"></div>
+</div>

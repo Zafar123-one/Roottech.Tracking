@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.SMIM.Entities">
+  <class name="FirstLogin">
+    <id name="Id" />
+    <property name="Msg" />
+    <loader query-ref="GetFirstLogin"/>
+  </class>
+  <sql-query name="GetFirstLogin">
+    <return class="FirstLogin" >
+      <return-property name="Id" column="Id" />
+      <return-property name="Msg" column="Msg" />
+      </return>
+    exec SMIM.usp_FirstLogin @Id = :Id , @OldPassword = :OldPassword, @NewPassword= :NewPassword, 
+                             @UserFAQ1= :UserFAQ1,@UserAns1= :UserAns1, @UserFAQ2= :UserFAQ2, 
+                             @UserAns2= :UserAns2, @LoginCode= :LoginCode
+  </sql-query>
+</hibernate-mapping>

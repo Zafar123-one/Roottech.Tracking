@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="VehicleReport">
+    <id name="Id" />
+    <property name="PlateId" />
+    <property name="Hours" />
+    <loader query-ref="GetVehicleReport"/>
+  </class>
+  <sql-query name="GetVehicleReport">
+    <return class="VehicleReport" >
+      <return-property name="Id" column="EventName" />
+      <return-property name="PlateId" column="PlateId" />
+      <return-property name="Hours" column="Hours" />
+    </return>
+    exec fn_Rpt_GetVehicleCard @UnitID = :UnitID, @Date= :Date
+  </sql-query>
+</hibernate-mapping>

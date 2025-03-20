@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="SensorInfoVoltage">
+    <id name="Id" />
+    <property name="Description" />
+    <property name="Voltage" />
+    <loader query-ref="GetSensorInfoVoltage"/>
+  </class>
+  <sql-query name="GetSensorInfoVoltage">
+    <return class="SensorInfoVoltage" >
+      <return-property name="Id" column="SensorCode" />
+      <return-property name="Description" column="Description" />
+      <return-property name="Voltage" column="ai1" />
+    </return>
+    exec Sp_Get_SensorInfo_AI @unitId = :UnitId, @Resource = :Resource
+  </sql-query>
+</hibernate-mapping>

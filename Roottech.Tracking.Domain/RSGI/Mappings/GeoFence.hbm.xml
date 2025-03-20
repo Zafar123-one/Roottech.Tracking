@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSGI.Entities">
+  <class name="GeoFence">
+    <id name="Id" />
+    <property name="GeofenceNo" />
+    <property name="OrgCode" />
+    <property name="Company_code" />
+    <property name="GFType" />
+    <property name="GFTitle" />
+    <property name="GFName" />
+    <property name="GFMargin" />
+    <property name="Comment" />
+    <property name="CRadius" />
+    <property name="CLongi" />
+    <property name="CLati" />
+    <property name="PLongi" />
+    <property name="PLati" />
+    <property name="PSeq" />
+    <property name="SLeftTopLongi" />
+    <property name="SLeftTopLati" />
+    <property name="SRightBotLongi" />
+    <property name="SRightBotLati" />
+    <loader query-ref="GetGeoFence"/>
+  </class>
+  <sql-query name="GetGeoFence">
+    <return class="GeoFence" >
+      <return-property name="Id" column="Id" />
+      <return-property name="GeofenceNo" column="GeofenceNo" />
+      <return-property name="OrgCode" column="OrgCode" />
+      <return-property name="Company_code" column="Company_code" />
+      <return-property name="GFType" column="GFType" />
+      <return-property name="GFTitle" column="GFTitle" />
+      <return-property name="GFName" column="GFName" />
+      <return-property name="GFMargin" column="GFMargin" />
+      <return-property name="Comment" column="Comment" />
+      <return-property name="CRadius" column="CRadius" />
+      <return-property name="CLongi" column="CLongi" />
+      <return-property name="CLati" column="CLati" />
+      <return-property name="PLongi" column="PLongi" />
+      <return-property name="PLati" column="PLati" />
+      <return-property name="PSeq" column="PSeq" />
+      <return-property name="SLeftTopLongi" column="SLeftTopLongi" />
+      <return-property name="SLeftTopLati" column="SLeftTopLati" />
+      <return-property name="SRightBotLongi" column="SRightBotLongi" />
+      <return-property name="SRightBotLati" column="SRightBotLati" />
+    </return>
+    exec sp_GetGeoFence @OrgCode = :orgCode, @Company_code = :companyCode, @GFType = :Type
+  </sql-query>
+</hibernate-mapping>

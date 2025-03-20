@@ -1,0 +1,27 @@
+﻿@using Roottech.Tracking.RTM.Boundries.UI.Web.Resources;
+@using System.Web.WebPages.Razor;
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <div>
+        <h3>@Model.DisplayCount @Language.New.ToLower() @Language.Errors</h3>
+    </div>
+    <div class="pmargin">
+        <datalist>
+            
+        </datalist>
+           <ul>
+@foreach (var error in @Model.ErrorList) {
+               <li>
+                   @Language.GetDescription(error.Description)&nbsp;@Language.Errors&nbsp;@Language.With&nbsp;@Language.GetSeverityValue(error.Severity)&nbsp;@Language.Severity&nbsp;@Language.at&nbsp; @error.LastUpdate
+
+               </li>
+}
+           </ul>
+        <br />
+    </div>
+</body>
+</html>

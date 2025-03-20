@@ -1,0 +1,67 @@
+﻿/*#featureList { width: 300px; height: 265px; padding: 0.5em; position: absolute; top: 50px;left: 100px;
+                background-color: rgba(246, 249, 252, 0.8);background-image: none; }
+#handle{ height: 20px; left: -6px; position: relative; top: -6px; width: 310px;text-align: center; }*/
+.ui-dialog .ui-dialog-titlebar-min{ position: absolute; right: 23px; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+.ui-dialog .ui-dialog-titlebar-min span { display: block; margin: 1px; }
+.ui-dialog .ui-dialog-titlebar-min:hover, .ui-dialog .ui-dialog-titlebar-min:focus { padding: 0; }
+ 
+.ui-dialog .ui-dialog-titlebar-rest{ position: absolute; right: 23px; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+.ui-dialog .ui-dialog-titlebar-rest span { display: block; margin: 1px; }
+.ui-dialog .ui-dialog-titlebar-rest:hover, .ui-dialog .ui-dialog-titlebar-rest:focus { padding: 0; }
+            
+.ui-dialog { opacity: 0.85 }
+.ui-dialog.ui-state-disabled { opacity: 0.35 }
+            
+.customBox {
+    background: yellow;
+    border: 1px solid black;
+    position: absolute;
+}
+ 
+li.loader-panel-active { position: relative;display: inline-flex; }            
+.ddt-loader {
+    display: none; /* hidden on init */
+    background: /*url(/images/loader_bg.png)*/ top left repeat; 
+    position: absolute !important;/*top: 2px !important;right: 0 !important;*/
+}
+ 
+
+.ddt-spinner-small {
+    height: 20px;
+    width: 20px;
+    background: url('/Content/treeview/ajax-loader.gif') center left no-repeat;
+}
+ .ddt-spinner-medium {
+    height: 32px;
+    width: 32px;
+    background: url('/Content/treeview/ajax-loader.gif') center left no-repeat;
+}
+.ddt-spinner-big {
+    height: 48px;
+    width: 48px;
+    background: url('/Images/ajax-loader-small.gif') center left no-repeat;
+}
+.ajax-loader {background: url(/Images/ajax-loader-small.gif) center left no-repeat;}
+.noclose .ui-dialog-titlebar-close
+{
+    display:none;
+}
+
+.monthForMonthwiseStats > .ui-datepicker-calendar {
+    display: none;
+}
+.ddt-spinner-horz-small {
+    height: 5px;
+    width: 20px;
+    background: url('/Images/loading-bar-42X21.gif') center left no-repeat;
+}
+.ddt-spinner-horz-medium {
+    height: 8px;
+    width: 32px;
+    background: url('/Images/loading-bar-42X21.gif') center left no-repeat;
+}
+.ddt-spinner-horz-big {
+    height: 15px;
+    width: 42px;
+    background: url('/Images/loading-bar-42X21.gif') center left no-repeat;
+}

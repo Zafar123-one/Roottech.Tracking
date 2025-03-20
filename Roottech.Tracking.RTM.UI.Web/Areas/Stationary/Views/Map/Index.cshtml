@@ -1,0 +1,85 @@
+﻿@using Roottech.Tracking.Domain.SMIM.Entities
+@using Roottech.Tracking.Library.Utils
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Real Time Monitoring (Stationary)</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <meta name="viewport" content="width=device-width"/>
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/bundles/sty/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery/min")
+    @Scripts.Render("~/bundles/jqueryui/min")
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing,places,geometry&key=AIzaSyAVeu8ZfAQsFmUhvflZWfdakzg3DUKq_dc"></script>
+    @Scripts.Render("~/bundles/sty/scripts")
+    @Scripts.Render("~/bundles/jqPlot/scripts")
+    <style type="text/css" media="screen">
+        th.ui-th-column div {
+            white-space: normal !important;
+            height: auto !important;
+            padding: 2px;
+        }
+        .ui-jqgrid .ui-jqgrid-resize { height: 100% !important; }
+        .ui-jqgrid {position: fixed !important;bottom: 0;}
+    </style>
+    <!--<script type="text/javascript" src="/../node_modules/fusioncharts/fusioncharts.js"></script>
+    <script type="text/javascript" src="/node_modules/jquery-fusioncharts/package/fusioncharts-jquery-plugin.js"></script>-->
+</head>
+    <body>
+    <div id="map_canvas"></div>
+    <table id="listDashboardStationary"></table>
+    <div id="pagerDashboardStationary"></div>
+    @Html.Partial("~/Areas/Mobile/Views/Map/_geoFenceToolBox.cshtml")
+    <div id="scriptPath" class="~/Scripts/"></div>
+    <div id="contentPath" class="~/Content/"></div>
+    @Html.Partial("_toolBox")
+    @Html.Partial("_fuelActivityReport")
+    @Html.Partial("_assetActivityReport")
+    @Html.Partial("_MonthwiseStatisticsReport")
+    @Html.Partial("_assetInfoReport")
+    @Html.Partial("_ampleView")
+    @Html.Partial("_poiAdmin")
+    <script language="javascript" type="text/javascript">
+        var urlGetDashboardStationariesForMap = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "StationaryApi", action = "GetDashboardStationariesForMap"})";
+        var urlGetDashboardStationaryDetailsByUnitId = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "StationaryApi", action = "GetDashboardStationaryDetailsByUnitId"})";
+        var urlGetMultipleDatasetsForAmpleViewByUnitId = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "StationaryApi", action = "GetMultipleDatasetsForAmpleViewByUnitId"})";
+        var urlGetMonthWiseSummaryByUnitIdAndMonthAndYear = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "StationaryApi", action = "GetMonthWiseSummaryByUnitIdAndMonthAndYear"})";
+        var urlGetRefuelDetailsForStationaryByUnitIdAndEventTypeAndMonthAndYear = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "StationaryApi", action = "GetRefuelDetailsForStationaryByUnitIdAndEventTypeAndMonthAndYear"})";
+        var urlGetStatisticsByUnitIdAndOpenDateAndFuelRate = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "StationaryApi", action = "GetStatisticsByUnitIdAndOpenDateAndFuelRate"})";
+        var urlGetCities = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "StationaryApi", action = "GetCities"})";
+        var urlGetRegionsByCity = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "StationaryApi", action = "GetRegionsByCity"})";
+        var urlGetSitesByRegion = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "StationaryApi", action = "GetSitesByRegion"})";
+        var urlGetAssetsBySite = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "StationaryApi", action = "GetAssetsBySite"})";
+        var urlLogout = "@Url.Action("Logout", new {area = "SMIM", controller = "Login"})";
+        var urlMapIndex = "@Url.Action("Index", new {area = "Stationary", controller = "Map"})";
+        var urlOrg = "@Url.HttpRouteUrl("Area_defaultApi", new {controller = "LoginApi", action = "GetOrganizationsModWise"})?userCode=" + @SystemLibrary.GetCookies("User_Code");
+        var urlSelectedOrganizationIsBank = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "StationaryApi", action = "SelectedOrganizationIsBank"})";
+        var userOrgCode = @SystemLibrary.GetCookies("UserOrgCode");
+        var urlGetSiteDirectoriesBySiteCode = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "SiteDirectoryApi", action = "GetSiteDirectoriesBySiteCode" })";
+        var urlPostSiteDirectory = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "SiteDirectoryApi", action = "Post" })";
+        var urlPutSiteDirectory = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "SiteDirectoryApi", action = "Put" })";
+
+        var urlGetNoOfMonthsDashboard = "@Url.HttpRouteUrl("Stationary_defaultApi", new { controller = "ReportApi", action = "GetNoOfMonthsDashboard" })";
+
+        var urlGetContractMsts = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ContractMstApi", action = "GetContractMsts" })";
+        var urlPostContractMst = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ContractMstApi", action = "Post" })";
+        var urlPutContractMst = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ContractMstApi", action = "Put" })";
+        var urlLovGetCompanies = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ContractMstApi", action = "GetCompanies" })";
+        var urlLovGetVendors = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ContractMstApi", action = "GetVendors" })";
+        var urlLovGetContrTypes = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ContractMstApi", action = "GetContrTypes" })";
+        var urlLovGetContrStatuses = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ContractMstApi", action = "GetContrStatuses" })";
+
+        initialize("map_canvas", karachi, zoom);
+    </script>
+    @if (SystemLibrary.GetCookies("AppType") == "All")
+    {
+        <script language="javascript" type="text/javascript">
+            $(".topTrack .iconyBar ul li:last").html('<a href="@Url.Action("Index", new { area = "Mobile", controller = "Map" })" id="switchApp" title="Switch to Mobile"><img src="/Images/common/realTimeMonitoring.gif"></a>')
+        </script>
+    }
+    
+</body>
+</html>

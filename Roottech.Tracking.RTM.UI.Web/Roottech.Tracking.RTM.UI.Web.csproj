@@ -1,0 +1,1102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AFF8B4B2-4F84-425B-B41E-11ECBBC53072}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Roottech.Tracking.RTM.UI.Web</RootNamespace>
+    <AssemblyName>Roottech.Tracking.RTM.UI.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <PackageAsSingleFile>true</PackageAsSingleFile>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="PTSL-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="dbFullSql" Enabled="False">
+            <PreSource Path="" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\PTSL-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.3.1.7705, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.3.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging">
+      <HintPath>..\packages\Castle.LoggingFacility.3.3.0\lib\net40\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.Log4netIntegration">
+      <HintPath>..\packages\Castle.Core-log4net.3.3.0\lib\net40\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions">
+      <HintPath>..\packages\DataAnnotationsExtensions.1.1.0.0\lib\NETFramework40\DataAnnotationsExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions.ClientValidation">
+      <HintPath>..\packages\DataAnnotationsExtensions.MVC3.1.1.0.0\lib\NETFramework40\DataAnnotationsExtensions.ClientValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0-rc1\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0-rc1\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvcMembership">
+      <HintPath>..\packages\MvcMembership.3.8.0\lib\40\MvcMembership.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.2.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.15.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.2.0-rc1\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=0.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.0.3.0-rc\lib\net40\System.Web.Http.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <HintPath>..\packages\WindowsBase.4.6.1055.0\lib\WindowsBase.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\Bootstrapper.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\GlobalConfig.cs" />
+    <Compile Include="Areas\Stationary\Controllers\CustomSum.cs" />
+    <Compile Include="App_Start\MvcMembership.cs" />
+    <Compile Include="App_Start\RegisterClientValidationExtensions.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\WindsorFilterProvider.cs" />
+    <Compile Include="Areas\Mobile\MobileAreaRegistration.cs" />
+    <Compile Include="Areas\SMIM\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\GeoFenceAdminApiController.cs" />
+    <Compile Include="Areas\SMIM\Controllers\LoginController.cs" />
+    <Compile Include="Areas\SMIM\Controllers\LoginApiController.cs" />
+    <Compile Include="Areas\SMIM\Controllers\MainPageController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\PoiAdminApiController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\ReportApiController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\ToolboxApiController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\VehicleApiController.cs" />
+    <Compile Include="Areas\SMIM\SMIMAreaRegistration.cs" />
+    <Compile Include="Areas\Stationary\Controllers\ContractMstApiController.cs" />
+    <Compile Include="Areas\Stationary\Controllers\ReportApiController.cs" />
+    <Compile Include="Areas\Stationary\Controllers\SiteDirectoryApiController.cs" />
+    <Compile Include="Infrastructure\CreateExcelFile.cs" />
+    <Compile Include="Infrastructure\Handlers\ExportGridToExcel.ashx.cs">
+      <DependentUpon>ExportGridToExcel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Installers\ServiceInstaller.cs" />
+    <Compile Include="Areas\Stationary\Controllers\MapController.cs" />
+    <Compile Include="Areas\Stationary\Controllers\StationaryApiController.cs" />
+    <Compile Include="Areas\Stationary\StationaryAreaRegistration.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Areas\Mobile\Controllers\MapController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Attributes\AuthorizeUserAttribute.cs" />
+    <Compile Include="Infrastructure\Attributes\TransactionAttribute.cs" />
+    <Compile Include="Infrastructure\Dispatcher\AreaHttpControllerSelector.cs" />
+    <Compile Include="Infrastructure\Dispatcher\AreaRegistrationContextExtensions.cs" />
+    <Compile Include="Infrastructure\Dispatcher\ControllerTypeSpecifications.cs" />
+    <Compile Include="Infrastructure\Dispatcher\WindsorCompositionRoot.cs" />
+    <Compile Include="Infrastructure\Dispatcher\WindsorDependencyResolver.cs" />
+    <Compile Include="Infrastructure\Dispatcher\WindsorDependencyScope.cs" />
+    <Compile Include="Infrastructure\Installers\ControllerInstaller.cs" />
+    <Compile Include="Infrastructure\Installers\LoggerInstaller.cs" />
+    <Compile Include="Infrastructure\Installers\LogInterceptorInstaller.cs" />
+    <Compile Include="Infrastructure\Installers\NHibernateInstaller.cs" />
+    <Compile Include="Infrastructure\Installers\RepositoryInstaller.cs" />
+    <Compile Include="Infrastructure\Installers\WebApiInstaller.cs" />
+    <Compile Include="Infrastructure\Interceptors\ControllerLogInterceptor.cs" />
+    <Compile Include="Infrastructure\SessionFactoryHandlerSelector.cs" />
+    <Compile Include="Infrastructure\SessionManagement\NHibernateSessionModule.cs" />
+    <Compile Include="Infrastructure\WindsorControllerFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\DrawingTool.htm" />
+    <Content Include="Content\fancybox\blank.gif" />
+    <Content Include="Content\fancybox\fancybox_buttons.png" />
+    <Content Include="Content\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="Content\fancybox\fancybox_loading.gif" />
+    <Content Include="Content\fancybox\fancybox_overlay.png" />
+    <Content Include="Content\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="Content\fancybox\fancybox_sprite.png" />
+    <Content Include="Content\jquery-ui-timepicker-addon.css" />
+    <Content Include="Content\jquery-ui-timepicker-addon.min.css" />
+    <Content Include="Content\jquery.countdown.css" />
+    <Content Include="Content\jquery.fancybox-buttons.css" />
+    <Content Include="Content\jquery.fancybox-thumbs.css" />
+    <Content Include="Content\jquery.fancybox.css" />
+    <Content Include="Content\jquery.jqGrid\ellipsis-xbl.xml" />
+    <Content Include="Content\jquery.jqGrid\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\jquery.jqGrid\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\jquery.jqGrid\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\jquery.jqGrid\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\jquery.jqGrid\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\jquery.jqGrid\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\jquery.jqGrid\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\jquery.jqGrid\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\jquery.contextMenu.css" />
+    <Content Include="Content\jquery.jqGrid\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\jquery.jqGrid\ui.jqgrid.css" />
+    <Content Include="Content\jqwidgets\jqx.base.css" />
+    <Content Include="Content\styles\galleria.classic.css" />
+    <Content Include="Content\styles\common.css" />
+    <Content Include="Content\images\header_bkg.png" />
+    <Content Include="Content\images\item_bkg.png" />
+    <Content Include="Content\jquery.treeview.css" />
+    <Content Include="Content\login-box.css" />
+    <Content Include="Content\styles\jquery.advance.docing.css" />
+    <Content Include="Content\styles\main-public.css" />
+    <Content Include="Content\styles\map.css" />
+    <Content Include="Content\styles\token-input.css" />
+    <Content Include="Content\styles\ui.multiselect.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\treeview\ajax-loader.gif" />
+    <Content Include="Content\treeview\file.gif" />
+    <Content Include="Content\treeview\folder-closed.gif" />
+    <Content Include="Content\treeview\folder.gif" />
+    <Content Include="Content\treeview\minus.gif" />
+    <Content Include="Content\treeview\plus.gif" />
+    <Content Include="Content\treeview\treeview-black-line.gif" />
+    <Content Include="Content\treeview\treeview-black.gif" />
+    <Content Include="Content\treeview\treeview-default-line.gif" />
+    <Content Include="Content\treeview\treeview-default.gif" />
+    <Content Include="Content\treeview\treeview-famfamfam-line.gif" />
+    <Content Include="Content\treeview\treeview-famfamfam.gif" />
+    <Content Include="Content\treeview\treeview-gray-line.gif" />
+    <Content Include="Content\treeview\treeview-gray.gif" />
+    <Content Include="Content\treeview\treeview-red-line.gif" />
+    <Content Include="Content\treeview\treeview-red.gif" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\ajax-loader-small.gif" />
+    <Content Include="Images\common\16-16-Doc-Add.png" />
+    <Content Include="Images\common\arrowDown.PNG" />
+    <Content Include="Images\common\autoRefresh.png" />
+    <Content Include="Images\common\BF_Logo.png" />
+    <Content Include="Images\common\bgText.png" />
+    <Content Include="Images\common\bgVehicleTree.png" />
+    <Content Include="Images\common\binoculars-32X16.jpg" />
+    <Content Include="Images\common\binoculars.jpg" />
+    <Content Include="Images\common\blue-car-top-view-90-th.png" />
+    <Content Include="Images\common\boxArrow.png" />
+    <Content Include="Images\common\brdr.png" />
+    <Content Include="Images\common\calendar.gif" />
+    <Content Include="Images\common\cancel.png" />
+    <Content Include="Images\common\car.png" />
+    <Content Include="Images\common\Clock.png" />
+    <Content Include="Images\common\diesel-generator.jpg" />
+    <Content Include="Images\common\find.png" />
+    <Content Include="Images\common\FuelGEX_Logo.png" />
+    <Content Include="Images\common\green-car-top-view-90-th.png" />
+    <Content Include="Images\common\grey-car-top-view-90-th.png" />
+    <Content Include="Images\common\led_circle_green.gif" />
+    <Content Include="Images\common\led_circle_green.png" />
+    <Content Include="Images\common\led_circle_red.gif" />
+    <Content Include="Images\common\led_circle_red.png" />
+    <Content Include="Images\common\lightblue-car-top-view-90-th.png" />
+    <Content Include="Images\common\Loading_bar.gif" />
+    <Content Include="Images\common\magnifier.png" />
+    <Content Include="Images\common\Male-user-add-icon.png" />
+    <Content Include="Images\common\map.png" />
+    <Content Include="Images\common\metalicgreen-car-top-view-90-th.png" />
+    <Content Include="Images\common\musterd-car-top-view-90-th.png" />
+    <Content Include="Images\common\myfuelmeter.PNG" />
+    <Content Include="Images\common\openTreeBarMinus.png" />
+    <Content Include="Images\common\pink-car-top-view-90-th.png" />
+    <Content Include="Images\common\practical-identify-small-icon-vector-material_15-6867.jpg" />
+    <Content Include="Images\common\purple-car-top-view-90-th.png" />
+    <Content Include="Images\common\red-car-top-view-90-th.png" />
+    <Content Include="Images\common\deletePanel.png" />
+    <Content Include="Images\common\DisplayLabel.png" />
+    <Content Include="Images\common\eme.png" />
+    <Content Include="Images\common\icon8.png" />
+    <Content Include="Images\common\inputBtn.jpg" />
+    <Content Include="Images\common\logoPtsl.png" />
+    <Content Include="Images\common\openTreeBar.png" />
+    <Content Include="Images\common\pan.png" />
+    <Content Include="Images\common\report.png" />
+    <Content Include="Images\common\save.png" />
+    <Content Include="Images\common\yellow-car-top-view-90-th.png" />
+    <Content Include="Images\GeneratorsIcon\DG-Green-100x100.png" />
+    <Content Include="Images\GeneratorsIcon\DG-Green-40x40.png" />
+    <Content Include="Images\GeneratorsIcon\DG-Green-64x64.png" />
+    <Content Include="Images\GeneratorsIcon\DG-Grey-100x100.png" />
+    <Content Include="Images\GeneratorsIcon\DG-Grey-40x40.png" />
+    <Content Include="Images\GeneratorsIcon\DG-Grey-64x64.png" />
+    <Content Include="Images\GeneratorsIcon\DG-Red-100x100.png" />
+    <Content Include="Images\GeneratorsIcon\DG-Red-40x40.png" />
+    <Content Include="Images\GeneratorsIcon\DG-Red-64x64.png" />
+    <Content Include="Images\GeneratorsIcon\DG-Yellow-100x100.png" />
+    <Content Include="Images\GeneratorsIcon\DG-Yellow-40x40.png" />
+    <Content Include="Images\GeneratorsIcon\DG-Yellow-64x64.png" />
+    <Content Include="Images\GeneratorsIcon\DG_Mobile_Green_100x100.png" />
+    <Content Include="Images\GeneratorsIcon\DG_Mobile_Green_40x40.png" />
+    <Content Include="Images\GeneratorsIcon\DG_Mobile_Green_64x64.png" />
+    <Content Include="Images\GeneratorsIcon\DG_Mobile_Grey_100x100.png" />
+    <Content Include="Images\GeneratorsIcon\DG_Mobile_Grey_40x40.png" />
+    <Content Include="Images\GeneratorsIcon\DG_Mobile_Grey_64x64.png" />
+    <Content Include="Images\GeneratorsIcon\DG_Mobile_Red_100x100.png" />
+    <Content Include="Images\GeneratorsIcon\DG_Mobile_Red_40x40.png" />
+    <Content Include="Images\GeneratorsIcon\DG_Mobile_Red_64x64.png" />
+    <Content Include="Images\GeneratorsIcon\DG_Mobile_Yellow_100x100.png" />
+    <Content Include="Images\GeneratorsIcon\DG_Mobile_Yellow_40x40.png" />
+    <Content Include="Images\GeneratorsIcon\DG_Mobile_Yellow_64x64.png" />
+    <Content Include="Images\GeneratorsIcon\Generator Icon.png" />
+    <Content Include="Images\GeneratorsIcon\generator-1032627_640.png" />
+    <Content Include="Images\GeneratorsIcon\generator-auto-switchover-system-v02.png" />
+    <Content Include="Images\GeneratorsIcon\generator-icon-01-150x150.png" />
+    <Content Include="Images\GeneratorsIcon\generator-icon-01-300x300.png" />
+    <Content Include="Images\GeneratorsIcon\Generator2-Green-128x128.png" />
+    <Content Include="Images\GeneratorsIcon\Generator2-Green-40x40.png" />
+    <Content Include="Images\GeneratorsIcon\Generator2-Green-64x64.png" />
+    <Content Include="Images\GeneratorsIcon\Generator2-Grey-128x128.png" />
+    <Content Include="Images\GeneratorsIcon\Generator2-Grey-40x40.png" />
+    <Content Include="Images\GeneratorsIcon\Generator2-Grey-64x64.png" />
+    <Content Include="Images\GeneratorsIcon\Generator2-Red-128x128.png" />
+    <Content Include="Images\GeneratorsIcon\Generator2-Red-40x40.png" />
+    <Content Include="Images\GeneratorsIcon\Generator2-Red-64x64.png" />
+    <Content Include="Images\GeneratorsIcon\Generator2-Yellow-128x128.png" />
+    <Content Include="Images\GeneratorsIcon\Generator2-Yellow-40x40.png" />
+    <Content Include="Images\GeneratorsIcon\Generator2-Yellow-64x64.png" />
+    <Content Include="Images\GeneratorsIcon\images.jpg" />
+    <Content Include="Images\GeneratorsIcon\my_generatoren_rgb_1.png" />
+    <Content Include="Images\GeneratorsIcon\sol_onergys_icon_07_3_00_generatoren_rgb_1.png" />
+    <Content Include="Images\geoFence\home-icon.png" />
+    <Content Include="Images\geoFence\rectanglebyzoom.png" />
+    <Content Include="Images\geoFence\Zoom-In-icon.png" />
+    <Content Include="Images\geoFence\Zoom-Out-icon.png" />
+    <Content Include="Images\loading-bar-42X21.gif" />
+    <Content Include="Images\poiImages\airport.png" />
+    <Content Include="Images\poiImages\fuel_station.png" />
+    <Content Include="Images\poiImages\garden.png" />
+    <Content Include="Images\poiImages\home.png" />
+    <Content Include="Images\poiImages\hospital.png" />
+    <Content Include="Images\poiImages\hotel.png" />
+    <Content Include="Images\poiImages\landmark.png" />
+    <Content Include="Images\poiImages\marker-panel.png" />
+    <Content Include="Images\poiImages\mosque.png" />
+    <Content Include="Images\poiImages\office.png" />
+    <Content Include="Images\poiImages\parking.png" />
+    <Content Include="Images\poiImages\pointer.png" />
+    <Content Include="Images\poiImages\pointer_green.png" />
+    <Content Include="Images\poiImages\pointer_yellow.png" />
+    <Content Include="Images\poiImages\pushpin.png" />
+    <Content Include="Images\poiImages\seaport.png" />
+    <Content Include="Images\poiImages\stadium.png" />
+    <Content Include="Images\poiImages\tower.png" />
+    <Content Include="Images\poiImages\truck_adda.png" />
+    <Content Include="Images\poiImages\warehouse.png" />
+    <Content Include="Images\toolBox\1362083097_stock_draw-circle.png" />
+    <Content Include="Images\toolBox\btn_drawPolyLine.png" />
+    <Content Include="Images\toolBox\GeofenceReport.png" />
+    <Content Include="Images\toolBox\geoCode.png" />
+    <Content Include="Images\toolBox\Geofence.png" />
+    <Content Include="Images\toolBox\PolygonSetIcon.png" />
+    <Content Include="Images\toolBox\queryByRectengle.png" />
+    <Content Include="Images\common\satellite.png" />
+    <Content Include="Images\common\stick.png" />
+    <Content Include="Images\common\topSliding.png" />
+    <Content Include="Images\common\topSlidingBack.png" />
+    <Content Include="Images\common\treeBarBg.png" />
+    <Content Include="Images\common\treeHead.jpg" />
+    <Content Include="Images\common\truck.png" />
+    <Content Include="Images\common\zoom_in_24.png" />
+    <Content Include="Images\geoFence\hand_24.png" />
+    <Content Include="Images\Login\DFUEL_01.gif" />
+    <Content Include="Images\Login\DFUEL_02.gif" />
+    <Content Include="Images\Login\DFUEL_03.gif" />
+    <Content Include="Images\Login\DFUEL_04.gif" />
+    <Content Include="Images\Login\DFUEL_05.gif" />
+    <Content Include="Images\Login\DFUEL_06.gif" />
+    <Content Include="Images\Login\DFUEL_07.gif" />
+    <Content Include="Images\Login\DFUEL_08.gif" />
+    <Content Include="Images\Login\DFUEL_09.gif" />
+    <Content Include="Images\Login\DFUEL_10.gif" />
+    <Content Include="Images\Login\DFUEL_11.gif" />
+    <Content Include="Images\Login\DFUEL_12.gif" />
+    <Content Include="Images\Login\DFUEL_13.gif" />
+    <Content Include="Images\Login\DFUEL_14.gif" />
+    <Content Include="Images\Login\DFUEL_15.gif" />
+    <Content Include="Images\Login\DFUEL_16.gif" />
+    <Content Include="Images\Login\DFUEL_17.gif" />
+    <Content Include="Images\Login\login-box-backg.png" />
+    <Content Include="Images\Login\login-btn.png" />
+    <Content Include="Images\Login\Login.gif" />
+    <Content Include="Images\Login\spacer.gif" />
+    <Content Include="Images\common\bg.jpg" />
+    <Content Include="Images\common\btn.jpg" />
+    <Content Include="Images\common\bundlePRS.png" />
+    <Content Include="Images\common\financialManagement.gif" />
+    <Content Include="Images\common\fleetManagement.gif" />
+    <Content Include="Images\common\fuelManagement.gif" />
+    <Content Include="Images\common\headerBg.png" />
+    <Content Include="Images\common\icon1.png" />
+    <Content Include="Images\common\icon2.png" />
+    <Content Include="Images\common\icon3.png" />
+    <Content Include="Images\common\icon4.png" />
+    <Content Include="Images\common\icon5.png" />
+    <Content Include="Images\common\icon6.png" />
+    <Content Include="Images\common\input.jpg" />
+    <Content Include="Images\common\itemLogo.png" />
+    <Content Include="Images\common\loginBg.jpg" />
+    <Content Include="Images\common\loginBgLeft.jpg" />
+    <Content Include="Images\common\loginBgRight.jpg" />
+    <Content Include="Images\common\loginBgShadow.png" />
+    <Content Include="Images\common\logisticManagement.gif" />
+    <Content Include="Images\common\logo.png" />
+    <Content Include="Images\common\mantinanceManagement.gif" />
+    <Content Include="Images\common\metarialManagement.gif" />
+    <Content Include="Images\common\operationManagement.gif" />
+    <Content Include="Images\common\realTimeMonitoring.gif" />
+    <Content Include="Images\common\seprater.png" />
+    <Content Include="Images\common\sprtIcon.png" />
+    <Content Include="Images\common\topBar.png" />
+    <Content Include="Images\marker-panel.png" />
+    <Content Include="Images\toolBox\alertReport.png" />
+    <Content Include="Images\toolBox\alertReport1.png" />
+    <Content Include="Images\toolBox\alertSubscription %282%29.png" />
+    <Content Include="Images\toolBox\alertSubscription.png" />
+    <Content Include="Images\toolBox\bookmark.png" />
+    <Content Include="Images\toolBox\DailyReport.png" />
+    <Content Include="Images\toolBox\dataFilter.png" />
+    <Content Include="Images\toolBox\featureList.png" />
+    <Content Include="Images\toolBox\FleetReport.png" />
+    <Content Include="Images\toolBox\map.png" />
+    <Content Include="Images\toolBox\map1.png" />
+    <Content Include="Images\toolBox\mapLegend.png" />
+    <Content Include="Images\toolBox\measure.png" />
+    <Content Include="Images\toolBox\MonthlyReport.png" />
+    <Content Include="Images\toolBox\POIAdmin.png" />
+    <Content Include="Images\toolBox\recyclebin_empty_24.png" />
+    <Content Include="Images\toolBox\StartsStopReport.png" />
+    <Content Include="Images\toolBox\SystemMessage.png" />
+    <Content Include="Images\toolBox\VehicleReports.png" />
+    <Content Include="Images\vehicleIcons\acc_off.png" />
+    <Content Include="Images\vehicleIcons\acc_on.png" />
+    <Content Include="Images\vehicleIcons\alarm_off.png" />
+    <Content Include="Images\vehicleIcons\alarm_on.png" />
+    <Content Include="Images\vehicleIcons\car.png" />
+    <Content Include="Images\vehicleIcons\container.jpg" />
+    <Content Include="Images\vehicleIcons\eme.jpg" />
+    <Content Include="Images\vehicleIcons\generator.jpg" />
+    <Content Include="Images\vehicleIcons\GPS_off.png" />
+    <Content Include="Images\vehicleIcons\GPS_on.png" />
+    <Content Include="Images\vehicleIcons\gsmHigh.png" />
+    <Content Include="Images\vehicleIcons\gsmLow.png" />
+    <Content Include="Images\vehicleIcons\gsmNormal.png" />
+    <Content Include="Images\vehicleIcons\gsmOff.png" />
+    <Content Include="Images\vehicleIcons\loading.gif" />
+    <Content Include="Images\vehicleIcons\loading2.gif" />
+    <Content Include="Images\vehicleIcons\mfdu.jpg" />
+    <Content Include="Images\vehicleIcons\mouse.gif" />
+    <Content Include="Images\vehicleIcons\offline.png" />
+    <Content Include="Images\vehicleIcons\offline1.png" />
+    <Content Include="Images\vehicleIcons\online.png" />
+    <Content Include="Images\vehicleIcons\online1.png" />
+    <Content Include="Images\vehicleIcons\ref8.png" />
+    <Content Include="Images\vehicleIcons\ship.jpg" />
+    <Content Include="Images\vehicleIcons\sound.png" />
+    <Content Include="Images\vehicleIcons\train.jpg" />
+    <Content Include="Images\vehicleIcons\truck.jpg" />
+    <Content Include="Images\vehicleIcons\truck.png" />
+    <Content Include="Images\warning.gif" />
+    <Content Include="Scripts\app\ajaxfileupload.js" />
+    <Content Include="Scripts\app\geofence.Drawing.js" />
+    <Content Include="Scripts\app\jqGridExportToExcel.js" />
+    <Content Include="Scripts\app\map.svg.truck.path.js" />
+    <Content Include="Scripts\app\map.track.js" />
+    <Content Include="Scripts\app\map.asset.finder.js" />
+    <Content Include="Scripts\app\map.geoFence.Admin.js" />
+    <Content Include="Scripts\app\gauge.min.js" />
+    <Content Include="Scripts\app\map.AmpleView.js" />
+    <Content Include="Scripts\app\map.animation.control.js" />
+    <Content Include="Scripts\app\map.arrowHandler.js" />
+    <Content Include="Scripts\appCommon\common.functions.js" />
+    <Content Include="Scripts\appCommon\jqGrid.functions.js" />
+    <Content Include="Scripts\app\map.svg.vehicle.path.js" />
+    <Content Include="Images\common\red-car-top-view-0-th.png" />
+    <Content Include="Scripts\app\PoiAdmin.js" />
+    <Content Include="Scripts\app\sty.base.js" />
+    <Content Include="Scripts\date.js" />
+    <Content Include="Scripts\galleria-1.2.9.js" />
+    <Content Include="Scripts\galleria-1.2.9.min.js" />
+    <Content Include="Scripts\galleria.classic.js" />
+    <Content Include="Scripts\galleria.classic.min.js" />
+    <Content Include="Scripts\i18n\grid.locale-ar.js" />
+    <Content Include="Scripts\i18n\grid.locale-bg.js" />
+    <Content Include="Scripts\i18n\grid.locale-bg1251.js" />
+    <Content Include="Scripts\i18n\grid.locale-cat.js" />
+    <Content Include="Scripts\i18n\grid.locale-cn.js" />
+    <Content Include="Scripts\i18n\grid.locale-cs.js" />
+    <Content Include="Scripts\i18n\grid.locale-da.js" />
+    <Content Include="Scripts\i18n\grid.locale-de.js" />
+    <Content Include="Scripts\i18n\grid.locale-dk.js" />
+    <Content Include="Scripts\i18n\grid.locale-el.js" />
+    <Content Include="Scripts\i18n\grid.locale-en.js" />
+    <Content Include="Scripts\i18n\grid.locale-es.js" />
+    <Content Include="Scripts\i18n\grid.locale-fa.js" />
+    <Content Include="Scripts\i18n\grid.locale-fi.js" />
+    <Content Include="Scripts\i18n\grid.locale-fr.js" />
+    <Content Include="Scripts\i18n\grid.locale-gl.js" />
+    <Content Include="Scripts\i18n\grid.locale-he.js" />
+    <Content Include="Scripts\i18n\grid.locale-hr.js" />
+    <Content Include="Scripts\i18n\grid.locale-hr1250.js" />
+    <Content Include="Scripts\i18n\grid.locale-hu.js" />
+    <Content Include="Scripts\i18n\grid.locale-id.js" />
+    <Content Include="Scripts\i18n\grid.locale-is.js" />
+    <Content Include="Scripts\i18n\grid.locale-it.js" />
+    <Content Include="Scripts\i18n\grid.locale-ja.js" />
+    <Content Include="Scripts\i18n\grid.locale-kr.js" />
+    <Content Include="Scripts\i18n\grid.locale-lt.js" />
+    <Content Include="Scripts\i18n\grid.locale-mne.js" />
+    <Content Include="Scripts\i18n\grid.locale-nl.js" />
+    <Content Include="Scripts\i18n\grid.locale-no.js" />
+    <Content Include="Scripts\i18n\grid.locale-pl.js" />
+    <Content Include="Scripts\i18n\grid.locale-pt-br.js" />
+    <Content Include="Scripts\i18n\grid.locale-pt.js" />
+    <Content Include="Scripts\i18n\grid.locale-ro.js" />
+    <Content Include="Scripts\i18n\grid.locale-ru.js" />
+    <Content Include="Scripts\i18n\grid.locale-sk.js" />
+    <Content Include="Scripts\i18n\grid.locale-sr-latin.js" />
+    <Content Include="Scripts\i18n\grid.locale-sr.js" />
+    <Content Include="Scripts\i18n\grid.locale-sv.js" />
+    <Content Include="Scripts\i18n\grid.locale-th.js" />
+    <Content Include="Scripts\i18n\grid.locale-tr.js" />
+    <Content Include="Scripts\i18n\grid.locale-tw.js" />
+    <Content Include="Scripts\i18n\grid.locale-ua.js" />
+    <Content Include="Scripts\i18n\grid.locale-vi.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-addon-i18n.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-addon-i18n.min.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-af.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-am.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-bg.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-ca.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-cs.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-da.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-de.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-el.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-es.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-et.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-eu.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-fi.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-fr.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-gl.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-he.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-hr.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-hu.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-id.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-it.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-ja.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-ko.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-lt.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-lv.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-nl.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-no.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-pl.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-pt-BR.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-pt.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-ro.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-ru.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-sk.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-sl.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-sr-RS.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-sr-YU.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-sv.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-th.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-tr.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-uk.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-vi.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-zh-CN.js" />
+    <Content Include="Scripts\i18n\jquery-ui-timepicker-zh-TW.js" />
+    <Content Include="Scripts\javascript.util.js" />
+    <Content Include="Scripts\jqPlot\changes.txt" />
+    <Content Include="Scripts\jqPlot\copyright.txt" />
+    <Content Include="Scripts\jqPlot\excanvas.js" />
+    <Content Include="Scripts\jqPlot\excanvas.min.js" />
+    <Content Include="Scripts\jqPlot\gpl-2.0.txt" />
+    <Content Include="Scripts\jqPlot\jqPlotCssStyling.txt" />
+    <Content Include="Scripts\jqPlot\jqPlotOptions.txt" />
+    <Content Include="Scripts\jqPlot\jquery.jqplot.css" />
+    <Content Include="Scripts\jqPlot\jquery.jqplot.js" />
+    <Content Include="Scripts\jqPlot\jquery.jqplot.min.css" />
+    <Content Include="Scripts\jqPlot\jquery.jqplot.min.js" />
+    <Content Include="Scripts\jqPlot\jquery.js" />
+    <Content Include="Scripts\jqPlot\jquery.min.js" />
+    <Content Include="Scripts\jqPlot\MIT-LICENSE.txt" />
+    <Content Include="Scripts\jqPlot\optionsTutorial.txt" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.barRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.barRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.BezierCurveRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.BezierCurveRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.blockRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.blockRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.bubbleRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.bubbleRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasAxisLabelRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasAxisLabelRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasAxisTickRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasAxisTickRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasOverlay.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasOverlay.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasTextRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.canvasTextRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.categoryAxisRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.categoryAxisRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.ciParser.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.ciParser.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.cursor.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.cursor.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.dateAxisRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.dateAxisRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.donutRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.donutRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.dragable.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.dragable.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.enhancedLegendRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.enhancedLegendRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.funnelRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.funnelRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.highlighter.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.highlighter.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.json2.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.json2.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.logAxisRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.logAxisRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.mekkoAxisRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.mekkoAxisRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.mekkoRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.mekkoRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.meterGaugeRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.meterGaugeRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.mobile.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.mobile.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.ohlcRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.ohlcRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pieRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pieRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pointLabels.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pointLabels.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pyramidAxisRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pyramidAxisRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pyramidGridRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pyramidGridRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pyramidRenderer.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.pyramidRenderer.min.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.trendline.js" />
+    <Content Include="Scripts\jqPlot\plugins\jqplot.trendline.min.js" />
+    <Content Include="Scripts\jqPlot\README.txt" />
+    <Content Include="Scripts\jqPlot\usage.txt" />
+    <Content Include="Scripts\jquery-2.1.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.2.js" />
+    <Content Include="Scripts\jquery-ui-1.11.2.min.js" />
+    <Content Include="Scripts\jquery-ui-sliderAccess.js" />
+    <Content Include="Scripts\jquery-ui-timepicker-addon.js" />
+    <Content Include="Scripts\app\map.latLng.locator.js" />
+    <Content Include="Scripts\app\ajax.loader.js" />
+    <Content Include="Scripts\app\login.js" />
+    <Content Include="Scripts\app\map.js" />
+    <Content Include="Scripts\app\map.controls.js" />
+    <Content Include="Scripts\app\map.drawing.js" />
+    <Content Include="Scripts\app\map.geometry.js" />
+    <Content Include="Scripts\app\map.options.js" />
+    <Content Include="Scripts\jquery-ui-timepicker-addon.min.js" />
+    <Content Include="Scripts\jquery.advance.docing.js" />
+    <Content Include="Scripts\jquery.contextMenu.js" />
+    <Content Include="Scripts\jquery.countdown.js" />
+    <Content Include="Scripts\jquery.countdown.min.js" />
+    <Content Include="Scripts\jquery.dialog.minimize.js" />
+    <Content Include="Scripts\jquery.fancybox-buttons.js" />
+    <Content Include="Scripts\jquery.fancybox-media.js" />
+    <Content Include="Scripts\jquery.fancybox-thumbs.js" />
+    <Content Include="Scripts\jquery.fancybox.js" />
+    <Content Include="Scripts\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\jquery.jqGrid.js" />
+    <Content Include="Scripts\jquery.jqGrid.min.js" />
+    <Content Include="Scripts\jquery.jqGrid.src.js" />
+    <Content Include="Scripts\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="Scripts\jQuery.tmpl.js" />
+    <Content Include="Scripts\jQuery.tmpl.min.js" />
+    <Content Include="Scripts\jquery.tokeninput.js" />
+    <Content Include="Scripts\jquery.tokeninput.min.js" />
+    <Content Include="Scripts\jquery.treeview.async.js" />
+    <Content Include="Scripts\jquery.treeview.edit.js" />
+    <Content Include="Scripts\jquery.treeview.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jQueryRotate.2.2.js" />
+    <Content Include="Scripts\jQueryRotateCompressed.2.2.js" />
+    <Content Include="Scripts\jqwidgets\jqxcore.js" />
+    <Content Include="Scripts\jqwidgets\jqxcore1.js" />
+    <Content Include="Scripts\jqwidgets\jqxdraw.js" />
+    <Content Include="Scripts\jqwidgets\jqxgauge.js" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\json2.min.js" />
+    <Content Include="Scripts\jsts.js" />
+    <Content Include="Scripts\keydragzoom.js" />
+    <Content Include="Scripts\keydragzoom_packed.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\mustache.js" />
+    <Content Include="Scripts\jquery-ui.multiselect.js" />
+    <Content Include="Scripts\speedoMeter\background-broken.jpg" />
+    <Content Include="Scripts\speedoMeter\background.jpg" />
+    <Content Include="Scripts\speedoMeter\excanvas-modified.js" />
+    <Content Include="Scripts\speedoMeter\jquery.jqcanvas-modified.js" />
+    <Content Include="Scripts\speedoMeter\jquery.speedometer.js" />
+    <Content Include="Scripts\v3_epoly.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Mobile\Views\Shared\" />
+    <Folder Include="Images\Organizations\" />
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Configuration\log4net.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Configuration\rewriter.local.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Intelligencia.UrlRewriter\Intelligencia.UrlRewriter.csproj">
+      <Project>{F8516C67-92BE-43FF-A8A9-B71A3EA4BE0D}</Project>
+      <Name>Intelligencia.UrlRewriter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roottech.Tracking.Common.Session\Roottech.Tracking.Common.Session.csproj">
+      <Project>{B605D1C3-3C02-4578-A2E5-719C49C8A971}</Project>
+      <Name>Roottech.Tracking.Common.Session</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roottech.Tracking.Common\Roottech.Tracking.Common.csproj">
+      <Project>{45CF407B-2B6E-4AF8-8159-661DB2E71E01}</Project>
+      <Name>Roottech.Tracking.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roottech.Tracking.Domain\Roottech.Tracking.Domain.csproj">
+      <Project>{D46CF62B-DD6D-488F-B555-19716F48DC69}</Project>
+      <Name>Roottech.Tracking.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roottech.Tracking.Library\Roottech.Tracking.Library.csproj">
+      <Project>{53a41d62-9c9d-4efe-8597-39e1e1a57ba3}</Project>
+      <Name>Roottech.Tracking.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roottech.Tracking.PdfRpt\Roottech.Tracking.PdfRpt.csproj">
+      <Project>{d1e1f3d6-f1c4-4e7d-94ac-f097d7a59ec1}</Project>
+      <Name>Roottech.Tracking.PdfRpt</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SMIM\Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SMIM\Views\Login\Index1.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SMIM\Views\Shared\_FirstTimeLogin.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SMIM\Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SMIM\Views\Dashboard\Vehicle.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SMIM\Views\Dashboard\FuelDispensionUnit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SMIM\Views\Dashboard\Stationary.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\SMIM\Views\Shared\_ForgotPassword.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Mobile\Views\Map\_featureList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Mobile\Views\Map\_toolBox.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Mobile\Views\Map\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Mobile\Views\Map\_latLongLocator.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\app\map.marker.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Mobile\Views\Map\_todaysReport.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_geoCoder.cshtml" />
+    <Content Include="Scripts\app\map.geoCoder.js" />
+    <Content Include="Areas\Mobile\Views\Map\_geoFenceToolBox.cshtml" />
+    <Content Include="Scripts\app\map.buttons.js" />
+    <Content Include="Areas\SMIM\Views\MainPage\Index.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_measureTool.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_mapHistoryTrackReplayToolbox.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_vehicleReportCard.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_startStopReport.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_poiAdmin.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_myAmpleView.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_imageSlider.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_ampleView.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_LastCdr.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_GeofenseIns.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_routeAdmin.cshtml" />
+    <Content Include="Views\Shared\_AjaxSetupPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Mobile\Views\Map\_assetFinder.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_mapTrackToolbox.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_geofenceAdmin.cshtml" />
+    <Content Include="Areas\Stationary\Views\Web.config" />
+    <Content Include="Areas\Stationary\Views\Map\Index.cshtml" />
+    <Content Include="Areas\Mobile\Views\Web.config" />
+    <Content Include="Areas\SMIM\Views\Shared\_AppSelection.cshtml" />
+    <Content Include="Areas\Stationary\Views\Map\_ampleView.cshtml" />
+    <Content Include="Areas\Stationary\Views\Map\_toolBox.cshtml" />
+    <Content Include="Areas\Stationary\Views\Map\_fuelActivityReport.cshtml" />
+    <Content Include="Infrastructure\Handlers\ExportGridToExcel.ashx" />
+    <Content Include="Areas\Stationary\Views\Map\_assetActivityReport.cshtml" />
+    <Content Include="Areas\Stationary\Views\Map\_MonthwiseStatisticsReport.cshtml" />
+    <Content Include="Areas\Stationary\Views\Map\_assetInfoReport.cshtml" />
+    <Content Include="Content\json\pakistan\ahmed pur.json" />
+    <Content Include="Content\json\pakistan\bahawalnagar.json" />
+    <Content Include="Content\json\pakistan\gujranwala.json" />
+    <Content Include="Content\json\pakistan\hasilpur.json" />
+    <Content Include="Content\json\pakistan\islam garh.json" />
+    <Content Include="Content\json\pakistan\islamabad.json" />
+    <Content Include="Content\json\pakistan\karachi.json" />
+    <Content Include="Content\json\pakistan\lahore.json" />
+    <Content Include="Content\json\pakistan\multan.json" />
+    <Content Include="Content\json\pakistan\rawalpindi.json" />
+    <Content Include="Content\json\pakistan\badin.json" />
+    <Content Include="Content\json\pakistan\bahawalpur.json" />
+    <Content Include="Content\json\pakistan\bewal.json" />
+    <Content Include="Content\json\pakistan\bhakkar.json" />
+    <Content Include="Content\json\pakistan\chakwal.json" />
+    <Content Include="Content\json\pakistan\chichawatni.json" />
+    <Content Include="Content\json\pakistan\daska.json" />
+    <Content Include="Content\json\pakistan\dera ghazi khan.json" />
+    <Content Include="Content\json\pakistan\dinga.json" />
+    <Content Include="Content\json\pakistan\faisalabad.json" />
+    <Content Include="Content\json\pakistan\fateh jang.json" />
+    <Content Include="Content\json\pakistan\ghourghushti.json" />
+    <Content Include="Content\json\pakistan\gujar khan.json" />
+    <Content Include="Content\json\pakistan\hafizabad.json" />
+    <Content Include="Content\json\pakistan\haweli lakha.json" />
+    <Content Include="Content\json\pakistan\hyderabad.json" />
+    <Content Include="Content\json\pakistan\jacobabad.json" />
+    <Content Include="Content\json\pakistan\jaranwala.json" />
+    <Content Include="Content\json\pakistan\jhang.json" />
+    <Content Include="Content\json\pakistan\jhelum.json" />
+    <Content Include="Content\json\pakistan\kabirwala.json" />
+    <Content Include="Content\json\pakistan\kallar syedan.json" />
+    <Content Include="Content\json\pakistan\kasur.json" />
+    <Content Include="Content\json\pakistan\khanewal.json" />
+    <Content Include="Content\json\pakistan\khanpur.json" />
+    <Content Include="Content\json\pakistan\lala musa.json" />
+    <Content Include="Content\json\pakistan\layyah.json" />
+    <Content Include="Content\json\pakistan\lodhran.json" />
+    <Content Include="Content\json\pakistan\lower dir.json" />
+    <Content Include="Content\json\pakistan\mandi bahauddin.json" />
+    <Content Include="Content\json\pakistan\mardan.json" />
+    <Content Include="Content\json\pakistan\mian channu.json" />
+    <Content Include="Content\json\pakistan\mingora swat.json" />
+    <Content Include="Content\json\pakistan\muree.json" />
+    <Content Include="Content\json\pakistan\nankana sahib.json" />
+    <Content Include="Content\json\pakistan\narowal.json" />
+    <Content Include="Content\json\pakistan\nowshera.json" />
+    <Content Include="Content\json\pakistan\okara.json" />
+    <Content Include="Content\json\pakistan\pakpattan.json" />
+    <Content Include="Content\json\pakistan\pasroor.json" />
+    <Content Include="Content\json\pakistan\peshawar.json" />
+    <Content Include="Content\json\pakistan\peshwar.json" />
+    <Content Include="Content\json\pakistan\pir mahal.json" />
+    <Content Include="Content\json\pakistan\potohar.json" />
+    <Content Include="Content\json\pakistan\rahim yar khan.json" />
+    <Content Include="Content\json\pakistan\saggian.json" />
+    <Content Include="Content\json\pakistan\sahiwal.json" />
+    <Content Include="Content\json\pakistan\sambrial.json" />
+    <Content Include="Content\json\pakistan\sargodha.json" />
+    <Content Include="Content\json\pakistan\shahdadpur.json" />
+    <Content Include="Content\json\pakistan\shakargarh.json" />
+    <Content Include="Content\json\pakistan\sheikhupura.json" />
+    <Content Include="Content\json\pakistan\shujabad.json" />
+    <Content Include="Content\json\pakistan\sialkot.json" />
+    <Content Include="Content\json\pakistan\sukkur.json" />
+    <Content Include="Content\json\pakistan\taxila.json" />
+    <Content Include="Content\json\pakistan\vehari.json" />
+    <Content Include="Content\json\pakistan\waisa.json" />
+    <Content Include="Content\json\pakistan\wazirabad.json" />
+    <Content Include="Content\json\pakistan\yazman.json" />
+    <Content Include="Content\json\pakistan\rawat.json" />
+    <Content Include="Configuration\Headoffice\appSettings.config" />
+    <Content Include="Configuration\PtclKhi\appSettings.config" />
+    <Content Include="Configuration\PtclLhr\appSettings.config" />
+    <Content Include="Areas\Stationary\Views\Map\_poiAdmin.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_mapTrackToDate.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_mapPeriodTrackReplay.cshtml" />
+    <Content Include="Areas\Mobile\Views\Map\_vehicleFuelActivityReports.cshtml" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Properties\PublishProfiles\ProfileForUAT.pubxml" />
+    <None Include="Scripts\jquery-2.1.3.min.map" />
+    <Content Include="Views\Error\Unauthorised.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

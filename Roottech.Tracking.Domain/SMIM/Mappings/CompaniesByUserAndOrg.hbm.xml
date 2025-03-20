@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.SMIM.Entities">
+  <class name="CompaniesByUserAndOrg">
+    <id name="Id" />
+    <property name="CompanyName" />
+    <loader query-ref="GetCompaniesByUserAndOrg"/>
+  </class>
+  <sql-query name="GetCompaniesByUserAndOrg">
+    <return class="CompaniesByUserAndOrg" >
+      <return-property name="Id" column="Company_Code" />
+      <return-property name="CompanyName" column="CompanyName" />
+    </return>
+    exec dbo.sp_LOV_Companies_By_User_And_Org @User_Code = :User_Code, @OrgCode = :Org_Code
+  </sql-query>
+</hibernate-mapping>

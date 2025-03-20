@@ -1,0 +1,80 @@
+﻿@using Roottech.Tracking.Library.Utils
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Real Time Monitoring</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/themes/base/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Styles.Render("~/Content/treeview/css")
+        @Styles.Render("~/bundles/map/css")
+        <!--<script src="~/Scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+        <script src="~/Scripts/jquery-ui-1.10.0.min.js" type="text/javascript"></script>-->
+        @Scripts.Render("~/bundles/jquery/min")
+        @Scripts.Render("~/bundles/jqueryui/min")
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=drawing,places,geometry&key=AIzaSyAVeu8ZfAQsFmUhvflZWfdakzg3DUKq_dc"></script>
+        <!--http://maps.google.com/maps?file=api&v=2&sensor=false&key=ABQIAAAAPDUET0Qt7p2VcSk6JNU1sBSM5jMcmVqUpI7aqV44cW1cEECiThQYkcZUPRJn9vy_TWxWvuLoOfSFBw-->
+        @Scripts.Render("~/bundles/googleMap/scripts")
+        @Scripts.Render("~/bundles/map/scripts")
+        @Scripts.Render("~/bundles/jqPlot/scripts")
+    </head>
+    <body>
+        <div id="map_canvas"></div>
+        @Html.Partial("_geoFenceToolBox")
+        @Html.Partial("_toolBox")
+        @Html.Partial("_featureList")
+        @Html.Partial("_latLongLocator")
+        @Html.Partial("_geoCoder")
+        @Html.Partial("_todaysReport")
+        @Html.Partial("_mapHistoryTrackReplayToolbox")
+        @Html.Partial("_mapPeriodTrackReplay")
+        @Html.Partial("_measureTool")
+        @Html.Partial("_routeAdmin")
+        @Html.Partial("_vehicleReportCard")
+        @Html.Partial("_vehicleFuelActivityReports")
+        @Html.Partial("_startStopReport")
+        @Html.Partial("_poiAdmin")
+        @Html.Partial("_GeofenseIns")
+        @Html.Partial("_myAmpleView")
+        @Html.Partial("_imageSlider")
+        @Html.Partial("_ampleView")
+        @Html.Partial("_LastCdr")
+        @Html.Partial("_assetFinder")
+        @Html.Partial("_mapTrackToolbox")
+        @Html.Partial("_geofenceAdmin")
+
+        <div id="scriptPath" class="~/Scripts/"></div>
+        <div id="contentPath" class="~/Content/"></div>
+        <div id="imagePath" class="~/Images/"></div>
+        <div id="infoWindowTemp" style="display: none"></div>
+        <script type="text/javascript">
+            var urlGetTodaysMap = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "ReportApi", action = "GetTodaysMap" })";
+            var urlGetVehicleReportCard = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "ReportApi", action = "GetVehicleReportByUnitIdAndDate" })";
+            var urlGetSpeedVehicleReportCard = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "ReportApi", action = "GetSpeedReportByUnitIdAndDate" })";
+            var urlGetVehicleList = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "VehicleApi", action = "GetVehicleList" })";
+            var urlLoginPage = "@Url.Action("Logout", new { area = "SMIM", controller = "Login"})";
+            //var urlGetAllToolBarItems = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "ToolboxApi", action = "GetAllToolBarItems" })";
+            var urlGetModAccess = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "ToolboxApi", action = "GetModAccess" })";
+            var identifyDisabled = false, ampleViewDisabled = false, todayMapDisabled = false, todayReportDisabled = false, assetFinderDisabled = false;
+            var urlGetFirstCDRByDateAndFromTimeAndToTime = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "ReportApi", action = "GetFirstCDRByDateAndFromTimeAndToTime" })";
+            var urlGetTodaysTrack = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "ReportApi", action = "GetTodaysTrack" })";
+            var urlGetEventsExceptDrive = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "ReportApi", action = "GetEventsExceptDrive" })";
+            var urlGetUnitGroupList = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "VehicleApi", action = "GetUnitGroupList" })"; 
+            var urlGetBusLocWisePlateIdList = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "VehicleApi", action = "GetBusLocWisePlateIdList" })";
+        </script>
+        @if (SystemLibrary.GetCookies("AppType") == "All")
+        {
+            <script language="javascript" type="text/javascript">
+                $(".topTrack .iconyBar ul li:last").html('<form action="@Url.Action("Index", new { area = "Stationary", controller = "Map" })" method="post">'+
+                    '<a href="#" id="switchApp" title="Switch to Stationary" onclick="submitSwitchAppForm(this);"><img src="/Images/common/diesel-generator.jpg"></a>')
+                function submitSwitchAppForm(obj) {
+                    var input = $("<input>").attr("type", "hidden").attr("name", "selOrganizationByUser").val("");
+                    $(obj).closest("form").append($(input));
+                    $(obj).closest("form").submit();
+                }
+            </script>
+        }
+    </body>
+</html>

@@ -1,0 +1,647 @@
+﻿<div id="assetActivityReportCard" style="display: none">
+    <table class="ampleviewtable">
+        <tr>
+            <td style="text-align: right; width: 90px; padding-right: 10px;">From Date<span class="myAchor">*</span></td>
+            <td style="width: 250px"><input id="fromDateForAssetReport" type="text" style="width: 75px"/></td>
+            <td style="text-align: right; width: 100px; padding-right: 10px;">To Date<span class="myAchor">*</span></td>
+            <td style="width: 200px"><input id="toDateForAssetReport" type="text" style="width: 75px"/></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px;">City</td>
+            <td><select id="cityForAssetReport" style="width: 200px"></select></td>
+            <td style="text-align: right; padding-right: 10px;">Region</td>
+            <td colspan="3"><select id="regionForAssetReport" style="width: 200px"></select></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px;">Site<span class="myAchor">*</span></td>
+            <td><select id="siteForAssetReport" style="width: 200px"></select></td>
+            <td style="text-align: right; padding-right: 10px;">Asset<span class="myAchor">*</span></td>
+            <td><select id="assetForAssetReport" style="width: 200px"></select></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px;">Asset Status</td>
+            <td><label><input type="radio" name="assetReport" value="1" checked="checked"/>ON</label>
+                <label><input type="radio" name="assetReport" value="2"/>OFF</label>
+                <label style="margin-left: 10px;">Grid/Asset</label>
+                <label><input type="radio" name="assetReport" value="5" />ON</label>
+                <label><input type="radio" name="assetReport" value="6"/>OFF</label>
+            </td>
+            <td colspan="2">
+              <label>Grid Status</label>
+              <label><input type="radio" name="assetReport" value="3" />ON</label>
+              <label><input type="radio" name="assetReport" value="4" />OFF</label>
+              <input style="float: right" id="btnAssetReport" type="button" value="Go" onclick="return runAssetReports();">
+              <input style="float: right" id="btnResetAssetReport" type="button" value="Reset" onclick="return resetAssetActivityReportCard();">
+              
+            </td>
+        </tr>
+    </table>
+    <div id="assetActivityLoader" style="height: 97%; position: absolute; top: 1px; width: 97%; background-color: white; display: none">
+        <div class="ajax-loader" style="height: 100%; margin-left: 50%;"></div>
+    </div>
+    <div class="error" style="display:none;"><span></span></div>
+</div>
+<table id="listAsset"></table>
+<div id="pagerAsset"></div>
+
+<script type="text/javascript">
+    function runAssetReports() {
+        if ($("#fromDateForAssetReport").val() === "") {
+            alert("Please select any from date.");
+            $("#fromDateForAssetReport").focus();
+            return false;
+        } else if ($("#toDateForAssetReport").val() === "") {
+            alert("Please select any to date.");
+            $("#toDateForAssetReport").focus();
+            return false;
+        } else if ($("#fromDateForAssetReport").datepicker("getDate") > $("#toDateForAssetReport").datepicker("getDate")) {
+            alert("To date should be greater than from date.");
+            $("#toDateForAssetReport").focus();
+            return false;
+        } else if (!$("#siteForAssetReport").val()) {
+            alert("Please select any site.");
+            $("#siteForAssetReport").focus();
+            return false;
+        } else if (!$("#assetForAssetReport").val()) {
+            alert("Please select any asset.");
+            $("#assetForAssetReport").focus();
+            return false;
+        } else if ($("input[name=assetReport]:checked").val() === undefined) {
+            alert("Please select one of the Asset Status.");
+            $("input[name=assetReport]").focus();
+            return false;
+        }
+        var from = $('#fromDateForAssetReport').datepicker('getDate');
+        var to = $('#toDateForAssetReport').datepicker('getDate');
+        var days = (to - from) / 1000 / 60 / 60 / 24;
+        if (days > 92) {
+            alert("The duration between dates should be three months at maximum.");
+            $("#toDateForFuelReport").focus();
+            return false;
+        }
+        $("#assetActivityLoader").fadeIn({
+            complete: function() {
+                if (parseInt($("input[name=assetReport]:checked").val()) < 3)
+                    loadAssetOperation();
+                else if (parseInt($("input[name=assetReport]:checked").val()) < 5) loadGridOperation();
+                else loadGridAssetOperation();
+            }
+        });
+
+        return true;
+    }
+
+    function loadAssetOperation() {
+        $("#assetActivityReportCard .error").hide();
+        var colModel = [
+            { name: 'Id', index: 'Id', width: 70, align: 'right', template: integerTemplate }, //template: dateTimeTemplate },"Plate ID",
+            { name: 'RegionName', index: 'RegionName', width: 150, align: 'left', sorttype: "string" },
+            { name: 'CityName', index: 'CityName', width: 100, align: 'left', sorttype: "string" },
+            { name: 'SiteName', index: 'SiteName', width: 150, align: 'left', sorttype: "string" },
+            { name: 'AssetName', index: 'AssetName', width: 150, align: 'left', sorttype: "string" },
+            { name: 'OpenDt', index: 'OpenDt', width: 150, align: 'center', template: dateTimeTemplate },
+            { name: 'CloseDt', index: 'CloseDt', width: 150, align: 'center', template: dateTimeTemplate },
+            {
+                name: 'AssetTotalDuration',
+                index: 'AssetTotalDuration',
+                width: 80,
+                align: 'center',
+                sorttype: "string",
+
+                formatter: function(cellval, opts, rwdat, act) {
+                    if (opts.rowId === "") {
+                        return $.fn.fmatter('string', GetTimeInFullByHourAndMinuteAndSecond(cellval.totalHours, cellval.totalMinutes, cellval.totalSeconds), opts, rwdat, act);
+                    } else {
+                        return $.fn.fmatter('string', cellval, opts, rwdat, act);
+                    }
+                },
+                summaryType: function(val, name, record) {
+                    if (typeof (val) === "string") {
+                        val = { totalHours: 0, totalMinutes: 0, totalSeconds: 0 };
+                    }
+                    val.totalHours += record.Hour;
+                    val.totalMinutes += record.Minute;
+                    val.totalSeconds += record.Second;
+                    return val;
+                }
+            },
+            { name: 'Consumption', index: 'Consumption', width: 80, align: 'right', template: moneyTemplate, summaryType: 'sum' },
+            { name: 'Second', index: 'Second', hidden: true, summaryType: "sum" },
+            { name: 'Minute', index: 'Minute', hidden: true, summaryType: "sum" },
+            { name: 'Hour', index: 'Hour', hidden: true, summaryType: "sum" }
+        ];
+        var assetActivityCaption = "Asset " + (parseInt($("input[name=assetReport]:checked").val()) === 1 ? "ON" : "OFF") + " Activity Report";
+        loadjqGrid(
+            [], "listAsset", "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ReportApi", action = "GetAssetOperationReport"})",
+            {
+                fromDate: $("#fromDateForAssetReport").datepicker("getDate").toJSON(),
+                toDate: $("#toDateForAssetReport").datepicker("getDate").toJSON(),
+                region: $("#regionForAssetReport").val(),
+                city: $("#cityForAssetReport").val(),
+                site: $("#siteForAssetReport").val(),
+                resource: $("#assetForAssetReport").val(),
+                dgStatus: parseInt($("input[name=assetReport]:checked").val()) === 1
+            },
+            ["Batch No.", "Region Name", "City Name", "Site Name", "Asset Name", "Event Start", "Event Stop", "Total Duration", "Consumption (Ltrs)", "Second", "Minute", "Hour"], colModel,
+            "pagerAsset", "Id", "asc", "", 50, _rowList, 1, 1, assetActivityCaption,
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                repeatitems: false,
+                userdata: "userdata"
+            },
+            undefined, undefined, true, true, function() {
+                if ($('.footrow [aria-describedby="listAsset_CloseDt"]').html() !== "&nbsp;")
+                    return;
+
+                $grid.setGridWidth($(window).width() - 360);
+                $grid.setGridHeight($(window).height() - 200);
+                $(".ui-jqgrid-active").css("bottom", 60);
+                $("#" + $grid.attr("aria-labelledby")).show();
+                //-----Close Selection
+                //$("#assetActivityReportCard").dialog("close");
+              $("#assetActivityLoader").fadeOut();
+
+                var localData = $grid.jqGrid("getGridParam", "data"),
+                    totalConsumption = 0,
+                    totalSeconds = 0,
+                    totalMinutes = 0,
+                    totalHours = 0;
+
+                $.each(localData, function(index, value) {
+                    totalConsumption += parseFloat(value.Consumption);
+                    totalSeconds += parseFloat(value.Second);
+                    totalMinutes += parseFloat(value.Minute);
+                    totalHours += parseFloat(value.Hour);
+                });
+
+                $grid.jqGrid("footerData", "set", {
+                    //TotDuration: "Total:",
+                    Consumption: totalConsumption
+                });
+                $('.footrow [aria-describedby="listAsset_AssetTotalDuration"]').html(GetTimeInFullByHourAndMinuteAndSecond(totalHours, totalMinutes, totalSeconds));
+                $('.footrow [aria-describedby="listAsset_CloseDt"]').html("<b>Grand Total: </b>");
+
+                $("#pagerAsset_excel").remove();
+            $("#" + $grid.attr("aria-labelledby")).addClass("z-index-2000");
+            });
+        $("#listAsset").jqGrid('setGridParam', {
+            loadError: function(xhr, st, err) {
+                $("#assetActivityReportCard .error").html("There is an error while fetching data for selected criteria. " + xhr.statusText);
+                $("#assetActivityReportCard .error").show();
+                $("#assetActivityLoader").hide();
+            }
+        });
+    }
+
+    function loadGridOperation() {
+        $("#assetActivityReportCard .error").hide();
+        var colModel = [
+            { name: 'Id.GridBatchNo', index: 'Id', width: 70, align: 'right', template: integerTemplate }, //template: dateTimeTemplate },"Plate ID",
+            { name: 'RegionName', index: 'RegionName', width: 150, align: 'left', sorttype: "string" },
+            { name: 'CityName', index: 'CityName', width: 100, align: 'left', sorttype: "string" },
+            { name: 'SiteName', index: 'SiteName', width: 150, align: 'left', sorttype: "string" },
+            { name: 'AssetName', index: 'AssetName', width: 150, align: 'left', sorttype: "string" },
+            { name: 'OpenDt', index: 'OpenDt', width: 150, align: 'center', template: dateTimeTemplate },
+            { name: 'CloseDt', index: 'CloseDt', width: 150, align: 'center', template: dateTimeTemplate },
+            {
+                name: 'Id.TotalDuration',
+                index: 'TotalDuration',
+                width: 80,
+                align: 'center',
+                sorttype: "string",
+
+                formatter: function(cellval, opts, rwdat, act) {
+                    if (opts.rowId === "") {
+                        return $.fn.fmatter('string', GetTimeInFullByHourAndMinuteAndSecond(cellval.totalHours, cellval.totalMinutes, cellval.totalSeconds), opts, rwdat, act);
+                    } else {
+                        return $.fn.fmatter('string', cellval, opts, rwdat, act);
+                    }
+                },
+                summaryType: function(val, name, record) {
+                    if (typeof (val) === "string") {
+                        val = { totalHours: 0, totalMinutes: 0, totalSeconds: 0 };
+                    }
+                    val.totalHours += record.Hour;
+                    val.totalMinutes += record.Minute;
+                    val.totalSeconds += record.Second;
+                    return val;
+                }
+            },
+            { name: 'Second', index: 'Second', hidden: true, summaryType: "sum" },
+            { name: 'Minute', index: 'Minute', hidden: true, summaryType: "sum" },
+            { name: 'Hour', index: 'Hour', hidden: true, summaryType: "sum" }
+        ];
+        var assetActivityCaption = "Grid " + (parseInt($("input[name=assetReport]:checked").val()) === 3 ? "ON" : "OFF") + " Activity Report";
+        loadjqGrid(
+            [], "listAsset", "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ReportApi", action = "GetGridPowerOperationReport"})",
+            {
+                fromDate: $("#fromDateForAssetReport").datepicker("getDate").toJSON(),
+                toDate: $("#toDateForAssetReport").datepicker("getDate").toJSON(),
+                region: $("#regionForAssetReport").val(),
+                city: $("#cityForAssetReport").val(),
+                site: $("#siteForAssetReport").val(),
+                resource: $("#assetForAssetReport").val(),
+                status: parseInt($("input[name=assetReport]:checked").val()) === 3
+            },
+            ["Batch No.", "Region Name", "City Name", "Site Name", "Asset Name", "Event Start", "Event Stop", "Total Duration", "Second", "Minute", "Hour"], colModel,
+            "pagerAsset", "Id", "asc", "", 50, _rowList, 1, 1, assetActivityCaption,
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                repeatitems: false,
+                userdata: "userdata"
+            },
+            undefined, undefined, true, true, function() {
+                if ($('.footrow [aria-describedby="listAsset_CloseDt"]').html() !== "&nbsp;")
+                    return;
+                $grid.setGridWidth($(window).width() - 360);
+                $grid.setGridHeight($(window).height() - 200);
+                $(".ui-jqgrid-active").css("bottom", 60);
+                $("#" + $grid.attr("aria-labelledby")).show();
+                //-----Close Selection
+                //$("#assetActivityReportCard").dialog("close");
+              $("#assetActivityLoader").fadeOut();
+
+                var localData = $grid.jqGrid("getGridParam", "data"),
+                    totalSeconds = 0,
+                    totalMinutes = 0,
+                    totalHours = 0;
+
+                $.each(localData, function(index, value) {
+                    totalSeconds += parseInt(value.Second);
+                    totalMinutes += parseInt(value.Minute);
+                    totalHours += parseInt(value.Hour);
+                    //console.log(index + ";" + value.Hour);
+                });
+                //console.log(localData);
+                $('.footrow [aria-describedby="listAsset_Id.TotalDuration"]').html(GetTimeInFullByHourAndMinuteAndSecond(totalHours, totalMinutes, totalSeconds));
+                $('.footrow [aria-describedby="listAsset_CloseDt"]').html("<b>Grand Total: </b>");
+
+                $("#pagerAsset_excel").remove();
+            $("#" + $grid.attr("aria-labelledby")).addClass("z-index-2000");
+            });
+        $("#listAsset").jqGrid('setGridParam', {
+            loadError: function(xhr, st, err) {
+                $("#assetActivityReportCard .error").html("There is an error while fetching data for selected criteria. " + xhr.statusText);
+                $("#assetActivityReportCard .error").show();
+                $("#assetActivityLoader").hide();
+            }
+        });
+    }
+
+    function loadGridAssetOperation() {
+        $("#assetActivityReportCard .error").hide();
+        var prevRegionNameCellVal = { cellId: undefined, value: undefined },
+            prevCityNameCellVal = { cellId: undefined, value: undefined },
+            prevSiteNameCellVal = { cellId: undefined, value: undefined },
+            prevAssetNameCellVal = { cellId: undefined, value: undefined },
+            prevAssetBatchNoCellVal = { cellId: undefined, value: undefined },
+            prevAssetOpenDtCellVal = { cellId: undefined, value: undefined },
+            prevAssetCloseDtCellVal = { cellId: undefined, value: undefined },
+            prevAssetDurationCellVal = { cellId: undefined, value: undefined },
+            isSameRow = false,
+            prevTotalGridDurationCellVal = { cellId: undefined, value: undefined };
+        var colModel = [
+                {
+                    name: 'RegionName',
+                    index: 'RegionName',
+                    width: 100,
+                    align: 'left',
+                    sorttype: "string",
+                    cellattr: function(rowId, val, rawObject, cm, rdata) {
+                        var result;
+                        if (prevRegionNameCellVal.value === val) {
+                            result = ' style="display: none" rowspanid="' + prevRegionNameCellVal.cellId + '"';
+                        } else {
+                            var cellId = this.id + '_row_' + rowId + '_' + cm.name;
+
+                            result = ' rowspan="1" id="' + cellId + '"';
+                            prevRegionNameCellVal = { cellId: cellId, value: val };
+                        }
+
+                        return result;
+                    }
+                },
+                {
+                    name: 'CityName',
+                    index: 'CityName',
+                    width: 100,
+                    align: 'left',
+                    sorttype: "string",
+                    cellattr: function(rowId, val, rawObject, cm, rdata) {
+                        var result;
+                        if (prevCityNameCellVal.value === val) {
+                            result = ' style="display: none" rowspanid="' + prevCityNameCellVal.cellId + '"';
+                        } else {
+                            var cellId = this.id + '_row_' + rowId + '_' + cm.name;
+
+                            result = ' rowspan="1" id="' + cellId + '"';
+                            prevCityNameCellVal = { cellId: cellId, value: val };
+                        }
+
+                        return result;
+                    }
+                },
+                {
+                    name: 'SiteName',
+                    index: 'SiteName',
+                    width: 100,
+                    align: 'left',
+                    sorttype: "string",
+                    cellattr: function(rowId, val, rawObject, cm, rdata) {
+                        var result;
+                        if (prevSiteNameCellVal.value === val) {
+                            result = ' style="display: none" rowspanid="' + prevSiteNameCellVal.cellId + '"';
+                        } else {
+                            var cellId = this.id + '_row_' + rowId + '_' + cm.name;
+
+                            result = ' rowspan="1" id="' + cellId + '"';
+                            prevSiteNameCellVal = { cellId: cellId, value: val };
+                        }
+
+                        return result;
+                    }
+                },
+                {
+                    name: 'Id.AssetBatchNo',
+                    index: 'AssetBatchNo',
+                    width: 60,
+                    align: 'right',
+                    template: integerTemplate,
+                    cellattr: function (rowId, val, rawObject, cm, rdata) {
+                        var result;
+                        if (prevAssetBatchNoCellVal.value === val) {
+                            result = ' style="display: none" rowspanid="' + prevAssetBatchNoCellVal.cellId + '"';
+                        } else {
+                            var cellId = this.id + '_row_' + rowId + '_' + cm.name;
+
+                            result = ' rowspan="1" id="' + cellId + '"';
+                            prevAssetBatchNoCellVal = { cellId: cellId, value: val };
+                        }
+
+                        return result;
+                    }
+                },
+                {
+                    name: 'AssetName',
+                    index: 'AssetName',
+                    width: 100,
+                    align: 'left',
+                    sorttype: "string",
+                    cellattr: function(rowId, val, rawObject, cm, rdata) {
+                        var result;
+                        if (prevAssetNameCellVal.value === val) {
+                            result = ' style="display: none" rowspanid="' + prevAssetNameCellVal.cellId + '"';
+                        } else {
+                            var cellId = this.id + '_row_' + rowId + '_' + cm.name;
+
+                            result = ' rowspan="1" id="' + cellId + '"';
+                            prevAssetNameCellVal = { cellId: cellId, value: val };
+                        }
+
+                        return result;
+                    }
+                },
+                {
+                    name: 'AssetOpenDt',
+                    index: 'AssetOpenDt',
+                    width: 130,
+                    align: 'center',
+                    template: dateTimeTemplate,
+                    cellattr: function(rowId, val, rawObject, cm, rdata) {
+                        var result;
+                        if (prevAssetOpenDtCellVal.value === val) {
+                            result = ' style="display: none" rowspanid="' + prevAssetOpenDtCellVal.cellId + '"';
+                        } else {
+                            var cellId = this.id + '_row_' + rowId + '_' + cm.name;
+
+                            result = ' rowspan="1" id="' + cellId + '"';
+                            prevAssetOpenDtCellVal = { cellId: cellId, value: val };
+                        }
+
+                        return result;
+                    }
+                },
+                {
+                    name: 'AssetCloseDt',
+                    index: 'AssetCloseDt',
+                    width: 130,
+                    align: 'center',
+                    template: dateTimeTemplate,
+                    cellattr: function(rowId, val, rawObject, cm, rdata) {
+                        var result;
+                        if (prevAssetCloseDtCellVal.value === val) {
+                            result = ' style="display: none" rowspanid="' + prevAssetCloseDtCellVal.cellId + '"';
+                        } else {
+                            var cellId = this.id + '_row_' + rowId + '_' + cm.name;
+
+                            result = ' rowspan="1" id="' + cellId + '"';
+                            prevAssetCloseDtCellVal = { cellId: cellId, value: val };
+                        }
+
+                        return result;
+                    }
+                },
+                {
+                    name: 'AssetTotalDuration',
+                    index: 'AssetTotalDuration',
+                    width: 60,
+                    align: 'center',
+                    sorttype: "string",
+                    
+                    formatter: function(cellval, opts, rwdat, act) {
+                        if (opts.rowId === "") {
+                            return $.fn.fmatter('string', GetTimeInFullByHourAndMinuteAndSecond(cellval.totalAHours, cellval.totalAMinutes, cellval.totalASeconds), opts, rwdat, act);
+                        } else {
+                            return $.fn.fmatter('string', cellval, opts, rwdat, act);
+                        }
+                    },
+                    summaryType: function(val, name, record) {
+                        if (typeof (val) === "string") {
+                            val = { totalAHours: 0, totalAMinutes: 0, totalASeconds: 0 };
+                        }
+                        val.totalAHours += record.AssetHour;
+                        val.totalAMinutes += record.AssetMinute;
+                        val.totalASeconds += record.AssetSecond;
+                        return val;
+                    },
+                    cellattr: function(rowId, val, rawObject, cm, rdata) {
+                        var result;
+                        if (prevAssetDurationCellVal.value === val) {
+                            result = ' style="display: none" rowspanid="' + prevAssetDurationCellVal.cellId + '"';
+                            isSameRow = true;
+                        } else {
+                            var cellId = this.id + '_row_' + rowId + '_' + cm.name;
+
+                            result = ' rowspan="1" id="' + cellId + '"';
+                            prevAssetDurationCellVal = { cellId: cellId, value: val };
+                            isSameRow = false;
+                        }
+
+                        return result;
+                    }
+                },
+                //{ name: 'Id.GridBatchNo', index: 'GridBatchNo', width: 60, align: 'right', template: integerTemplate },
+                { name: 'GridOpenDt', index: 'GridOpenDt', width: 130, align: 'center', template: dateTimeTemplate },
+                { name: 'GridCloseDt', index: 'GridCloseDt', width: 130, align: 'center', template: dateTimeTemplate },
+                {
+                    name: 'Id.TotalDuration',
+                    index: 'TotalDuration',
+                    width: 60,
+                    align: 'center',
+                    sorttype: "string",
+
+                    formatter: function(cellval, opts, rwdat, act) {
+                        if (opts.rowId === "") {
+                            return $.fn.fmatter('string', GetTimeInFullByHourAndMinuteAndSecond(cellval.totalGHours, cellval.totalGMinutes, cellval.totalGSeconds), opts, rwdat, act);
+                        } else {
+                            return $.fn.fmatter('string', cellval, opts, rwdat, act);
+                        }
+                    },
+                    summaryType: function(val, name, record) {
+                        if (typeof (val) === "string") {
+                            val = { totalGHours: 0, totalGMinutes: 0, totalGSeconds: 0 };
+                        }
+                        val.totalGHours += record.GridHour;
+                        val.totalGMinutes += record.GridMinute;
+                        val.totalGSeconds += record.GridSecond;
+                        return val;
+                    }
+                },
+                { name: 'AssetSecond', index: 'AssetSecond', hidden: true, summaryType: "sum" },
+                { name: 'AssetMinute', index: 'AssetMinute', hidden: true, summaryType: "sum" },
+                { name: 'AssetHour', index: 'AssetHour', hidden: true, summaryType: "sum" },
+                { name: 'GridSecond', index: 'GridSecond', hidden: true, summaryType: "sum" },
+                { name: 'GridMinute', index: 'GridMinute', hidden: true, summaryType: "sum" },
+                { name: 'GridHour', index: 'GridHour', hidden: true, summaryType: "sum" },
+                //{
+                //    name: 'Total', index: 'Total', width: 60, align: 'center', sorttype: "string", 
+                //    formatter: function (cellval, opts, rwdat, act) {
+                //        if (!isSameRow) prevTotalGridDurationCellVal.value = 0;
+                //        prevTotalGridDurationCellVal.value = (prevTotalGridDurationCellVal.value || 0) + rwdat.GridSecond + (rwdat.GridMinute * 60) + (rwdat.GridHour * 60);
+
+                //        return $.fn.fmatter('string', GetTimeInFullByHourAndMinuteAndSecond(0,0, prevTotalGridDurationCellVal.value), opts, rwdat, act);
+                //    },
+                //    cellattr: function (rowId, val, rawObject, cm, rdata) {
+                //        var result;
+                //        if (isSameRow) {
+                //            result = ' style="display: none" rowspanid="' + prevTotalGridDurationCellVal.cellId + '"';
+                //        } else {
+                //            var cellId = this.id + '_row_' + rowId + '_' + cm.name;
+
+                //            result = ' rowspan="1" id="' + cellId + '"';
+                //            prevTotalGridDurationCellVal.cellId = cellId;
+                //        }
+                //        return result;
+                //    }
+                //}
+            ],
+            activityCaption = "Concurrent Grid Power & DG " + (parseInt($("input[name=assetReport]:checked").val()) === 5 ? "ON" : "OFF") + " Operation Report";
+        loadjqGrid(
+            [], "listAsset", "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ReportApi", action = "GetGridPowerAssetOperationReport"})",
+            {
+                fromDate: $("#fromDateForAssetReport").datepicker("getDate").toJSON(),
+                toDate: $("#toDateForAssetReport").datepicker("getDate").toJSON(),
+                region: $("#regionForAssetReport").val(),
+                city: $("#cityForAssetReport").val(),
+                site: $("#siteForAssetReport").val(),
+                resource: $("#assetForAssetReport").val(),
+                status: parseInt($("input[name=assetReport]:checked").val()) === 5
+            },
+            ["Region Name", "City Name", "Site Name", "Batch No.", "Name", "Event Start", "Event Stop", "Duration",//"Batch No.", 
+                "Event Start", "Event Stop", "Duration", "A Second", "A Minute", "A Hour", "G Second", "G Minute", "G Hour"]//, "Total"]
+                , colModel,"pagerAsset", "Id", "asc", "", -1, [], 1, 1, activityCaption,
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                repeatitems: false,
+                userdata: "userdata"
+            },
+            undefined, undefined, true, true, function() {
+                if ($('.footrow [aria-describedby="listAsset_AssetCloseDt"]').html() !== "&nbsp;")
+                    return;
+
+                $grid.setGridWidth($(window).width() - 260);
+                $grid.setGridHeight($(window).height() - 200);
+                $(".ui-jqgrid-active").css("bottom", 60);
+                $("#" + $grid.attr("aria-labelledby")).show();
+                //-----Close Selection
+                //$("#assetActivityReportCard").dialog("close");
+              $("#assetActivityLoader").fadeOut();
+
+                var localData = $grid.jqGrid("getGridParam", "data"),
+                    totalASeconds = 0,
+                    totalAMinutes = 0,
+                    totalAHours = 0,
+                    totalGSeconds = 0,
+                    totalGMinutes = 0,
+                    totalGHours = 0;
+                
+                $.each(localData, function (index, value) {
+                    totalASeconds += parseInt(value.AssetSecond);
+                    totalAMinutes += parseInt(value.AssetMinute);
+                    totalAHours += parseInt(value.AssetHour);
+
+                    totalGSeconds += parseInt(value.GridSecond);
+                    totalGMinutes += parseInt(value.GridMinute);
+                    totalGHours += parseInt(value.GridHour);
+                });
+                $('.footrow [aria-describedby="listAsset_Id.TotalDuration"]').html(GetTimeInFullByHourAndMinuteAndSecond(totalGHours, totalGMinutes, totalGSeconds));
+                $('.footrow [aria-describedby="listAsset_AssetTotalDuration"]').html(GetTimeInFullByHourAndMinuteAndSecond(totalAHours, totalAMinutes, totalASeconds));
+                $('.footrow [aria-describedby="listAsset_AssetCloseDt"]').html("<b>Grand Total: </b>");
+
+                $("#pagerAsset_excel").remove();
+                
+                $grid.jqGrid('setGroupHeaders', {
+                    useColSpanStyle: false,
+                    groupHeaders: [
+                      { startColumnName: 'AssetName', numberOfColumns: 4, titleText: '<b>Asset</b>' },
+                      { startColumnName: 'GridOpenDt', numberOfColumns: 3, titleText: '<b>Grid</b>' }
+                    ]
+                });
+
+                $grid.navButtonAdd('#pagerAsset', {
+                    caption: "Export to Excel",
+                    buttonicon: "ui-icon-disk",
+                    onClickButton: function () {
+                        //  Export the data from our jqGrid into a "real" Excel 2007 file
+                        ExportJQGridDataToExcel("#listAsset", activityCaption + ".xlsx");
+                    },
+                    position: "last"
+                });
+                $.each($("#listAsset [role='row'] td:nth-of-type(5)[id^='listAsset_row_']"), function (index, td) {
+                    var rowId = $grid.prop("id") + '_row_' + $(td).parent().prop("id") + '_Total';
+                    $("#" + rowId).html($("[rowspanid=" + rowId + "]").last().html());
+                });
+              $("#pagerAsset_center").hide();
+            $("#" + $grid.attr("aria-labelledby")).addClass("z-index-2000");
+
+            });
+        $("#listAsset").jqGrid('setGridParam', {
+            loadError: function(xhr, st, err) {
+                $("#assetActivityReportCard .error").html("There is an error while fetching data for selected criteria. " + xhr.statusText);
+                $("#assetActivityReportCard .error").show();
+                $("#assetActivityLoader").hide();
+            },
+
+            beforeSelectRow: function () {
+                return false;
+            },
+            gridComplete: function () {
+                var grid = this;
+
+                $('td[rowspan="1"]', grid).each(function () {
+                    var spans = $('td[rowspanid="' + this.id + '"]', grid).length + 1;
+                    if (spans > 1) $(this).attr('rowspan', spans);
+                });
+            }
+        });
+    }
+</script>

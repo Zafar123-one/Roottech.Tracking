@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D46CF62B-DD6D-488F-B555-19716F48DC69}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Roottech.Tracking.Domain</RootNamespace>
+    <AssemblyName>Roottech.Tracking.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.2.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MRAT\Entities\AssetGroup.cs" />
+    <Compile Include="MRAT\Entities\AssetStatus.cs" />
+    <Compile Include="MRAT\Entities\Condition.cs" />
+    <Compile Include="MRAT\Mappings\AssetGroupMap.cs" />
+    <Compile Include="MRAT\Mappings\AssetStatusMap.cs" />
+    <Compile Include="MRAT\Mappings\ConditionMap.cs" />
+    <Compile Include="OMOP\Entities\ProjectMst.cs" />
+    <Compile Include="OMOP\Mappings\ProjectMstMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RSGI\Entities\GeoFence.cs" />
+    <Compile Include="RSGI\Entities\GFDtl.cs" />
+    <Compile Include="RSGI\Entities\GFMst.cs" />
+    <Compile Include="RSGI\Entities\GFPOI.cs" />
+    <Compile Include="RSGI\Entities\GImage.cs" />
+    <Compile Include="RSGI\Entities\Poi.cs" />
+    <Compile Include="RSGI\Entities\POIType.cs" />
+    <Compile Include="RSGI\Entities\RouteDtl.cs" />
+    <Compile Include="RSGI\Entities\RouteMst.cs" />
+    <Compile Include="RSGI\Entities\PoiImageAccess.cs" />
+    <Compile Include="RSGI\Entities\PoiImage.cs" />
+    <Compile Include="RSGI\Mappings\GFDtlMap.cs" />
+    <Compile Include="RSGI\Mappings\GfMstMap.cs" />
+    <Compile Include="RSGI\Mappings\GFPOIMap.cs" />
+    <Compile Include="RSGI\Mappings\GImageMap.cs" />
+    <Compile Include="RSGI\Mappings\PoiMap.cs" />
+    <Compile Include="RSGI\Mappings\PoiTypeMap.cs" />
+    <Compile Include="RSGI\Mappings\RouteDtlMap.cs" />
+    <Compile Include="RSGI\Mappings\RouteMstMap.cs" />
+    <Compile Include="MRAT\Entities\Asset.cs" />
+    <Compile Include="RSGI\Mappings\PoiImageAccessMap.cs" />
+    <Compile Include="RSGI\Mappings\PoiImageMap.cs" />
+    <Compile Include="RSMT\Entities\ContractMst.cs" />
+    <Compile Include="RSMT\Entities\ContSite.cs" />
+    <Compile Include="RSMT\Entities\ContrType.cs" />
+    <Compile Include="RSMT\Entities\ContrStatus.cs" />
+    <Compile Include="RSMT\Entities\Vendor.cs" />
+    <Compile Include="RSMT\Mappings\ContractMstMap.cs" />
+    <Compile Include="RSMT\Mappings\ContSiteMap.cs" />
+    <Compile Include="RSMT\Mappings\ContrTypeMap.cs" />
+    <Compile Include="RSMT\Mappings\ContrStatusMap.cs" />
+    <Compile Include="RSMT\Mappings\VendorMap.cs" />
+    <Compile Include="RSPT\Entities\AssetsImage.cs" />
+    <Compile Include="RSPT\Entities\BusLocWisePlateIdLov.cs" />
+    <Compile Include="RSPT\Entities\CompleteUnitVw.cs" />
+    <Compile Include="RSPT\Entities\CurrentStatus.cs" />
+    <Compile Include="RSPT\Entities\CurrentStatusAmpleView.cs" />
+    <Compile Include="RSPT\Entities\DashboardStationaryV2Vw.cs" />
+    <Compile Include="RSPT\Entities\FleetUnitsView.cs" />
+    <Compile Include="RSPT\Entities\SensorInfoVoltage.cs" />
+    <Compile Include="RSPT\Entities\SiteDirectory.cs" />
+    <Compile Include="RSPT\Mappings\FleetUnitsViewMap.cs" />
+    <Compile Include="RSPT\Mappings\SiteDirectoryMap.cs" />
+    <Compile Include="RSPT\Mappings\DashboardStationaryV2VwMap.cs" />
+    <Compile Include="RSPT\Entities\FleetInfoAmpleView.cs" />
+    <Compile Include="RSPT\Entities\LastCDR.cs" />
+    <Compile Include="RSPT\Entities\LastEventAmpleView.cs" />
+    <Compile Include="RSPT\Entities\MonthlyAmpleView.cs" />
+    <Compile Include="RSPT\Entities\PackageMst.cs" />
+    <Compile Include="RSPT\Entities\ResourceType.cs" />
+    <Compile Include="RSPT\Entities\FuelPrice.cs" />
+    <Compile Include="RSPT\Entities\SensorInfo.cs" />
+    <Compile Include="RSPT\Entities\Site.cs" />
+    <Compile Include="RSPT\Entities\TrckUnit.cs" />
+    <Compile Include="RSPT\Entities\RsptUStatus.cs" />
+    <Compile Include="RSPT\Entities\SensorBoard.cs" />
+    <Compile Include="RSPT\Entities\SITEResource.cs" />
+    <Compile Include="RSPT\Entities\SpeedVehicleReport.cs" />
+    <Compile Include="RSPT\Entities\StartStopReport.cs" />
+    <Compile Include="RSPT\Entities\UnitGroupAccessDtl.cs" />
+    <Compile Include="RSPT\Mappings\UnitGroupAccessDtlMap.cs" />
+    <Compile Include="RSPT\Entities\UnitGroupDtl.cs" />
+    <Compile Include="RSPT\Entities\UnitGroupMst.cs" />
+    <Compile Include="RSPT\Entities\VehicleAmpleView.cs" />
+    <Compile Include="RSPT\Entities\VehicleReport.cs" />
+    <Compile Include="MRAT\Mappings\AssetsMap.cs" />
+    <Compile Include="RSPT\Mappings\CompleteUnitVwMap.cs" />
+    <Compile Include="RSPT\Mappings\PackageMstMap.cs" />
+    <Compile Include="RSPT\Mappings\ResourceTypeMap.cs" />
+    <Compile Include="RSPT\Mappings\FuelPriceMap.cs" />
+    <Compile Include="RSPT\Mappings\SiteMap.cs" />
+    <Compile Include="RSPT\Mappings\TrckUnitMap.cs" />
+    <Compile Include="RSPT\Mappings\RsptUStatusMap.cs" />
+    <Compile Include="RSPT\Mappings\SITEResourceMap.cs" />
+    <Compile Include="RSPT\Mappings\UnitGroupDtlMap.cs" />
+    <Compile Include="RSPT\Mappings\UnitGroupMstMap.cs" />
+    <Compile Include="RSPT\Entities\DashboardStationaryTestVw.cs" />
+    <Compile Include="RSSP\Entities\EDRFuel.cs" />
+    <Compile Include="RSSP\Entities\EDRFuelRun.cs" />
+    <Compile Include="RSSP\Entities\EdrGeo.cs" />
+    <Compile Include="RSSP\Entities\EdrLastHi.cs" />
+    <Compile Include="RSSP\Entities\MonthWiseSummary.cs" />
+    <Compile Include="RSSP\Entities\RptAssetOperation.cs" />
+    <Compile Include="RSSP\Entities\RptDayWiseSummary.cs" />
+    <Compile Include="RSSP\Entities\RptFuelTheftDetail.cs" />
+    <Compile Include="RSSP\Entities\RptGenConsumption.cs" />
+    <Compile Include="RSSP\Entities\RptGenRefuel.cs" />
+    <Compile Include="RSSP\Entities\RptGridPowerAssetOperation.cs" />
+    <Compile Include="RSSP\Entities\RptGridPowerOperation.cs" />
+    <Compile Include="RSSP\Entities\RptMonthwiseStatistics.cs" />
+    <Compile Include="RSSP\Entities\DevActivity.cs" />
+    <Compile Include="RSSP\Entities\RptVehicleRefuelDetail.cs" />
+    <Compile Include="RSSP\Entities\RptVehicleTheftDetail.cs" />
+    <Compile Include="RSSP\Entities\TodayStatistics.cs" />
+    <Compile Include="RSPT\Entities\UnitGroupLov.cs" />
+    <Compile Include="RSSP\Mappings\DevActivityMap.cs" />
+    <Compile Include="SMAA\Entities\OrgModule.cs" />
+    <Compile Include="SMAA\Entities\Module.cs" />
+    <Compile Include="SMAA\Mappings\OrgModuleMap.cs" />
+    <Compile Include="SMAA\Mappings\ModuleMap.cs" />
+    <Compile Include="SMIM\Entities\ClientMaster.cs" />
+    <Compile Include="SMIM\Entities\RefreshToken.cs" />
+    <Compile Include="SMIM\Mappings\ClientMasterMap.cs" />
+    <Compile Include="SMIM\Mappings\RefreshTokenMap.cs" />
+    <Compile Include="SMSA\Entities\Region.cs" />
+    <Compile Include="RSPT\Mappings\DashboardStationaryTestVwMap.cs" />
+    <Compile Include="RSSP\Mappings\EdrFuelMap.cs" />
+    <Compile Include="RSSP\Mappings\EDRFuelRunMap.cs" />
+    <Compile Include="RSSP\Mappings\EdrGeoMap.cs" />
+    <Compile Include="RSSP\Mappings\EdrLastHiMap.cs" />
+    <Compile Include="SMSA\Entities\Area.cs" />
+    <Compile Include="SMSA\Entities\Country.cs" />
+    <Compile Include="SMSA\Entities\TerritoryDtl.cs" />
+    <Compile Include="SMSA\Entities\State.cs" />
+    <Compile Include="SMSA\Entities\TerritoryMst.cs" />
+    <Compile Include="SMSA\Mappings\RegionMap.cs" />
+    <Compile Include="SMAA\Entities\GFAsset.cs" />
+    <Compile Include="SMAA\Entities\ModAccessByUserAndMod.cs" />
+    <Compile Include="SMAA\Entities\ModDtl.cs" />
+    <Compile Include="SMAA\Entities\ModMst.cs" />
+    <Compile Include="SMAA\Entities\MonitorAsset.cs" />
+    <Compile Include="SMAA\Mappings\GfAssetMap.cs" />
+    <Compile Include="SMAA\Mappings\ModDtlMap.cs" />
+    <Compile Include="SMAA\Mappings\ModMstMap.cs" />
+    <Compile Include="SMAA\Mappings\MonitorAssetMap.cs" />
+    <Compile Include="SMIM\Entities\CompaniesByUserAndOrg.cs" />
+    <Compile Include="SMAM\Entities\Dashboard.cs" />
+    <Compile Include="SMIM\Entities\FirstLogin.cs" />
+    <Compile Include="SMIM\Entities\ForgotPassword.cs" />
+    <Compile Include="SMIM\Entities\Login.cs" />
+    <Compile Include="SMSA\Mappings\AreaMap.cs" />
+    <Compile Include="SMSA\Mappings\CountryMap.cs" />
+    <Compile Include="SMSA\Mappings\TerritoryDtlMap.cs" />
+    <Compile Include="SMSA\Mappings\StateMap.cs" />
+    <Compile Include="SMSA\Mappings\TerritoryMstMap.cs" />
+    <Compile Include="SMSE\Entities\Organization.cs" />
+    <Compile Include="SMIM\Entities\OrganizationsByUserCode.cs" />
+    <Compile Include="SMIM\Entities\UGroupDtlSt.cs" />
+    <Compile Include="SMIM\Entities\UGroupMstSt.cs" />
+    <Compile Include="SMIM\Entities\UserProfile.cs" />
+    <Compile Include="SMIM\Entities\VehicleTree.cs" />
+    <Compile Include="SMAM\Mappings\DashboardMap.cs" />
+    <Compile Include="SMSE\Mappings\OrganizationMap.cs" />
+    <Compile Include="SMIM\Mappings\UGroupDtlStMap.cs" />
+    <Compile Include="SMIM\Mappings\UGroupMstStMap.cs" />
+    <Compile Include="SMIM\Mappings\UserProfileMap.cs" />
+    <Compile Include="SMSA\Entities\AreaDtl.cs" />
+    <Compile Include="SMSA\Entities\City.cs" />
+    <Compile Include="SMSA\Entities\Company.cs" />
+    <Compile Include="SMSA\Entities\CompleteLocationByOrgCode.cs" />
+    <Compile Include="SMSA\Mappings\AreaDtlMap.cs" />
+    <Compile Include="SMSA\Mappings\CityMap.cs" />
+    <Compile Include="SMSA\Mappings\CompanyMap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSPT\Mappings\AssetsImage.hbm.xml" />
+    <EmbeddedResource Include="RSPT\Mappings\CurrentStatus.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RSPT\Mappings\CurrentStatusAmpleView.hbm.xml" />
+    <EmbeddedResource Include="RSPT\Mappings\FleetInfoAmpleView.hbm.xml" />
+    <EmbeddedResource Include="RSPT\Mappings\LastCdr.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RSPT\Mappings\LastEventAmpleView.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RSPT\Mappings\MonthlyAmpleView.hbm.xml" />
+    <EmbeddedResource Include="RSPT\Mappings\SensorBoard.hbm.xml" />
+    <EmbeddedResource Include="RSPT\Mappings\SpeedVehicleReport.hbm.xml" />
+    <EmbeddedResource Include="RSPT\Mappings\StartStopReport.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RSPT\Mappings\VehicleAmpleView.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RSPT\Mappings\VehicleReport.hbm.xml" />
+    <EmbeddedResource Include="RSSP\Mappings\MonthWiseSummary.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMIM\Mappings\CompaniesByUserAndOrg.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SMIM\Mappings\VehicleTree.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SMIM\Mappings\FirstLogin.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SMIM\Mappings\ForgotPassword.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SMIM\Mappings\Login.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SMIM\Mappings\OrganizationsByUserCode.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SMSA\Mappings\CompleteLocationByOrgCode.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SMAA\Mappings\ModAccessByUserAndMod.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSGI\Mappings\GeoFence.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSSP\Mappings\TodayStatistics.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSPT\Mappings\SensorInfo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSSP\Mappings\RptGenRefuel.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSSP\Mappings\RptGenConsumption.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSSP\Mappings\RptFuelTheftDetail.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSSP\Mappings\RptAssetOperation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSSP\Mappings\RptGridPowerOperation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSSP\Mappings\RptGridPowerAssetOperation.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSSP\Mappings\RptMonthwiseStatistics.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSPT\Mappings\SensorInfoVoltage.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Roottech.Tracking.Common\Roottech.Tracking.Common.csproj">
+      <Project>{45cf407b-2b6e-4af8-8159-661db2e71e01}</Project>
+      <Name>Roottech.Tracking.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSSP\Mappings\RptVehicleRefuelDetail.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSPT\Mappings\UnitGroupLov.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSPT\Mappings\BusLocWisePlateIdLov.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSSP\Mappings\RptVehicleTheftDetail.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RSSP\Mappings\RptDayWiseSummary.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

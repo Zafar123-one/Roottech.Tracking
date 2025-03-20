@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="BusLocWisePlateIdLov">
+    <id name="Id" />
+    <property name="AssetName" />
+	<property name="ResourceNo" />
+    <loader query-ref="GetBusLocWisePlateIdLov"/>
+  </class>
+  <sql-query name="GetBusLocWisePlateIdLov">
+    <return class="BusLocWisePlateIdLov" >
+      <return-property name="Id" column="PlateID" />
+      <return-property name="AssetName" column="Assetname" />
+      <return-property name="ResourceNo" column="ResourceNo" />
+    </return>
+	  exec SP_Lov_For_Plate_ID_BusLoc_Wise @SiteCode = '%', @Orgcode = :Orgcode, @PlateID = :PlateID, @Usercode = :UserCode, @ugrpmst# = :ugrpmst
+  </sql-query>
+</hibernate-mapping>

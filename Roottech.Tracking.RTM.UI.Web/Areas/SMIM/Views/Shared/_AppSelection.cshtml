@@ -1,0 +1,119 @@
+﻿@using Roottech.Tracking.Domain.SMIM.Entities
+<table id="appselect" style="display: none">
+    <tr id="appsel">
+        <td>
+            <div class="selectModule left">
+                @*<a href="@Url.Action("Index", new {area = "Mobile", controller = "Map"})">
+                        <div class="selectImg"><img src="/Images/common/realTimeMonitoring.gif"/>
+                        </div></a>
+                    <div class="selectAnchor"><a href="@Url.Action("Index", new {area = "Mobile", controller = "Map"})"> </a>
+                        <a href="@Url.Action("Index", new {area = "Mobile", controller = "Map"})">Mobile</a>
+                    </div>*@
+                <a href="#" onclick="getOrganization(2)">
+                    <div class="selectImg"><img src="/Images/common/realTimeMonitoring.gif" /></div>
+                </a>
+                <div class="selectAnchor">
+                    <a href="@Url.Action("Index", new {area = "Mobile", controller = "Map"})"> </a>
+                    <a href="#" onclick="getOrganization(1)">Mobile</a>
+                </div>
+            </div>
+        </td>
+        <td>
+            <div class="selectModule left">
+                <a href="#" onclick="getOrganization(1)">
+                    <div class="selectImg">
+                        <img src="/Images/common/diesel-generator.jpg" />
+                    </div>
+                </a>
+                <div class="selectAnchor">
+                    <a href="@Url.Action("Index", new {area = "Stationary", controller = "Map"})"> </a>
+                    <a href="#" onclick="getOrganization(1)">Stationay</a>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr id="orgsel" style="display: none">
+        <td colspan="2">
+            <form action="/Stationary/Map" id="statForm" method="post">
+                <select name="selOrganizationByUser" id="selOrganizationByUser" onchange="this.form.submit();">
+                </select>
+            </form>
+        </td>
+    </tr>
+    <tr id="orgselMob" style="display: none">
+        <td colspan="2">
+            <form action="/Mobile/Map" id="mobForm" method="post">
+                <select name="selOrganizationByUserForMobile" id="selOrganizationByUserForMobile" onchange="this.form.submit();"> </select>
+            </form>
+        </td>
+    </tr>
+</table>
+@if (Model != null)// && !String.IsNullOrEmpty(Model.User_Name))
+{
+    if (Model.Msg == null)
+    {
+        if (Model.AppType == null)
+        {
+            <script type="text/javascript">
+                $("div.error span").html("You do not have access on any dashboard, Please contact your Administrator.");
+                $("div.error").show();
+            </script>
+        }
+        else if (Model.AppType == AppType.All)
+        {
+            <script type="text/javascript">
+                $.fancybox({
+                    href: "#appselect",
+                    title: "Choose Type",
+                    openEffect: 'elastic',
+                    openSpeed: 250,
+                    openOpacity: true,
+                    closeEffect: 'elastic',
+                    closeSpeed: 150,
+                    closeOpacity: true,
+                    type: 'inline',
+                    modal: true
+                });
+            </script>
+        }
+        else if (Model.AppType == AppType.Mobile)
+        {
+            <script type="text/javascript">
+                $("#mobForm").closest("form").append($("<input>").attr("type", "hidden").attr("name", "selOrganizationByUserForMobile").val(@Model.OrgCode));
+                $("#mobForm").submit();
+            </script>
+            //Response.Redirect(@Url.Action("Index", new { area = "Mobile", controller = "Map" }));
+        }
+        else if (Model.AppType == AppType.Stationary)
+        {
+            <script type="text/javascript">
+                $("#statForm").closest("form").append($("<input>").attr("type", "hidden").attr("name", "selOrganizationByUser").val(@Model.OrgCode));
+                $("#statForm").submit();
+            </script>
+            //Response.Redirect(@Url.Action("Index", new { area = "Stationary", controller = "Map" }));
+        }
+    }
+    else
+    {
+        var msg = Model.Msg.Split(';');
+        if (msg[0] == "6") // First Login
+        {
+            <script type="text/javascript">
+                $("#UserName").val('@Model.User_Name');
+                $("#LoginCode").val($("#UserId").val());
+                $("#Organization").val('@Model.OrgName');
+                getSecurityQuestion('#crudform', '@msg[1]', 754, 450);
+            </script>
+        }
+        else
+        {
+            if (msg[1] != null)
+            {
+                <script type="text/javascript">
+                    $("div.error span").html('@msg[1]');
+                    $("div.error").show();
+                </script>
+            }
+        }
+    }
+}

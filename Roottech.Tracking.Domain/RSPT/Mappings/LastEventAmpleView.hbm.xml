@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="LastEventAmpleView">
+    <id name="Id" />
+    <property name="Activity" />
+    <property name="Initiate" />
+    <property name="Stopdt" />
+    <property name="totDuration" />
+    <property name="IDLHr" />
+    <property name="TotalMileage" />
+    <property name="AtcComKM" />
+    <property name="NetQty" />
+    <loader query-ref="GetLastEventAmpleView"/>
+  </class>
+  <sql-query name="GetLastEventAmpleView">
+    <return class="LastEventAmpleView" >
+      <return-property name="Id" column="Id" />
+      <return-property name="Activity" column="Activity" />
+      <return-property name="Initiate" column="Initiate" />
+      <return-property name="Stopdt" column="Stopdt" />
+      <return-property name="totDuration" column="totDuration" />
+      <return-property name="IDLHr" column="IDLHr" />
+      <return-property name="TotalMileage" column="TotalMileage" />
+      <return-property name="AtcComKM" column="AtcComKM" />
+      <return-property name="NetQty" column="NetQty" />
+    </return>
+    exec usp_AmpleViewLastDetail @AssetNo = :AssetNo, @UnitId = :UnitId
+  </sql-query>
+</hibernate-mapping>

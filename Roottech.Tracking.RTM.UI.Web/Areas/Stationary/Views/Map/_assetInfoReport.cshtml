@@ -1,0 +1,115 @@
+﻿<div id="assetInfoReportCard" style="display: none">
+    <table class="ampleviewtable">
+        <tr>
+            <td style="text-align: right; padding-right: 10px;">Region</td>
+            <td ><select id="regionForAssetInfoReport" style="width: 200px"></select></td>
+            <td style="text-align: right; padding-right: 10px; width: 50px">Site<span class="myAchor">*</span></td>
+            <td><select id="siteForAssetInfoReport" style="width: 200px"></select></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px;">Asset<span class="myAchor">*</span></td>
+            <td ><select id="assetForAssetInfoReport" style="width: 200px"></select></td>
+            <td style="text-align: right; padding-right: 10px;">Status</td>
+            <td>
+              <label><input type="radio" name="assetInfoReport" value="-1" autofocus />Both</label>
+              <label><input type="radio" name="assetInfoReport" value="1" />ON</label>
+              <label><input type="radio" name="assetInfoReport" value="0" />OFF</label>
+              <input style="float: right" id="btnAssetInfoReport" type="button" value="Go" onclick="return runAssetInfoReport();">
+              <input style="float: right" id="btnResetAssetInfoReport" type="button" value="Reset" onclick="return resetAssetInfoReportCard();">
+            </td>
+        </tr>
+    </table>
+    <div id="assetInfoLoader" style="height: 97%; position: absolute; top: 1px; width: 97%; background-color: white; display: none">
+        <div class="ajax-loader" style="height: 100%; margin-left: 50%;"></div>
+    </div>
+    <div class="error" style="display:none;"><span></span></div>
+</div>
+<table id="listAssetInfo"></table>
+<div id="pagerAssetInfo"></div>
+
+<script type="text/javascript">
+    function runAssetInfoReport() {
+        if ($("input[name=assetInfoReport]:checked").val() === undefined) {
+            alert("Please select one of the Status.");
+            $("input[name=assetInfoReport]").focus();
+            return false;
+        }
+        $("#assetInfoLoader").fadeIn({ complete: function() { loadAssetInfo(); } });
+        return true;
+    }
+
+    function loadAssetInfo() {
+        $("#assetInfoReportCard .error").hide();
+        var colModel = [
+            { name: 'RegionName', index: 'RegionName', width: 150, align: 'left', sorttype: "string" },
+            { name: 'SiteName', index: 'SiteName', width: 150, align: 'left', sorttype: "string" },
+            { name: 'AssetName', index: 'AssetName', width: 150, align: 'left', sorttype: "string" },
+            { name: 'Dgcap', index: 'Dgcap', width: 90, align: 'right', template: integerTemplate },
+            { name: 'ActivationDt', index: 'ActivationDt', width: 130, align: 'center', template: dateTimeTemplate },
+            { name: 'Capacity', index: 'Capacity', width: 100, align: 'right', template: moneyTemplate },
+            { name: 'BaseVolume', index: 'BaseVolume', width: 80, align: 'right', template: moneyTemplate },
+            { name: 'MinLevel', index: 'MinLevel', width: 80, align: 'right', template: moneyTemplate },
+            { name: 'Currents', index: 'Currents', width: 80, align: 'right', template: moneyTemplate },
+            { name: 'LevelType', index: 'LevelType', width: 80, align: 'right', sorttype: "string"},
+            {
+                name: 'EventName', index: 'EventName', width: 80, align: 'center', sorttype: "string",
+                formatter: function (cellval) {
+                    var color;
+                    if (cellval.toLowerCase().indexOf("on") > -1)
+                        color = "green";
+                    else if (cellval.toLowerCase().indexOf("off") > -1)
+                        color = "red";
+                    else
+                        return cellval;
+                    return "<img src='/Images/common/led_circle_" + color + ".gif' style='width: 21px; margin: auto;' alt='" + cellval + "' />";
+                }
+            },
+            { name: 'TotDuration', index: 'TotDuration', width: 60, align: 'center', sorttype: "string" }
+        ];
+        loadjqGrid(
+            [], "listAssetInfo", "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "StationaryApi", action = "GetAssetInformationReport"})",
+            {
+                regionId: $("#regionForAssetInfoReport").val(),
+                site: $("#siteForAssetInfoReport").val(),
+                resource: $("#assetForAssetInfoReport").val(),
+                assetStatus: (parseInt($("input[name=assetInfoReport]:checked").val()) === -1) ? null : parseInt($("input[name=assetInfoReport]:checked").val()) === 1
+            },
+            ["Region Name", "Site Name", "Asset Name", "Rating (KVA)", "Activation Date", "Tank Capacity", "Base Volume", "Min Volume", "Current Fuel", "Current Fuel", "Asset Status", "Duration"], colModel,
+            "pagerAssetInfo", "RegionName", "asc", "", 50, _rowList, 1, 1, "Asset Information Report",
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                repeatitems: false,
+                userdata: "userdata"
+            },
+            undefined, undefined, false, false, function() {
+                $grid.setGridWidth($(window).width() - 190);
+                $grid.setGridHeight($(window).height() - 180);
+                $(".ui-jqgrid-active").css("bottom", 60);
+                $("#" + $grid.attr("aria-labelledby")).show();
+
+                //-----Close Selection
+                $("#assetInfoReportCard").dialog("close");
+                if ($('[role="columnheader"][colspan=4]').html() === "<b>Quantity in Liters</b>")
+                    return;
+                $grid.jqGrid('setGroupHeaders', {
+                    useColSpanStyle: false,
+                    groupHeaders: [
+                      { startColumnName: 'Capacity', numberOfColumns: 4, titleText: '<b>Quantity in Liters</b>' }
+                    ]
+                });
+
+                $("#pagerAssetInfo_excel").remove();
+
+            });
+        $("#listAssetInfo").jqGrid('setGridParam', {
+            loadError: function(xhr, st, err) {
+                $("#assetInfoReportCard .error").html("There is an error while fetching data for selected criteria. " + xhr.statusText);
+                $("#assetInfoReportCard .error").show();
+                $("#assetInfoLoader").hide();
+            }
+        });
+    }
+</script>

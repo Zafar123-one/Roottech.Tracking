@@ -1,0 +1,311 @@
+﻿<div id="divMain" style="display:none;">
+    <table id="tableMain">
+        <tr>
+            <td>
+                <div class="ampleViewCurveDiv">
+                    <div class="ampleViewHeader"> Fuel Gauge </div>
+                    <canvas id="fuelometerGuage1" style="width:264px;"></canvas> 
+                    <div style="padding-bottom: 6px; padding-top:4px">
+                        <table>
+                            <tr>
+                                <td style="width:13px"></td>
+                                <td class="greenIndicate" ></td>
+                                <td style="font-size:8pt">Filled</td>
+                                <td class="redIndicate"></td>
+                                <td style="font-size:8pt">Empty</td>
+                                <td style="width:5px"></td>
+                                <td style="text-align:right;"><div id="preview-textfield" style="font-size:8pt; font-weight:bold;text-align:right; "></div>    </td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                    
+                    
+                </div>
+            </td>
+            <td style="width:500px">
+                <div id="lastMessage" class="ampleViewCurveDiv" style="width:95%">
+                     <div class="ampleViewHeader"> Asset Status </div>
+                    <table style="font-size:11px; font-family:Arial, sans-serif;padding-left : 30px; " >
+                        <tr>
+                            <td id="tdDeviceLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdDeviceNo"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdDateLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdDateVal"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdIgnitionLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdIgnitionStatus"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdCompressorLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdCompressorStatus"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdSpeedLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdSpeedVal"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdBatteryLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdBatteryVal"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdFuelQtyLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdFuelQty"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdTempLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdTempVal"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdLongiLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdLongiVal"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdLatiLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdLatiVal"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdLocationLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdLocationVal"></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td></td>
+            <td style="width:320px">
+                <div id="assetsInformation" class="ampleViewCurveDiv" style="width:100%">
+                    <div class="ampleViewHeader"> Asset Detail </div>
+                    <table style="font-size:11px; font-family :Arial, sans-serif; padding-left:30px; padding-bottom:19px;">
+                        <tr>
+                            <td id="tdAssetNoLabel" style="text-align:right; font-weight:bold"> Vehicle / Asset # </td><td style="width:5px"></td><td id="tdAssetNo"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdAssetNameLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdAssetNameVal"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdDepotLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdDepotName"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdUsageDescLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdUsageDescVal"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdUsageTypeLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdUsageTypeVal"></td>
+                        </tr>
+                        <tr style="height:12px">
+                            <td></td><td style="width:5px"></td><td ></td>
+                        </tr>
+                        <tr>
+                            <td id="tdRegDateLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdRegDateVal"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdDriverNameLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdDriverNameVal"></td>
+                        </tr>
+                        <tr>
+                            <td id="tdCellLabel" style="text-align:right; font-weight:bold"></td><td style="width:5px"></td><td id="tdCellVal"></td>
+                        </tr>
+                        <tr>
+                            <td ></td><td style="width:5px"></td><td ></td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr style="vertical-align:top">
+            <td colspan="3" rowspan="3">
+                <div class="spacerOne"></div>
+                <div id="divCurrentStatus" class="ampleViewCurveDiv" style="width:96.5%">
+                    <div class="ampleViewHeader"> Current Event Status</div>
+                    <table style="font-size:11px; font-family:Arial, sans-serif">
+                        <tr>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold">Event #</td>
+                            <td style="width:5px"></td>
+                            <td id="tdEventNo"></td>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold">Current Event</td>
+                            <td style="width:5px"></td>
+                            <td id="tdActivity"></td>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold"></td>
+                            <td style="width:5px"></td>
+                            <td ></td>
+                        </tr>
+                        <tr>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold">Site Address</td>
+                            <td style="width:5px"></td>
+                            <td id="tdSite" colspan="8"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold"> Event Started</td>
+                            <td style="width:5px"></td>
+                            <td id="tdEventStart"></td>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold">Last Log</td>
+                            <td style="width:5px"></td>
+                            <td id="tdEventEnd"></td>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold">Time Lapsed</td>
+                            <td style="width:5px"></td>
+                            <td id="tdTotalDuration"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold">Starting Mileage</td>
+                            <td style="width:5px"></td>
+                            <td id="tdFromMilege"></td>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold">Current Mileage</td>
+                            <td style="width:5px"></td>
+                            <td id="tdCurrentMileage"></td>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold">Event Mileage</td>
+                            <td style="width:5px"></td>
+                            <td id="tdNetMileage"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:5px" ></td>
+                            <td style="text-align:right; font-weight:bold"></td>
+                            <td style="width:5px"></td>
+                            <td colspan="5"></td>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold">Event Kilometerage</td>
+                            <td style="width:5px"></td>
+                            <td id="tdNetMileInKM"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold">Starting Fuel</td>
+                            <td style="width:5px"></td>
+                            <td id="tdOpenFuel"></td>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold">Current Fuel</td>
+                            <td style="width:5px"></td>
+                            <td id="tdCurrentFuel"></td>
+                            <td style="width:5px"></td>
+                            <td style="text-align:right; font-weight:bold">Event Fuel</td>
+                            <td style="width:5px"></td>
+                            <td id="tdNetFuel"></td>
+                        </tr>
+                        
+                    </table>
+                </div>
+                <div class="spacerOne"></div>
+                <div class="ampleViewCurveDiv" style="width:96.5%">
+                    <div class="ampleViewHeader"> Last Events</div>
+                    <div id="divLastEvent">
+                        <table id="listLastEventStatus" class="myTable" style="width:100%"></table>
+                    </div>
+                </div>
+            </td>
+            <td style="horiz-align:right">
+                <div id="divDailySummary" style="width:100%; "> @*  Position:absolute;top:8px *@
+                    <div class="spacerOne"></div>
+                    <div class="ampleViewCurveDiv" style="height:242px">
+                        <div class="ampleViewHeader">Current Month Summary </div>
+                        <table style="font-size:8pt; padding-left:30px">
+                            <tr>
+                                <td style="text-align:right;font-weight:bold">Fuel Opening</td>
+                                <td style="width:5px"></td>
+                                <td style="text-align:left"><label id="txtMOpenFuel" value="" width="80px" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;font-weight:bold;">Refuel</td>
+                                <td style="width:5px"></td>
+                                <td style="text-align:left"><label id="txtTotalRefuel" value="" width="80px" /></td>
+
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;font-weight:bold">Fuel Consumed</td>
+                                <td style="width:5px"></td>
+                                <td style="text-align:left"><label id="txtTotalConsumed" value="" width="100px" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;font-weight:bold">Fuel Theft</td>
+                                <td style="width:5px"></td>
+                                <td style="text-align:left"><label id="txtTotalTheft" value="" width="100px" /></td>
+                            </tr>
+                            <tr><td colspan="3">---------------------------------------------------</td></tr>
+                            <tr>
+                                <td style="text-align:right;font-weight:bold">FMS Odometer Miles</td>
+                                <td style="width:5px"></td>
+                                <td style="text-align:left"><label id="txtMOpenMileage" value="" width="100px" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;font-weight:bold">Mileage</td>
+                                <td style="width:5px"></td>
+                                <td style="text-align:left"><label id="txtMTotalMileage" value="" width="100px" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right;font-weight:bold">Kilometer</td>
+                                <td style="width:5px"></td>
+                                <td style="text-align:left"><label id="txtMTotalKM" value="" width="100px" /></td>
+                            </tr>
+                            <tr><td colspan="3">---------------------------------------------------</td></tr>
+                            <tr>
+                                <td style="text-align:right;font-weight:bold">Driven Hours</td>
+                                <td style="width:5px"></td>
+                                <td style="text-align:left"><label id="txtTotalRunHours" value="" width="80px" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right">AvCons.</td>
+                                <td style="width:5px"></td>
+                                <td style="text-align:left"><label id="txtAvgkmltr" value="" /> </td>
+                            </tr>
+                            <!--<tr>
+                                <td style="text-align:right;font-weight:bold">Avg Consumption</td>
+                                <td style="width:5px"></td>
+                                <td style="text-align:left"><label id="txtAvConM" value="" /></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:right"></td>
+                                <td style="width:5px"></td>
+                                <td style="text-align:left"><label id="txtAvConK" value="" /> </td>
+                            </tr>-->
+                            <tr>
+                                <td style="text-align:right;font-weight:bold">Idle Hours</td>
+                                <td style="width:5px"></td>
+                                <td style="text-align:left"><label id="txtTotalIdleHours" value="" width="80px" /></td>
+                            </tr>
+                        </table>  
+                    </div>
+
+                    @* <div class="spacerOne"></div>
+                   <div class="ampleViewCurveDiv" >
+                       <div class="ampleViewHeader">D Sensor Board</div>   
+                       <table style="font-size:8pt;" id="listSensorBoardStatus" class="myTable"></table> 
+                   </div>*@
+
+                </div>
+                <div class="spacerOne"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="divMonthlySummary">
+                    
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="divTripBoard">
+                    
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" rowspan="3">
+               
+            </td>
+            <td>
+                <div id="divImageGallery">
+                    
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="divSensorBoardNew">
+                    
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+</div>

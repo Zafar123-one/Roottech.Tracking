@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="CurrentStatus">
+    <id name="Id" />
+    <property name="AssetName" />
+    <property name="SiteName" />
+    <property name="Depot" />
+    <property name="UnitUsageDesc" />
+    <property name="UnitTypeDesc" />
+    <property name="RegDt" />
+    <property name="UnitId" />
+    <property name="Rtcdttm" />
+    <property name="Ignition" />
+    <property name="Speed" />
+    <property name="FuelQuantity" />
+    <property name="Temperature" />
+    <property name="Longi" />
+    <property name="Lati" />
+    <property name="Battery" />
+    <property name="EventNo" />
+    <property name="Activity" />
+    <property name="BatchDt" />
+    <property name="EventStart" />
+    <property name="EventEnd" />
+    <property name="TotalDuration" />
+    <property name="FromMileage" />
+    <property name="CurrentMileage" />
+    <property name="NetMileage" />
+    <property name="NetMileageInKm" />
+    <property name="FuelOpenBal" />
+    <property name="CurrentFuelBal" />
+    <property name="NetFuelBal" />
+    <property name="Compressor" />
+    <property name="TotalCapacity" />
+    <loader query-ref="GetCurrentStatus"/>
+  </class>
+  <sql-query name="GetCurrentStatus">
+    <return class="CurrentStatus" >
+      <return-property name="Id" column="Id" />
+      <return-property name="AssetName" column="AssetName" />
+      <return-property name="SiteName" column="SiteName" />
+      <return-property name="Depot" column="Depot" />
+      <return-property name="UnitUsageDesc" column="UnitUsageDesc" />
+      <return-property name="UnitTypeDesc" column="UnitTypeDesc" />
+      <return-property name="RegDt" column="RegDt" />
+      <return-property name="UnitId" column="UnitId" />
+      <return-property name="Rtcdttm" column="Rtcdttm" />
+      <return-property name="Ignition" column="Ignition" />
+      <return-property name="Speed" column="Speed" />
+      <return-property name="FuelQuantity" column="FuelQuantity" />
+      <return-property name="Temperature" column="Temperature" />
+      <return-property name="Longi" column="Longi" />
+      <return-property name="Lati" column="Lati" />
+      <return-property name="Battery" column="Battery" />
+      <return-property name="EventNo" column="EventNo" />
+      <return-property name="Activity" column="Activity" />
+      <return-property name="BatchDt" column="BatchDt" />
+      <return-property name="EventStart" column="EventStart" />
+      <return-property name="EventEnd" column="EventEnd" />
+      <return-property name="TotalDuration" column="TotalDuration" />
+      <return-property name="CurrentMileage" column="CurrentMileage" />
+      <return-property name="FromMileage" column="FromMileage" />
+      <return-property name="NetMileage" column="NetMileage" />
+      <return-property name="NetMileageInKm" column="NetMileageInKm" />
+      <return-property name="FuelOpenBal" column="FuelOpenBal" />
+      <return-property name="CurrentFuelBal" column="CurrentFuelBal" />
+      <return-property name="TotalCapacity" column="TotalCapacity" />
+      <return-property name="NetFuelBal" column="NetFuelBal" />
+      <return-property name="Compressor" column="Compressor" />
+    </return>
+    exec usp_FleetInfoStatus @AssetNo = :AssetNo
+  </sql-query>
+</hibernate-mapping>

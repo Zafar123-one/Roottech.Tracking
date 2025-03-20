@@ -1,0 +1,89 @@
+2025-02-26 17:06:51,452 [10] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-26 19:57:35,448 [7] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-26 20:32:38,004 [6] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-26 20:38:28,276 [35] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-26 20:38:31,072 [35] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: MonthlyIdel
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(IDataReader rs, Object id, Object obj, ILoadable rootLoadable, String[][] suffixedPropertyColumns, Boolean allProperties, ISessionImplementor session)
+   at NHibernate.Loader.Loader.LoadFromResultSet(IDataReader rs, Int32 i, Object obj, String instanceClass, EntityKey key, String rowIdAlias, LockMode lockMode, ILoadable rootPersister, ISessionImplementor session)
+   at NHibernate.Loader.Loader.InstanceNotYetLoaded(IDataReader dr, Int32 i, ILoadable persister, EntityKey key, LockMode lockMode, String rowIdAlias, EntityKey optionalObjectKey, Object optionalObject, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRow(IDataReader rs, ILoadable[] persisters, EntityKey[] keys, Object optionalObject, EntityKey optionalObjectKey, LockMode[] lockModes, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-26 20:38:31,072 [35] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - MonthlyIdel
+2025-02-26 20:38:31,077 [35] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: MonthlyIdel
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(IDataReader rs, Object id, Object obj, ILoadable rootLoadable, String[][] suffixedPropertyColumns, Boolean allProperties, ISessionImplementor session)
+   at NHibernate.Loader.Loader.LoadFromResultSet(IDataReader rs, Int32 i, Object obj, String instanceClass, EntityKey key, String rowIdAlias, LockMode lockMode, ILoadable rootPersister, ISessionImplementor session)
+   at NHibernate.Loader.Loader.InstanceNotYetLoaded(IDataReader dr, Int32 i, ILoadable persister, EntityKey key, LockMode lockMode, String rowIdAlias, EntityKey optionalObjectKey, Object optionalObject, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRow(IDataReader rs, ILoadable[] persisters, EntityKey[] keys, Object optionalObject, EntityKey optionalObjectKey, LockMode[] lockModes, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-26 20:38:31,077 [35] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - MonthlyIdel
+2025-02-26 20:40:03,553 [15] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: MonthlyIdel
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(IDataReader rs, Object id, Object obj, ILoadable rootLoadable, String[][] suffixedPropertyColumns, Boolean allProperties, ISessionImplementor session)
+   at NHibernate.Loader.Loader.LoadFromResultSet(IDataReader rs, Int32 i, Object obj, String instanceClass, EntityKey key, String rowIdAlias, LockMode lockMode, ILoadable rootPersister, ISessionImplementor session)
+   at NHibernate.Loader.Loader.InstanceNotYetLoaded(IDataReader dr, Int32 i, ILoadable persister, EntityKey key, LockMode lockMode, String rowIdAlias, EntityKey optionalObjectKey, Object optionalObject, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRow(IDataReader rs, ILoadable[] persisters, EntityKey[] keys, Object optionalObject, EntityKey optionalObjectKey, LockMode[] lockModes, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-26 20:40:03,553 [15] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - MonthlyIdel
+2025-02-26 20:40:03,553 [15] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: MonthlyIdel
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(IDataReader rs, Object id, Object obj, ILoadable rootLoadable, String[][] suffixedPropertyColumns, Boolean allProperties, ISessionImplementor session)
+   at NHibernate.Loader.Loader.LoadFromResultSet(IDataReader rs, Int32 i, Object obj, String instanceClass, EntityKey key, String rowIdAlias, LockMode lockMode, ILoadable rootPersister, ISessionImplementor session)
+   at NHibernate.Loader.Loader.InstanceNotYetLoaded(IDataReader dr, Int32 i, ILoadable persister, EntityKey key, LockMode lockMode, String rowIdAlias, EntityKey optionalObjectKey, Object optionalObject, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRow(IDataReader rs, ILoadable[] persisters, EntityKey[] keys, Object optionalObject, EntityKey optionalObjectKey, LockMode[] lockModes, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-26 20:40:03,554 [15] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - MonthlyIdel
+2025-02-26 20:40:18,026 [46] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-26 20:40:20,391 [46] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: Idel
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(IDataReader rs, Object id, Object obj, ILoadable rootLoadable, String[][] suffixedPropertyColumns, Boolean allProperties, ISessionImplementor session)
+   at NHibernate.Loader.Loader.LoadFromResultSet(IDataReader rs, Int32 i, Object obj, String instanceClass, EntityKey key, String rowIdAlias, LockMode lockMode, ILoadable rootPersister, ISessionImplementor session)
+   at NHibernate.Loader.Loader.InstanceNotYetLoaded(IDataReader dr, Int32 i, ILoadable persister, EntityKey key, LockMode lockMode, String rowIdAlias, EntityKey optionalObjectKey, Object optionalObject, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRow(IDataReader rs, ILoadable[] persisters, EntityKey[] keys, Object optionalObject, EntityKey optionalObjectKey, LockMode[] lockModes, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-26 20:40:20,391 [46] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - Idel
+2025-02-26 20:40:20,391 [46] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: Idel
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(IDataReader rs, Object id, Object obj, ILoadable rootLoadable, String[][] suffixedPropertyColumns, Boolean allProperties, ISessionImplementor session)
+   at NHibernate.Loader.Loader.LoadFromResultSet(IDataReader rs, Int32 i, Object obj, String instanceClass, EntityKey key, String rowIdAlias, LockMode lockMode, ILoadable rootPersister, ISessionImplementor session)
+   at NHibernate.Loader.Loader.InstanceNotYetLoaded(IDataReader dr, Int32 i, ILoadable persister, EntityKey key, LockMode lockMode, String rowIdAlias, EntityKey optionalObjectKey, Object optionalObject, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRow(IDataReader rs, ILoadable[] persisters, EntityKey[] keys, Object optionalObject, EntityKey optionalObjectKey, LockMode[] lockModes, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-26 20:40:20,391 [46] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - Idel
+2025-02-26 20:41:31,858 [14] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-26 21:10:58,051 [95] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-26 21:12:26,683 [109] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-26 21:15:29,781 [42] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-26 21:29:02,344 [17] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-26 21:40:12,698 [138] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level

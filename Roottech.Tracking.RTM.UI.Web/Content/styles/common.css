@@ -1,0 +1,298 @@
+﻿#map_canvas { position: fixed !important; padding: 0; margin: 0; height: 100%; width: 100%}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    border: 0 none;
+    font-size: 100%;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    /*vertical-align: baseline;*/
+}
+#geoCodeAddress { border: 1px solid rgba(0, 0, 0, 0.5); }
+#geoCodeAddress.notfound { border: 2px solid rgba(255, 0, 0, 0.4); }
+body { background:#fff; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:12px;}
+img { border:0; display:block;}
+.left { float:left;}
+.right { float:right;}
+.spacer { height:10px; clear:both;}
+.spacerOne { height:20px; clear:both;}
+.spacerTwo { height:30px; clear:both;}
+.spacerThree { height:40px; clear:both;}
+.spacerFour { height:50px; clear:both;}
+.adjust { margin-right:2px;}
+.reportSprt {background: none repeat scroll 0 0 #999999;border-bottom: 1px solid #EEEEEE;height: 1px;margin-bottom: 5px;margin-top: 8px;width: 80px;}
+.inputField { background:url(/Images/Common/input.jpg) top left repeat-x; border:1px solid #aeaeae; width:220px; padding:6px; height:18px; color:#343434; margin-bottom:5px; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; -o-border-radius:3px;}
+.inputBtn { background:url(/Images/Common/btn.jpg) top left repeat-x; border:1px solid #c9c9c9; color:#ff5900; padding:6px; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; -o-border-radius:3px; min-width:100px; cursor:pointer;}
+.bgTrack { background:url(/Images/Common/bg.jpg) top center no-repeat #A6BFDD;}
+.topTrack { background:url(/Images/Common/topBar.png) top left repeat-x; height:55px; position:absolute;top: 0;width: 100% !important;}
+.topTrack .topSlide { background:url(/Images/Common/topSliding.png) top left no-repeat; width:60px; height:43px; display:block; position:absolute; right:0px; top:41px; cursor:pointer}
+.topTrack .itemLogo { margin-top:0px; margin-left:10px;}
+.topTrack .itemPanel {}
+.topTrack .itemPanel .itemCheckList { font-size:14px; font-weight:bold; color:#333; margin-top:10px; margin-right:10px;}
+.topTrack .itemPanel .welcome { padding-right:20px; padding-top:12px;}
+.topTrack .itemPanel .logout a { text-decoration:none; text-align:center; width:65px; height:28px; padding-top:12px; display:block; background:#fff; color:#1d93c9; font-size:14px;}
+.topTrack .itemPanel .welcome p { color:#515151;}
+.topTrack .itemPanel .welcome span { color:#2aaae5; font-size:14px; font-weight:bold;}
+.topTrack .itemPanel .iconyBar { margin-right:50px;}
+.topTrack .itemPanel .iconyBar ul {}
+.topTrack .itemPanel .iconyBar img { padding-top:6px;width: 29px;height: 29px;}
+.topTrack .itemPanel .iconyBar li { background:url(/Images/Common/sprtIcon.png) top left no-repeat; height:40px; float:left; list-style:none;}
+.topTrack .itemPanel .iconyBar li.last { background:url(/Images/Common/sprtIcon.png) top right no-repeat;}
+.topTrack .itemPanel .iconyBar li a { width:34px; display:block; padding-left:6px; height:40px; margin-left:2px;}
+.topTrack .itemPanel .iconyBar li a:hover { background:#fff;}
+.topTrack .itemPanel .iconyBar li div {line-height: 12px; width:40px; height:40px; text-align: center;padding-top: 4px; font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif; font-size: 24px;font-style: normal;font-variant: normal;font-weight: 500;}
+.topTrack .itemPanel .iconyBar li p { text-align: center;}
+
+.main { width:100%;}
+.header { background:url(/Images/Common/headerBg.png) top left repeat-x; height:129px;}
+.header .logoArea { width:960px; margin:0 auto;}
+.header .logoArea .ProductLogo { padding-top:8px;}
+.loginPanel { width:960px; margin:0 auto;}
+.loginPanel h2 { color:#686868; font-size:16px; text-transform:uppercase; font-weight:normal; border-bottom:1px solid #d4d4d4; padding-bottom:5px;}
+.selectModuleArea { width:870px; clear:both; margin:30px auto}
+.selectModuleArea .selectModule, #appselect .selectModule { background:#fff; width:190px; height:160px; border:1px solid #cbcbcb; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px; box-shadow:1px 1px 8px #d5d5d5; position:relative; margin-right:30px; margin-bottom:30px;}
+.selectModuleArea .selectModule a, #appselect .selectModule a { width:auto; height:auto;}
+.selectModuleArea .selectModule:hover, #appselect .selectModule:hover { box-shadow:1px 1px 8px #888;}
+.selectModuleArea .selectModule .selectImg:hover, #appselect .selectModule .selectImg:hover { opacity:0.8;}
+.selectModuleArea .selectModule .selectImg, #appselect .selectModule .selectImg{ width:170px; height:116px; margin:10px auto 0;}
+.selectModuleArea .selectModule .selectAnchor, #appselect .selectModule .selectAnchor { position:absolute; bottom:0; left:0;}
+.selectModuleArea .selectModule .selectAnchor, #appselect .selectModule .selectAnchor { background:#f0f0f0; font-size:12px; color:#275df9; width:190px; display:block; text-align:center; padding:3px 0;}
+/* GEO Fence Tree */
+.GeoFenceTreeArea { background:url(/Images/Common/treeBarBg.png) top left repeat-y; border:1px solid #d1d1d0; position:absolute;left:-80px; top:110px;width: 80px;}
+.GeoFenceTreeArea .dataTrack { margin:0 auto; height:32px; border-bottom:1px solid #f0f0f0; width: 66px;}
+.GeoFenceTreeArea .dataTrack a { width: 24px; height: 24px;margin: 5px 2px;}
+.GeoFenceTreeArea .dataTrack a:hover { opacity: 0.6;} 
+.GeoFenceTreeArea .dataTrack img { float:left; width:24px; height:24px;}
+.GeoFenceTreeArea .dataTrack span { color:#333; font-size:14px; display:inline-block; margin-left:8px; padding-top:3px}
+
+.GeoFenceTreeArea .dataTrackLeft { margin:0 auto; height:26px; border-bottom:1px solid #f0f0f0; margin: 5px; }
+.GeoFenceTreeArea .dataTrackLeft img { float:left; width:24px; height:24px;}
+.GeoFenceTreeArea .dataTrackRight { margin:0 auto; height:26px; border-bottom:1px solid #f0f0f0; left: 30px; margin: 5px; position: absolute; top: 30px;}
+.GeoFenceTreeArea .dataTrackRight img { float:left; width:24px; height:24px;}
+
+.GeoFenceTreeArea .TreeOpen { background:url(/Images/Common/openTreeBar.png) top left no-repeat; width:44px; height:60px; position:absolute; 
+top:-12px; right:-45px; cursor:pointer;}
+.GeoFenceTreeArea .treeHead { background:url(/Images/Common/treeHead.jpg) top left repeat-x; height:29px;}
+.GeoFenceTreeArea .treeHead h3 { font-size:14px; color:#333; font-weight:normal; padding:5px 5px 0 5px;}
+.GeoFenceTreeArea .treeHead .sticky { background:url(/Images/Common/stick.png) top left no-repeat; height:23px; width:17px; cursor:pointer; margin: 3px 3px 0 3px;}
+/* GEO Fence Tree */
+.vehicleTreeBarArea { background:url(/Images/Common/bgVehicleTree.png) top left repeat-y; width:260px; height:250px; border:1px solid #d1d1d0; padding:10px 0; position:relative;}
+.vehicleTreeBarArea .rrtt { font-size:12px; color:#3c3c3c; position:absolute; right:5px; bottom:2px;}
+.vehicleTreeBarArea .vehicleHead { width:240px; margin:0 auto; height:28px; background:url(/Images/Common/brdr.png) bottom left no-repeat;}
+.vehicleTreeBarArea .vehicleHead h2 { font-size:16px; color:#303030; padding-left:6px;}
+.vehicleTreeBarArea .vehicleHead .deletePanel { background:url(/Images/Common/deletePanel.png) top left no-repeat; width:16px; height:16px; cursor:pointer}
+.vehicleTreeBarArea .vehicleActiveBox {width:240px; margin:0 auto; height:22px; padding-top:6px; border-bottom:1px solid #b0b0b0;}
+.vehicleTreeBarArea .vehicleActiveBox p { font-size:14px; color:#333; padding-left:6px;}
+.vehicleTreeBarArea .vehicleActiveBox .LitRed { width:15px; height:15px; background:#ff4444; cursor:pointer}
+.vehicleTreeBarArea .vehicleActiveBox .LitYellow { width:15px; height:15px; background:#e6ff3e; margin-left:5px; cursor:pointer}
+.vehicleTreeBarArea .vehicleActiveBox .LitGreen { width:15px; height:15px; background:#31ff6b; margin-right:5px; margin-left:5px; cursor:pointer}
+/* Right Click Solution */
+.rightClickOptions { background:#fff; width:200px; margin-left:5px; box-shadow:1px 1px 10px #888; opacity:0.9;}
+.rightClickOptions ul {}
+.rightClickOptions li { list-style:none;}
+.rightClickOptions li a { text-decoration:none; font-size:14px; color:#666; width:180px; padding:5px 10px; display:block}
+.rightClickOptions li span.ic { margin-right:8px;}
+.rightClickOptions li a:hover { background-color: #666666;
+    color: white;
+    text-decoration: none;}
+/* new css tool box */
+.IconAreaBar {}
+.IconAreaBar .iconOne { width: 24px;height: 24px;}    
+/* Vehicle Tree */
+.loginShadow { background:url(/Images/Common/loginBgShadow.png) top left no-repeat; height:28px; width:960px; margin:0 auto; clear:both}
+.loginPanel .loginLeft { background:url(/Images/Common/loginBgLeft.jpg) top left no-repeat; width:32px; height:301px;}
+.loginPanel .loginCenter { background:url(/Images/Common/loginBg.jpg) top left repeat-x; height:301px; width:896px;}
+.loginPanel .loginRight { background:url(/Images/Common/loginBgRight.jpg) top right no-repeat; width:32px; height:301px;}
+.loginPanel .loginCenter .centerData{ margin-top:15px; height:280px;}
+.loginPanel .loginCenter .centerData .sprt { background:url(/Images/Common/seprater.png) top left no-repeat; width:24px; height:280px; margin-left:10px;}
+.loginPanel .loginCenter .centerData .collage { margin-right:10px; position:relative;}
+.loginPanel .loginCenter .centerData .collage .wish { position:absolute; bottom:52px; right:60px; width:82px; line-height:16px;}
+.loginPanel .loginCenter .centerData .collage .wish p { color:#fff; text-align:center; font-size:20px; text-transform:uppercase; font-family:"Agency FB";}
+.loginPanel .loginCenter .centerData .collage .wish span { color:#fff; text-align:center; font-size:10px;}
+.loginPanel .loginCenter .centerData .loginFieldArea { width:240px; margin-top:20px;}
+.loginPanel .loginCenter .centerData .loginFieldArea h2 {color:#006cff; font-size:25px; font-family:"Agency FB"; font-weight:normal; margin-bottom:25px;}
+.loginPanel .loginCenter .centerData .loginFieldArea .loginFields { width:235px; margin:0 auto;}
+.loginPanel .loginCenter .centerData .loginFieldArea .loginFields .inputField { background:url(/Images/Common/input.jpg) top left repeat-x; border:1px solid #aeaeae; width:220px; padding:6px; height:18px; color:#343434; margin-bottom:5px; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; -o-border-radius:3px;}
+.loginPanel .loginCenter .centerData .loginFieldArea .loginFields .inputBtn { background:url(/Images/Common/btn.jpg) top left repeat-x; border:1px solid #c9c9c9; color:#ff5900; padding:6px; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; -o-border-radius:3px; min-width:100px; cursor:pointer;}
+.loginPanel .loginCenter .centerData .loginFieldArea .loginFields a { color:#0543fe; text-decoration:none; padding-top:5px; display:inline-block; margin-right:2px;}
+.loginPanel .loginCenter .centerData .dataCompany { width:320px; margin-top:30px;}
+.loginPanel .loginCenter .centerData .dataCompany h2 { color:#2c2c2c; font-size:24px; font-family:"Agency FB"; font-weight:normal; margin-bottom:15px;}
+.loginPanel .loginCenter .centerData .dataCompany p { font-size:12px; color:#4f4f4f; text-align:justify; padding:8px 30px 8px 0; margin-bottom:12px;}
+.footer { color:#333; width:960px; margin:0 auto; text-align:center; clear:both}
+
+
+/* Further CSS */
+#assetTreeControl {height : 60px}
+.buttons { background:#fff; padding:10px;}
+.button { background:none; padding:10px;}
+/* Just for Input and Anchor Button */
+.themeyIntputBtn { background:url(/Images/common/inputBtn.jpg) top left repeat-x; border:1px solid #d3d3d3; cursor:pointer; color:#606060; font-size: 14px;
+height: 30px; min-width: 80px; text-transform: uppercase; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px;}
+.themeyAnchBtn {background:url(/Images/common/inputBtn.jpg) top left repeat-x; border:1px solid #d3d3d3; color:#606060; text-align:center; text-align:center; text-decoration:none; font-size:12px; font-size: 14px; padding:5px 20px; text-transform: uppercase; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px;}
+/* .themeyInputTextField { background:#fff; border:1px solid #a9a9a9; height: 22px; padding-left: 4px; width: 220px;} */
+.themeyInputTextField { background:url(/Images/common/autoRefresh.png) top left repeat-x; border:1px solid #c7c7c7; height:22px; width:235px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px;}
+/* Just for Input and Anchor Button */
+/* About Vehicle Box */
+.vehicleInfoBox { background:url(/Images/common/bgText.png) top left repeat; text-align:center; color:#fff; text-transform:uppercase; 
+padding:10px; width:200px; border-radius:5px; position:relative; font-weight:bold; -moz-border-radius:5px; -web-border-radius:5px; -o-border-radius:5px;}
+.vehicleInfoBox .boxArrow { background:url(/Images/common/boxArrow.png) top left no-repeat; position: absolute; bottom:-40px; left:20px; width:58px; height:40px;}
+/* Circle Polygonal Box */
+.CircleInfoBox { background:url(/Images/common/DisplayLabel.png) top left repeat; text-align:center; color:#010101; text-transform:uppercase; padding:10px; width:160px; border-radius:5px; position:relative; font-weight:bold; -moz-border-radius:5px; -web-border-radius:5px; -o-border-radius:5px; border:1px solid #b1b1b1;}
+.CircleInfoBox .ArrowDown { background:url(/Images/common/arrowDown.PNG) top left no-repeat; position:absolute; bottom:-20px; left:130px; width:22px; height:20px;}
+/* Auto Refresh */
+.autoRefreshBox { background:url(/Images/common/autoRefresh.png) top left repeat-x; border:1px solid #c7c7c7; height:28px; width:200px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px;}
+.autoRefreshBox .autoRf { width:75px; background:#34332a; height:28px; border-radius:5px 0 0 5px; color:#fff}
+.autoRefreshBox .autoRf .autoRandom {    background: none repeat scroll 0 0 transparent; border: 0 none; height: 23px; width: 40px; font-size:20px; color:#fff; margin-left:5px;}
+.autoRefreshBox .autoCheck .check { }
+.autoRefreshBox .autoCheck { color:#646464; font-size:14px; margin-right:6px; margin-top:3px; }
+/* Further CSS */
+.bold { font-weight:bold; color:#333;}
+/*1C94B7
+EFF7FF- fafae3*/
+.ampleViewHeader  {  background:#4e8dcc; padding:5px;-moz-border-radius:10px 10px 0 0; -webkit-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0;color: white;font-weight: bold;  }
+.ampleViewCurveDiv  {background-color: whitesmoke; -moz-border-radius:10px 10px 0 0; -webkit-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0;border: solid 1px  #ccc;font-size: 12px;font-family: Arial; }
+.txt { border-right: lightsteelblue 1px solid;border-top: lightsteelblue 1px solid;border-left: lightsteelblue 1px solid;border-bottom: lightsteelblue 1px solid;font-family: Arial;font-size: 8pt;color:Black;}
+.myTable { border: solid 1px #ccc;width: 100%;font-size: 11px; font-family:Arial, sans-serif}
+.myTable tr td { border-right : solid 1px #ccc; border-bottom : solid 1px #ccc}
+.myTable tr th { border-right : solid 1px #ccc; border-bottom : solid 1px #ccc}
+.myTable tr > th {background:none repeat scroll 0 0 #4e8dcc;}
+.myAchor { color: red;text-decoration: none;}
+.greenIndicate { background-color: #61b314;width: 7%;}
+.redIndicate { background-color: #FF0000;width: 6.5%;}
+
+button.ui-button-icon-only { 
+    width: 1em;
+    margin-left: 0.5em;
+}
+
+.bs-example{position:relative;border-color:#e5e5e5 #eee #eee;border-style:solid;border-width: 1px;border-radius: 0px 0px 10px 10px;}
+.btn-showSearchAsset {position: absolute;height: 15px;top: 6px;right: 14px;z-index: 10;display: block;padding: 5px 8px;font-size: 12px;color: #777;cursor: pointer;background-color: #fff;border: 1px solid #e1e1e8;border-radius: 0px 9px;}
+#showSearch-checkbox {display: none;}
+#showSearch-checkbox:checked + #showSearch-label:after {
+  content: "Show";position: absolute;padding: 5px 5px;top: 0;left: 0;right: 0;bottom: 0;background: white;border-radius: 0px 9px;}
+/* Toggled State */
+#showSearch-checkbox:checked ~ div.bs-example { display: none; }
+.searchlabel { position:relative;border-color:#e5e5e5 #eee #eee;border-style:solid;border-width: 1px;border-radius: 4px;}
+.ui-datepicker-trigger{ display: inline;margin-left: 2px;vertical-align: bottom;}
+.msgpopuptable { border-collapse: collapse; width:250px}
+.msgpopuptable td {border: 1px solid black;}
+.msgpopuptable td:nth-child(1) {text-align: right;}
+.msgpopuptable td:nth-child(2) {padding-left: 5px;}
+#iw-container .iw-title {
+   font-family: 'Open Sans Condensed', sans-serif;
+   /*font-size: 16px;*/
+   font-weight: 400;
+   padding: 5px 10px;
+   background-color: #48b5e9;
+   color: white;
+   margin: 1px;
+   border-radius: 2px 2px 0 0; /* In accordance with the rounding of the default infowindow corners. */
+}
+#iw-container .iw-content {
+	color: #333;
+	/*font-size: 13px;*/
+	line-height: 18px;
+	font-weight: 400;
+	margin-right: 1px;
+	padding: 5px 3px 0px 5px;
+	max-height: 200px;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+.iw-content img {
+	float: right;
+	margin: 0 5px 5px 10px;	
+}
+.iw-subTitle {
+	font-size: 16px;
+	font-weight: 700;
+	padding: 5px 0;
+}
+.iw-bottom-gradient {
+	position: absolute;
+	width: 326px;
+	height: 25px;
+	bottom: 20px;
+	right: 16px;
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+}
+.eventtype-t { background-color: red;}
+.eventtype-p { background-color: blue;}
+.eventtype-r { background-color: yellow;}
+
+.eventname-gnGreen { background-color: #61b314;}
+a[id^='showAmpleView'] img {float: left; margin: 0}
+#tblChart td:nth-child(2) {padding-left: 0px;}
+
+/*applied to all widgets*/
+.jqx-widget{-moz-box-sizing: content-box; box-sizing: content-box; -ms-touch-action: none; zoom: 1 !important; color: #000000; -moz-background-clip: padding; background-clip: padding-box; -webkit-text-size-adjust: none; -ms-text-size-adjust: none; -webkit-appearance: none; -webkit-background-clip: padding-box; direction: ltr !important; -webkit-tap-highlight-color: rgba(0,0,0,0); font-family: Verdana,Arial,sans-serif; font-style: normal; font-size: 13px;}
+.jqx-widget, .jqx-widget-content, .jqx-widget-header, .jqx-fill-state-normal {
+    line-height: 1.231;
+}
+.ampleviewcelllabel {text-align:right; font-weight:bold}
+.ampleviewcelltext { padding-left: 5px}
+.ampleviewtable {font-size:11px; font-family:Arial, sans-serif;padding-left : 30px; }
+
+.ampleviewtableborder 
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.ampleviewtableborder th, .ampleviewtableborder td {
+   border: 1px solid black;
+    padding-left: 4px;
+    text-align: left;
+}
+.ampleviewtableborder th  
+{
+    font-size:11px; font-family:Arial, sans-serif;font-weight: bold;
+}
+
+.ampleviewtableborder td {overflow: hidden}
+.ampleviewtableborder td a { color : blue; margin: -1em; padding: 1em; display: block; border: 1px solid black;}
+
+#statisticsInfo .ampleviewtable td:nth-child(1), #statisticsInfo .ampleviewtable td:nth-child(2) { text-align: right;}
+div.error {
+    border:2px solid #C0C097;
+    background-color:#fff;
+    color:red;
+    padding:3px;
+    text-align:left;
+    font:100% arial,helvetica,clean,sans-serif;
+    font-weight:bold;  
+}
+
+.custom-combobox {
+    position: relative;
+    display: inline-block;
+}
+.custom-combobox-toggle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: -1px;
+    padding: 0;
+}
+.custom-combobox-input {
+    margin: 0;
+    padding: 5px 10px;
+}
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* add padding to account for vertical scrollbar */
+    padding-right: 20px;
+} 
+.ui-front {
+    z-index: 1000!important;
+}
+.z-index-2000 {
+    z-index: 2000;
+}
+table.ui-jqgrid-btable {
+    min-height: 1px;
+}

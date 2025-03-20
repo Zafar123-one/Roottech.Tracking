@@ -1,0 +1,360 @@
+﻿<div id="vehicleFuelActivityReport" style="display: none">
+    <table class="ampleviewtable">
+        <tr>
+            <td style="text-align: right; width: 100px; padding-right: 10px;">From Date</td>
+            <td style="width: 250px"><input id="fromDateForFuelReport" type="text" style="width: 75px" /></td>
+            <td style="text-align: right; width: 100px; padding-right: 10px;">To Date</td>
+            <td style="width: 250px"><input id="toDateForFuelReport" type="text" style="width: 75px" /></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px;">Unit Group</td>
+            <td><select id="selectUnitGroupForFuelReport" style="width: 200px"></select></td>
+            <td style="text-align: right; padding-right: 10px;">Plate #</td>
+            <td colspan="3"><select id="selectVehicleForFuelReport" style="width: 200px"></select></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px;">Activity Type</td>
+            <td colspan="2">
+                <label><input type="radio" name="fuelReport" value="R" checked="checked" />Refuel</label>
+                <label><input type="radio" name="fuelReport" value="T" />Theft</label>
+                <label><input type="radio" name="fuelReport" value="D" />Day Wise Summary</label>
+            </td>
+            <td colspan="3" style="text-align: right">
+                <input id="btnFuelReport" type="button" value="Go" onclick="return runFuelReports();">
+                <input id="btnResetFuelReport" type="button" value="Reset" onclick="return resetFuelActivityReportCard();">
+            </td>
+        </tr>
+    </table>
+    <div id="fuelActivityLoader" style="height: 97%; position: absolute; top: 1px; width: 97%; background-color: white; display: none">
+        <div class="ajax-loader" style="height: 100%; margin-left: 50%;"></div>
+    </div>
+</div>
+<table id="listFuel"></table>
+<div id="pagerFuel"></div>
+
+<script type="text/javascript">
+    function runFuelReports() {
+        if ($("input[name=fuelReport]:checked").val() === undefined) {
+            alert("Please select one of the reports options");
+            return false;
+        }
+        if ($("#fromDateForFuelReport").val() === "") {
+            alert("Please select any from date.");
+            $("#fromDateForFuelReport").focus();
+            return false;
+        } else if ($("#toDateForFuelReport").val() === "") {
+            alert("Please select any to date.");
+            $("#toDateForFuelReport").focus();
+            return false;
+        } else if ($("#fromDateForFuelReport").datepicker("getDate") > $("#toDateForFuelReport").datepicker("getDate")) {
+            alert("To date should be greater than from date.");
+            $("#toDateForFuelReport").focus();
+            return false;
+        } else if ($("input[name=fuelReport]:checked").val() == "D" && $("#selectVehicleForFuelReport").val() == "") {
+            alert("Plate # is required for Day Wise Summary.");
+            $("#selectVehicleForFuelReport").focus();
+            return false;
+        }
+
+        var from = $('#fromDateForFuelReport').datepicker('getDate');
+        var to = $('#toDateForFuelReport').datepicker('getDate');
+        var days = (to - from) / 1000 / 60 / 60 / 24;
+        if (days > 92) {
+            alert("The duration between dates should be three months at maximum.");
+            $("#toDateForFuelReport").focus();
+            return false;
+        }
+
+        $("#fuelActivityLoader").fadeIn({
+            complete: function() {
+                switch ($("input[name=fuelReport]:checked").val()) {
+                case "R":
+                    loadGridRefuelDetails();
+                    break;
+                case "D":
+                    loadGridFuelDayWiseSummary();
+                    break;
+                case "T":
+                    loadGridFuelTheft();
+                    break;
+                default:
+                    break;
+                }
+            }
+        });
+        return true;
+    }
+
+    $("#selectUnitGroupForFuelReport").change(function () {
+        if ($(this).val() != "")
+            getBusLocWisePlateIdList("#selectVehicleForFuelReport", $(this).val());//loadCompaniesByOrgForGeofence($(this).val());
+    });
+
+    function getBusLocWisePlateIdList(ddlId, ugrpmst) {
+        $.ajax({
+            url: urlGetBusLocWisePlateIdList + "?plateId=&ugrpmst=" + ugrpmst,
+            type: "GET",
+            contentType: "application/json charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                var bindData = { org: data };
+                var template = "{{#org}}<option value={{Id}}>{{AssetName}}</option>{{/org}}";
+                var html = Mustache.to_html(template, bindData);
+                html = "<option value=>Select Plate #</option>" + html;
+                $(ddlId).html(html);
+                $(ddlId).show();
+            }
+        });
+    }
+
+    function loadGridRefuelDetails() {
+        var colModel = [
+            { name: 'Description', index: 'Description', width: 50, align: 'left', sorttype: "string" },
+            { name: 'Location', index: 'Location', width: 150, align: 'left', sorttype: "string" },
+            { name: 'Id', index: 'Id', width: 70, align: 'right', template: integerTemplate }, //template: dateTimeTemplate },"Plate ID",
+            { name: 'EventType', index: 'EventType', width: 80, align: 'left', sorttype: "string" },
+            { name: 'OpenDate', index: 'OpenDate', width: 150, align: 'center', template: dateTimeTemplate },
+            { name: 'CloseDate', index: 'CloseDate', width: 150, align: 'center', template: dateTimeTemplate },
+            { name: 'LevelType', index: 'LevelType', width: 80, align: 'center', sorttype: "string" },
+            { name: 'TotDuration', index: 'TotDuration', width: 80, align: 'center', sorttype: "string" },
+            { name: 'EndQty', index: 'EndQty', width: 80, align: 'right', template: moneyTemplate, summaryType: 'sum' }
+        ];
+        var url = "@Url.HttpRouteUrl("Mobile_defaultApi", new {controller = "ReportApi", action = "GetVehicleRefuelDetailReport" })";
+        loadjqGrid(
+            [], "listFuel", url,
+            {
+                fromDate: $("#fromDateForFuelReport").datepicker("getDate").toJSON(),
+                toDate: $("#toDateForFuelReport").datepicker("getDate").toJSON(),
+                resource: $("#selectVehicleForFuelReport").val(),
+                ugrpmst: $("#selectUnitGroupForFuelReport").val()
+            },
+            ["Plate ID", "Site Location", "Batch#", "Event Type", "Event Start", "Event End", "Ignition", "Total Duration", "Refueled (Ltrs)"], colModel,
+            "pagerFuel", "Id", "asc", "", 50, _rowList, 1, 1, "Refuel Details",
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                repeatitems: false,
+                userdata: "userdata",
+                oper: "grid"
+            },
+            undefined, undefined, true, true, function() {
+                if ($grid.jqGrid("footerData").TotDuration !== "&nbsp;")
+                    return;
+                $grid.setGridWidth(1000);//$(window).width() - 260);
+                $grid.setGridHeight($(window).height() - 200);
+                $(".ui-jqgrid-active").css("bottom", 60);
+                $("#" + $grid.attr("aria-labelledby")).show();
+                //-----Close Selection of Org
+                //$("#fuelActivityReportCard").dialog("close");
+            $("#fuelActivityLoader").fadeOut();
+
+                //var colSum = $grid.jqGrid('getCol', 'Increase', false, 'sum');
+                //$grid.jqGrid('footerData', 'set', { 'Increase': colSum });
+
+                var localData = $grid.jqGrid("getGridParam", "data"),
+                    totalEndQty = 0;
+
+                $.each(localData, function(index, value) {
+                    totalEndQty += parseFloat(value.EndQty);
+                });
+
+                $grid.jqGrid("footerData", "set", {
+                    LevelType: "Records: " + localData.length,
+                    TotDuration: "Grand Total:",
+                    EndQty: totalEndQty
+                });
+                $("#pagerFuel_excel").remove();
+
+                /*$grid.navButtonAdd('#pagerFuel', {
+                    caption: "",
+                    buttonicon: "ui-icon-disk",
+                    onClickButton: function() {
+                        //  Export the data from our jqGrid into a "real" Excel 2007 file
+                        ExportJQGridDataToExcel("#listFuel", "Refuel Detail Report.xlsx");
+                    }
+                });
+                $grid.navButtonAdd('#pagerFuel', {
+                    caption: "",
+                    buttonicon: "ui-icon-disk",
+                    title: "Export To Pdf (All)",
+                    onClickButton: function(e) {
+                        try {
+                            $grid.jqGrid("excelExport", { tag: "pdf", url: url + "Ep" + "?all=true" });
+                        } catch (e) {
+                            window.location = url + "Ep" + "?all=true&oper=pdf";
+                        }
+                    },
+                    position: "last"
+              });*/
+            $("#" + $grid.attr("aria-labelledby")).addClass("z-index-2000");
+          });
+        gridErrorLoaderFunction("listFuel", "fuelActivityLoader");
+    }
+
+    function loadGridFuelDayWiseSummary() {
+        var colModel = [
+            { name: 'PlateID', index: 'PlateID', width: 50, align: 'left', sorttype: "string" },
+            { name: 'Date', index: 'Date', width: 150, align: 'center', template: dateTimeTemplate },
+            { name: 'StartPoint', index: 'StartPoint', width: 70, align: 'left', sorttype: "string" },
+            { name: 'EndPoint', index: 'EndPoint', width: 70, align: 'left', sorttype: "string" },
+            { name: 'Opening', index: 'Opening', width: 70, align: 'right', template: moneyTemplate, summaryType: 'sum' },
+            { name: 'Consume', index: 'Consume', width: 70, align: 'right', template: moneyTemplate, summaryType: 'sum' },
+            { name: 'Refuel', index: 'Refuel', width: 60, align: 'right', template: moneyTemplate, summaryType: 'sum' },
+            { name: 'Theft', index: 'Theft', width: 50, align: 'right', template: moneyTemplate, summaryType: 'sum' },
+            { name: 'Closing', index: 'Closing', width: 80, align: 'right', template: moneyTemplate, summaryType: 'sum' },
+            { name: 'RunningHour', index: 'RunningHour', width: 80, align: 'left', sorttype: "string" },
+            { name: 'Idle', index: 'Idle', width: 70, align: 'left', sorttype: "string" },
+            { name: 'Parking', index: 'Parking', width: 80, align: 'left', sorttype: "string" },
+            { name: 'Kms', index: 'Kms', width: 50, align: 'right', template: moneyTemplate, summaryType: 'sum' },
+            { name: 'AvgLtrhr', index: 'AvgLtrhr', width: 80, align: 'right', template: moneyTemplate, summaryType: 'sum' },
+            { name: 'TotMile', index: 'TotMile', width: 80, align: 'right', template: moneyTemplate, summaryType: 'sum' }
+        ];
+        var url = "@Url.HttpRouteUrl("Mobile_defaultApi", new {controller = "ReportApi", action = "GetRptDayWiseSummaryReport" })";
+        loadjqGrid(
+            [], "listFuel", url,
+            {
+                fromDate: $("#fromDateForFuelReport").datepicker("getDate").toJSON(),
+                toDate: $("#toDateForFuelReport").datepicker("getDate").toJSON(),
+                resource: $("#selectVehicleForFuelReport").val(),
+                ugrpmst: $("#selectUnitGroupForFuelReport").val()
+            },
+            ["Plate ID", "Date", "Start Point", "End Point", "Opening", "Consume", "Refuel", "Theft", "EDR Closing", "Running Hours",
+                "Idle Hours", "Parking Hours", "Kmtrs", "Avg Ltr/hr", "Avg Km/Ltr"], colModel,
+            "pagerFuel", "Id", "asc", "", 50, _rowList, 1, 1, "Day Wise Summary Report",
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                repeatitems: false,
+                userdata: "userdata",
+                oper: "grid"
+            },
+            undefined, undefined, true, true, function () {
+                if ($grid.jqGrid("footerData").TotMile !== "&nbsp;")
+                    return;
+                $grid.setGridWidth(1220);
+                $grid.setGridHeight($(window).height() - 200);
+                $(".ui-jqgrid-active").css("bottom", 60);
+                $("#" + $grid.attr("aria-labelledby")).show();
+                //-----Close Selection of Org
+                //$("#fuelActivityReportCard").dialog("close");
+                $("#fuelActivityLoader").fadeOut();
+
+                var localData = $grid.jqGrid("getGridParam", "data"),
+                    totalOpening = 0, totalConsume = 0, totalRefuel = 0, totalTheft = 0,
+                    totalClosing = 0, totalKms = 0, totalAvgLtrhr = 0, totalTotMile = 0;
+
+                $.each(localData, function (index, value) {
+                    totalOpening += parseFloat(value.Opening);
+                    totalConsume += parseFloat(value.Consume);
+                    totalRefuel += parseFloat(value.Refuel);
+                    totalTheft += parseFloat(value.Theft);
+                    totalClosing += parseFloat(value.Closing);
+                    totalKms += parseFloat(value.Kms);
+                    totalAvgLtrhr += parseFloat(value.AvgLtrhr);
+                    totalTotMile += parseFloat(value.TotMile);
+                });
+
+                $grid.jqGrid("footerData", "set", {
+                    EndPoint: "Total:",
+                    Opening: totalOpening,
+                    Consume: totalConsume,
+                    Refuel: totalRefuel,
+                    Theft: totalTheft,
+                    Closing: totalClosing,
+                    Kms: totalKms,
+                    AvgLtrhr: totalAvgLtrhr,
+                    TotMile: totalTotMile,
+
+                });
+                //$('.footrow [aria-describedby="listFuel_Duration"]').html(GetTimeInFullByHourAndMinuteAndSecond(totalHours, totalMinutes, totalSeconds));
+                //$('.footrow [aria-describedby="listFuel_CloseDt"]').html("<b>Grand Total: </b>");
+                $("#pagerFuel_excel").remove();
+            $("#" + $grid.attr("aria-labelledby")).addClass("z-index-2000");
+        });
+        gridErrorLoaderFunction("listFuel", "fuelActivityLoader");
+    }
+
+    function loadGridFuelTheft() {
+        var colModel = [
+            { name: 'Description', index: 'Description', width: 50, align: 'left', sorttype: "string" },
+            { name: 'Id', index: 'Id', width: 70, align: 'right', template: integerTemplate }, //template: dateTimeTemplate },"Plate ID",
+            { name: 'OpenDate', index: 'OpenDate', width: 150, align: 'center', template: dateTimeTemplate },
+            { name: 'CloseDate', index: 'CloseDate', width: 150, align: 'center', template: dateTimeTemplate },
+            { name: 'LevelType', index: 'LevelType', width: 80, align: 'center', sorttype: "string" },
+            { name: 'TotDuration', index: 'TotDuration', width: 80, align: 'center', sorttype: "string" },
+            { name: 'FuelTheftQty', index: 'FuelTheftQty', width: 80, align: 'right', template: moneyTemplate, summaryType: 'sum' },
+        ];
+        //Leveltype     Event_Start_Date        CloseDate               TotalDuration   Fuel_Theft_Qty(in Ltrs)                 Longitude       Latitude
+        var url = "@Url.HttpRouteUrl("Mobile_defaultApi", new {controller = "ReportApi", action = "GetVehicleTheftDetailReport" })";
+        loadjqGrid(
+            [], "listFuel", url,
+            {
+                fromDate: $("#fromDateForFuelReport").datepicker("getDate").toJSON(),
+                toDate: $("#toDateForFuelReport").datepicker("getDate").toJSON(),
+                resource: $("#selectVehicleForFuelReport").val(),
+                ugrpmst: $("#selectUnitGroupForFuelReport").val()
+            },
+            ["Plate ID", "Batch No.", "Event Start", "Event Stop", "Ignition", "Total Duration", "Fuel Theft (Ltrs)"], colModel,
+            "pagerFuel", "Id", "asc", "", 50, _rowList, 1, 1, "Fuel Theft Details",
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                repeatitems: false,
+                userdata: "userdata"
+            },
+            undefined, undefined, true, true, function() {
+                if ($grid.jqGrid("footerData").TotDuration !== "&nbsp;")
+                    return;
+
+                $grid.setGridWidth(770);
+                $grid.setGridHeight($(window).height() - 200);
+                $(".ui-jqgrid-active").css("bottom", 60);
+                $("#" + $grid.attr("aria-labelledby")).show();
+                //-----Close Selection of Org
+                //$("#fuelActivityReportCard").dialog("close");
+            $("#fuelActivityLoader").fadeOut();
+
+                var localData = $grid.jqGrid("getGridParam", "data"), totalFuelTheftQty = 0;
+
+                $.each(localData, function(index, value) {
+                    totalFuelTheftQty += parseFloat(value.FuelTheftQty);
+                });
+
+                $grid.jqGrid("footerData", "set", {
+                    TotDuration: "Grand Total:",
+                    FuelTheftQty: totalFuelTheftQty
+                });
+                $("#pagerFuel_excel").remove();
+
+                /*$grid.navButtonAdd('#pagerFuel', {
+                    caption: "",
+                    buttonicon: "ui-icon-disk",
+                    title: "Export To Pdf (All)",
+                    onClickButton: function (e) {
+                        try {
+                            $grid.jqGrid("excelExport", { tag: "pdf", url: url + "Ep" + "?all=true" });
+                        } catch (e) {
+                            window.location = url + "Ep" + "?all=true&oper=pdf";
+                        }
+                    },
+                    position: "last"
+              });*/
+            $("#" + $grid.attr("aria-labelledby")).addClass("z-index-2000");
+            });
+        gridErrorLoaderFunction("listFuel", "fuelActivityLoader");
+    }
+
+    function gridErrorLoaderFunction(gridId, errorLoaderId) {
+        $("#" + gridId).jqGrid('setGridParam', {
+            loadError: function (xhr, st, err) {
+                $("#" + errorLoaderId).hide();
+            }
+        });
+    }
+</script>

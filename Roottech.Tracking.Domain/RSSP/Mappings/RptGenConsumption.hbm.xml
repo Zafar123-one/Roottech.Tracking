@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSSP.Entities">
+  <class name="RptGenConsumption">
+    <id name="Id" />
+    <property name="SiteCode" />
+    <property name="SiteName" />
+    <property name="AssetName" />
+    <property name="OpenDtForGroup" />
+    <property name="OpenDt" />
+    <property name="CloseDt" />
+    <property name="Duration" />
+    <property name="ConsumeQty" />
+    <property name="Hour" />
+    <property name="Minute" />
+    <property name="Second" />
+    <property name="Average" />
+    <loader query-ref="GetRptGenConsumption"/>
+  </class>
+  <sql-query name="GetRptGenConsumption">
+    <return class="RptGenConsumption" >
+      <return-property name="Id" column="Batch#" />
+      <return-property name="SiteCode" column="Site_Name" />
+      <return-property name="SiteName" column="Name" />
+      <return-property name="AssetName" column="AssetName" />
+      <return-property name="OpenDtForGroup" column="OpenDt" />
+      <return-property name="OpenDt" column="Opendt" />
+      <return-property name="CloseDt" column="CloseDt" />
+      <return-property name="Duration" column="Duration" />
+      <return-property name="ConsumeQty" column="ConsumeQty" />
+      <return-property name="Hour" column="Hour" />
+      <return-property name="Minute" column="Minute" />
+      <return-property name="Second" column="Second" />
+      <return-property name="Average" column="Average" />
+    </return>
+    exec SP_Rpt_Gen_Consumption_Analysis_S @From = :FromDt, @To = :ToDt, @Site = :Site, @Region = :Region, @City = :City, @Territory = :Territory, @Resource = :Resource, @Orgcode = :Orgcode, @EventType='C', @LevelType='D', @user_code = :UserCode
+  </sql-query>
+</hibernate-mapping>

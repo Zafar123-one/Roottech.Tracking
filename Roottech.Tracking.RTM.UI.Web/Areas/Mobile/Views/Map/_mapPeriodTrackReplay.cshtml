@@ -1,0 +1,76 @@
+﻿<div id="periodTrackReplay" style="display: none">
+    <table>
+        <tr name="trackControls">
+            <td colspan="4" width="220px">
+                <a href="#" id="trackBackward" title="Slower"><span class="ui-icon ui-icon-seek-prev" style="display:inline-block;"></span></a>
+                <div id="trackSlider" style="display:inline-block; width: 75%;"></div>
+                <a href="#" id="trackForward" title="Faster"><span class="ui-icon ui-icon-seek-next" style="display:inline-block;"></span></a>
+                <a href="#" id="trackPlay" title="Play/Pause"><span class="ui-icon ui-icon-play" style="display:inline-block;"></span></a>
+                <a href="#" id="trackStop" title="Stop"><span class="ui-icon ui-icon-stop" style="display:inline-block;"></span></a>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">From Date:</td>
+            <td><input type="text" id="txt_FromDate" style="width:90px" /></td>
+            <td align="right">To Date:</td>
+            <td><input type="text" id="txt_ToDate" style="width:90px" /></td>
+        </tr>
+        <tr>
+            <td align="right">Time Range:</td>
+            <td colspan="3">
+                <input type="text" id="txtPeriodFromTime" style="width:58px" />
+                <input type="text" id="txtPeriodToTime" style="width:58px" />
+                <input type="button" id="btnShowMapbyPeriod" value="Draw Map" />
+            </td>
+        </tr>
+        <tr name="trackControls">
+            <td align="right">Distance:</td>
+            <td colspan="3">
+                <b>
+                    <span id="trackPathLength">0</span> out of
+                    <span id="trackTotalPathLength"></span> Kms
+                </b>
+            </td>
+        </tr>
+        <tr name="trackControls">
+
+            <td align="right">Ignition:</td>
+            <td>
+                <select id="trackPeriodIgnition">
+                    <option value="A">All</option>
+                    <option value="1" selected="selected">On</option>
+                    <!--<option value="I">Idle</option>-->
+                    <option value="0">Off</option>
+                </select>
+            </td>
+            <td align="right">Icon:</td>
+            <td>
+                <select id="trackAnimationObject">
+                    <!--<option value="V">Vehicle</option>-->
+                    <option value="S">Circle</option>
+                    <option value="G" selected="selected">SVG Vehicle</option>
+                </select>
+                <span id="lblUnitIdPeriodMap" style="visibility:hidden;"></span>
+                <span id="lblAssetNamePeriodMap" style="visibility:hidden;"></span>
+            </td>
+        </tr>
+    </table>
+    <table class="myTable" name="trackControls">
+        <tr>
+            <th>Date</th>
+            <th>Ign</th>
+            <th>GSM</th>
+            <th>Speed.Kmph</th>
+            <th>Lat</th>
+            <th>Long</th>
+        </tr>
+        <tr>
+            <td align="center" id="trackDate"></td>
+            <td align="center"><img id="imgTrackIgnition" /></td>
+            <td align="center"><img id="imgTrackSignal" /></td>
+            <td align="center" id="trackSpeed"></td>
+            <td align="center" id="trackLati"></td>
+            <td align="center" id="trackLongi"></td>
+        </tr>
+    </table>
+</div>

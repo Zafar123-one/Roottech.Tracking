@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/themes/base/css")
+        @Scripts.Render("~/bundles/modernizr")
+
+        <!--@Styles.Render("~/bundles/map/css")-->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=drawing,places,geometry"></script>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui/min")
+        @Scripts.Render("~/bundles/app/scripts")
+    </head>
+    <body>
+        @RenderBody()
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

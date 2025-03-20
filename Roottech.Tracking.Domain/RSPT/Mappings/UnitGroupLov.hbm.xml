@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="UnitGroupLov">
+    <id name="Id" />
+    <property name="Description" />
+    <loader query-ref="GetUnitGroupLov"/>
+  </class>
+  <sql-query name="GetUnitGroupLov">
+    <return class="UnitGroupLov" >
+      <return-property name="Id" column="ugrpmst#" />
+      <return-property name="Description" column="description" />
+    </return>
+	  exec SP_Lov_For_UnitGroup @Orgcode = :Orgcode, @Usercode = :UserCode
+  </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,375 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drawing tools</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map { height: 100%; }
+      /* Optional: Makes the sample page fill the window. */
+      html, body { height: 100%; margin: 0; padding: 0; }
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+	  .controls {
+        background-color: #fff;
+        border-radius: 2px;
+        border: 1px solid transparent;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        height: 29px;
+        margin-left: 17px;
+        margin-top: 10px;
+        outline: none;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+      .delete-menu {
+        position: absolute;
+        background: white;
+        padding: 3px;
+        color: #666;
+        font-weight: bold;
+        border: 1px solid #999;
+        font-family: sans-serif;
+        font-size: 12px;
+        box-shadow: 1px 3px 3px rgba(0, 0, 0, .3);
+        margin-top: -10px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      .delete-menu:hover {
+        background: #eee;
+      }
+      .controls:focus {
+        border-color: #4d90fe;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=drawing,places,geometry"></script><!--&callback=initMap-->
+  </head>
+  <body>
+	<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    <div id="map"></div>
+	<input type='file' id='file-input' style='display:none' />
+    <script>
+      // This example requires the Drawing library. Include the libraries=drawing
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=drawing">
+	  var infoWindow, path, map, polygonArray = [];
+	  function CustomControl(controlDiv, map, type, name, title) {
+        // Set CSS for the control border.
+        var controlUi = document.createElement('div');
+        controlUi.style.backgroundColor = '#fff';
+        controlUi.style.borderRadius = '2px';
+        controlUi.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+        controlUi.style.cursor = 'pointer';
+        controlUi.title = title;
+		//controlUI.style.float = 'left';
+        controlDiv.appendChild(controlUi);
+		
+		controlDiv.style.marginTop = '10px';
+        if (type === 0) controlDiv.style.marginRight = '10px';
+		
+		// Set CSS for the control interior.
+        var controlText = document.createElement('div');
+        controlText.style.fontSize = '12px';
+        controlText.style.lineHeight = '20px';
+        controlText.style.paddingLeft = '3px';
+        controlText.style.paddingRight = '3px';
+        controlText.innerHTML = name;
+        controlUi.appendChild(controlText);
+
+		if (type === 0)
+			controlUi.addEventListener('click', function() { exportFile(path); });
+		else if (type === 1)
+			controlUi.addEventListener('click', function() { performClick('file-input'); });
+		else
+			controlUi.addEventListener('click', function() { clearOverlays(); });
+      }
+
+	  function initMap() {
+	      map = new google.maps.Map(document.getElementById('map'), {
+	          center: { lat: 31.292608, lng: 70.874560 },
+	          zoom: 7
+	      });
+
+	      // Create the search box and link it to the UI element.
+	      var input = document.getElementById('pac-input');
+	      var searchBox = new google.maps.places.SearchBox(input);
+	      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+	      // Bias the SearchBox results towards current map's viewport.
+	      map.addListener('bounds_changed', function() {
+	          searchBox.setBounds(map.getBounds());
+	      });
+
+	      // Listen for the event fired when the user selects a prediction and retrieve
+	      // more details for that place.
+	      searchBox.addListener('places_changed', function() {
+	          var places = searchBox.getPlaces();
+
+	          if (places.length == 0) return;
+
+	          // For each place, get the icon, name and location.
+	          var bounds = new google.maps.LatLngBounds();
+	          places.forEach(function(place) {
+	              if (!place.geometry) {
+	                  console.log("Returned place contains no geometry");
+	                  return;
+	              }
+	              var icon = {
+	                  url: place.icon,
+	                  size: new google.maps.Size(71, 71),
+	                  origin: new google.maps.Point(0, 0),
+	                  anchor: new google.maps.Point(17, 34),
+	                  scaledSize: new google.maps.Size(25, 25)
+	              };
+
+	              if (place.geometry.viewport) {
+	                  // Only geocodes have viewport.
+	                  bounds.union(place.geometry.viewport);
+	              } else {
+	                  bounds.extend(place.geometry.location);
+	              }
+	          });
+	          map.fitBounds(bounds);
+	      });
+
+	      // Create the DIV to hold the control and call the CenterControl()
+	      // constructor passing in this DIV.
+	      var customControlDiv = document.createElement('div');
+	      var exportControl = new CustomControl(customControlDiv, map, 0, 'Exp', 'Click to export polygon');
+
+	      customControlDiv.index = 1;
+	      map.controls[google.maps.ControlPosition.TOP_RIGHT].push(customControlDiv);
+
+	      customControlDiv = document.createElement('div');
+	      var importControl = new CustomControl(customControlDiv, map, 1, 'Imp', 'Click to import polygon');
+	      customControlDiv.index = 2;
+	      map.controls[google.maps.ControlPosition.TOP_RIGHT].push(customControlDiv);
+
+	      customControlDiv = document.createElement('div');
+	      var importControl = new CustomControl(customControlDiv, map, 2, 'Clear', 'Click to clear all polygons from map');
+	      customControlDiv.index = 3;
+	      map.controls[google.maps.ControlPosition.TOP_RIGHT].push(customControlDiv);
+
+	      var drawingManager = new google.maps.drawing.DrawingManager({
+	          drawingMode: google.maps.drawing.OverlayType.POLYGON,
+	          drawingControl: true,
+	          drawingControlOptions: {
+	              position: google.maps.ControlPosition.TOP_CENTER,
+	              drawingModes: ['polygon'] //['marker', 'circle', 'polygon', 'polyline', 'rectangle']
+	          },
+	          polygonOptions: {
+	              fillColor: '#dc4b3f',
+	              fillOpacity: 0.2,
+	              strokeColor: '#dc4b3f',
+	              strokeWeight: 1.2,
+	              clickable: false,
+	              editable: true
+	          }
+	      });
+	      drawingManager.setMap(map);
+
+	      google.maps.event.addListener(drawingManager, "overlaycomplete", function(event) {
+	          if (event.type == google.maps.drawing.OverlayType.POLYGON) {
+	              var linePathArray = event.overlay.getPath().getArray();
+	              path = linePathArray;
+	              //exportFile(linePathArray);
+
+	              var deleteMenu = new DeleteMenu();
+	              google.maps.event.addListener(event.overlay, "rightclick", function(e) {
+	                  // Check if click was on a vertex control point
+	                  console.log(e.vertex);
+	                  if (e.vertex == undefined) {
+	                      event.overlay.setMap(null);
+	                      path = null;
+	                      polygonArray.pop(event.overlay);
+	                      return;
+	                  }
+	                  deleteMenu.open(map, event.overlay.getPath(), e.vertex);
+	              });
+
+	              polygonArray.push(event.overlay);
+	          }
+	      });
+	      google.maps.event.addListener(drawingManager, 'polygoncomplete', function(polygon) {
+	          google.maps.event.addListener(polygon.getPath(), 'set_at', function() {
+	              path = polygon.getPath().getArray();
+	          });
+	          google.maps.event.addListener(polygon.getPath(), 'insert_at', function() {
+	              path = polygon.getPath().getArray();
+	          });
+	      });
+	  }
+
+	  function exportFile(array) {
+	      var a = document.createElement('a'), content = "";
+	      document.body.appendChild(a);
+	      if (!array) return;
+
+	      for (var i = 0; i < array.length; i++)
+	          content += '{"Lati":"' + array[i].lat() + '","Longi":"' + array[i].lng() + '"},';
+
+	      content = "[" + content.substring(0, content.length - 1) + "]";
+	      a.href = 'data:text/plain;base64,' + btoa(content);
+	      a.textContent = 'download';
+	      a.download = 'text.json';
+	      a.click();
+	      document.body.removeChild(a);
+	  }
+
+	  function performClick(elemId) {
+	      var elem = document.getElementById(elemId);
+	      if (elem && document.createEvent) {
+	          var evt = document.createEvent("MouseEvents");
+	          evt.initEvent("click", true, false);
+	          elem.dispatchEvent(evt);
+	      }
+	  }
+
+	  function readSingleFile(e) {
+	      var file = e.target.files[0];
+	      if (!file) return;
+
+	      var reader = new FileReader();
+	      reader.onload = function(e) {
+	          var contents = e.target.result;
+	          displayContents(contents);
+	      };
+	      reader.readAsText(file);
+	  }
+
+	  function displayContents(contents) {
+	      var data = JSON.parse(contents);
+	      var latLngs = [];
+	      for (var i = 0; i < data.length; i++)
+	          latLngs.push(new google.maps.LatLng(data[i].Lati, data[i].Longi));
+	      polygonArray.push(
+	          new google.maps.Polygon({
+	              paths: latLngs,
+	              map: map,
+	              fillColor: '#dc4b3f',
+	              fillOpacity: 0.2,
+	              strokeColor: '#dc4b3f',
+	              strokeWeight: 1.2,
+	              clickable: false,
+	              editable: true
+	          }));
+	  }
+
+	  function clearOverlays() {
+	      if (polygonArray != null) {
+	          if (polygonArray.length > 0) {
+	              for (var i = 0; i < polygonArray.length; i++)
+	                  polygonArray[i].setMap(null);
+	              polygonArray.length = 0;
+	          }
+	      }
+	  }
+
+/**
+* A menu that lets a user delete a selected vertex of a path.
+* @constructor
+*/
+	  function DeleteMenu() {
+	      this.div_ = document.createElement('div');
+	      this.div_.className = 'delete-menu';
+	      this.div_.innerHTML = 'Delete';
+
+	      var menu = this;
+	      google.maps.event.addDomListener(this.div_, 'click', function () {
+	          menu.removeVertex();
+	      });
+	  }
+	  DeleteMenu.prototype = new google.maps.OverlayView();
+
+	  DeleteMenu.prototype.onAdd = function () {
+	      var deleteMenu = this;
+	      var map = this.getMap();
+	      this.getPanes().floatPane.appendChild(this.div_);
+
+	      // mousedown anywhere on the map except on the menu div will close the
+	      // menu.
+	      this.divListener_ = google.maps.event.addDomListener(map.getDiv(), 'mousedown', function (e) {
+	          if (e.target != deleteMenu.div_) {
+	              deleteMenu.close();
+	          }
+	      }, true);
+	  };
+
+	  DeleteMenu.prototype.onRemove = function () {
+	      google.maps.event.removeListener(this.divListener_);
+	      this.div_.parentNode.removeChild(this.div_);
+
+	      // clean up
+	      this.set('position');
+	      this.set('path');
+	      this.set('vertex');
+	  };
+
+	  DeleteMenu.prototype.close = function () {
+	      this.setMap(null);
+	  };
+
+	  DeleteMenu.prototype.draw = function () {
+	      var position = this.get('position');
+	      var projection = this.getProjection();
+	      if (!position || !projection) {
+	          return;
+	      }
+
+	      var point = projection.fromLatLngToDivPixel(position);
+	      this.div_.style.top = point.y + 'px';
+	      this.div_.style.left = point.x + 'px';
+	  };
+
+	  /**
+       * Opens the menu at a vertex of a given path.
+       */
+	  DeleteMenu.prototype.open = function (map, path, vertex) {
+	      this.set('position', path.getAt(vertex));
+	      this.set('path', path);
+	      this.set('vertex', vertex);
+	      this.setMap(map);
+	      this.draw();
+	  };
+
+	  /**
+       * Deletes the vertex from the path.
+       */
+	  DeleteMenu.prototype.removeVertex = function () {
+	      var path = this.get('path');
+	      var vertex = this.get('vertex');
+
+	      if (!path || vertex == undefined) {
+	          this.close();
+	          return;
+	      }
+
+	      path.removeAt(vertex);
+	      this.close();
+	  };
+
+	  google.maps.event.addDomListener(window, 'load', initMap);
+	  document.getElementById('file-input').addEventListener('change', readSingleFile, false);
+    </script>
+  </body>
+</html>

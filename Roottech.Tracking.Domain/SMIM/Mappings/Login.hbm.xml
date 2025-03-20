@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.SMIM.Entities">
+  <class name="Login">
+    <id name="Id" />
+    <property name="User_Name" />
+    <property name="Msg" />
+    <property name="RegionId" />
+    <property name="OrgCode" />
+    <property name="OrgName" />
+    <property name="GroupCount" />
+    <property name="UGRP_Code" />
+    <property name="AppType" />
+    <loader query-ref="GetLogin"/>
+  </class>
+  <sql-query name="GetLogin">
+    <return class="Login" >
+      <return-property name="Id" column="OrgCode" />
+      <return-property name="User_Name" column="User_Name" />
+      <return-property name="Msg" column="Msg" />
+      <return-property name="RegionId" column="RegionId" />
+      <return-property name="OrgCode" column="OrgCode" />
+      <return-property name="OrgName" column="OrgName" />
+      <return-property name="GroupCount" column="GroupCount" />
+      <return-property name="UGRP_Code" column="UGRP_Code" />
+      <return-property name="AppType" column="AppType" />
+    </return>
+    exec SMIM.usp_Login @Id = :Id, @User_Password = :Password, @User_IP = :UserIP
+  </sql-query>
+</hibernate-mapping>

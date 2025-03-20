@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="SpeedVehicleReport">
+    <id name="Id" />
+    <property name="Perc" />
+    <loader query-ref="GetSpeedVehicleReport"/>
+  </class>
+  <sql-query name="GetSpeedVehicleReport">
+    <return class="SpeedVehicleReport" >
+      <return-property name="Id" column="Speed" />
+      <return-property name="Perc" column="Perc" />
+    </return>
+    exec sp_GetSpeedReportCard @UnitID = :UnitID, @rtcdttm= :Date
+  </sql-query>
+</hibernate-mapping>

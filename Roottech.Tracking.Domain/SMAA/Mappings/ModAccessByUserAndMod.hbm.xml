@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.SMAA.Entities">
+  <class name="ModAccessByUserAndMod">
+    <id name="Id" />
+    <property name="ObjCode" />
+    <property name="Title" />
+    <property name="Description" />
+    <property name="Allow" />
+    <property name="MomNo" />
+    <loader query-ref="GetModAccessByUserAndMod"/>
+  </class>
+  <sql-query name="GetModAccessByUserAndMod">
+    <return class="ModAccessByUserAndMod" >
+      <return-property name="Id" column="Mod_ID" />
+      <return-property name="ObjCode" column="ObjCode" />
+      <return-property name="Title" column="Title" />
+      <return-property name="Description" column="Description" />
+      <return-property name="Allow" column="Allow" />
+      <return-property name="MomNo" column="Mom#" />
+    </return>
+    exec SP_GET_MODULE_ACCESS @User_Code = :User_Code, @Module# = :ModuleNo
+  </sql-query>
+</hibernate-mapping>

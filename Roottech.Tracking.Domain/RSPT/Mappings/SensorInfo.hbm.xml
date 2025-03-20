@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="SensorInfo">
+    <id name="Id" />
+    <property name="Description" />
+    <property name="DiStatus" />
+    <loader query-ref="GetSensorInfo"/>
+  </class>
+  <sql-query name="GetSensorInfo">
+    <return class="SensorInfo" >
+      <return-property name="Id" column="SENSORcODE" />
+      <return-property name="Description" column="Description" />
+      <return-property name="DiStatus" column="DI_Status" />
+    </return>
+    exec Sp_Get_SensorInfos @Resource = :Resource, @DI = :Di
+  </sql-query>
+</hibernate-mapping>

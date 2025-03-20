@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSSP.Entities">
+  <class name="RptDayWiseSummary">
+    <id name="Id" />
+	  <property name="AssetName" />
+	  <property name="PlateID" />
+	  <property name="Date" />
+	  <property name="Day" />
+	  <property name="StartPoint" />
+	  <property name="EndPoint" />
+	  <property name="MonthlyDuration" />
+	  <property name="MonthlyParking" />
+	  <property name="MonthlyIdle" />
+	  <property name="Opening" />
+	  <property name="Refuel" />
+	  <property name="Consume" />
+	  <property name="Theft" />
+	  <property name="AvgLtrhr" />
+	  <property name="RunningHour" />
+	  <property name="Idle" />
+	  <property name="Parking" />
+	  <property name="ClosingFormula" />
+	  <property name="TotMiles" />
+	  <property name="Closing" />
+	  <property name="Kms" />
+	  <property name="TotMile" />
+	  <loader query-ref="GetRptDayWiseSummary"/>
+  </class>
+  <sql-query name="GetRptDayWiseSummary">
+    <return class="RptDayWiseSummary" >
+      <return-property name="Id" column="Row#" />
+		<return-property name="AssetName" column="AssetName" />
+		<return-property name="PlateID" column="PlateID" />
+		<return-property name="Date" column="Date" />
+		<return-property name="Day" column="Day" />
+		<return-property name="StartPoint" column="StartPoint" />
+		<return-property name="EndPoint" column="EndPoint" />
+		<return-property name="MonthlyDuration" column="MonthlyDuration" />
+		<return-property name="MonthlyParking" column="MonthlyParking" />
+		<return-property name="MonthlyIdle" column="MonthlyIdle" />
+		<return-property name="Opening" column="Opening" />
+		<return-property name="Refuel" column="Refuel" />
+		<return-property name="Consume" column="Consume" />
+		<return-property name="Theft" column="Theft" />
+		<return-property name="AvgLtrhr" column="AvgLtrhr" />
+		<return-property name="RunningHour" column="RunningHour" />
+		<return-property name="Idle" column="Idle" />
+		<return-property name="Parking" column="Parking" />
+		<return-property name="ClosingFormula" column="Closing_Formula" />
+		<return-property name="TotMiles" column="TotMiles" />
+		<return-property name="Closing" column="Closing" />
+		<return-property name="Kms" column="KM" />
+		<return-property name="TotMile" column="TotMile" />
+    </return>
+	  exec SP_Day_Wise_Summary_new @FromDt = :FromDt, @ToDt = :ToDt, @ORGCODE = :Orgcode, @PlateID = :PlateID, @Usercode = :UserCode, @ugrpmst# = :ugrpmst
+  </sql-query>
+</hibernate-mapping>

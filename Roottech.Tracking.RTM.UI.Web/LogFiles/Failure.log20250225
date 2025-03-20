@@ -1,0 +1,867 @@
+2025-02-25 11:07:18,485 [10] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 15:14:51,615 [7] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 16:43:47,980 [7] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 16:54:59,805 [19] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSSP.Mappings.RptVehicleRefuelDetail.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSSP.Mappings.RptVehicleRefuelDetail.hbm.xml ---> NHibernate.MappingException: Problem trying to set property type by reflection ---> NHibernate.MappingException: class Roottech.Tracking.Domain.RSSP.Entities.RptVehicleRefuelDetail, Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null not found while looking for property: OpenDt ---> NHibernate.PropertyNotFoundException: Could not find a getter for property 'OpenDt' in class 'Roottech.Tracking.Domain.RSSP.Entities.RptVehicleRefuelDetail'
+   at NHibernate.Properties.BasicPropertyAccessor.GetGetter(Type type, String propertyName)
+   at NHibernate.Util.ReflectHelper.ReflectedPropertyClass(String className, String name, String accessorName)
+   --- End of inner exception stack trace ---
+   at NHibernate.Util.ReflectHelper.ReflectedPropertyClass(String className, String name, String accessorName)
+   at NHibernate.Mapping.SimpleValue.SetTypeUsingReflection(String className, String propertyName, String accesorName)
+   --- End of inner exception stack trace ---
+   at NHibernate.Mapping.SimpleValue.SetTypeUsingReflection(String className, String propertyName, String accesorName)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.CreateProperty(IEntityPropertyMapping propertyMapping, String propertyOwnerClassName, IValue value, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, Table table, IDictionary`2 inheritedMetas, Action`1 modifier, Action`1 addToModelAction)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, IDictionary`2 inheritedMetas, Action`1 modifier)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 16:54:59,842 [19] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSSP.Mappings.RptVehicleRefuelDetail.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSSP.Mappings.RptVehicleRefuelDetail.hbm.xml ---> NHibernate.MappingException: Problem trying to set property type by reflection ---> NHibernate.MappingException: class Roottech.Tracking.Domain.RSSP.Entities.RptVehicleRefuelDetail, Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null not found while looking for property: OpenDt ---> NHibernate.PropertyNotFoundException: Could not find a getter for property 'OpenDt' in class 'Roottech.Tracking.Domain.RSSP.Entities.RptVehicleRefuelDetail'
+   at NHibernate.Properties.BasicPropertyAccessor.GetGetter(Type type, String propertyName)
+   at NHibernate.Util.ReflectHelper.ReflectedPropertyClass(String className, String name, String accessorName)
+   --- End of inner exception stack trace ---
+   at NHibernate.Util.ReflectHelper.ReflectedPropertyClass(String className, String name, String accessorName)
+   at NHibernate.Mapping.SimpleValue.SetTypeUsingReflection(String className, String propertyName, String accesorName)
+   --- End of inner exception stack trace ---
+   at NHibernate.Mapping.SimpleValue.SetTypeUsingReflection(String className, String propertyName, String accesorName)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.CreateProperty(IEntityPropertyMapping propertyMapping, String propertyOwnerClassName, IValue value, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, Table table, IDictionary`2 inheritedMetas, Action`1 modifier, Action`1 addToModelAction)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, IDictionary`2 inheritedMetas, Action`1 modifier)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 16:54:59,921 [19] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSSP.Mappings.RptVehicleRefuelDetail.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSSP.Mappings.RptVehicleRefuelDetail.hbm.xml ---> NHibernate.MappingException: Problem trying to set property type by reflection ---> NHibernate.MappingException: class Roottech.Tracking.Domain.RSSP.Entities.RptVehicleRefuelDetail, Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null not found while looking for property: OpenDt ---> NHibernate.PropertyNotFoundException: Could not find a getter for property 'OpenDt' in class 'Roottech.Tracking.Domain.RSSP.Entities.RptVehicleRefuelDetail'
+   at NHibernate.Properties.BasicPropertyAccessor.GetGetter(Type type, String propertyName)
+   at NHibernate.Util.ReflectHelper.ReflectedPropertyClass(String className, String name, String accessorName)
+   --- End of inner exception stack trace ---
+   at NHibernate.Util.ReflectHelper.ReflectedPropertyClass(String className, String name, String accessorName)
+   at NHibernate.Mapping.SimpleValue.SetTypeUsingReflection(String className, String propertyName, String accesorName)
+   --- End of inner exception stack trace ---
+   at NHibernate.Mapping.SimpleValue.SetTypeUsingReflection(String className, String propertyName, String accesorName)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.CreateProperty(IEntityPropertyMapping propertyMapping, String propertyOwnerClassName, IValue value, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, Table table, IDictionary`2 inheritedMetas, Action`1 modifier, Action`1 addToModelAction)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, IDictionary`2 inheritedMetas, Action`1 modifier)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 16:55:00,177 [42] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSSP.Mappings.RptVehicleRefuelDetail.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSSP.Mappings.RptVehicleRefuelDetail.hbm.xml ---> NHibernate.MappingException: Problem trying to set property type by reflection ---> NHibernate.MappingException: class Roottech.Tracking.Domain.RSSP.Entities.RptVehicleRefuelDetail, Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null not found while looking for property: OpenDt ---> NHibernate.PropertyNotFoundException: Could not find a getter for property 'OpenDt' in class 'Roottech.Tracking.Domain.RSSP.Entities.RptVehicleRefuelDetail'
+   at NHibernate.Properties.BasicPropertyAccessor.GetGetter(Type type, String propertyName)
+   at NHibernate.Util.ReflectHelper.ReflectedPropertyClass(String className, String name, String accessorName)
+   --- End of inner exception stack trace ---
+   at NHibernate.Util.ReflectHelper.ReflectedPropertyClass(String className, String name, String accessorName)
+   at NHibernate.Mapping.SimpleValue.SetTypeUsingReflection(String className, String propertyName, String accesorName)
+   --- End of inner exception stack trace ---
+   at NHibernate.Mapping.SimpleValue.SetTypeUsingReflection(String className, String propertyName, String accesorName)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.CreateProperty(IEntityPropertyMapping propertyMapping, String propertyOwnerClassName, IValue value, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, Table table, IDictionary`2 inheritedMetas, Action`1 modifier, Action`1 addToModelAction)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, IDictionary`2 inheritedMetas, Action`1 modifier)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 16:55:00,201 [42] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSSP.Mappings.RptVehicleRefuelDetail.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSSP.Mappings.RptVehicleRefuelDetail.hbm.xml ---> NHibernate.MappingException: Problem trying to set property type by reflection ---> NHibernate.MappingException: class Roottech.Tracking.Domain.RSSP.Entities.RptVehicleRefuelDetail, Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null not found while looking for property: OpenDt ---> NHibernate.PropertyNotFoundException: Could not find a getter for property 'OpenDt' in class 'Roottech.Tracking.Domain.RSSP.Entities.RptVehicleRefuelDetail'
+   at NHibernate.Properties.BasicPropertyAccessor.GetGetter(Type type, String propertyName)
+   at NHibernate.Util.ReflectHelper.ReflectedPropertyClass(String className, String name, String accessorName)
+   --- End of inner exception stack trace ---
+   at NHibernate.Util.ReflectHelper.ReflectedPropertyClass(String className, String name, String accessorName)
+   at NHibernate.Mapping.SimpleValue.SetTypeUsingReflection(String className, String propertyName, String accesorName)
+   --- End of inner exception stack trace ---
+   at NHibernate.Mapping.SimpleValue.SetTypeUsingReflection(String className, String propertyName, String accesorName)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.CreateProperty(IEntityPropertyMapping propertyMapping, String propertyOwnerClassName, IValue value, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, Table table, IDictionary`2 inheritedMetas, Action`1 modifier, Action`1 addToModelAction)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, IDictionary`2 inheritedMetas, Action`1 modifier)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 16:55:00,238 [42] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSSP.Mappings.RptVehicleRefuelDetail.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSSP.Mappings.RptVehicleRefuelDetail.hbm.xml ---> NHibernate.MappingException: Problem trying to set property type by reflection ---> NHibernate.MappingException: class Roottech.Tracking.Domain.RSSP.Entities.RptVehicleRefuelDetail, Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null not found while looking for property: OpenDt ---> NHibernate.PropertyNotFoundException: Could not find a getter for property 'OpenDt' in class 'Roottech.Tracking.Domain.RSSP.Entities.RptVehicleRefuelDetail'
+   at NHibernate.Properties.BasicPropertyAccessor.GetGetter(Type type, String propertyName)
+   at NHibernate.Util.ReflectHelper.ReflectedPropertyClass(String className, String name, String accessorName)
+   --- End of inner exception stack trace ---
+   at NHibernate.Util.ReflectHelper.ReflectedPropertyClass(String className, String name, String accessorName)
+   at NHibernate.Mapping.SimpleValue.SetTypeUsingReflection(String className, String propertyName, String accesorName)
+   --- End of inner exception stack trace ---
+   at NHibernate.Mapping.SimpleValue.SetTypeUsingReflection(String className, String propertyName, String accesorName)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.CreateProperty(IEntityPropertyMapping propertyMapping, String propertyOwnerClassName, IValue value, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, Table table, IDictionary`2 inheritedMetas, Action`1 modifier, Action`1 addToModelAction)
+   at NHibernate.Cfg.XmlHbmBinding.PropertiesBinder.Bind(IEnumerable`1 properties, IDictionary`2 inheritedMetas, Action`1 modifier)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 16:56:40,816 [47] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 16:56:40,817 [47] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 16:56:40,842 [47] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 16:56:40,842 [47] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 16:56:40,898 [17] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 16:56:40,899 [17] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 16:56:41,141 [46] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 16:56:41,141 [46] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 16:56:41,167 [46] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 16:56:41,167 [46] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 16:56:41,193 [46] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 16:56:41,193 [46] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:01:17,882 [17] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:01:17,882 [17] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:01:17,901 [17] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:01:17,901 [17] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:01:17,961 [17] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:01:17,961 [17] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:01:18,208 [42] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:01:18,208 [42] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:01:18,241 [42] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:01:18,241 [42] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:01:18,271 [42] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:01:18,271 [42] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.UnitGroupLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.UnitGroupLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:23,912 [18] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:23,912 [18] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:23,996 [53] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:23,996 [8] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:23,996 [53] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:23,996 [8] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:23,996 [18] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:23,996 [18] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:23,996 [17] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:23,996 [17] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:23,996 [5] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:23,996 [5] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:24,050 [8] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:24,050 [8] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:24,052 [53] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:24,053 [53] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:24,053 [5] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:24,053 [5] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:24,113 [17] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:24,113 [17] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:24,145 [18] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:24,145 [18] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:24,145 [55] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:24,145 [55] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:24,145 [53] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:24,145 [53] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:24,145 [17] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:24,145 [17] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:24,145 [8] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:24,145 [8] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:24,370 [49] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:24,371 [49] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:24,395 [49] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:24,395 [49] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:02:24,423 [49] ERROR NHibernate.Util.ReflectHelper [(null)] - Could not load type Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain.
+System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+2025-02-25 17:02:24,423 [49] ERROR NHibernate.Cfg.Configuration [(null)] - Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml
+NHibernate.MappingException: Could not compile the mapping document: Roottech.Tracking.Domain.RSPT.Mappings.BusLocWisePlateIdLov.hbm.xml ---> NHibernate.MappingException: persistent class Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov, Roottech.Tracking.Domain not found ---> System.TypeLoadException: Could not load type 'Roottech.Tracking.Domain.RSPT.Entities.BusLocWisePlateIdLov' from assembly 'Roottech.Tracking.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeAssembly.GetType(RuntimeAssembly assembly, String name, Boolean throwOnError, Boolean ignoreCase, ObjectHandleOnStack type)
+   at System.Reflection.RuntimeAssembly.GetType(String name, Boolean throwOnError, Boolean ignoreCase)
+   at NHibernate.Util.ReflectHelper.TypeFromAssembly(AssemblyQualifiedTypeName name, Boolean throwOnError)
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   --- End of inner exception stack trace ---
+   at NHibernate.Cfg.XmlHbmBinding.Binder.ClassForFullNameChecked(String fullName, String errorMessage)
+   at NHibernate.Cfg.XmlHbmBinding.ClassBinder.BindClass(IEntityMapping classMapping, PersistentClass model, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.RootClassBinder.Bind(HbmClass classSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.AddEntitiesMappings(HbmMapping mappingSchema, IDictionary`2 inheritedMetas)
+   at NHibernate.Cfg.XmlHbmBinding.MappingRootBinder.Bind(HbmMapping mappingSchema)
+   at NHibernate.Cfg.Configuration.AddDeserializedMapping(HbmMapping mappingDocument, String documentFileName)
+   --- End of inner exception stack trace ---
+2025-02-25 17:03:05,510 [51] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 17:11:43,093 [13] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 17:40:36,027 [7] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 18:07:43,795 [51] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: ugrpmst#
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Loader.Loader.GetKeyFromResultSet(Int32 i, IEntityPersister persister, Object id, IDataReader rs, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:07:43,795 [51] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - ugrpmst#
+2025-02-25 18:07:43,795 [51] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: ugrpmst#
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Loader.Loader.GetKeyFromResultSet(Int32 i, IEntityPersister persister, Object id, IDataReader rs, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:07:43,795 [51] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - ugrpmst#
+2025-02-25 18:08:41,760 [45] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: ugrpmst#
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Loader.Loader.GetKeyFromResultSet(Int32 i, IEntityPersister persister, Object id, IDataReader rs, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:08:41,760 [45] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - ugrpmst#
+2025-02-25 18:08:41,760 [45] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: ugrpmst#
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Loader.Loader.GetKeyFromResultSet(Int32 i, IEntityPersister persister, Object id, IDataReader rs, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:08:41,760 [45] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - ugrpmst#
+2025-02-25 18:10:48,517 [96] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 18:10:50,349 [96] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: ugrpmst#
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Loader.Loader.GetKeyFromResultSet(Int32 i, IEntityPersister persister, Object id, IDataReader rs, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:10:50,349 [96] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - ugrpmst#
+2025-02-25 18:10:50,353 [96] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: ugrpmst#
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Loader.Loader.GetKeyFromResultSet(Int32 i, IEntityPersister persister, Object id, IDataReader rs, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:10:50,353 [96] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - ugrpmst#
+2025-02-25 18:10:55,753 [119] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: ugrpmst#
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Loader.Loader.GetKeyFromResultSet(Int32 i, IEntityPersister persister, Object id, IDataReader rs, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:10:55,753 [119] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - ugrpmst#
+2025-02-25 18:10:55,753 [119] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: ugrpmst#
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Loader.Loader.GetKeyFromResultSet(Int32 i, IEntityPersister persister, Object id, IDataReader rs, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:10:55,753 [119] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - ugrpmst#
+2025-02-25 18:11:42,161 [27] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 18:11:43,514 [27] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: ugrpmst#
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Loader.Loader.GetKeyFromResultSet(Int32 i, IEntityPersister persister, Object id, IDataReader rs, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:11:43,514 [27] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - ugrpmst#
+2025-02-25 18:11:43,518 [27] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: ugrpmst#
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Loader.Loader.GetKeyFromResultSet(Int32 i, IEntityPersister persister, Object id, IDataReader rs, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:11:43,518 [27] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - ugrpmst#
+2025-02-25 18:14:25,722 [96] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 18:15:49,235 [86] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 18:16:45,852 [107] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: TotDuration
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(IDataReader rs, Object id, Object obj, ILoadable rootLoadable, String[][] suffixedPropertyColumns, Boolean allProperties, ISessionImplementor session)
+   at NHibernate.Loader.Loader.LoadFromResultSet(IDataReader rs, Int32 i, Object obj, String instanceClass, EntityKey key, String rowIdAlias, LockMode lockMode, ILoadable rootPersister, ISessionImplementor session)
+   at NHibernate.Loader.Loader.InstanceNotYetLoaded(IDataReader dr, Int32 i, ILoadable persister, EntityKey key, LockMode lockMode, String rowIdAlias, EntityKey optionalObjectKey, Object optionalObject, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRow(IDataReader rs, ILoadable[] persisters, EntityKey[] keys, Object optionalObject, EntityKey optionalObjectKey, LockMode[] lockModes, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:16:45,852 [107] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - TotDuration
+2025-02-25 18:16:45,852 [107] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: TotDuration
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(IDataReader rs, Object id, Object obj, ILoadable rootLoadable, String[][] suffixedPropertyColumns, Boolean allProperties, ISessionImplementor session)
+   at NHibernate.Loader.Loader.LoadFromResultSet(IDataReader rs, Int32 i, Object obj, String instanceClass, EntityKey key, String rowIdAlias, LockMode lockMode, ILoadable rootPersister, ISessionImplementor session)
+   at NHibernate.Loader.Loader.InstanceNotYetLoaded(IDataReader dr, Int32 i, ILoadable persister, EntityKey key, LockMode lockMode, String rowIdAlias, EntityKey optionalObjectKey, Object optionalObject, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRow(IDataReader rs, ILoadable[] persisters, EntityKey[] keys, Object optionalObject, EntityKey optionalObjectKey, LockMode[] lockModes, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:16:45,852 [107] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - TotDuration
+2025-02-25 18:18:07,268 [62] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: TotDuration
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(IDataReader rs, Object id, Object obj, ILoadable rootLoadable, String[][] suffixedPropertyColumns, Boolean allProperties, ISessionImplementor session)
+   at NHibernate.Loader.Loader.LoadFromResultSet(IDataReader rs, Int32 i, Object obj, String instanceClass, EntityKey key, String rowIdAlias, LockMode lockMode, ILoadable rootPersister, ISessionImplementor session)
+   at NHibernate.Loader.Loader.InstanceNotYetLoaded(IDataReader dr, Int32 i, ILoadable persister, EntityKey key, LockMode lockMode, String rowIdAlias, EntityKey optionalObjectKey, Object optionalObject, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRow(IDataReader rs, ILoadable[] persisters, EntityKey[] keys, Object optionalObject, EntityKey optionalObjectKey, LockMode[] lockModes, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:18:07,268 [62] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - TotDuration
+2025-02-25 18:18:07,268 [62] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: TotDuration
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(IDataReader rs, Object id, Object obj, ILoadable rootLoadable, String[][] suffixedPropertyColumns, Boolean allProperties, ISessionImplementor session)
+   at NHibernate.Loader.Loader.LoadFromResultSet(IDataReader rs, Int32 i, Object obj, String instanceClass, EntityKey key, String rowIdAlias, LockMode lockMode, ILoadable rootPersister, ISessionImplementor session)
+   at NHibernate.Loader.Loader.InstanceNotYetLoaded(IDataReader dr, Int32 i, ILoadable persister, EntityKey key, LockMode lockMode, String rowIdAlias, EntityKey optionalObjectKey, Object optionalObject, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRow(IDataReader rs, ILoadable[] persisters, EntityKey[] keys, Object optionalObject, EntityKey optionalObjectKey, LockMode[] lockModes, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 18:18:07,268 [62] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - TotDuration
+2025-02-25 18:19:13,930 [90] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 18:32:16,791 [79] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 19:19:07,146 [8] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 19:27:35,993 [65] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 19:27:36,525 [65] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: [Fuel_Theft_Qty(in Ltrs)]
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(IDataReader rs, Object id, Object obj, ILoadable rootLoadable, String[][] suffixedPropertyColumns, Boolean allProperties, ISessionImplementor session)
+   at NHibernate.Loader.Loader.LoadFromResultSet(IDataReader rs, Int32 i, Object obj, String instanceClass, EntityKey key, String rowIdAlias, LockMode lockMode, ILoadable rootPersister, ISessionImplementor session)
+   at NHibernate.Loader.Loader.InstanceNotYetLoaded(IDataReader dr, Int32 i, ILoadable persister, EntityKey key, LockMode lockMode, String rowIdAlias, EntityKey optionalObjectKey, Object optionalObject, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRow(IDataReader rs, ILoadable[] persisters, EntityKey[] keys, Object optionalObject, EntityKey optionalObjectKey, LockMode[] lockModes, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 19:27:36,525 [65] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - [Fuel_Theft_Qty(in Ltrs)]
+2025-02-25 19:27:36,525 [65] WARN  NHibernate.Util.ADOExceptionReporter [(null)] - System.IndexOutOfRangeException: [Fuel_Theft_Qty(in Ltrs)]
+   at System.Data.ProviderBase.FieldNameLookup.GetOrdinal(String fieldName)
+   at System.Data.SqlClient.SqlDataReader.GetOrdinal(String name)
+   at NHibernate.Type.NullableType.NullSafeGet(IDataReader rs, String name)
+   at NHibernate.Persister.Entity.AbstractEntityPersister.Hydrate(IDataReader rs, Object id, Object obj, ILoadable rootLoadable, String[][] suffixedPropertyColumns, Boolean allProperties, ISessionImplementor session)
+   at NHibernate.Loader.Loader.LoadFromResultSet(IDataReader rs, Int32 i, Object obj, String instanceClass, EntityKey key, String rowIdAlias, LockMode lockMode, ILoadable rootPersister, ISessionImplementor session)
+   at NHibernate.Loader.Loader.InstanceNotYetLoaded(IDataReader dr, Int32 i, ILoadable persister, EntityKey key, LockMode lockMode, String rowIdAlias, EntityKey optionalObjectKey, Object optionalObject, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRow(IDataReader rs, ILoadable[] persisters, EntityKey[] keys, Object optionalObject, EntityKey optionalObjectKey, LockMode[] lockModes, IList hydratedObjects, ISessionImplementor session)
+   at NHibernate.Loader.Loader.GetRowFromResultSet(IDataReader resultSet, ISessionImplementor session, QueryParameters queryParameters, LockMode[] lockModeArray, EntityKey optionalObjectKey, IList hydratedObjects, EntityKey[] keys, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQuery(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoQueryAndInitializeNonLazyCollections(ISessionImplementor session, QueryParameters queryParameters, Boolean returnProxies)
+   at NHibernate.Loader.Loader.DoList(ISessionImplementor session, QueryParameters queryParameters)
+2025-02-25 19:27:36,525 [65] ERROR NHibernate.Util.ADOExceptionReporter [(null)] - [Fuel_Theft_Qty(in Ltrs)]
+2025-02-25 19:28:09,498 [68] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 19:33:33,017 [42] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level
+2025-02-25 19:42:05,145 [31] WARN  NHibernate.Tuple.Entity.EntityMetamodel [(null)] - Disabled lazy property fetching for Roottech.Tracking.Domain.RSSP.Entities.EDRFuel because it does not support lazy at the entity level

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSSP.Entities">
+  <class name="RptAssetOperation">
+    <id name="Id" />
+    <property name="RegionName" />
+    <property name="CityName" />
+    <property name="SiteName" />
+    <property name="AssetName" />
+    <property name="OpenDt" />
+    <property name="CloseDt" />
+    <property name="AssetTotalDuration" />
+    <property name="Consumption" />
+    <property name="Hour" />
+    <property name="Minute" />
+    <property name="Second" />
+    <loader query-ref="GetRptAssetOperation"/>
+  </class>
+  <sql-query name="GetRptAssetOperation">
+    <return class="RptAssetOperation" >
+      <return-property name="Id" column="Batch#" />
+      <return-property name="RegionName" column="RegionName" />
+      <return-property name="CityName" column="CityName" />
+      <return-property name="SiteName" column="Site_Name" />
+      <return-property name="AssetName" column="AssetName" />
+      <return-property name="OpenDt" column="OpenDt" />
+      <return-property name="CloseDt" column="CloseDt" />
+      <return-property name="AssetTotalDuration" column="AssetTotalDuration" />
+      <return-property name="Consumption" column="Consumption" />
+      <return-property name="Hour" column="ASsethr" />
+      <return-property name="Minute" column="AssetMin" />
+      <return-property name="Second" column="Assetss" />
+    </return>
+    exec SP_Rpt_AssetOperation @fromdate = :FromDt, @todate = :ToDt, @Region = :Region, @City = :City, @Territory = :Territory, @SiteCode = :Site, @Orgcode = :Orgcode, @Resource = :Resource,@EventType=:EventType,@levelTYpe=:LevelType
+  </sql-query>
+</hibernate-mapping>

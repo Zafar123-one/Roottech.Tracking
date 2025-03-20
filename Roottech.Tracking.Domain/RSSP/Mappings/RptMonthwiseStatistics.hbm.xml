@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSSP.Entities">
+  <class name="RptMonthwiseStatistics">
+    <id name="Id" />
+    <property name="CityName" />
+    <property name="RegionName" />
+    <property name="SiteName" />
+    <property name="AssetName" />
+    <property name="DgCap" />
+    <property name="OpenDt" />
+    <property name="FuelOpening" />
+    <property name="Refuel" />
+    <property name="Consume" />
+    <property name="Theft" />
+    <property name="FuelClosing" />
+    <property name="RunningHour" />
+    <property name="AvgRun" />
+    <loader query-ref="GetRptMonthwiseStatistics"/>
+  </class>
+  <sql-query name="GetRptMonthwiseStatistics">
+    <return class="RptMonthwiseStatistics" >
+      <return-property name="Id" column="UnitId" />
+      <return-property name="CityName" column="CityName" />
+      <return-property name="RegionName" column="RegionName" />
+      <return-property name="SiteName" column="Site_Name" />
+      <return-property name="AssetName" column="AssetName" />
+      <return-property name="DgCap" column="DgCap" />
+      <return-property name="OpenDt" column="OpenDt" />
+      <return-property name="FuelOpening" column="FuelOpening" />
+      <return-property name="Refuel" column="Refuel" />
+      <return-property name="Consume" column="Consume2" />
+      <return-property name="Theft" column="Theft" />
+      <return-property name="FuelClosing" column="FuelClosing" />
+      <return-property name="RunningHour" column="RunningHour" />
+      <return-property name="AvgRun" column="AvgRun" />
+    </return>
+    exec SP_Rpt_Gen_Monthwise_Statistics @Date=:Month,@SITECode=:Site,@OrgCode=:Orgcode,@Resource=:Resource,@RegionID=:Region,@CityID=:City,@EngineUMake=:EngineUMake,@DGCAP=:DgCap
+  </sql-query>
+</hibernate-mapping>

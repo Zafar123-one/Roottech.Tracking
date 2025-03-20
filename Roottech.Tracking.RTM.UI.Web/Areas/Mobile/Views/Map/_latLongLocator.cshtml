@@ -1,0 +1,15 @@
+﻿<div id="latLongLocator" style="display: none">
+    <table>
+        <tr><td>@Html.Label("Latitude"): </td><td colspan="2">@Html.TextBox("latitude")</td></tr>
+        <tr><td>@Html.Label("Longitude"): </td><td colspan="2">@Html.TextBox("longitude")</td></tr>
+
+        <tr><td>@Html.CheckBox("chkOrganizationByUserForLatLngLocator") @Html.Label("Get Org") </td><td colspan="2">
+            <select id="selRouteByOrgCom" style="display: none"></select>
+        </td></tr>
+
+        <tr><td><input type="button" id="goToPoint" value="Go To Point"/></td>
+        <td><input type="button" id="getPointFromMap" value="Get Point From Map"/></td>
+        <td><input type="button" id="clearPushpin" value="Clear Pushpin"/></td>
+        </tr>
+    </table>
+</div>

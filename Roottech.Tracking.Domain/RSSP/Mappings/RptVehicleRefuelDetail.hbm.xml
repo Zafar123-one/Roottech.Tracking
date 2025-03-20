@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSSP.Entities">
+  <class name="RptVehicleRefuelDetail">
+    <id name="Id" />
+    <property name="LevelType" />
+    <property name="EventType" />
+    <property name="Location" />
+    <property name="OpenDate" />
+    <property name="CloseDate" />
+	<property name="DurationHH" />
+	<property name="DurationMI" />
+	<property name="DurationSS" />
+    <property name="TotDuration" />
+	  <property name="TotIdleTime" />
+	  <property name="FromMileage" />
+	  <property name="ToMileage" />
+	  <property name="StartQty" />
+	  <property name="EndQty" />
+	  <property name="Increase" />
+    <property name="Decrease" />
+	  <property name="Description" />
+    <loader query-ref="GetRptVehicleRefuelDetail"/>
+  </class>
+  <sql-query name="GetRptVehicleRefuelDetail">
+    <return class="RptVehicleRefuelDetail" >
+      <return-property name="Id" column="Batch#" />
+      <return-property name="LevelType" column="Leveltype" />
+      <return-property name="EventType" column="EventType" />
+      <return-property name="Location" column="location" />
+      <return-property name="OpenDate" column="OpenDate" />
+      <return-property name="CloseDate" column="CloseDate" />
+	  <return-property name="DurationHH" column="DurationHH" />
+	  <return-property name="DurationMI" column="DurationMI" />
+	  <return-property name="DurationSS" column="DurationSS" />
+      <return-property name="TotDuration" column="TotalDuration" />
+		<return-property name="TotIdleTime" column="Totidletime" />
+		<return-property name="FromMileage" column="FromMileage" />
+		<return-property name="ToMileage" column="ToMileage" />
+		<return-property name="StartQty" column="StartQty" />
+		<return-property name="EndQty" column="EndQty" />
+		<return-property name="Increase" column="Increase" />
+      <return-property name="Decrease" column="Decrease" />
+		<return-property name="Description" column="Description" />
+    </return>
+	  exec SP_RPT_Vehicle_RefuelDetail_UG @FromDt = :FromDt, @ToDt = :ToDt, @ResourceNo = :ResourceNo, @EventType = 'R', @Orgcode = :Orgcode, @Usercode = :UserCode, @ugrpmst# = :ugrpmst
+  </sql-query>
+</hibernate-mapping>

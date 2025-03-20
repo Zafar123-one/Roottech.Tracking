@@ -1,0 +1,61 @@
+﻿<form id="crudform" style="display: none">
+    <div class="error" style="display:none;"><span></span></div>
+    <table>
+        <!--<tr><td>
+            <h3 >First Time Login</h3></td></tr>
+        <tr><td><h4>Account Informations</h4></td></tr>-->
+        <tr>
+            <td>@Html.Label("lblUserId", "Login Code")</td>
+            <td>@Html.TextBox("LoginCode", "", new { @class = "inputField", title = "Login Code", size = "30", maxlength = "18", placeholder = "Login Code" })</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("lblUserId", "User Name")</td>
+            <td>@Html.TextBox("UserName", "", new { @disabled = "disabled", @class = "inputField" })</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("lblOrgName", "Organization")</td>
+            <td>@Html.TextBox("Organization", "", new { @disabled = "disabled", @class = "inputField" })</td>
+        </tr>
+        @*        <tr>
+            <td>@Html.Label("lblCreateDate", "Creation Date")</td>
+            <td>@Html.TextBox("CreationDate")</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("lblExpiryDate", "Expiry Date")</td>
+            <td>@Html.TextBox("ExpiryDate")</td>
+        </tr>*@
+        <tr><td><h4>Security Information</h4></td></tr>
+        <tr>
+            <td>@Html.Label("lblFAQ1", "Question # 1")</td>
+            <td><select id="ddlFAQ1" class="inputField" style="height: 30px; width: 234px;"></select></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("lblAns1", "Answer # 1")</td>
+            <td>@Html.TextBox("Answer1", "", new { @class = "inputField", title = "Answer #1", placeholder = "Answer #1" })</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("lblFAQ2", "Question # 2")</td>
+            <td><select id="ddlFAQ2" class="inputField" style="height: 30px; width: 234px;"></select></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("lblAns2", "Answer # 2")</td>
+            <td>@Html.TextBox("Answer2", "", new { @class = "inputField", title = "Answer #2", placeholder = "Answer #2" })</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("lblOldPass", "Old Password")</td>
+            <td>@Html.Password("OldPass", "", new { @class = "inputField", title = "Old Password", placeholder = "Old Password" })</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("lblNewPass", "New Password")</td>
+            <td>@Html.Password("NewPass", "", new { @class = "inputField", title = "New Password", placeholder = "New Password" })</td>
+        </tr>
+        <tr>
+            <td>@Html.Label("lblCfmPass", "Confirm Password")</td>
+            <td>@Html.Password("ConfrimPass", "", new { @class = "inputField", title = "Confirm Password", placeholder = "Confirm Password" })</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right"><button type="button" class="inputBtn" onclick=" return firstLogin() ">Submit</button>&nbsp;
+            <button type="button" class="inputBtn" onclick=" $.fancybox.close(); ">Close</button></td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Boundaries Monitoring";
+}
+<div id="map_canvas"></div>
+<input type="text" id="txtTime" value="30" onchange="timeIntervelChanged()" />
+@section scripts
+{
+    <script language="javascript" type="text/javascript">
+        var oc = @Request.QueryString["oc"];
+        var urlGetAllAssetsForMonitoring = "api/VehicleApi/GetAllAssetsForMonitoring?oc=" + oc;
+        var urlLastCdr = "api/VehicleApi/GetLastCdr?assetNo=";
+        var urlGetGeofenseForMonitoring = "api/GeoFenceApi/GetGeofenseForMonitoring?oc=" + oc;
+        var urlGetGfAssetsForMonitoring = "api/GeoFenceApi/GetGfAssetsForMonitoring?oc=" + oc;
+        var urlGetFirstEdrGeoByRtcdttmAndUpdatePullDt = "api/GeoFenceApi/GetFirstEdrGeoByRtcdttmAndUpdatePullDt?oc=" + oc;
+        var urlGetGeoFencesByOrgCode = "api/GeoFenceApi/GetGeoFencesByOrgCode?oc=" + oc;
+        var urlUpdateEdrGeo = "api/GeoFenceApi/UpdateEdrGeo";
+        initialize("map_canvas", karachi, zoom);
+    </script>
+}

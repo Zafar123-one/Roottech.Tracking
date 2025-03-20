@@ -1,0 +1,45 @@
+﻿<form id="geofenseMst" style="display: none">
+    <table>
+        <tr>
+            <td>@Html.Label("Title")</td>
+            <td><input id="txtGeoTitle" type="text" class="themeyInputTextField" style="width:100px"/></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Name")</td>
+            <td><input id="txtGeoName" type="text" class="themeyInputTextField"  style="width:300px"/></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Organization")</td>
+            <td><select id="selGeoFenseOrganizationByUser" class="themeyInputTextField"  style="width:300px"></select></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Company")</td>
+            <td><select id="selGeoFenseCompanyByUser" class="themeyInputTextField"  style="width:300px"></select></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Type")</td>
+            <td><select id="selGeoFenseType" class="themeyInputTextField" disabled="disabled" style="width:150px"></select></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Buffer (mtrs)")</td>
+            <td><input id="txtGeoMargin" type="text" class="themeyInputTextField"  style="width:100px"/></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Comments")</td>
+            <td><input id="txtGeoComments" type="text" class="themeyInputTextField" style="width:300px; height:40px"/></td>
+        </tr>
+        <tr>
+            <td style="text-align: right" colspan="2"><input type="button" class="themeyIntputBtn" value="Save" id="btnGeoFenseSave" />
+                <input type="button" class="themeyIntputBtn" value="Cancel" id="btnGeoFenceCancel" /></td>
+        </tr>
+    </table>
+</form>
+<div id="geoFenceLoader" class="ajax-loader" style="display: none; height: 300px; width:250px; position: absolute;margin-left: 190px;left: 520px;top: 50px;z-index: 999;">
+    <p style="padding-top: 200px;margin-left: -85px;">Please wait, This may take a few minutes.</p>
+</div>
+<script language="javascript" type="text/javascript">
+    var urlsaveGFPoi = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "AddGeofencePoi" })";
+    var urlSetGeofenceMst = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "AddGeofenceMst" })";
+    var urlSetGeofenceDtl = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "AddGeofencedtl" })";
+    var urlAddPolyGeofencedtl = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "AddPolyGeofencedtl" })";
+</script>

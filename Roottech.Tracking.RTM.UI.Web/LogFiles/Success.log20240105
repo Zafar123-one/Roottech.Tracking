@@ -1,0 +1,975 @@
+2024-01-05 13:08:33,621 [36] INFO  NHibernate.Cfg.Environment [(null)] - NHibernate 3.3.1.4000 (3.3.2.GA)
+2024-01-05 13:08:33,647 [36] INFO  NHibernate.Cfg.Environment [(null)] - Bytecode provider name : lcg
+2024-01-05 13:08:33,647 [36] INFO  NHibernate.Cfg.Environment [(null)] - Using reflection optimizer
+2024-01-05 13:08:33,654 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.AssetsImage.hbm.xml
+2024-01-05 13:08:33,715 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,750 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.AssetsImage -> AssetsImage
+2024-01-05 13:08:33,797 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.CurrentStatus.hbm.xml
+2024-01-05 13:08:33,797 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,798 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CurrentStatus -> CurrentStatus
+2024-01-05 13:08:33,799 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.CurrentStatusAmpleView.hbm.xml
+2024-01-05 13:08:33,800 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,800 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CurrentStatusAmpleView -> CurrentStatusAmpleView
+2024-01-05 13:08:33,801 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.FleetInfoAmpleView.hbm.xml
+2024-01-05 13:08:33,801 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,801 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FleetInfoAmpleView -> FleetInfoAmpleView
+2024-01-05 13:08:33,802 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.LastCdr.hbm.xml
+2024-01-05 13:08:33,802 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,802 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.LastCdr -> LastCdr
+2024-01-05 13:08:33,803 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.LastEventAmpleView.hbm.xml
+2024-01-05 13:08:33,803 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,803 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.LastEventAmpleView -> LastEventAmpleView
+2024-01-05 13:08:33,803 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.MonthlyAmpleView.hbm.xml
+2024-01-05 13:08:33,804 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,804 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.MonthlyAmpleView -> MonthlyAmpleView
+2024-01-05 13:08:33,804 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorBoard.hbm.xml
+2024-01-05 13:08:33,804 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,805 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorBoard -> SensorBoard
+2024-01-05 13:08:33,805 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SpeedVehicleReport.hbm.xml
+2024-01-05 13:08:33,805 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,806 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SpeedVehicleReport -> SpeedVehicleReport
+2024-01-05 13:08:33,806 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.StartStopReport.hbm.xml
+2024-01-05 13:08:33,806 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,806 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.StartStopReport -> StartStopReport
+2024-01-05 13:08:33,806 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.VehicleAmpleView.hbm.xml
+2024-01-05 13:08:33,807 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,807 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.VehicleAmpleView -> VehicleAmpleView
+2024-01-05 13:08:33,809 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.VehicleReport.hbm.xml
+2024-01-05 13:08:33,809 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,809 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.VehicleReport -> VehicleReport
+2024-01-05 13:08:33,809 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.MonthWiseSummary.hbm.xml
+2024-01-05 13:08:33,810 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,810 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.MonthWiseSummary -> MonthWiseSummary
+2024-01-05 13:08:33,811 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.CompaniesByUserAndOrg.hbm.xml
+2024-01-05 13:08:33,811 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,811 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.CompaniesByUserAndOrg -> CompaniesByUserAndOrg
+2024-01-05 13:08:33,812 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.VehicleTree.hbm.xml
+2024-01-05 13:08:33,812 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,812 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.FirstLogin.hbm.xml
+2024-01-05 13:08:33,812 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,812 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.FirstLogin -> FirstLogin
+2024-01-05 13:08:33,812 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.ForgotPassword.hbm.xml
+2024-01-05 13:08:33,813 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,813 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.ForgotPassword -> ForgotPassword
+2024-01-05 13:08:33,813 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.Login.hbm.xml
+2024-01-05 13:08:33,813 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,813 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.Login -> Login
+2024-01-05 13:08:33,817 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.OrganizationsByUserCode.hbm.xml
+2024-01-05 13:08:33,817 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,818 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.OrganizationsByUserCode -> OrganizationsByUserCode
+2024-01-05 13:08:33,818 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMSA.Mappings.CompleteLocationByOrgCode.hbm.xml
+2024-01-05 13:08:33,818 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,818 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.CompleteLocationByOrgCode -> CompleteLocationByOrgCode
+2024-01-05 13:08:33,818 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMAA.Mappings.ModAccessByUserAndMod.hbm.xml
+2024-01-05 13:08:33,818 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,819 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModAccessByUserAndMod -> ModAccessByUserAndMod
+2024-01-05 13:08:33,819 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSGI.Mappings.GeoFence.hbm.xml
+2024-01-05 13:08:33,819 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,819 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GeoFence -> GeoFence
+2024-01-05 13:08:33,820 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.TodayStatistics.hbm.xml
+2024-01-05 13:08:33,820 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,820 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.TodayStatistics -> TodayStatistics
+2024-01-05 13:08:33,820 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorInfo.hbm.xml
+2024-01-05 13:08:33,821 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,821 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorInfo -> SensorInfo
+2024-01-05 13:08:33,821 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGenRefuel.hbm.xml
+2024-01-05 13:08:33,821 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,821 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGenRefuel -> RptGenRefuel
+2024-01-05 13:08:33,822 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGenConsumption.hbm.xml
+2024-01-05 13:08:33,822 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,822 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGenConsumption -> RptGenConsumption
+2024-01-05 13:08:33,823 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptFuelTheftDetail.hbm.xml
+2024-01-05 13:08:33,823 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,823 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptFuelTheftDetail -> RptFuelTheftDetail
+2024-01-05 13:08:33,824 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptAssetOperation.hbm.xml
+2024-01-05 13:08:33,824 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,824 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptAssetOperation -> RptAssetOperation
+2024-01-05 13:08:33,825 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGridPowerOperation.hbm.xml
+2024-01-05 13:08:33,830 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,830 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGridPowerOperation -> RptGridPowerOperation
+2024-01-05 13:08:33,858 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGridPowerAssetOperation.hbm.xml
+2024-01-05 13:08:33,858 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,859 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGridPowerAssetOperation -> RptGridPowerAssetOperation
+2024-01-05 13:08:33,860 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptMonthwiseStatistics.hbm.xml
+2024-01-05 13:08:33,861 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,861 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptMonthwiseStatistics -> RptMonthwiseStatistics
+2024-01-05 13:08:33,862 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorInfoVoltage.hbm.xml
+2024-01-05 13:08:33,862 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:33,862 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorInfoVoltage -> SensorInfoVoltage
+2024-01-05 13:08:34,274 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:34,274 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSE.Entities.Organization -> SMSE_Organization_MST_ST
+2024-01-05 13:08:34,275 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAM.Entities.Dashboard -> SMAM_DashBoards_ST
+2024-01-05 13:08:34,276 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Region -> SMSA_Regions_ST
+2024-01-05 13:08:34,276 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Area -> SMSA_Areas_ST
+2024-01-05 13:08:34,284 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Country -> SMSA_Country_ST
+2024-01-05 13:08:34,284 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.TerritoryDtl -> SMSA_TerritoryDTL_ST
+2024-01-05 13:08:34,285 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.State -> SMSA_States_ST
+2024-01-05 13:08:34,285 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.TerritoryMst -> SMSA_TerritoryMST_ST
+2024-01-05 13:08:34,285 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.AreaDtl -> SMSA_AreasDTL_ST
+2024-01-05 13:08:34,286 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.City -> SMSA_Cities_ST
+2024-01-05 13:08:34,286 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Company -> SMSA_Companies_ST
+2024-01-05 13:08:34,286 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.ClientMaster -> SMIM_ClientMaster_ST
+2024-01-05 13:08:34,287 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.RefreshToken -> SMIM_RefreshToken_ST
+2024-01-05 13:08:34,287 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UGroupDtlSt -> SMIM_UGroupDTL_ST
+2024-01-05 13:08:34,287 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UGroupMstSt -> SMIM_UGroupMST_ST
+2024-01-05 13:08:34,288 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UserProfile -> SMIM_UserProfiile_ST
+2024-01-05 13:08:34,291 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.OrgModule -> SMAA_OrgModules_ST
+2024-01-05 13:08:34,291 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.Module -> SMAA_Modules_ST
+2024-01-05 13:08:34,291 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.GFAsset -> GFAsset
+2024-01-05 13:08:34,292 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModDtl -> SMAA_ModObjDtl_ST
+2024-01-05 13:08:34,293 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModMst -> SMAA_ModObjMst_ST
+2024-01-05 13:08:34,293 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.MonitorAsset -> MonitorAsset
+2024-01-05 13:08:34,293 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.DevActivity -> RSSP_DevActivities_HI
+2024-01-05 13:08:34,294 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EDRFuel -> RSSP_EDRFuel_HI
+2024-01-05 13:08:34,296 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EDRFuelRun -> RSSP_EDRFuelRun_HI
+2024-01-05 13:08:34,305 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EdrGeo -> RSSP_EDRGEO_HI
+2024-01-05 13:08:34,305 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EdrLastHi -> RSSP_EDRLast_HI
+2024-01-05 13:08:34,305 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FleetUnitsView -> rspt_FleetUnits_vw
+2024-01-05 13:08:34,306 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SiteDirectory -> RSPT_SiteDirectory_ST
+2024-01-05 13:08:34,308 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.DashboardStationaryV2Vw -> rspt_dashboardStationary_V2_vw
+2024-01-05 13:08:34,309 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupAccessDtl -> RSPT_UGrpAccessDtl_ST
+2024-01-05 13:08:34,310 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CompleteUnitVw -> RSPT_CompleteUnit_Vw
+2024-01-05 13:08:34,311 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.PackageMst -> RSPT_TPCKMst_TR
+2024-01-05 13:08:34,311 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.ResourceType -> RSPT_ResourceType_ST
+2024-01-05 13:08:34,312 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FuelPrice -> RSPT_FuelPrice_TR
+2024-01-05 13:08:34,312 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.Site -> RSPT_Site_TR
+2024-01-05 13:08:34,313 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.TrckUnit -> RSPT_TrckUnits_TR
+2024-01-05 13:08:34,314 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.RsptUStatus -> RSPT_UStatus_ST
+2024-01-05 13:08:34,314 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SiteResource -> RSPT_SITEResource_TR
+2024-01-05 13:08:34,315 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupDtl -> RSPT_UGrpDtl_ST
+2024-01-05 13:08:34,315 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupMst -> RSPT_UGrpMst_ST
+2024-01-05 13:08:34,316 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.DashboardStationaryTestVw -> rspt_dashboardStationary_Test_vw
+2024-01-05 13:08:34,317 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContractMst -> RSMT_ContractMst_TR
+2024-01-05 13:08:34,318 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContSite -> RSMT_ContSites_TR
+2024-01-05 13:08:34,319 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContrType -> RSMT_ContrTypes_ST
+2024-01-05 13:08:34,320 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContrStatus -> RSMT_ContrStatus_ST
+2024-01-05 13:08:34,320 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.Vendor -> RSMT_Vendors_ST
+2024-01-05 13:08:34,321 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFDtl -> RSGI_GFDtl_TR
+2024-01-05 13:08:34,321 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFMst -> RSGI_GFMst_TR
+2024-01-05 13:08:34,321 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFPOI -> RSGI_GFPOI_TR
+2024-01-05 13:08:34,322 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GImage -> RSGI_Images_ST
+2024-01-05 13:08:34,322 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.Poi -> RSGI_POI_TR
+2024-01-05 13:08:34,323 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiType -> RSGI_POITypes_ST
+2024-01-05 13:08:34,324 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.RouteDtl -> RSGI_RouteDtl_TR
+2024-01-05 13:08:34,324 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.RouteMst -> RSGI_RouteMst_TR
+2024-01-05 13:08:34,324 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiImageAccess -> RSGI_POI_Image_Access_TR
+2024-01-05 13:08:34,325 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiImage -> RSGI_POI_Image_TR
+2024-01-05 13:08:34,325 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.OMOP.Entities.ProjectMst -> OMOP_ProjectMST_TR
+2024-01-05 13:08:34,326 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.AssetGroup -> MRAT_AssetGroup_ST
+2024-01-05 13:08:34,326 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.AssetStatus -> MRAT_AssetStatus_ST
+2024-01-05 13:08:34,326 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.Condition -> MRAT_Conditions_ST
+2024-01-05 13:08:34,327 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.Asset -> MRAT_Assets_TR
+2024-01-05 13:08:34,329 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:34,329 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:34,330 [36] INFO  NHibernate.Connection.ConnectionProvider [(null)] - Configuring ConnectionProvider
+2024-01-05 13:08:34,331 [36] INFO  NHibernate.Driver.DriverBase [(null)] - setting ADO.NET command timeout to 10 seconds
+2024-01-05 13:08:49,326 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.AssetsImage.hbm.xml
+2024-01-05 13:08:49,327 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,327 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.AssetsImage -> AssetsImage
+2024-01-05 13:08:49,327 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.CurrentStatus.hbm.xml
+2024-01-05 13:08:49,327 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,327 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CurrentStatus -> CurrentStatus
+2024-01-05 13:08:49,329 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.CurrentStatusAmpleView.hbm.xml
+2024-01-05 13:08:49,329 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,329 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CurrentStatusAmpleView -> CurrentStatusAmpleView
+2024-01-05 13:08:49,330 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.FleetInfoAmpleView.hbm.xml
+2024-01-05 13:08:49,330 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,330 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FleetInfoAmpleView -> FleetInfoAmpleView
+2024-01-05 13:08:49,331 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.LastCdr.hbm.xml
+2024-01-05 13:08:49,331 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,331 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.LastCdr -> LastCdr
+2024-01-05 13:08:49,332 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.LastEventAmpleView.hbm.xml
+2024-01-05 13:08:49,332 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,332 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.LastEventAmpleView -> LastEventAmpleView
+2024-01-05 13:08:49,333 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.MonthlyAmpleView.hbm.xml
+2024-01-05 13:08:49,333 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,333 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.MonthlyAmpleView -> MonthlyAmpleView
+2024-01-05 13:08:49,333 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorBoard.hbm.xml
+2024-01-05 13:08:49,333 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,334 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorBoard -> SensorBoard
+2024-01-05 13:08:49,334 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SpeedVehicleReport.hbm.xml
+2024-01-05 13:08:49,334 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,334 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SpeedVehicleReport -> SpeedVehicleReport
+2024-01-05 13:08:49,334 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.StartStopReport.hbm.xml
+2024-01-05 13:08:49,334 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,335 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.StartStopReport -> StartStopReport
+2024-01-05 13:08:49,335 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.VehicleAmpleView.hbm.xml
+2024-01-05 13:08:49,335 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,336 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.VehicleAmpleView -> VehicleAmpleView
+2024-01-05 13:08:49,338 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.VehicleReport.hbm.xml
+2024-01-05 13:08:49,338 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,338 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.VehicleReport -> VehicleReport
+2024-01-05 13:08:49,338 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.MonthWiseSummary.hbm.xml
+2024-01-05 13:08:49,339 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,339 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.MonthWiseSummary -> MonthWiseSummary
+2024-01-05 13:08:49,339 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.CompaniesByUserAndOrg.hbm.xml
+2024-01-05 13:08:49,339 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,339 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.CompaniesByUserAndOrg -> CompaniesByUserAndOrg
+2024-01-05 13:08:49,340 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.VehicleTree.hbm.xml
+2024-01-05 13:08:49,340 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,340 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.FirstLogin.hbm.xml
+2024-01-05 13:08:49,340 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,340 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.FirstLogin -> FirstLogin
+2024-01-05 13:08:49,340 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.ForgotPassword.hbm.xml
+2024-01-05 13:08:49,341 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,341 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.ForgotPassword -> ForgotPassword
+2024-01-05 13:08:49,341 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.Login.hbm.xml
+2024-01-05 13:08:49,341 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,341 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.Login -> Login
+2024-01-05 13:08:49,342 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.OrganizationsByUserCode.hbm.xml
+2024-01-05 13:08:49,342 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,342 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.OrganizationsByUserCode -> OrganizationsByUserCode
+2024-01-05 13:08:49,342 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMSA.Mappings.CompleteLocationByOrgCode.hbm.xml
+2024-01-05 13:08:49,343 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,343 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.CompleteLocationByOrgCode -> CompleteLocationByOrgCode
+2024-01-05 13:08:49,343 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMAA.Mappings.ModAccessByUserAndMod.hbm.xml
+2024-01-05 13:08:49,343 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,343 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModAccessByUserAndMod -> ModAccessByUserAndMod
+2024-01-05 13:08:49,344 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSGI.Mappings.GeoFence.hbm.xml
+2024-01-05 13:08:49,344 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,344 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GeoFence -> GeoFence
+2024-01-05 13:08:49,345 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.TodayStatistics.hbm.xml
+2024-01-05 13:08:49,345 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,345 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.TodayStatistics -> TodayStatistics
+2024-01-05 13:08:49,346 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorInfo.hbm.xml
+2024-01-05 13:08:49,346 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,346 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorInfo -> SensorInfo
+2024-01-05 13:08:49,347 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGenRefuel.hbm.xml
+2024-01-05 13:08:49,347 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,347 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGenRefuel -> RptGenRefuel
+2024-01-05 13:08:49,347 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGenConsumption.hbm.xml
+2024-01-05 13:08:49,348 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,348 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGenConsumption -> RptGenConsumption
+2024-01-05 13:08:49,349 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptFuelTheftDetail.hbm.xml
+2024-01-05 13:08:49,349 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,349 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptFuelTheftDetail -> RptFuelTheftDetail
+2024-01-05 13:08:49,349 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptAssetOperation.hbm.xml
+2024-01-05 13:08:49,350 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,350 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptAssetOperation -> RptAssetOperation
+2024-01-05 13:08:49,350 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGridPowerOperation.hbm.xml
+2024-01-05 13:08:49,351 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,351 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGridPowerOperation -> RptGridPowerOperation
+2024-01-05 13:08:49,352 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGridPowerAssetOperation.hbm.xml
+2024-01-05 13:08:49,353 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,353 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGridPowerAssetOperation -> RptGridPowerAssetOperation
+2024-01-05 13:08:49,354 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptMonthwiseStatistics.hbm.xml
+2024-01-05 13:08:49,354 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,354 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptMonthwiseStatistics -> RptMonthwiseStatistics
+2024-01-05 13:08:49,355 [36] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorInfoVoltage.hbm.xml
+2024-01-05 13:08:49,355 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,355 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorInfoVoltage -> SensorInfoVoltage
+2024-01-05 13:08:49,366 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,366 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSE.Entities.Organization -> SMSE_Organization_MST_ST
+2024-01-05 13:08:49,366 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAM.Entities.Dashboard -> SMAM_DashBoards_ST
+2024-01-05 13:08:49,367 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Region -> SMSA_Regions_ST
+2024-01-05 13:08:49,367 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Area -> SMSA_Areas_ST
+2024-01-05 13:08:49,367 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Country -> SMSA_Country_ST
+2024-01-05 13:08:49,368 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.TerritoryDtl -> SMSA_TerritoryDTL_ST
+2024-01-05 13:08:49,368 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.State -> SMSA_States_ST
+2024-01-05 13:08:49,369 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.TerritoryMst -> SMSA_TerritoryMST_ST
+2024-01-05 13:08:49,369 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.AreaDtl -> SMSA_AreasDTL_ST
+2024-01-05 13:08:49,369 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.City -> SMSA_Cities_ST
+2024-01-05 13:08:49,370 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Company -> SMSA_Companies_ST
+2024-01-05 13:08:49,370 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.ClientMaster -> SMIM_ClientMaster_ST
+2024-01-05 13:08:49,370 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.RefreshToken -> SMIM_RefreshToken_ST
+2024-01-05 13:08:49,371 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UGroupDtlSt -> SMIM_UGroupDTL_ST
+2024-01-05 13:08:49,371 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UGroupMstSt -> SMIM_UGroupMST_ST
+2024-01-05 13:08:49,371 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UserProfile -> SMIM_UserProfiile_ST
+2024-01-05 13:08:49,372 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.OrgModule -> SMAA_OrgModules_ST
+2024-01-05 13:08:49,372 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.Module -> SMAA_Modules_ST
+2024-01-05 13:08:49,373 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.GFAsset -> GFAsset
+2024-01-05 13:08:49,373 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModDtl -> SMAA_ModObjDtl_ST
+2024-01-05 13:08:49,373 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModMst -> SMAA_ModObjMst_ST
+2024-01-05 13:08:49,374 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.MonitorAsset -> MonitorAsset
+2024-01-05 13:08:49,374 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.DevActivity -> RSSP_DevActivities_HI
+2024-01-05 13:08:49,374 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EDRFuel -> RSSP_EDRFuel_HI
+2024-01-05 13:08:49,376 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EDRFuelRun -> RSSP_EDRFuelRun_HI
+2024-01-05 13:08:49,376 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EdrGeo -> RSSP_EDRGEO_HI
+2024-01-05 13:08:49,376 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EdrLastHi -> RSSP_EDRLast_HI
+2024-01-05 13:08:49,377 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FleetUnitsView -> rspt_FleetUnits_vw
+2024-01-05 13:08:49,378 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SiteDirectory -> RSPT_SiteDirectory_ST
+2024-01-05 13:08:49,378 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.DashboardStationaryV2Vw -> rspt_dashboardStationary_V2_vw
+2024-01-05 13:08:49,379 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupAccessDtl -> RSPT_UGrpAccessDtl_ST
+2024-01-05 13:08:49,380 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CompleteUnitVw -> RSPT_CompleteUnit_Vw
+2024-01-05 13:08:49,380 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.PackageMst -> RSPT_TPCKMst_TR
+2024-01-05 13:08:49,381 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.ResourceType -> RSPT_ResourceType_ST
+2024-01-05 13:08:49,381 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FuelPrice -> RSPT_FuelPrice_TR
+2024-01-05 13:08:49,382 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.Site -> RSPT_Site_TR
+2024-01-05 13:08:49,383 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.TrckUnit -> RSPT_TrckUnits_TR
+2024-01-05 13:08:49,384 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.RsptUStatus -> RSPT_UStatus_ST
+2024-01-05 13:08:49,384 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SiteResource -> RSPT_SITEResource_TR
+2024-01-05 13:08:49,385 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupDtl -> RSPT_UGrpDtl_ST
+2024-01-05 13:08:49,385 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupMst -> RSPT_UGrpMst_ST
+2024-01-05 13:08:49,386 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.DashboardStationaryTestVw -> rspt_dashboardStationary_Test_vw
+2024-01-05 13:08:49,387 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContractMst -> RSMT_ContractMst_TR
+2024-01-05 13:08:49,388 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContSite -> RSMT_ContSites_TR
+2024-01-05 13:08:49,388 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContrType -> RSMT_ContrTypes_ST
+2024-01-05 13:08:49,389 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContrStatus -> RSMT_ContrStatus_ST
+2024-01-05 13:08:49,389 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.Vendor -> RSMT_Vendors_ST
+2024-01-05 13:08:49,390 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFDtl -> RSGI_GFDtl_TR
+2024-01-05 13:08:49,390 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFMst -> RSGI_GFMst_TR
+2024-01-05 13:08:49,391 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFPOI -> RSGI_GFPOI_TR
+2024-01-05 13:08:49,391 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GImage -> RSGI_Images_ST
+2024-01-05 13:08:49,391 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.Poi -> RSGI_POI_TR
+2024-01-05 13:08:49,392 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiType -> RSGI_POITypes_ST
+2024-01-05 13:08:49,392 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.RouteDtl -> RSGI_RouteDtl_TR
+2024-01-05 13:08:49,393 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.RouteMst -> RSGI_RouteMst_TR
+2024-01-05 13:08:49,393 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiImageAccess -> RSGI_POI_Image_Access_TR
+2024-01-05 13:08:49,393 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiImage -> RSGI_POI_Image_TR
+2024-01-05 13:08:49,394 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.OMOP.Entities.ProjectMst -> OMOP_ProjectMST_TR
+2024-01-05 13:08:49,394 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.AssetGroup -> MRAT_AssetGroup_ST
+2024-01-05 13:08:49,395 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.AssetStatus -> MRAT_AssetStatus_ST
+2024-01-05 13:08:49,395 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.Condition -> MRAT_Conditions_ST
+2024-01-05 13:08:49,395 [36] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.Asset -> MRAT_Assets_TR
+2024-01-05 13:08:49,396 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,397 [36] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,397 [36] INFO  NHibernate.Connection.ConnectionProvider [(null)] - Configuring ConnectionProvider
+2024-01-05 13:08:49,397 [36] INFO  NHibernate.Driver.DriverBase [(null)] - setting ADO.NET command timeout to 10 seconds
+2024-01-05 13:08:49,439 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.AssetsImage.hbm.xml
+2024-01-05 13:08:49,439 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,440 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.AssetsImage -> AssetsImage
+2024-01-05 13:08:49,440 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.CurrentStatus.hbm.xml
+2024-01-05 13:08:49,440 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,440 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CurrentStatus -> CurrentStatus
+2024-01-05 13:08:49,441 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.CurrentStatusAmpleView.hbm.xml
+2024-01-05 13:08:49,441 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,442 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CurrentStatusAmpleView -> CurrentStatusAmpleView
+2024-01-05 13:08:49,442 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.FleetInfoAmpleView.hbm.xml
+2024-01-05 13:08:49,442 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,443 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FleetInfoAmpleView -> FleetInfoAmpleView
+2024-01-05 13:08:49,443 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.LastCdr.hbm.xml
+2024-01-05 13:08:49,443 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,443 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.LastCdr -> LastCdr
+2024-01-05 13:08:49,444 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.LastEventAmpleView.hbm.xml
+2024-01-05 13:08:49,444 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,444 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.LastEventAmpleView -> LastEventAmpleView
+2024-01-05 13:08:49,445 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.MonthlyAmpleView.hbm.xml
+2024-01-05 13:08:49,445 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,445 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.MonthlyAmpleView -> MonthlyAmpleView
+2024-01-05 13:08:49,445 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorBoard.hbm.xml
+2024-01-05 13:08:49,445 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,446 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorBoard -> SensorBoard
+2024-01-05 13:08:49,446 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SpeedVehicleReport.hbm.xml
+2024-01-05 13:08:49,446 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,446 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SpeedVehicleReport -> SpeedVehicleReport
+2024-01-05 13:08:49,446 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.StartStopReport.hbm.xml
+2024-01-05 13:08:49,446 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,447 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.StartStopReport -> StartStopReport
+2024-01-05 13:08:49,447 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.VehicleAmpleView.hbm.xml
+2024-01-05 13:08:49,447 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,447 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.VehicleAmpleView -> VehicleAmpleView
+2024-01-05 13:08:49,449 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.VehicleReport.hbm.xml
+2024-01-05 13:08:49,449 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,449 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.VehicleReport -> VehicleReport
+2024-01-05 13:08:49,449 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.MonthWiseSummary.hbm.xml
+2024-01-05 13:08:49,449 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,450 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.MonthWiseSummary -> MonthWiseSummary
+2024-01-05 13:08:49,450 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.CompaniesByUserAndOrg.hbm.xml
+2024-01-05 13:08:49,450 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,451 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.CompaniesByUserAndOrg -> CompaniesByUserAndOrg
+2024-01-05 13:08:49,451 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.VehicleTree.hbm.xml
+2024-01-05 13:08:49,451 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,451 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.FirstLogin.hbm.xml
+2024-01-05 13:08:49,451 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,452 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.FirstLogin -> FirstLogin
+2024-01-05 13:08:49,452 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.ForgotPassword.hbm.xml
+2024-01-05 13:08:49,452 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,452 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.ForgotPassword -> ForgotPassword
+2024-01-05 13:08:49,452 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.Login.hbm.xml
+2024-01-05 13:08:49,452 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,453 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.Login -> Login
+2024-01-05 13:08:49,453 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.OrganizationsByUserCode.hbm.xml
+2024-01-05 13:08:49,453 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,453 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.OrganizationsByUserCode -> OrganizationsByUserCode
+2024-01-05 13:08:49,454 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMSA.Mappings.CompleteLocationByOrgCode.hbm.xml
+2024-01-05 13:08:49,454 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,454 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.CompleteLocationByOrgCode -> CompleteLocationByOrgCode
+2024-01-05 13:08:49,454 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMAA.Mappings.ModAccessByUserAndMod.hbm.xml
+2024-01-05 13:08:49,454 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,454 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModAccessByUserAndMod -> ModAccessByUserAndMod
+2024-01-05 13:08:49,455 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSGI.Mappings.GeoFence.hbm.xml
+2024-01-05 13:08:49,455 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,455 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GeoFence -> GeoFence
+2024-01-05 13:08:49,456 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.TodayStatistics.hbm.xml
+2024-01-05 13:08:49,456 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,456 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.TodayStatistics -> TodayStatistics
+2024-01-05 13:08:49,457 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorInfo.hbm.xml
+2024-01-05 13:08:49,457 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,457 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorInfo -> SensorInfo
+2024-01-05 13:08:49,457 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGenRefuel.hbm.xml
+2024-01-05 13:08:49,457 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,458 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGenRefuel -> RptGenRefuel
+2024-01-05 13:08:49,458 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGenConsumption.hbm.xml
+2024-01-05 13:08:49,458 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,458 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGenConsumption -> RptGenConsumption
+2024-01-05 13:08:49,459 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptFuelTheftDetail.hbm.xml
+2024-01-05 13:08:49,459 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,459 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptFuelTheftDetail -> RptFuelTheftDetail
+2024-01-05 13:08:49,460 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptAssetOperation.hbm.xml
+2024-01-05 13:08:49,460 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,460 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptAssetOperation -> RptAssetOperation
+2024-01-05 13:08:49,460 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGridPowerOperation.hbm.xml
+2024-01-05 13:08:49,461 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,461 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGridPowerOperation -> RptGridPowerOperation
+2024-01-05 13:08:49,461 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGridPowerAssetOperation.hbm.xml
+2024-01-05 13:08:49,462 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,462 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGridPowerAssetOperation -> RptGridPowerAssetOperation
+2024-01-05 13:08:49,463 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptMonthwiseStatistics.hbm.xml
+2024-01-05 13:08:49,463 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,463 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptMonthwiseStatistics -> RptMonthwiseStatistics
+2024-01-05 13:08:49,464 [25] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorInfoVoltage.hbm.xml
+2024-01-05 13:08:49,464 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,464 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorInfoVoltage -> SensorInfoVoltage
+2024-01-05 13:08:49,476 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,476 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSE.Entities.Organization -> SMSE_Organization_MST_ST
+2024-01-05 13:08:49,476 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAM.Entities.Dashboard -> SMAM_DashBoards_ST
+2024-01-05 13:08:49,477 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Region -> SMSA_Regions_ST
+2024-01-05 13:08:49,477 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Area -> SMSA_Areas_ST
+2024-01-05 13:08:49,478 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Country -> SMSA_Country_ST
+2024-01-05 13:08:49,478 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.TerritoryDtl -> SMSA_TerritoryDTL_ST
+2024-01-05 13:08:49,479 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.State -> SMSA_States_ST
+2024-01-05 13:08:49,479 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.TerritoryMst -> SMSA_TerritoryMST_ST
+2024-01-05 13:08:49,480 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.AreaDtl -> SMSA_AreasDTL_ST
+2024-01-05 13:08:49,480 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.City -> SMSA_Cities_ST
+2024-01-05 13:08:49,481 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Company -> SMSA_Companies_ST
+2024-01-05 13:08:49,481 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.ClientMaster -> SMIM_ClientMaster_ST
+2024-01-05 13:08:49,481 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.RefreshToken -> SMIM_RefreshToken_ST
+2024-01-05 13:08:49,481 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UGroupDtlSt -> SMIM_UGroupDTL_ST
+2024-01-05 13:08:49,482 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UGroupMstSt -> SMIM_UGroupMST_ST
+2024-01-05 13:08:49,482 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UserProfile -> SMIM_UserProfiile_ST
+2024-01-05 13:08:49,483 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.OrgModule -> SMAA_OrgModules_ST
+2024-01-05 13:08:49,484 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.Module -> SMAA_Modules_ST
+2024-01-05 13:08:49,484 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.GFAsset -> GFAsset
+2024-01-05 13:08:49,484 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModDtl -> SMAA_ModObjDtl_ST
+2024-01-05 13:08:49,485 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModMst -> SMAA_ModObjMst_ST
+2024-01-05 13:08:49,485 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.MonitorAsset -> MonitorAsset
+2024-01-05 13:08:49,485 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.DevActivity -> RSSP_DevActivities_HI
+2024-01-05 13:08:49,486 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EDRFuel -> RSSP_EDRFuel_HI
+2024-01-05 13:08:49,487 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EDRFuelRun -> RSSP_EDRFuelRun_HI
+2024-01-05 13:08:49,488 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EdrGeo -> RSSP_EDRGEO_HI
+2024-01-05 13:08:49,488 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EdrLastHi -> RSSP_EDRLast_HI
+2024-01-05 13:08:49,489 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FleetUnitsView -> rspt_FleetUnits_vw
+2024-01-05 13:08:49,490 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SiteDirectory -> RSPT_SiteDirectory_ST
+2024-01-05 13:08:49,490 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.DashboardStationaryV2Vw -> rspt_dashboardStationary_V2_vw
+2024-01-05 13:08:49,492 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupAccessDtl -> RSPT_UGrpAccessDtl_ST
+2024-01-05 13:08:49,492 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CompleteUnitVw -> RSPT_CompleteUnit_Vw
+2024-01-05 13:08:49,493 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.PackageMst -> RSPT_TPCKMst_TR
+2024-01-05 13:08:49,494 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.ResourceType -> RSPT_ResourceType_ST
+2024-01-05 13:08:49,494 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FuelPrice -> RSPT_FuelPrice_TR
+2024-01-05 13:08:49,494 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.Site -> RSPT_Site_TR
+2024-01-05 13:08:49,496 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.TrckUnit -> RSPT_TrckUnits_TR
+2024-01-05 13:08:49,497 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.RsptUStatus -> RSPT_UStatus_ST
+2024-01-05 13:08:49,497 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SiteResource -> RSPT_SITEResource_TR
+2024-01-05 13:08:49,498 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupDtl -> RSPT_UGrpDtl_ST
+2024-01-05 13:08:49,498 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupMst -> RSPT_UGrpMst_ST
+2024-01-05 13:08:49,499 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.DashboardStationaryTestVw -> rspt_dashboardStationary_Test_vw
+2024-01-05 13:08:49,500 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContractMst -> RSMT_ContractMst_TR
+2024-01-05 13:08:49,501 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContSite -> RSMT_ContSites_TR
+2024-01-05 13:08:49,502 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContrType -> RSMT_ContrTypes_ST
+2024-01-05 13:08:49,502 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContrStatus -> RSMT_ContrStatus_ST
+2024-01-05 13:08:49,502 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.Vendor -> RSMT_Vendors_ST
+2024-01-05 13:08:49,503 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFDtl -> RSGI_GFDtl_TR
+2024-01-05 13:08:49,504 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFMst -> RSGI_GFMst_TR
+2024-01-05 13:08:49,504 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFPOI -> RSGI_GFPOI_TR
+2024-01-05 13:08:49,505 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GImage -> RSGI_Images_ST
+2024-01-05 13:08:49,505 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.Poi -> RSGI_POI_TR
+2024-01-05 13:08:49,506 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiType -> RSGI_POITypes_ST
+2024-01-05 13:08:49,506 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.RouteDtl -> RSGI_RouteDtl_TR
+2024-01-05 13:08:49,507 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.RouteMst -> RSGI_RouteMst_TR
+2024-01-05 13:08:49,507 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiImageAccess -> RSGI_POI_Image_Access_TR
+2024-01-05 13:08:49,507 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiImage -> RSGI_POI_Image_TR
+2024-01-05 13:08:49,508 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.OMOP.Entities.ProjectMst -> OMOP_ProjectMST_TR
+2024-01-05 13:08:49,509 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.AssetGroup -> MRAT_AssetGroup_ST
+2024-01-05 13:08:49,509 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.AssetStatus -> MRAT_AssetStatus_ST
+2024-01-05 13:08:49,509 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.Condition -> MRAT_Conditions_ST
+2024-01-05 13:08:49,510 [25] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.Asset -> MRAT_Assets_TR
+2024-01-05 13:08:49,511 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,511 [25] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,511 [25] INFO  NHibernate.Connection.ConnectionProvider [(null)] - Configuring ConnectionProvider
+2024-01-05 13:08:49,511 [25] INFO  NHibernate.Driver.DriverBase [(null)] - setting ADO.NET command timeout to 10 seconds
+2024-01-05 13:08:49,712 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.AssetsImage.hbm.xml
+2024-01-05 13:08:49,712 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,712 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.AssetsImage -> AssetsImage
+2024-01-05 13:08:49,713 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.CurrentStatus.hbm.xml
+2024-01-05 13:08:49,713 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,713 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CurrentStatus -> CurrentStatus
+2024-01-05 13:08:49,714 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.CurrentStatusAmpleView.hbm.xml
+2024-01-05 13:08:49,715 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,715 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CurrentStatusAmpleView -> CurrentStatusAmpleView
+2024-01-05 13:08:49,715 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.FleetInfoAmpleView.hbm.xml
+2024-01-05 13:08:49,716 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,716 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FleetInfoAmpleView -> FleetInfoAmpleView
+2024-01-05 13:08:49,716 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.LastCdr.hbm.xml
+2024-01-05 13:08:49,717 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,717 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.LastCdr -> LastCdr
+2024-01-05 13:08:49,717 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.LastEventAmpleView.hbm.xml
+2024-01-05 13:08:49,717 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,718 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.LastEventAmpleView -> LastEventAmpleView
+2024-01-05 13:08:49,718 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.MonthlyAmpleView.hbm.xml
+2024-01-05 13:08:49,718 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,718 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.MonthlyAmpleView -> MonthlyAmpleView
+2024-01-05 13:08:49,719 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorBoard.hbm.xml
+2024-01-05 13:08:49,719 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,719 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorBoard -> SensorBoard
+2024-01-05 13:08:49,719 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SpeedVehicleReport.hbm.xml
+2024-01-05 13:08:49,719 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,719 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SpeedVehicleReport -> SpeedVehicleReport
+2024-01-05 13:08:49,720 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.StartStopReport.hbm.xml
+2024-01-05 13:08:49,720 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,720 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.StartStopReport -> StartStopReport
+2024-01-05 13:08:49,720 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.VehicleAmpleView.hbm.xml
+2024-01-05 13:08:49,721 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,721 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.VehicleAmpleView -> VehicleAmpleView
+2024-01-05 13:08:49,722 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.VehicleReport.hbm.xml
+2024-01-05 13:08:49,722 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,722 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.VehicleReport -> VehicleReport
+2024-01-05 13:08:49,723 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.MonthWiseSummary.hbm.xml
+2024-01-05 13:08:49,723 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,723 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.MonthWiseSummary -> MonthWiseSummary
+2024-01-05 13:08:49,724 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.CompaniesByUserAndOrg.hbm.xml
+2024-01-05 13:08:49,724 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,724 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.CompaniesByUserAndOrg -> CompaniesByUserAndOrg
+2024-01-05 13:08:49,725 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.VehicleTree.hbm.xml
+2024-01-05 13:08:49,725 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,725 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.FirstLogin.hbm.xml
+2024-01-05 13:08:49,725 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,725 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.FirstLogin -> FirstLogin
+2024-01-05 13:08:49,725 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.ForgotPassword.hbm.xml
+2024-01-05 13:08:49,725 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,726 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.ForgotPassword -> ForgotPassword
+2024-01-05 13:08:49,726 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.Login.hbm.xml
+2024-01-05 13:08:49,726 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,726 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.Login -> Login
+2024-01-05 13:08:49,726 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.OrganizationsByUserCode.hbm.xml
+2024-01-05 13:08:49,727 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,727 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.OrganizationsByUserCode -> OrganizationsByUserCode
+2024-01-05 13:08:49,727 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMSA.Mappings.CompleteLocationByOrgCode.hbm.xml
+2024-01-05 13:08:49,727 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,727 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.CompleteLocationByOrgCode -> CompleteLocationByOrgCode
+2024-01-05 13:08:49,727 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMAA.Mappings.ModAccessByUserAndMod.hbm.xml
+2024-01-05 13:08:49,728 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,728 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModAccessByUserAndMod -> ModAccessByUserAndMod
+2024-01-05 13:08:49,728 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSGI.Mappings.GeoFence.hbm.xml
+2024-01-05 13:08:49,728 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,729 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GeoFence -> GeoFence
+2024-01-05 13:08:49,729 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.TodayStatistics.hbm.xml
+2024-01-05 13:08:49,729 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,730 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.TodayStatistics -> TodayStatistics
+2024-01-05 13:08:49,730 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorInfo.hbm.xml
+2024-01-05 13:08:49,730 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,730 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorInfo -> SensorInfo
+2024-01-05 13:08:49,730 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGenRefuel.hbm.xml
+2024-01-05 13:08:49,731 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,731 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGenRefuel -> RptGenRefuel
+2024-01-05 13:08:49,731 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGenConsumption.hbm.xml
+2024-01-05 13:08:49,731 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,732 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGenConsumption -> RptGenConsumption
+2024-01-05 13:08:49,732 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptFuelTheftDetail.hbm.xml
+2024-01-05 13:08:49,732 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,732 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptFuelTheftDetail -> RptFuelTheftDetail
+2024-01-05 13:08:49,733 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptAssetOperation.hbm.xml
+2024-01-05 13:08:49,733 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,733 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptAssetOperation -> RptAssetOperation
+2024-01-05 13:08:49,734 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGridPowerOperation.hbm.xml
+2024-01-05 13:08:49,734 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,735 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGridPowerOperation -> RptGridPowerOperation
+2024-01-05 13:08:49,736 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGridPowerAssetOperation.hbm.xml
+2024-01-05 13:08:49,736 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,737 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGridPowerAssetOperation -> RptGridPowerAssetOperation
+2024-01-05 13:08:49,737 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptMonthwiseStatistics.hbm.xml
+2024-01-05 13:08:49,738 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,738 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptMonthwiseStatistics -> RptMonthwiseStatistics
+2024-01-05 13:08:49,738 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorInfoVoltage.hbm.xml
+2024-01-05 13:08:49,738 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,738 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorInfoVoltage -> SensorInfoVoltage
+2024-01-05 13:08:49,749 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,750 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSE.Entities.Organization -> SMSE_Organization_MST_ST
+2024-01-05 13:08:49,750 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAM.Entities.Dashboard -> SMAM_DashBoards_ST
+2024-01-05 13:08:49,750 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Region -> SMSA_Regions_ST
+2024-01-05 13:08:49,751 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Area -> SMSA_Areas_ST
+2024-01-05 13:08:49,751 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Country -> SMSA_Country_ST
+2024-01-05 13:08:49,752 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.TerritoryDtl -> SMSA_TerritoryDTL_ST
+2024-01-05 13:08:49,752 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.State -> SMSA_States_ST
+2024-01-05 13:08:49,753 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.TerritoryMst -> SMSA_TerritoryMST_ST
+2024-01-05 13:08:49,753 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.AreaDtl -> SMSA_AreasDTL_ST
+2024-01-05 13:08:49,754 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.City -> SMSA_Cities_ST
+2024-01-05 13:08:49,754 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Company -> SMSA_Companies_ST
+2024-01-05 13:08:49,755 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.ClientMaster -> SMIM_ClientMaster_ST
+2024-01-05 13:08:49,755 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.RefreshToken -> SMIM_RefreshToken_ST
+2024-01-05 13:08:49,755 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UGroupDtlSt -> SMIM_UGroupDTL_ST
+2024-01-05 13:08:49,756 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UGroupMstSt -> SMIM_UGroupMST_ST
+2024-01-05 13:08:49,756 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UserProfile -> SMIM_UserProfiile_ST
+2024-01-05 13:08:49,757 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.OrgModule -> SMAA_OrgModules_ST
+2024-01-05 13:08:49,757 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.Module -> SMAA_Modules_ST
+2024-01-05 13:08:49,758 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.GFAsset -> GFAsset
+2024-01-05 13:08:49,758 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModDtl -> SMAA_ModObjDtl_ST
+2024-01-05 13:08:49,759 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModMst -> SMAA_ModObjMst_ST
+2024-01-05 13:08:49,759 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.MonitorAsset -> MonitorAsset
+2024-01-05 13:08:49,759 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.DevActivity -> RSSP_DevActivities_HI
+2024-01-05 13:08:49,760 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EDRFuel -> RSSP_EDRFuel_HI
+2024-01-05 13:08:49,761 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EDRFuelRun -> RSSP_EDRFuelRun_HI
+2024-01-05 13:08:49,762 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EdrGeo -> RSSP_EDRGEO_HI
+2024-01-05 13:08:49,762 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EdrLastHi -> RSSP_EDRLast_HI
+2024-01-05 13:08:49,762 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FleetUnitsView -> rspt_FleetUnits_vw
+2024-01-05 13:08:49,763 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SiteDirectory -> RSPT_SiteDirectory_ST
+2024-01-05 13:08:49,764 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.DashboardStationaryV2Vw -> rspt_dashboardStationary_V2_vw
+2024-01-05 13:08:49,766 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupAccessDtl -> RSPT_UGrpAccessDtl_ST
+2024-01-05 13:08:49,766 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CompleteUnitVw -> RSPT_CompleteUnit_Vw
+2024-01-05 13:08:49,767 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.PackageMst -> RSPT_TPCKMst_TR
+2024-01-05 13:08:49,768 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.ResourceType -> RSPT_ResourceType_ST
+2024-01-05 13:08:49,768 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FuelPrice -> RSPT_FuelPrice_TR
+2024-01-05 13:08:49,768 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.Site -> RSPT_Site_TR
+2024-01-05 13:08:49,770 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.TrckUnit -> RSPT_TrckUnits_TR
+2024-01-05 13:08:49,771 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.RsptUStatus -> RSPT_UStatus_ST
+2024-01-05 13:08:49,771 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SiteResource -> RSPT_SITEResource_TR
+2024-01-05 13:08:49,772 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupDtl -> RSPT_UGrpDtl_ST
+2024-01-05 13:08:49,772 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupMst -> RSPT_UGrpMst_ST
+2024-01-05 13:08:49,773 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.DashboardStationaryTestVw -> rspt_dashboardStationary_Test_vw
+2024-01-05 13:08:49,774 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContractMst -> RSMT_ContractMst_TR
+2024-01-05 13:08:49,775 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContSite -> RSMT_ContSites_TR
+2024-01-05 13:08:49,775 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContrType -> RSMT_ContrTypes_ST
+2024-01-05 13:08:49,776 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContrStatus -> RSMT_ContrStatus_ST
+2024-01-05 13:08:49,776 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.Vendor -> RSMT_Vendors_ST
+2024-01-05 13:08:49,777 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFDtl -> RSGI_GFDtl_TR
+2024-01-05 13:08:49,777 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFMst -> RSGI_GFMst_TR
+2024-01-05 13:08:49,778 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFPOI -> RSGI_GFPOI_TR
+2024-01-05 13:08:49,778 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GImage -> RSGI_Images_ST
+2024-01-05 13:08:49,778 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.Poi -> RSGI_POI_TR
+2024-01-05 13:08:49,779 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiType -> RSGI_POITypes_ST
+2024-01-05 13:08:49,779 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.RouteDtl -> RSGI_RouteDtl_TR
+2024-01-05 13:08:49,780 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.RouteMst -> RSGI_RouteMst_TR
+2024-01-05 13:08:49,780 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiImageAccess -> RSGI_POI_Image_Access_TR
+2024-01-05 13:08:49,780 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiImage -> RSGI_POI_Image_TR
+2024-01-05 13:08:49,781 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.OMOP.Entities.ProjectMst -> OMOP_ProjectMST_TR
+2024-01-05 13:08:49,781 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.AssetGroup -> MRAT_AssetGroup_ST
+2024-01-05 13:08:49,782 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.AssetStatus -> MRAT_AssetStatus_ST
+2024-01-05 13:08:49,782 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.Condition -> MRAT_Conditions_ST
+2024-01-05 13:08:49,782 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.Asset -> MRAT_Assets_TR
+2024-01-05 13:08:49,783 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,784 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,784 [39] INFO  NHibernate.Connection.ConnectionProvider [(null)] - Configuring ConnectionProvider
+2024-01-05 13:08:49,784 [39] INFO  NHibernate.Driver.DriverBase [(null)] - setting ADO.NET command timeout to 10 seconds
+2024-01-05 13:08:49,784 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.AssetsImage.hbm.xml
+2024-01-05 13:08:49,784 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,784 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.AssetsImage -> AssetsImage
+2024-01-05 13:08:49,785 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.CurrentStatus.hbm.xml
+2024-01-05 13:08:49,785 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,786 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CurrentStatus -> CurrentStatus
+2024-01-05 13:08:49,786 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.CurrentStatusAmpleView.hbm.xml
+2024-01-05 13:08:49,787 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,787 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CurrentStatusAmpleView -> CurrentStatusAmpleView
+2024-01-05 13:08:49,788 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.FleetInfoAmpleView.hbm.xml
+2024-01-05 13:08:49,788 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,788 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FleetInfoAmpleView -> FleetInfoAmpleView
+2024-01-05 13:08:49,788 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.LastCdr.hbm.xml
+2024-01-05 13:08:49,789 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,789 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.LastCdr -> LastCdr
+2024-01-05 13:08:49,790 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.LastEventAmpleView.hbm.xml
+2024-01-05 13:08:49,790 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,790 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.LastEventAmpleView -> LastEventAmpleView
+2024-01-05 13:08:49,790 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.MonthlyAmpleView.hbm.xml
+2024-01-05 13:08:49,791 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,791 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.MonthlyAmpleView -> MonthlyAmpleView
+2024-01-05 13:08:49,791 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorBoard.hbm.xml
+2024-01-05 13:08:49,791 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,791 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorBoard -> SensorBoard
+2024-01-05 13:08:49,791 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SpeedVehicleReport.hbm.xml
+2024-01-05 13:08:49,792 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,792 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SpeedVehicleReport -> SpeedVehicleReport
+2024-01-05 13:08:49,792 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.StartStopReport.hbm.xml
+2024-01-05 13:08:49,792 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,792 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.StartStopReport -> StartStopReport
+2024-01-05 13:08:49,792 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.VehicleAmpleView.hbm.xml
+2024-01-05 13:08:49,793 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,793 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.VehicleAmpleView -> VehicleAmpleView
+2024-01-05 13:08:49,794 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.VehicleReport.hbm.xml
+2024-01-05 13:08:49,794 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,794 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.VehicleReport -> VehicleReport
+2024-01-05 13:08:49,795 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.MonthWiseSummary.hbm.xml
+2024-01-05 13:08:49,795 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,795 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.MonthWiseSummary -> MonthWiseSummary
+2024-01-05 13:08:49,795 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.CompaniesByUserAndOrg.hbm.xml
+2024-01-05 13:08:49,796 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,796 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.CompaniesByUserAndOrg -> CompaniesByUserAndOrg
+2024-01-05 13:08:49,796 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.VehicleTree.hbm.xml
+2024-01-05 13:08:49,796 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,796 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.FirstLogin.hbm.xml
+2024-01-05 13:08:49,796 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,796 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.FirstLogin -> FirstLogin
+2024-01-05 13:08:49,797 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.ForgotPassword.hbm.xml
+2024-01-05 13:08:49,797 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,797 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.ForgotPassword -> ForgotPassword
+2024-01-05 13:08:49,797 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.Login.hbm.xml
+2024-01-05 13:08:49,797 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,797 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.Login -> Login
+2024-01-05 13:08:49,798 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.OrganizationsByUserCode.hbm.xml
+2024-01-05 13:08:49,798 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,798 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.OrganizationsByUserCode -> OrganizationsByUserCode
+2024-01-05 13:08:49,798 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMSA.Mappings.CompleteLocationByOrgCode.hbm.xml
+2024-01-05 13:08:49,798 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,799 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.CompleteLocationByOrgCode -> CompleteLocationByOrgCode
+2024-01-05 13:08:49,799 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMAA.Mappings.ModAccessByUserAndMod.hbm.xml
+2024-01-05 13:08:49,799 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,799 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModAccessByUserAndMod -> ModAccessByUserAndMod
+2024-01-05 13:08:49,799 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSGI.Mappings.GeoFence.hbm.xml
+2024-01-05 13:08:49,800 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,800 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GeoFence -> GeoFence
+2024-01-05 13:08:49,800 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.TodayStatistics.hbm.xml
+2024-01-05 13:08:49,801 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,801 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.TodayStatistics -> TodayStatistics
+2024-01-05 13:08:49,801 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorInfo.hbm.xml
+2024-01-05 13:08:49,801 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,802 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorInfo -> SensorInfo
+2024-01-05 13:08:49,802 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGenRefuel.hbm.xml
+2024-01-05 13:08:49,802 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,802 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGenRefuel -> RptGenRefuel
+2024-01-05 13:08:49,802 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGenConsumption.hbm.xml
+2024-01-05 13:08:49,803 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,803 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGenConsumption -> RptGenConsumption
+2024-01-05 13:08:49,803 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptFuelTheftDetail.hbm.xml
+2024-01-05 13:08:49,803 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,804 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptFuelTheftDetail -> RptFuelTheftDetail
+2024-01-05 13:08:49,804 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptAssetOperation.hbm.xml
+2024-01-05 13:08:49,804 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,805 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptAssetOperation -> RptAssetOperation
+2024-01-05 13:08:49,805 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGridPowerOperation.hbm.xml
+2024-01-05 13:08:49,805 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,805 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGridPowerOperation -> RptGridPowerOperation
+2024-01-05 13:08:49,806 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGridPowerAssetOperation.hbm.xml
+2024-01-05 13:08:49,806 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,806 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGridPowerAssetOperation -> RptGridPowerAssetOperation
+2024-01-05 13:08:49,807 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptMonthwiseStatistics.hbm.xml
+2024-01-05 13:08:49,808 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,808 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptMonthwiseStatistics -> RptMonthwiseStatistics
+2024-01-05 13:08:49,808 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorInfoVoltage.hbm.xml
+2024-01-05 13:08:49,808 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,809 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorInfoVoltage -> SensorInfoVoltage
+2024-01-05 13:08:49,824 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,825 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSE.Entities.Organization -> SMSE_Organization_MST_ST
+2024-01-05 13:08:49,825 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAM.Entities.Dashboard -> SMAM_DashBoards_ST
+2024-01-05 13:08:49,826 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Region -> SMSA_Regions_ST
+2024-01-05 13:08:49,826 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Area -> SMSA_Areas_ST
+2024-01-05 13:08:49,828 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Country -> SMSA_Country_ST
+2024-01-05 13:08:49,828 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.TerritoryDtl -> SMSA_TerritoryDTL_ST
+2024-01-05 13:08:49,830 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.State -> SMSA_States_ST
+2024-01-05 13:08:49,831 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.TerritoryMst -> SMSA_TerritoryMST_ST
+2024-01-05 13:08:49,832 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.AreaDtl -> SMSA_AreasDTL_ST
+2024-01-05 13:08:49,832 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.City -> SMSA_Cities_ST
+2024-01-05 13:08:49,833 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Company -> SMSA_Companies_ST
+2024-01-05 13:08:49,834 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.ClientMaster -> SMIM_ClientMaster_ST
+2024-01-05 13:08:49,835 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.RefreshToken -> SMIM_RefreshToken_ST
+2024-01-05 13:08:49,835 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UGroupDtlSt -> SMIM_UGroupDTL_ST
+2024-01-05 13:08:49,836 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UGroupMstSt -> SMIM_UGroupMST_ST
+2024-01-05 13:08:49,837 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UserProfile -> SMIM_UserProfiile_ST
+2024-01-05 13:08:49,839 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.OrgModule -> SMAA_OrgModules_ST
+2024-01-05 13:08:49,840 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.Module -> SMAA_Modules_ST
+2024-01-05 13:08:49,840 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.GFAsset -> GFAsset
+2024-01-05 13:08:49,841 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModDtl -> SMAA_ModObjDtl_ST
+2024-01-05 13:08:49,842 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModMst -> SMAA_ModObjMst_ST
+2024-01-05 13:08:49,843 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.MonitorAsset -> MonitorAsset
+2024-01-05 13:08:49,843 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.DevActivity -> RSSP_DevActivities_HI
+2024-01-05 13:08:49,844 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EDRFuel -> RSSP_EDRFuel_HI
+2024-01-05 13:08:49,847 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EDRFuelRun -> RSSP_EDRFuelRun_HI
+2024-01-05 13:08:49,848 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EdrGeo -> RSSP_EDRGEO_HI
+2024-01-05 13:08:49,849 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EdrLastHi -> RSSP_EDRLast_HI
+2024-01-05 13:08:49,850 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FleetUnitsView -> rspt_FleetUnits_vw
+2024-01-05 13:08:49,851 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SiteDirectory -> RSPT_SiteDirectory_ST
+2024-01-05 13:08:49,852 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.DashboardStationaryV2Vw -> rspt_dashboardStationary_V2_vw
+2024-01-05 13:08:49,853 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupAccessDtl -> RSPT_UGrpAccessDtl_ST
+2024-01-05 13:08:49,853 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CompleteUnitVw -> RSPT_CompleteUnit_Vw
+2024-01-05 13:08:49,854 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.PackageMst -> RSPT_TPCKMst_TR
+2024-01-05 13:08:49,855 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.ResourceType -> RSPT_ResourceType_ST
+2024-01-05 13:08:49,855 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FuelPrice -> RSPT_FuelPrice_TR
+2024-01-05 13:08:49,855 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.Site -> RSPT_Site_TR
+2024-01-05 13:08:49,857 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.TrckUnit -> RSPT_TrckUnits_TR
+2024-01-05 13:08:49,857 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.RsptUStatus -> RSPT_UStatus_ST
+2024-01-05 13:08:49,858 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SiteResource -> RSPT_SITEResource_TR
+2024-01-05 13:08:49,859 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupDtl -> RSPT_UGrpDtl_ST
+2024-01-05 13:08:49,859 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupMst -> RSPT_UGrpMst_ST
+2024-01-05 13:08:49,859 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.DashboardStationaryTestVw -> rspt_dashboardStationary_Test_vw
+2024-01-05 13:08:49,861 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContractMst -> RSMT_ContractMst_TR
+2024-01-05 13:08:49,861 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContSite -> RSMT_ContSites_TR
+2024-01-05 13:08:49,862 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContrType -> RSMT_ContrTypes_ST
+2024-01-05 13:08:49,862 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContrStatus -> RSMT_ContrStatus_ST
+2024-01-05 13:08:49,862 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.Vendor -> RSMT_Vendors_ST
+2024-01-05 13:08:49,863 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFDtl -> RSGI_GFDtl_TR
+2024-01-05 13:08:49,864 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFMst -> RSGI_GFMst_TR
+2024-01-05 13:08:49,864 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFPOI -> RSGI_GFPOI_TR
+2024-01-05 13:08:49,865 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GImage -> RSGI_Images_ST
+2024-01-05 13:08:49,865 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.Poi -> RSGI_POI_TR
+2024-01-05 13:08:49,865 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiType -> RSGI_POITypes_ST
+2024-01-05 13:08:49,866 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.RouteDtl -> RSGI_RouteDtl_TR
+2024-01-05 13:08:49,867 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.RouteMst -> RSGI_RouteMst_TR
+2024-01-05 13:08:49,868 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiImageAccess -> RSGI_POI_Image_Access_TR
+2024-01-05 13:08:49,868 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiImage -> RSGI_POI_Image_TR
+2024-01-05 13:08:49,868 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.OMOP.Entities.ProjectMst -> OMOP_ProjectMST_TR
+2024-01-05 13:08:49,869 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.AssetGroup -> MRAT_AssetGroup_ST
+2024-01-05 13:08:49,870 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.AssetStatus -> MRAT_AssetStatus_ST
+2024-01-05 13:08:49,870 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.Condition -> MRAT_Conditions_ST
+2024-01-05 13:08:49,870 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.Asset -> MRAT_Assets_TR
+2024-01-05 13:08:49,872 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,872 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,872 [39] INFO  NHibernate.Connection.ConnectionProvider [(null)] - Configuring ConnectionProvider
+2024-01-05 13:08:49,872 [39] INFO  NHibernate.Driver.DriverBase [(null)] - setting ADO.NET command timeout to 10 seconds
+2024-01-05 13:08:49,873 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.AssetsImage.hbm.xml
+2024-01-05 13:08:49,873 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,874 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.AssetsImage -> AssetsImage
+2024-01-05 13:08:49,874 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.CurrentStatus.hbm.xml
+2024-01-05 13:08:49,874 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,874 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CurrentStatus -> CurrentStatus
+2024-01-05 13:08:49,875 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.CurrentStatusAmpleView.hbm.xml
+2024-01-05 13:08:49,875 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,875 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CurrentStatusAmpleView -> CurrentStatusAmpleView
+2024-01-05 13:08:49,876 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.FleetInfoAmpleView.hbm.xml
+2024-01-05 13:08:49,876 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,876 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FleetInfoAmpleView -> FleetInfoAmpleView
+2024-01-05 13:08:49,877 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.LastCdr.hbm.xml
+2024-01-05 13:08:49,877 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,877 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.LastCdr -> LastCdr
+2024-01-05 13:08:49,877 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.LastEventAmpleView.hbm.xml
+2024-01-05 13:08:49,878 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,878 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.LastEventAmpleView -> LastEventAmpleView
+2024-01-05 13:08:49,878 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.MonthlyAmpleView.hbm.xml
+2024-01-05 13:08:49,878 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,878 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.MonthlyAmpleView -> MonthlyAmpleView
+2024-01-05 13:08:49,879 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorBoard.hbm.xml
+2024-01-05 13:08:49,879 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,879 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorBoard -> SensorBoard
+2024-01-05 13:08:49,879 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SpeedVehicleReport.hbm.xml
+2024-01-05 13:08:49,879 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,879 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SpeedVehicleReport -> SpeedVehicleReport
+2024-01-05 13:08:49,880 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.StartStopReport.hbm.xml
+2024-01-05 13:08:49,880 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,880 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.StartStopReport -> StartStopReport
+2024-01-05 13:08:49,880 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.VehicleAmpleView.hbm.xml
+2024-01-05 13:08:49,881 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,881 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.VehicleAmpleView -> VehicleAmpleView
+2024-01-05 13:08:49,882 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.VehicleReport.hbm.xml
+2024-01-05 13:08:49,882 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,882 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.VehicleReport -> VehicleReport
+2024-01-05 13:08:49,882 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.MonthWiseSummary.hbm.xml
+2024-01-05 13:08:49,882 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,883 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.MonthWiseSummary -> MonthWiseSummary
+2024-01-05 13:08:49,883 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.CompaniesByUserAndOrg.hbm.xml
+2024-01-05 13:08:49,883 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,884 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.CompaniesByUserAndOrg -> CompaniesByUserAndOrg
+2024-01-05 13:08:49,884 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.VehicleTree.hbm.xml
+2024-01-05 13:08:49,884 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,884 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.FirstLogin.hbm.xml
+2024-01-05 13:08:49,884 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,884 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.FirstLogin -> FirstLogin
+2024-01-05 13:08:49,884 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.ForgotPassword.hbm.xml
+2024-01-05 13:08:49,885 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,885 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.ForgotPassword -> ForgotPassword
+2024-01-05 13:08:49,885 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.Login.hbm.xml
+2024-01-05 13:08:49,885 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,885 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.Login -> Login
+2024-01-05 13:08:49,886 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMIM.Mappings.OrganizationsByUserCode.hbm.xml
+2024-01-05 13:08:49,886 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,886 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.OrganizationsByUserCode -> OrganizationsByUserCode
+2024-01-05 13:08:49,886 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMSA.Mappings.CompleteLocationByOrgCode.hbm.xml
+2024-01-05 13:08:49,886 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,886 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.CompleteLocationByOrgCode -> CompleteLocationByOrgCode
+2024-01-05 13:08:49,887 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.SMAA.Mappings.ModAccessByUserAndMod.hbm.xml
+2024-01-05 13:08:49,887 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,887 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModAccessByUserAndMod -> ModAccessByUserAndMod
+2024-01-05 13:08:49,887 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSGI.Mappings.GeoFence.hbm.xml
+2024-01-05 13:08:49,887 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,888 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GeoFence -> GeoFence
+2024-01-05 13:08:49,888 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.TodayStatistics.hbm.xml
+2024-01-05 13:08:49,888 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,889 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.TodayStatistics -> TodayStatistics
+2024-01-05 13:08:49,889 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorInfo.hbm.xml
+2024-01-05 13:08:49,889 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,889 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorInfo -> SensorInfo
+2024-01-05 13:08:49,889 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGenRefuel.hbm.xml
+2024-01-05 13:08:49,890 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,890 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGenRefuel -> RptGenRefuel
+2024-01-05 13:08:49,890 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGenConsumption.hbm.xml
+2024-01-05 13:08:49,890 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,891 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGenConsumption -> RptGenConsumption
+2024-01-05 13:08:49,891 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptFuelTheftDetail.hbm.xml
+2024-01-05 13:08:49,891 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,891 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptFuelTheftDetail -> RptFuelTheftDetail
+2024-01-05 13:08:49,892 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptAssetOperation.hbm.xml
+2024-01-05 13:08:49,892 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,892 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptAssetOperation -> RptAssetOperation
+2024-01-05 13:08:49,892 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGridPowerOperation.hbm.xml
+2024-01-05 13:08:49,893 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,893 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGridPowerOperation -> RptGridPowerOperation
+2024-01-05 13:08:49,893 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptGridPowerAssetOperation.hbm.xml
+2024-01-05 13:08:49,894 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,894 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptGridPowerAssetOperation -> RptGridPowerAssetOperation
+2024-01-05 13:08:49,895 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSSP.Mappings.RptMonthwiseStatistics.hbm.xml
+2024-01-05 13:08:49,895 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,895 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.RptMonthwiseStatistics -> RptMonthwiseStatistics
+2024-01-05 13:08:49,895 [39] INFO  NHibernate.Cfg.Configuration [(null)] - Mapping resource: Roottech.Tracking.Domain.RSPT.Mappings.SensorInfoVoltage.hbm.xml
+2024-01-05 13:08:49,896 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: NHibernate.Dialect.MsSql2012Dialect
+2024-01-05 13:08:49,896 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SensorInfoVoltage -> SensorInfoVoltage
+2024-01-05 13:08:49,907 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,907 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSE.Entities.Organization -> SMSE_Organization_MST_ST
+2024-01-05 13:08:49,908 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAM.Entities.Dashboard -> SMAM_DashBoards_ST
+2024-01-05 13:08:49,908 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Region -> SMSA_Regions_ST
+2024-01-05 13:08:49,908 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Area -> SMSA_Areas_ST
+2024-01-05 13:08:49,909 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Country -> SMSA_Country_ST
+2024-01-05 13:08:49,909 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.TerritoryDtl -> SMSA_TerritoryDTL_ST
+2024-01-05 13:08:49,910 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.State -> SMSA_States_ST
+2024-01-05 13:08:49,910 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.TerritoryMst -> SMSA_TerritoryMST_ST
+2024-01-05 13:08:49,910 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.AreaDtl -> SMSA_AreasDTL_ST
+2024-01-05 13:08:49,911 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.City -> SMSA_Cities_ST
+2024-01-05 13:08:49,911 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMSA.Entities.Company -> SMSA_Companies_ST
+2024-01-05 13:08:49,912 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.ClientMaster -> SMIM_ClientMaster_ST
+2024-01-05 13:08:49,912 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.RefreshToken -> SMIM_RefreshToken_ST
+2024-01-05 13:08:49,912 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UGroupDtlSt -> SMIM_UGroupDTL_ST
+2024-01-05 13:08:49,913 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UGroupMstSt -> SMIM_UGroupMST_ST
+2024-01-05 13:08:49,913 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMIM.Entities.UserProfile -> SMIM_UserProfiile_ST
+2024-01-05 13:08:49,914 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.OrgModule -> SMAA_OrgModules_ST
+2024-01-05 13:08:49,914 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.Module -> SMAA_Modules_ST
+2024-01-05 13:08:49,914 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.GFAsset -> GFAsset
+2024-01-05 13:08:49,915 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModDtl -> SMAA_ModObjDtl_ST
+2024-01-05 13:08:49,915 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.ModMst -> SMAA_ModObjMst_ST
+2024-01-05 13:08:49,916 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.SMAA.Entities.MonitorAsset -> MonitorAsset
+2024-01-05 13:08:49,916 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.DevActivity -> RSSP_DevActivities_HI
+2024-01-05 13:08:49,916 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EDRFuel -> RSSP_EDRFuel_HI
+2024-01-05 13:08:49,918 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EDRFuelRun -> RSSP_EDRFuelRun_HI
+2024-01-05 13:08:49,919 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EdrGeo -> RSSP_EDRGEO_HI
+2024-01-05 13:08:49,919 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSSP.Entities.EdrLastHi -> RSSP_EDRLast_HI
+2024-01-05 13:08:49,920 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FleetUnitsView -> rspt_FleetUnits_vw
+2024-01-05 13:08:49,921 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SiteDirectory -> RSPT_SiteDirectory_ST
+2024-01-05 13:08:49,921 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.DashboardStationaryV2Vw -> rspt_dashboardStationary_V2_vw
+2024-01-05 13:08:49,923 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupAccessDtl -> RSPT_UGrpAccessDtl_ST
+2024-01-05 13:08:49,923 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.CompleteUnitVw -> RSPT_CompleteUnit_Vw
+2024-01-05 13:08:49,924 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.PackageMst -> RSPT_TPCKMst_TR
+2024-01-05 13:08:49,924 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.ResourceType -> RSPT_ResourceType_ST
+2024-01-05 13:08:49,925 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.FuelPrice -> RSPT_FuelPrice_TR
+2024-01-05 13:08:49,925 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.Site -> RSPT_Site_TR
+2024-01-05 13:08:49,926 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.TrckUnit -> RSPT_TrckUnits_TR
+2024-01-05 13:08:49,927 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.RsptUStatus -> RSPT_UStatus_ST
+2024-01-05 13:08:49,927 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.SiteResource -> RSPT_SITEResource_TR
+2024-01-05 13:08:49,928 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupDtl -> RSPT_UGrpDtl_ST
+2024-01-05 13:08:49,929 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.UnitGroupMst -> RSPT_UGrpMst_ST
+2024-01-05 13:08:49,929 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSPT.Entities.DashboardStationaryTestVw -> rspt_dashboardStationary_Test_vw
+2024-01-05 13:08:49,930 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContractMst -> RSMT_ContractMst_TR
+2024-01-05 13:08:49,931 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContSite -> RSMT_ContSites_TR
+2024-01-05 13:08:49,932 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContrType -> RSMT_ContrTypes_ST
+2024-01-05 13:08:49,932 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.ContrStatus -> RSMT_ContrStatus_ST
+2024-01-05 13:08:49,932 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSMT.Entities.Vendor -> RSMT_Vendors_ST
+2024-01-05 13:08:49,933 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFDtl -> RSGI_GFDtl_TR
+2024-01-05 13:08:49,933 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFMst -> RSGI_GFMst_TR
+2024-01-05 13:08:49,934 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GFPOI -> RSGI_GFPOI_TR
+2024-01-05 13:08:49,935 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.GImage -> RSGI_Images_ST
+2024-01-05 13:08:49,935 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.Poi -> RSGI_POI_TR
+2024-01-05 13:08:49,936 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiType -> RSGI_POITypes_ST
+2024-01-05 13:08:49,936 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.RouteDtl -> RSGI_RouteDtl_TR
+2024-01-05 13:08:49,936 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.RouteMst -> RSGI_RouteMst_TR
+2024-01-05 13:08:49,937 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiImageAccess -> RSGI_POI_Image_Access_TR
+2024-01-05 13:08:49,937 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.RSGI.Entities.PoiImage -> RSGI_POI_Image_TR
+2024-01-05 13:08:49,937 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.OMOP.Entities.ProjectMst -> OMOP_ProjectMST_TR
+2024-01-05 13:08:49,938 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.AssetGroup -> MRAT_AssetGroup_ST
+2024-01-05 13:08:49,938 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.AssetStatus -> MRAT_AssetStatus_ST
+2024-01-05 13:08:49,939 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.Condition -> MRAT_Conditions_ST
+2024-01-05 13:08:49,939 [39] INFO  NHibernate.Cfg.XmlHbmBinding.Binder [(null)] - Mapping class: Roottech.Tracking.Domain.MRAT.Entities.Asset -> MRAT_Assets_TR
+2024-01-05 13:08:49,939 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,940 [39] INFO  NHibernate.Dialect.Dialect [(null)] - Using dialect: Roottech.Tracking.Common.Session.MyMsSql2012Dialect
+2024-01-05 13:08:49,940 [39] INFO  NHibernate.Connection.ConnectionProvider [(null)] - Configuring ConnectionProvider
+2024-01-05 13:08:49,940 [39] INFO  NHibernate.Driver.DriverBase [(null)] - setting ADO.NET command timeout to 10 seconds

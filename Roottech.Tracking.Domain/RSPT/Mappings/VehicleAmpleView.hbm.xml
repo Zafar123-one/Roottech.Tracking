@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="VehicleAmpleView">
+    <id name="Id" />
+    <property name="Site_Reg" />
+    <property name="TripNo" />
+    <property name="Trip_Status" />
+    <property name="CurrentEvent" />
+    <property name="EventStartDt" />
+    <property name="TotDuration" />
+    <property name="Batch" />
+    <property name="OpenMileage" />
+    <property name="TotalMileage" />
+    <property name="LevelType" />
+    <property name="Currents" />
+    <property name="UnitID" />
+    <property name="RegionID" />
+    <property name="CurBatch" />
+    <property name="Site_code" />
+    <property name="Client" />
+    <property name="Site_Name" />
+    <property name="ItemType" />
+    <property name="Priority" />
+    <property name="Capacity" />
+    <property name="Min_Level" />
+    <property name="LastConsumption" />
+    <property name="Title" />
+    <property name="Site_Type" />
+    <property name="Address" />
+    <property name="ContractPerson" />
+    <property name="Phone" />
+    <property name="Cell" />
+    <property name="Fax" />
+    <property name="MaxLevel" />
+    <property name="Resource" />
+    <property name="BaseVolume" />
+    <property name="TotLLS" />
+    <property name="ProjNo" />
+    <property name="ProjDesc" />
+    <loader query-ref="GetAmpleViewInfo"/>
+  </class>
+  <sql-query name="GetAmpleViewInfo">
+    <return class="VehicleAmpleView" >
+      <return-property name="Id" column="Id" />
+      <return-property name="Site_Reg" column="Site_Reg" />
+      <return-property name="TripNo" column="TripNo" />
+      <return-property name="Trip_Status" column="Trip_Status" />
+      <return-property name="CurrentEvent" column="CurrentEvent" />
+      <return-property name="EventStartDt" column="EventStartDt" />
+      <return-property name="TotDuration" column="TotDuration" />
+      <return-property name="Batch" column="Batch" />
+      <return-property name="OpenMileage" column="OpenMileage" />
+      <return-property name="TotalMileage" column="TotalMileage" />
+      <return-property name="LevelType" column="LevelType" />
+      <return-property name="Currents" column="Currents" />
+      <return-property name="UnitID" column="UnitID" />
+      <return-property name="RegionID" column="RegionID" />
+      <return-property name="CurBatch" column="CurBatch" />
+      <return-property name="Site_code" column="Site_code" />
+      <return-property name="Client" column="Client" />
+      <return-property name="Site_Name" column="Site_Name" />
+      <return-property name="ItemType" column="ItemType" />
+      <return-property name="Priority" column="Priority" />
+      <return-property name="Capacity" column="Capacity" />
+      <return-property name="Min_Level" column="Min_Level" />
+      <return-property name="LastConsumption" column="LastConsumption" />
+      <return-property name="Title" column="Title" />
+      <return-property name="Site_Type" column="Site_Type" />
+      <return-property name="Address" column="Address" />
+      <return-property name="ContractPerson" column="ContractPerson" />
+      <return-property name="Phone" column="Phone" />
+      <return-property name="Cell" column="Cell" />
+      <return-property name="Fax" column="Fax" />
+      <return-property name="MaxLevel" column="MaxLevel" />
+      <return-property name="Resource" column="Resource" />
+      <return-property name="BaseVolume" column="BaseVolume" />
+      <return-property name="TotLLS" column="TotLLS" />
+      <return-property name="ProjNo" column="ProjNo" />
+      <return-property name="ProjDesc" column="ProjDesc" />
+    </return>
+    exec usp_AmpleViewBasic @AssetNo = :AssetNo
+  </sql-query>
+</hibernate-mapping>

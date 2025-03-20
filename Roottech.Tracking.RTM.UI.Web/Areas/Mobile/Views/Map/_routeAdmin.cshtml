@@ -1,0 +1,93 @@
+﻿<form id="routeAdmin" style="display: none">
+    <table>
+        <tr>
+            <td>@Html.Label("Title")</td>
+            <td><input id="txtRouteTitle" type="text" class="themeyInputTextField" style="width:300px"/></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Name")</td>
+            <td><input id="txtRouteName" type="text" class="themeyInputTextField"  style="width:300px"/></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Organization")</td>
+            <td><select id="selRouteOrganizationByUser" class="themeyInputTextField"  style="width:300px"></select></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Company")</td>
+            <td><select id="selRouteCompanyByUser" class="themeyInputTextField"  style="width:300px"></select></td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Line Color")</td>
+            <td><select id="selRouteLineColor" class="themeyInputTextField" style="width:300px">
+                    <option value="">Select Any</option>
+                    <option value="Red">Red</option>
+                    <option value="Blue">Blue</option>
+                    <option value="White">White</option>
+                    <option value="Green">Green</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.Label("Comments")</td>
+            <td><input id="txtRouteComments" type="text" class="themeyInputTextField" style="width:300px; height:40px"/></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: right"><input type="button" class="themeyIntputBtn" value="Save" id="btnRouteSave" />
+                <input type="button" class="themeyIntputBtn" value="Cancel" id="btnRouteCancel" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="themeyIntputBtn" value="Save POI's" style="display:none" id="btnRoutePOISave" /></td>
+            <td></td>
+        </tr>
+    </table>
+    <table id="listPoiSelection"></table>
+    <div id="pagerPoiSelection"></div>
+</form>
+<div id="routeAdminLoader" style="display: none; position: absolute;left: 520px;top: 50px;z-index: 999;background-color: white">
+    <div class="ajax-loader" style="margin-left: 190px;">
+        <p style="padding-top: 240px;margin-left: -24px;">Please wait, This may take a few minutes.</p>
+    </div>
+</div>
+<script type="text/javascript">
+    $("#btnRouteSave").click(function() {
+        if ($("#txtRouteTitle").val() == "") {
+            alert("Please input title");
+            $("#txtRouteTitle").focus();
+            return false;
+        } else if ($("#txtRouteName").val() == "") {
+            alert("Please input name");
+            $("#txtRouteName").focus();
+            return false;
+        } else if ($("#listPoiSelection").jqGrid("getGridParam", "selarrrow").length == 0) {
+            alert("Please select pois");
+            $("#listPoiSelection").focus();
+            return false;
+        }
+        addRouteMst($("#selOrganizationByUserForGeoFence").val(), $("#selCompanyByOrgForGeoFence").val(), $("#txtRouteTitle").val(), $("#txtRouteName").val(), $("#selRouteLineColor").val(), $("#txtRouteComments").val());
+    });
+    $("#btnRouteCancel").click(function () {
+        $("#routeAdminLoader").css({ height: $("#routeAdmin").parent().css("height") });
+        $("#routeAdminLoader").css({ width: $("#routeAdmin").parent().css("width") });
+        $("#routeAdminLoader").css({ left: $("#routeAdmin").parent().css("left") });
+        $("#routeAdminLoader").css({ top: $("#routeAdmin").parent().css("top") });
+        $("#routeAdminLoader").fadeIn({
+            complete: function() {
+                clearRouteAdminIns();
+                $("#routeAdminLoader").fadeOut();
+            }
+        });
+    });
+
+    function clearRouteAdminIns() {
+        $("#listPoiSelection").jqGrid("GridUnload");
+        $("#selRouteOrganizationByUser").closest("tr").show();
+        $("#selRouteCompanyByUser").closest("tr").show();
+        $("#txtRouteTitle").val("");
+        $("#txtRouteName").val("");
+        $("#selRouteLineColor").val("");
+        $("#txtRouteComments").val("");
+
+        $("#routeAdmin").dialog("close");
+        $("#gbox_listRouteAdmin .ui-jqgrid-titlebar-close.HeaderButton .ui-icon.ui-icon-circle-triangle-s").parent().click();
+    }
+</script>

@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <script src="~/Scripts/jquery-1.8.3.min.js" type="text/javascript"></script>
+        <script src="~/Scripts/jquery.fancybox.pack.js" type="text/javascript"></script>
+        <link href="~/Content/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+        <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+        <script language="javascript">
+            function login() {
+                var url = "@Url.HttpRouteUrl("Area_defaultApi", new { area= "SMIM", controller = "LoginApi", action = "Get" })?userId=" + $("#UserId").val() + "&password=" + $("#Password").val() ;//
+                //console.log(url);
+                //return;
+                $.ajax({
+                    url: url, //"/SMIM/api/LoginApi/Get",
+                    type: "GET",
+                    //data: JSON.stringify({ userId: "John", password: "Boston" }),
+                    contentType: "application/json charset=utf-8",
+                    dataType: "json",
+                    /*beforeSend: function() {
+                    $('#' + id + ' .contentarea').html('');
+                    },*/
+                    success: function (data, textStatus, xhr) {
+                        if (textStatus == "success") {
+                            var msg = data[0].Msg.toString().split(';');
+                            
+                            var attemptType = parseInt(msg[0]);
+                            if (attemptType == 6)
+                            {
+                                $.fancybox({
+                                    //padding: 5,
+                                    href: '#crudform',
+                                    title: msg[1],
+                                    openEffect: 'elastic',
+                                    openSpeed: 250,
+                                    openOpacity: true,
+                                    closeEffect: 'elastic',
+                                    closeSpeed: 150,
+                                    closeOpacity: true,
+                                    width: 754, // TODO parseInt($("div.tableContainer").css("width").replace("px", "")),
+                                    autoSize: false,
+                                    height: 450,
+                                    type: 'inline',
+                                    modal: true,
+                                    //beforeShow: function () { viewModel.showForm(true); }
+                        //helpers: { overlay: null }
+                                });
+                            }
+                            //console.log(msg[1]);
+                        }
+                        
+                        
+                        /*
+                        if (filename == '/function-demos/functions/ajax/data/content3.html') {
+                        setTimeout(function() {
+                        $('#' + id + ' .contentarea').html(data);
+                        }, 2000);
+                        } else {
+                        $('#' + id + ' .contentarea').html(data);
+                        }*/
+                    } /*,
+                    error: function(xhr, textStatus, errorThrown) {
+                        $('#' + id + ' .contentarea').html(textStatus);
+                    }*/
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            User Id @Html.TextBox("UserId")<br/>
+            Password @Html.Password("Password")
+            <input type="button" name="button" value="Button" onclick="login()" />  
+            
+            <table width="800">
+                   <tr>
+                       <td colspan="4" style="background-image: url('~/Images/Login/DFUEL_01.gif'); width: 800px;
+                           height: 99px">
+                        </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 99px">
+                         </td>
+                   </tr>
+                   <tr>
+                       <td colspan="4" style="background-image: url(~/Images/Login/DFUEL_02.gif); width: 800px;
+                           height: 65px">
+                       </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 65px">
+                       </td>
+                   </tr>
+                   <tr>
+                       <td 
+                           colspan="3" rowspan="2" style="background-image: url(~/Images/Login/DFUEL_03.gif); width: 382px;
+                           height: 28px; text-align: right">
+                           User ID @* @Html.Label("lbl_UserID") *@
+                       </td>
+                       <td style="background-image: url(~/Images/Login/DFUEL_04.gif); width: 418px; height: 26px;
+                           text-align: left">
+                                 @Html.TextBox("txt_Usercode")
+                        </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 26px">
+                       </td>
+                   </tr>
+                   <tr>
+                       <td rowspan="3" style="background-image:url (~/Images/Login/DFUEL_05.gif); vertical-align: middle;
+                           width: 418px; height: 28px; text-align: left">
+                             @Html.Password("txt_Password")                                                           
+                       </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 2px">
+                       </td>
+                   </tr>
+                   <tr>
+                       <td style="background-image: url(~/Images/Login/DFUEL_06.gif); width: 1px; height: 25px">
+                       </td>
+                       <td colspan="2" style="background-image: url(~/Images/Login/DFUEL_07.gif); width: 381px;
+                                                                                                                                                                                                                                                                                                                                                       height: 25px; text-align: right">
+                           Password
+                       </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 25px">
+                       </td>
+                   </tr>
+                   <tr>
+                       <td colspan="3" rowspan="2" style="background-image: url(~/Images/Login/DFUEL_08.gif); width: 382px;
+                           height: 33px">
+                       </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 1px">
+                       </td>
+                   </tr>
+                   <tr>
+                       <td style="background-image: url(~/Images/Login/DFUEL_09.gif); width: 418px; height: 32px;
+                           text-align: left">
+                           @Html.Label("lblMsg", new { style= "display:none"})
+                           <input type="button" name="ibt_Login" value="Login" onclick="login()" src="~/Images/Login/Login.gif" />  
+                       </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 32px">
+                       </td>
+                   </tr>
+                   <tr style="background-image: url(~/Images/Login/DFUEL_10.gif); width: 800px; height: 27px">
+                       <td colspan="4">
+                       </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 27px">
+                       </td>
+                   </tr>
+                   <tr>
+                       <td colspan="2" style="background-image: url(~/Images/Login/DFUEL_11.gif); width: 380px;
+                           height: 1px; text-align: right">
+                           @Html.Label("lbl_Organization","Organization",false)
+                       </td>
+                       <td colspan="2" rowspan="2" style="background-image: url(~/Images/Login/DFUEL_12.gif); vertical-align: top;
+                                                                                                  width: 120px; height: 31px; text-align: left">
+                           @*@Html.DropDownList("ddl_Org")*@
+                           <input type="button" name="int_Go" value="Go" src="~/Images/Login/go.gif" />  
+                       </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 1px">
+                       </td>
+                   </tr>
+                   <tr>
+                       <td colspan="2" style="background-image: url(~/Images/Login/DFUEL_13.gif); width: 380px;
+                           height: 30px; text-align: right">
+                    </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 30px">
+                       </td>
+                   </tr>
+                   <tr>
+                       <td colspan="4" style="background-image: url(~/Images/Login/DFUEL_14.gif); width: 800px;
+                           height: 26px">
+                    <asp:LinkButton ID="lnkForgot" runat="server" Font-Bold="True" Font-Names="Arial" Font-Size="8pt" ForeColor="Navy" style="color: navy" OnClick="lnkForgot_Click">Forgot Password</asp:LinkButton></td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 26px">
+                           <!--<IMG SRC="~/Images/Login/spacer.gif" WIDTH=1 HEIGHT=26 ALT="">-->
+                       </td>
+                   </tr>
+                   <tr>
+                       <td colspan="4" style="background-image: url(~/Images/Login/DFUEL_15.gif); width: 800px;
+                           height: 28px">
+                           <!--<IMG SRC="~/Images/Login/DFUEL_15.gif" WIDTH=800 HEIGHT=28 ALT="">-->
+                       </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 28px">
+                           <!--<IMG SRC="~/Images/Login/spacer.gif" WIDTH=1 HEIGHT=28 ALT="">-->
+                       </td>
+                   </tr>
+                   <tr>
+                       <td colspan="4" style="background-image: url(~/Images/Login/DFUEL_16.gif); width: 800px; height: 150px">
+                           <!--<IMG SRC="~/Images/Login/DFUEL_16.gif" WIDTH=800 HEIGHT=150 ALT="">-->
+                       </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 150px">
+                           <!--<IMG SRC="~/Images/Login/spacer.gif" WIDTH=1 HEIGHT=150 ALT="">-->
+                       </td>
+                   </tr>
+                   <tr>
+                       <td colspan="4" style="background-image: url(~/Images/Login/DFUEL_17.gif); width: 800px;
+                           height: 188px">
+                           <%--<IMG SRC="~/Images/Login/DFUEL_17.gif" WIDTH=800 HEIGHT=188 ALT="">--%>
+                       </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 188px">
+                           <%--<IMG SRC="~/Images/Login/spacer.gif" WIDTH=1 HEIGHT=188 ALT="">--%>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 1px; height: 1px">
+                           <%--<IMG SRC="~/Images/Login/spacer.gif" WIDTH=1 HEIGHT=1 ALT="">--%>
+                       </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 379px; height: 1px">
+                           <%--<IMG SRC="~/Images/Login/spacer.gif" WIDTH=379 HEIGHT=1 ALT="">--%>
+                       </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 2px; height: 1px">
+                           <%--<IMG SRC="~/Images/Login/spacer.gif" WIDTH=2 HEIGHT=1 ALT="">--%>
+                       </td>
+                       <td style="background-image: url(~/Images/Login/spacer.gif); width: 418px">
+                           <%--<IMG SRC="~/Images/Login/spacer.gif" WIDTH=418 HEIGHT=1 ALT="">--%>
+                       </td>
+                       <td>
+                       </td>
+                   </tr>
+               </table>
+        
+        </div>
+    @Html.Partial("_FirstTimeLogin");
+    </body>
+</html>

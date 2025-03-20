@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>FuelGEX Solution</title>
+    @Styles.Render("~/bundles/login/css")
+    @Scripts.Render("~/bundles/jquery/min")
+    <!--<script src="~/Scripts/jQuery.tmpl.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/mustache.js" type="text/javascript"></script>-->
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="logoArea"><div class="ProductLogo"><a href="#"><img src="~/Images/common/FuelGEX_Logo.png" alt="Premier Tracking Solution" /></a></div></div>
+        </div>
+        <div class="spacerFour"></div>
+        <div class="spacerThree"></div>
+        <div class="loginPanel">
+            <div class="left loginLeft"></div>
+            <div class="left loginCenter">
+                <div class="centerData">
+                    <div class="left dataCompany">
+                        <h2>Introduction</h2>
+                        <p>
+                            FuelGEX. is a bundle of multiple business modules integrated into each other, designed to work with the telematic devices and the sensors, communicating transparently and furnishing real time and accurate business analytics for the customers. It is a unique software solution for monitoring assets operation and their fuel consumption remotely and round the clock, requiring no human intervention.
+                        </p>
+                        <input type="button" class="inputBtn" value="More" onclick="goBack()" /><!--goAboutus()-->
+                    </div>
+                    <div class="left sprt"></div>
+                    <div class="left collage">
+                        <img src="~/Images/common/bundlePRS.png" />
+                        @*<div class="wish"><p>PTSL</p><span>Tracking Solutions</span></div>*@
+                    </div>
+                    <div class="left sprt"></div>
+                    <div class="left loginFieldArea">
+                        <h2>Sign In</h2>
+                        <div class="loginFields">
+                            @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                    <table width="100%" border="0">
+                                        <tr>
+                                            <td>@Html.TextBox("UserId", "", new {@class = "inputField", title = "Username", size = "30", maxlength = "18", placeholder = "Login ID"})</td>@*<input type="text" class="inputField" placeholder="Login ID" /></td>*@
+                                        </tr>
+                                        <tr>
+                                            <td>@Html.Password("Password", "", new {@class = "inputField", title = "Password", size = "30", placeholder = "Password"})</td>@*<input type="password" class="inputField" placeholder="Password" /></td>*@
+                                            <div class="error" style="display: none;"><span></span></div>
+                                        </tr>
+                                        <tr id="buttonsrow">
+                                            <td align="right">
+                                                <input type="submit" class="inputBtn" value="Submit"/>&nbsp;
+                                                <input type="button" class="inputBtn" value="Go Back" onclick=" goBack() "/>
+                                            </td>
+                                        </tr>
+                                        <tr id="loadingrow" style="display: none"><td align="center"><img src="/Images/common/Loading_bar.gif"/></td></tr>
+                                        <tr>
+                                            <td align="right"><a href="#" onclick="getfpSecurityQuestion()">Forgot Password</a></td>
+                                        </tr>
+                                    </table>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right loginRight"></div>
+        </div>
+        <div class="loginShadow"></div>
+        <div class="footer">Powered by FuelGEX 2013 all right reserved</div>
+    </div>
+    @Html.Partial("_FirstTimeLogin")
+    @Html.Partial("_ForgotPassword")
+    @Scripts.Render("~/bundles/login/scripts")
+    <script language="javascript">
+        var url = "@Url.HttpRouteUrl("Area_defaultApi", new {controller = "LoginApi", action = "Get"})";
+        var urlOrg = "@Url.HttpRouteUrl("Area_defaultApi", new {controller = "LoginApi", action = "GetOrganizationsModWise"})?userCode=" + @(Request.Form.Count > 0 ? Request.Form["UserId"] : "0");
+        var urlLoginInfo = "@Url.HttpRouteUrl("Area_defaultApi", new {controller = "LoginApi", action = "GetUserProfile"})";
+        var urlFirstLogin = "@Url.HttpRouteUrl("Area_defaultApi", new {controller = "LoginApi", action = "GetFirstLogin"})";
+        var urlSecurityFAQs = "@Url.HttpRouteUrl("Area_defaultApi", new {controller = "LoginApi", action = "getSecutiryFAQs"})";
+        var urlForgotPassword = "@Url.HttpRouteUrl("Area_defaultApi", new {controller = "LoginApi", action = "GetForgotPassword"})";
+        var urlMainPage = "@Url.Action("Index", new {area = "SMIM", controller = "MainPage"})";
+        var urlMore = "http://204.93.216.66/ptsl/about.html";
+        var urlMap = "@Url.Action("Index", new {area = "Mobile", controller = "Map"})";
+    </script>
+        @Html.Partial("_AppSelection")
+    </body>
+</html>

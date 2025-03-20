@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="FleetInfoAmpleView">
+    <id name="Id" />
+    <property name="Specification" />
+    <property name="RegDt" />
+    <property name="TagNo" />
+    <property name="UnitUsageDesc" />
+    <property name="UnitTypeDesc" />
+    <property name="DriverName" />
+    <property name="DriverCellNo" />
+    <property name="SiteName" />
+    <loader query-ref="GetFleetAmpleViewInfo"/>
+  </class>
+  <sql-query name="GetFleetAmpleViewInfo">
+    <return class="FleetInfoAmpleView" >
+      <return-property name="Id" column="Id" />
+      <return-property name="Specification" column="Specification" />
+      <return-property name="RegDt" column="RegDt" />
+      <return-property name="TagNo" column="TagNo" />
+      <return-property name="UnitUsageDesc" column="UnitUsageDesc" />
+      <return-property name="UnitTypeDesc" column="UnitTypeDesc" />
+      <return-property name="DriverName" column="DriverName" />
+      <return-property name="DriverCellNo" column="DriverCellNo" />
+      <return-property name="SiteName" column="SiteName" />
+    </return>
+    exec usp_GetFleetinfo @AssetNo = :AssetNo
+  </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="AssetsImage">
+    <id name="Id" />
+    <property name="UnitImage" />
+    <loader query-ref="GetAssetsImage"/>
+  </class>
+  <sql-query name="GetAssetsImage">
+    <return class="AssetsImage" >
+      <return-property name="Id" column="Id" />
+      <return-property name="UnitImage" column="UnitImage" />
+    </return>
+    exec SP_GetAll_Images_Assets @AssetNo = :AssetNo
+  </sql-query>
+</hibernate-mapping>

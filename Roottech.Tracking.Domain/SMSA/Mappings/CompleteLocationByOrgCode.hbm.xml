@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.SMSA.Entities">
+  <class name="CompleteLocationByOrgCode">
+    <id name="Id" />
+    <property name="Name" />
+    <loader query-ref="GetCompleteLocationByOrgCode"/>
+  </class>
+  <sql-query name="GetCompleteLocationByOrgCode">
+    <return class="CompleteLocationByOrgCode" >
+      <return-property name="Id" column="Block_Code" />
+      <return-property name="Name" column="Description" />
+    </return>
+    exec dbo.sp_LOV_Complete_Location_By_OrgCode @OrgCode = :Org_Code, 
+    @SearchText = :SearchText, @BlockCode = :BlockCode
+  </sql-query>
+</hibernate-mapping>

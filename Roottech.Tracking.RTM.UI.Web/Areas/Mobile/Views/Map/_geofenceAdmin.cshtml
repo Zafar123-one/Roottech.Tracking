@@ -1,0 +1,75 @@
+﻿<div id="geofenceAdmin" style="display: none">
+    <table>
+        <tr><td><select id="selOrganizationByUserForGeoFence"></select></td></tr>
+        <tr><td><select id="selCompanyByOrgForGeoFence" style="display: none"></select></td></tr>
+        <tr>
+            <td>
+                <div id="markersRadio" style="display: none">
+                    <input type="radio" name="grp1" id="rdshowGeofenceMarker" value="Show Geofences" />
+                    <label id="lblshowGeofenceMarker" for="rdshowGeofenceMarker">Show Geofences</label>
+                    <input type="radio" name="grp1" id="rdshowRouteMarker" value="Show Routes" />
+                    <label id="lblshowRouteMarker" for="rdshowRouteMarker" >Show Routes</label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select id="selRouteByOrgCom" style="display: none"></select>
+                <select id="selGfType" style="display: none"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" id="showGrid" value="List" style="display: none"/>
+                <input type="button" id="drawOnMap" value="Display on Map" style="display: none"/>
+            </td>        
+        </tr>
+    </table>
+    <input type="hidden" id="geofenceObjects" />
+</div>
+<table id="listGeoFenceAdmin"></table>
+<div id="pagerGeoFenceAdmin"></div>
+<table id="listRouteAdmin"></table>
+<div id="pagerRouteAdmin"></div>
+<script language="javascript" type="text/javascript">
+    var urlGetRoute = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "GetRoute" })";
+    var urlSetRouteMst = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "AddRouteMst" })";
+    var urlGetRouteMst = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "GetRouteMst" })";
+    var urlEditRoute = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "EditRoute" })";
+    var urlDeleteRoute = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "DeleteRoute" })";
+
+    var urlGetGeofenceDtl = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "GetGeofense" })";
+    var urlGetPoisByRoute = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "GetPoisByRoute" })";
+    var urlGetGeofenceMst = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "GetGeofenseMst" })";
+
+    var urlEditGeofence = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "EditGeofence" })";
+    var urlDeleteGeofence = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "GeoFenceAdminApi", action = "DeleteGeofence" })";
+    $("#geofenceAdmin").dialog({
+        height: 180,
+        width: 400,
+        show: "blind",
+        hide: "explode",
+        title: "Geo Fence Management",
+        position: { my: "left+520 top+50", at: "left top"},//[400, 100],
+        autoOpen: false,
+        close: function() { clearGeoFenceAdmin(true); }
+    });
+
+    $("#showGeoFence").click(function() {
+        if ($("#listGeoFenceAdmin").parents('.ui-jqgrid').css("display") == "block")
+            return;
+        else if ($("[aria-describedby='geofenceAdmin']").css("display") == "none")
+            $("#selOrganizationByUserForGeoFence").val("");
+
+        if (!$("#selOrganizationByUserForGeoFence option").length) {
+            loadOrgByUserForGeofence();
+            markerTypeClickEvent();
+        } else {
+            if ($("#sel ionByUserForGeoFence option").length == 2) {
+                $("#selOrganizationByUserForGeoFence").val($("#selOrganizationByUserForGeoFence option:eq(1)").val());
+                loadCompaniesByOrg($("#selOrganizationByUserForGeoFence").val());
+            }
+            $("#geofenceAdmin").dialog("open");
+        }
+    });
+</script>

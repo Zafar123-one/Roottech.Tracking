@@ -1,0 +1,250 @@
+﻿<div id="divAmpleView" style="display: none;">
+    <table id="tableMain">
+        <tr>
+            <td style="vertical-align: top">
+                <table>
+                    <tr>
+                        <td style="width: 750px">
+                            <div class="ampleViewCurveDiv">
+                              <div class="ampleViewHeader"> <label id="lblInformationType">Site Information </label>
+                                <div style="float: right;">
+                                  <input type="text" id="txtTimeForAV" value="60" style='width: 30px; height: 8px' onblur="setAutoRefreshTimeForAV();"/>(sec)<label>
+                                    <input type='checkbox' name='autoRefresh' id='chkAutoRefreshForAV' onclick='setAutoRefreshTimeForAV();' style="margin: 0px; height: 11px;">Auto Refresh
+                                  </label>
+                                </div>
+                              </div>
+                                <div id="siteInfo"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 750px">
+                            <div class="ampleViewCurveDiv">
+                                <div class="ampleViewHeader"> Asset Information</div>
+                                <div id="assetInfo"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 750px">
+                            <div class="ampleViewCurveDiv">
+                                <div class="ampleViewHeader"> Contract Information
+                                    <a style="border: none; display: inline-block; vertical-align: bottom; height: 13px;" href="#" onclick="openContractMstWindow(true)"> <img src="/Images/common/16-16-Doc-Add.png"></a>
+                                </div>
+                                <div id="contractInfo"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 750px">
+                            <div class="ampleViewCurveDiv">
+                                <div class="ampleViewHeader"> Fuel Information </div>
+                                <div id="fuelInfo"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 750px">
+                            <div class="ampleViewCurveDiv">
+                                <div class="ampleViewHeader"> Month Wise Summary
+                                    <a href="#" title="Previous Month" onclick="changeYearOrMonthSum(1)" class="fancybox-prev"><span><<</span></a>
+                                    <select id="monthsForSummary" onchange="changeYearOrMonthSum(0)"></select>
+                                    <a href="#" title="Next Month" onclick="changeYearOrMonthSum(-1)" class="fancybox-prev"><span>>></span></a>
+                                    <select id="yearsForSummary" onchange="changeYearOrMonthSum(0)"></select>
+                                    <select id="noofMonthstoGet" onchange="changeYearOrMonthSum(0)"></select>
+                                    <input id="btnShowFuelTransactionChart" type="button" value="Chart" onclick="$('#chartFuelTransaction').dialog('open')">
+                                </div>
+                                <div id="monthWise"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="vertical-align: top">
+              <table>
+                <tr>
+                  <td style="width: 230px">
+                    <div class="ampleViewCurveDiv">
+                      <div class="ampleViewHeader"> Fuel Volume(Ltrs) <label style="font-size: smaller" id="lblLastMsgDate"></label>
+                      </div>
+                      <div>
+                        <div id="guageInfo"></div>
+                        <table style="top: 58px; right: 8px; background-color: rgba(255, 255, 255, .6); border: 1px solid #ccc; position: absolute; font-size: .75em; margin: 12px">
+                          <tbody>
+                          <tr><td style="background-color: #FF0000; border: 5px solid #FF0000; border-left-width: 6px; border-right-width: 6px;"></td><td>Min Level(<label id="lblMinLevel"></label>)</td></tr>
+                          <tr><td style="background-color: #61b314; border: 5px solid #61b314"></td><td>Capacity(<label id="lblFullCapacity"></label>)</td></tr>
+                          <tr><td style="background-color: #307DD7; border: 5px solid #307DD7"></td><td>Current(<label id="lblCurrentFuel"></label>)</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width: 230px">
+                    <div class="ampleViewCurveDiv">
+                      <div class="ampleViewHeader"> Instant Statistics </div>
+                      <div id="statisticsInfo">
+                        <table class='ampleviewtable ampleviewtableborder' style="width: 100%;">
+                          <tr>
+                            <td>Date</td>
+                            <td colspan="2">
+
+                              <div style="display: inline-flex">
+                                <a href="#" title="Previous Date" onclick="getStatisticsByDate(-1)" style="border: 0px;"><span><<</span></a>
+                                <input id="statisticsDate" type="text" style="width: 70px" onchange="getStatisticsByDate(0)"/>
+                                <a href="#" title="Next Date" onclick="getStatisticsByDate(1)" style="border: 0px;"><span>>></span></a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Std Fuel Rate</td>
+                            <td id="tdStdFuelRate"></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Fuel Opening</td>
+                            <td id="tdFuelOpening"></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Total Consume</td>
+                            <td id="tdTotalCons"></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Refuel Volume</td>
+                            <td id="tdRefuelVolume"></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Drain Volume</td>
+                            <td id="tdDrainVolume"></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>Fuel Closing</td>
+                            <td id="tdFuelClosing"></td>
+                            <td></td>
+                          </tr>
+                          <tr>
+                            <td>DG Run Hrs</td>
+                            <td id="tdTotalRun"></td>
+                            <td>Hrs</td>
+                          </tr>
+                          <tr>
+                            <td>Grid OFF Hrs</td>
+                            <td id="tdGridOff"></td>
+                            <td>Hrs</td>
+                          </tr>
+                          <tr>
+                            <td>Avg Cons</td>
+                            <td id="tdAvgCons"></td>
+                            <td>Ltr/Hr</td>
+                          </tr>
+                          <tr>
+                            <td>Fuel Rate</td>
+                            <td id="tdFuelRate"></td>
+                            <td>Per Hr</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <!--<tr>
+                  <td style="width: 230px">
+                    <div class="ampleViewCurveDiv">
+                      <div class="ampleViewHeader"> Image Gallary </div>
+                      <div id="imageInfo"></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="width: 230px">
+                    <div class="ampleViewCurveDiv">
+                      <div class="ampleViewHeader"> Quick Links </div>
+                      <div id="quickLinksInfo"></div>
+                    </div>
+                  </td>
+                </tr>-->
+                <tr>
+                  <td style="width: 230px">
+                    <div class="ampleViewCurveDiv">
+                      <div class="ampleViewHeader sensorBoard" onclick=" $('#sensorBoardInfo').toggle();" style="cursor: pointer"> Sensor Board </div>
+                      <div id="sensorBoardInfo" style="display: none"></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="contactInfo" style="display: none;">
+    <table id="tableRefuelDetails" class="ampleviewtable" style="width: 100%">
+        <tbody>
+        <tr>
+            <th style="text-align: right"><label>Salutation:</label></th>
+            <td><input type="text" id="txtContactInfoSalutation" placeholder="Salutation" maxlength="10"/></td>
+            <td rowspan="7" id="listContactInfo" style="vertical-align: top"></td>
+        </tr>
+        <tr><th style="text-align: right"><label>Name:</label></th><td><input type="text" id="txtContactInfoName" placeholder="Name" maxlength="40"/><input type="hidden" id="txtContactInfoId"/></td></tr>
+        <tr><th style="text-align: right"><label>Designation:</label></th><td><input type="text" id="txtContactInfoDesignation" placeholder="Designation" maxlength="20"/></td></tr>
+        <tr><th style="text-align: right"><label>Cell:</label></th><td><input type="text" id="txtContactInfoCell" placeholder="Cell" maxlength="20"/></td></tr>
+        <tr><th style="text-align: right"><label>Phone:</label></th><td><input type="text" id="txtContactInfoPhone" placeholder="Phone" maxlength="20"/></td></tr>
+        <tr><th style="text-align: right"><label>Extension:</label></th><td><input type="text" id="txtContactInfoExtension" placeholder="Extension" maxlength="10"/></td></tr>
+        <tr><th style="text-align: right"><label>Email:</label></th><td><input type="text" id="txtContactInfoEmail" placeholder="Email" maxlength="40"/></td></tr>
+        <tr><th style="text-align: right"><label>Status:</label></th><td><input type="text" id="txtContactInfoStatus" placeholder="Status" maxlength="1"/></td></tr>
+        <tr>
+            <th></th>
+            <td style="text-align: right">
+                <a href="#" id="btnSaveContactInfo" style="display: inline-block; border: none;" onclick="saveContactInfo();"><img src="/Images/common/save.png"/></a>
+                <a href="#" id="btnCancelContactInfo" style="display: inline-block; border: none;" onclick="cancelContactInfo();"><img src="/Images/common/cancel.png"/></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="error" style="display: none;"><span></span></div>
+</div>
+<div id="contractManagement" style="display: none;">
+    <table id="tablecontractManagement" class="ampleviewtable" style="padding: 0;">
+        <tbody>
+        <tr><th style="text-align: right"><label>Project:</label></th><td><input type="text" id="txtContractManagementProject" placeholder="Project" maxlength="10" style="width: 70px;"/></td>
+            <th style="text-align: right"><label>Contract Date:</label></th><td><input type="text" id="txtContractManagementContractDate" placeholder="Contract Date" maxlength="10" style="width: 70px;" /> <span class="myAchor"> *</span></td>
+            <td rowspan="8" id="listContractManagement" style="vertical-align: top"></td></tr>
+        <tr><th style="text-align: right"><label>Contract Type:</label></th><td><select id="txtContractManagementContractType" placeholder="Contract Type" style="width: 200px"></select><span class="myAchor"> *</span></td>
+            <th style="text-align: right"><label>Master Contract #:</label></th><td><select id="txtContractManagementMasterContract" placeholder="Master Contract #" style="width: 200px"></select></td></tr>
+        <tr><th style="text-align: right"><label>Outsourcing Partner</label></th><td><select id="txtContractManagementToVendorCode" placeholder="Outsourcing Partner" style="width: 200px" onchange="setVendorCode()"></select><span class="myAchor"> *</span></td>
+            <th style="text-align: right"><label>Service Provider:</label></th><td><select id="txtContractManagementVendorCode" placeholder="Service Provider" style="width: 200px"></select></td></tr>
+        <tr><th style="text-align: right"><label>Client:</label></th><td><select id="txtContractManagementCompCode" placeholder="Client" style="width: 200px"></select><span class="myAchor"> *</span></td>
+            <th style="text-align: right"><label>Contract Status</label></th><td><select id="txtContractManagementContrStatus" placeholder="Contract Status #" style="width: 200px"></select></td></tr>
+        <tr><th style="text-align: right"><label>Contract Valid From:</label></th><td><input type="text" id="txtContractManagementDateFrom" placeholder="Valid From" maxlength="10" style="width: 70px;"/><span class="myAchor"> *</span></td>
+            <th style="text-align: right"><label>Valid To:</label></th><td><input type="text" id="txtContractManagementDateTo" placeholder="Valid To" maxlength="10" style="width: 70px;" /><span class="myAchor"> *</span></td></tr>
+        <tr><th style="text-align: right"><label>Day Befor Alert:</label></th><td><input type="text" id="txtContractManagementExpiryAlertB4" placeholder="Day Befor Alert" maxlength="4"  style="width: 30px;"/><span class="myAchor"> *</span><a href="#" onclick="getContractAlertDay();">Get Day</a></td>
+            <th style="text-align: right"><label>Alert Date:</label></th><td><input type="text" id="txtContractManagementExpiryAlertDate" placeholder="Alert Date" maxlength="10"  style="width: 70px;"/><span class="myAchor"> *</span><input type="text" id="txtContractManagementRemainingDays" placeholder="Remaining Days" style="width: 30px;" /></td></tr>
+        <tr><th style="text-align: right"><label>Description:</label></th><td><textarea id="txtContractManagementDescription" placeholder="Description" rows="2" cols="30" maxlength="100"></textarea></td>
+            <th style="text-align: right"><label>Title:</label></th><td><input type="text" id="txtContractManagementTitle" placeholder="Title" maxlength="15" /><span class="myAchor"> *</span></td></tr>
+        <tr>
+                <th></th>
+                <td colspan="3" style="text-align: right">
+                    <a href="#" id="btnSaveContractManagement" style="display: inline-block; border: none;" onclick="saveContractManagement();"><img src="/Images/common/save.png" /></a>
+                    <a href="#" id="btnCancelContractManagement" style="display: inline-block; border: none;" onclick="cancelContractManagement();"><img src="/Images/common/cancel.png" /></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="error" style="display: none;"><span></span></div>
+</div>
+
+<div id="chartFuelTransaction" style="display: none"></div>
+<div id="divRefuelDetails" style="display: none;">
+    <table id="tableRefuelDetails" class="ampleviewtable ampleviewtableborder" style="width:100%">
+        <tr>
+            <th>Bactch #</th>
+            <th>Ignition (ON / OFF)</th>
+            <th>Event Start</th>
+            <th>Fuel Qty (in Ltrs)</th>
+        </tr>
+    </table>
+</div>

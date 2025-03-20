@@ -1,0 +1,100 @@
+﻿@*<form id="MainPage">
+    
+    <div style="background-color: #E0E0E0; height: 1024px">
+        <h1>
+            Roottechnologies - Tracking Solution Providers</h1>
+        <h3>
+            Please Select Module</h3>
+        <ul>
+            <li>@Html.ActionLink("Real Time Monitoring", "Index", new { area = "SMIM", controller = "Login" })</li>
+            <li>@Html.ActionLink("Track & Care", "Index", new { area = "SMIM", controller = "Login" })</li>
+            <li>@Html.ActionLink("Material Management", "Index", new { area = "SMIM", controller = "Login" })</li>
+            <li>@Html.ActionLink("Operation Management", "Index", new { area = "SMIM", controller = "Login" })</li>
+            <li>@Html.ActionLink("Fleet Management", "Index", new { area = "SMIM", controller = "Login" })</li>
+        </ul>
+       
+    
+    </div>
+</form>
+*@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FuelGEX Solution</title>
+<link type="text/css" rel="stylesheet" href="~/Content/styles/common.css" />
+</head>
+
+<body>
+	<div class="main">
+    	<div class="header">
+        	<div class="logoArea"><div class="ProductLogo"><a href="#"><img src="~/Images/common/FuelGEX_Logo.png" alt="Premier Tracking Solution" /></a></div></div>
+        </div>
+        <div class="spacerFour"></div>
+        <div class="spacerThree"></div>
+        	<div class="loginPanel">
+            	<h2>Welcome FuelGEX Solutions</h2>
+                	<div class="selectModuleArea">
+                        <!-- Select Module -->
+                    	<div class="selectModule left">
+                        	<a href="/SMIM/Login" >
+                            <div class="selectImg"><img src="~/Images/common/realTimeMonitoring.gif" /></div>
+                            <div class="selectAnchor"> @Html.ActionLink("Real Time Monitoring System", "Index", new { area = "SMIM", controller = "Login" })</div> 
+                            </a>
+                        </div>
+                        <!-- Select Module -->
+                        <div class="selectModule left">
+                        	<a href="#">
+                            <div class="selectImg"><img src="~/Images/common/fleetManagement.gif" /></div>
+                            <div class="selectAnchor">Fleet Management System</div>
+                            </a>
+                        </div>
+                        <!-- Select Module -->
+                        <div class="selectModule left">
+                        	<a href="#">
+                            <div class="selectImg"><img src="~/Images/common/logisticManagement.gif" /></div>
+                            <div class="selectAnchor">Logistics Management System</div>
+                            </a>
+                        </div>
+                        <!-- Select Module -->
+                        <div class="selectModule left" style="margin:0">
+                        	<a href="http://fmslive.dfuelmetrix.com">
+                            <div class="selectImg"><img src="~/Images/common/fuelManagement.gif" /></div>
+                            <div class="selectAnchor">Fuel Management System</div>
+                            </a>
+                        </div>
+                        <!-- Select Module -->
+                        <div class="selectModule left">
+                        	<a href="#">
+                            <div class="selectImg"><img src="~/Images/common/operationManagement.gif" /></div>
+                            <div class="selectAnchor">Operation Management System</div>
+                            </a>
+                        </div>
+                        <!-- Select Module -->
+                        <div class="selectModule left">
+                        	<a href="#">
+                            <div class="selectImg"><img src="~/Images/common/mantinanceManagement.gif" /></div>
+                            <div class="selectAnchor">Maintenance Management System</div>
+                            </a>
+                        </div>
+                        <!-- Select Module -->
+                        <div class="selectModule left">
+                        	<a href="#">
+                            <div class="selectImg"><img src="~/Images/common/metarialManagement.gif" /></div>
+                            <div class="selectAnchor">Material Management System</div>
+                            </a>
+                        </div>
+                        <!-- Select Module -->
+                        <div class="selectModule left" style="margin:0">
+                        	<a href="#">
+                            <div class="selectImg"><img src="~/Images/common/financialManagement.gif" /></div>
+                            <div class="selectAnchor">Financial Management System</div>
+                            </a>
+                        </div>
+                        <!-- Select Module -->
+                    </div>
+            </div>
+            <div class="footer">Powered by FuelGEX 2013 all right reserved</div>
+    </div>
+</body>
+</html>

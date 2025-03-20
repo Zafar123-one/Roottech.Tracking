@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSSP.Entities">
+  <class name="MonthWiseSummary">
+    <id name="Id" />
+    <property name="OpenningMile" />
+    <property name="TotalMileage" />
+    <property name="Refuel" />
+    <property name="Consume" />
+    <property name="ConsumeWithUnCon" />
+    <property name="Theft" />
+    <property name="GridRunHr" />
+    <property name="TotalRuningHour" />
+    <property name="CompRunHr" />
+    <property name="AverageConsumption" />
+    <property name="Closing" />
+    <property name="Unconsume" />
+    <property name="StabMargin" />
+    <property name="FuelReturnDrain" />
+    <property name="AverageConsumptionMile" />
+    <property name="AverageConsumptionKilometer" />
+    <loader query-ref="GetMonthWiseSummary"/>
+  </class>
+  <sql-query name="GetMonthWiseSummary">
+    <return class="MonthWiseSummary" >
+		  <return-property name="Id" column="Opening_Fuel" />
+	    <return-property column="OpenMile" name="OpenningMile" />
+		  <return-property column="TotalMileage" name="TotalMileage" />
+		  <return-property column="Refuel" name="Refuel" />
+		  <return-property column="Consume" name="Consume" />
+      <return-property column="ConsumeWithUnCon" name="ConsumeWithUnCon" />
+      <return-property column="Theft" name="Theft" />
+      <return-property column="GridRunHr" name="GridRunHr" />
+      <return-property column="totRuninghr" name="TotalRuningHour" />
+		  <return-property column="CompRunHr" name="CompRunHr" />
+		  <return-property column="Avg_Consum" name="AverageConsumption" />
+		  <return-property column="Closing" name="Closing" />
+      <return-property column="Unconsume" name="Unconsume" />
+      <return-property column="StabMargin" name="StabMargin" />
+		  <return-property column="FuelReturn" name="FuelReturnDrain" />
+		  <return-property column="Avg_Consumption_Mile" name="AverageConsumptionMile" />
+		  <return-property column="Avg_Consumption_KM" name="AverageConsumptionKilometer" />
+    </return>
+    exec dbo.SP_GET_MONTHSUM_DASHBOARD_test @UnitId = :UnitId, @Year = :Year, @month = :Month
+  </sql-query>
+</hibernate-mapping>

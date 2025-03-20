@@ -1,0 +1,152 @@
+﻿<div id="vehicleReportCard" style="display: none">
+    <table>
+        <tr>
+            <td>Vehicle</td>
+            <td><select id="selectVehicleForReportCard"></select></td>
+            <td>Date</td>
+            <td><input id="dateForVehicleReportCard" type="text"/></td>
+            <td><input id="runVehicleReportCard" type="button" value="Run Report" onclick="callREportCard($('#selectVehicleForReportCard').val(), $('#dateForVehicleReportCard').val())" ></td>
+            <!--<td><input id="exportVehicleReportCard" type="button" value="Export" ></td>-->
+        </tr>
+        <tr>
+            <td colspan="2" valign="top" >
+                <table>
+                    <tr>
+                        <td>Driving Distance</td>
+                        <td>41.02Km</td>
+                    </tr>
+                    <tr>
+                        <td>Total Driving Duration</td>
+                        <td>3h 15m</td>
+                    </tr>
+                </table>
+            </td>
+            <td colspan="3">
+                <div id="chartVehicleReportCard" style="width:300px; height:300px;"></div>
+                <div id="speedchartVehicleReportCard" style="width:300px; height:300px;"></div>
+                
+            </td>
+        </tr>
+    </table>
+</div>
+<script type="text/javascript">
+    function callREportCard(unitId, date) {
+        showChartVehicleReportCard(unitId, date);
+        showSpeedVehicleReportCard(unitId, date);
+    }
+    function showChartVehicleReportCard(unitId, date) {
+        $.ajax({
+            // have to use synchronous here, else the function
+            // will return before the data is fetched
+            async: false,
+            url: urlGetVehicleReportCard,
+            type: "GET",
+            data: { unitId: unitId, date: date },
+            dataType: "json",
+            success: function (data) {
+                var s = []; //[200, 600, 700, 1000];
+                //var s2 = [460, -210, 690, 820];
+                //var s3 = [-260, -440, 320, 200];
+
+                // Can specify a custom tick Array.
+                // Ticks should match up one for each y value (category) in the series.
+                var ticks = [];// ['Driving', 'Parked', 'Idle'];
+                $('#chartVehicleReportCard').empty();
+                if (data != "") {
+                    $(data).each(function() {
+                        s.push(this.Hours);
+                        ticks.push(this.Id);
+                    });
+                } else {
+                    alert('no data found');
+                    return;
+                }
+                
+                var plot1 = $.jqplot('chartVehicleReportCard', [s], {
+                    // The "seriesDefaults" option is an options object that will
+                    // be applied to all series in the chart.
+                    title: 'Vehicle Usage', 
+                    seriesDefaults: {
+                        renderer: $.jqplot.BarRenderer,
+                        rendererOptions: { fillToZero: true },
+                        pointLabels: { show: true, location: 'e', edgeTolerance: -15 },
+                    },
+                    axes: {
+                        // Use a category axis on the x axis and use our custom ticks.
+                        xaxis: {
+                            renderer: $.jqplot.CategoryAxisRenderer,
+                            ticks: ticks
+                        },
+                        yaxis: {
+                            label:'Hours',
+                            labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+                            pad: 1.05,
+                            //padMin: 0,
+                            min: 0, max: 24
+                            //ticks: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]
+                            ,tickOptions: { formatString: '%.2f' }
+                        }
+                    }
+                });
+                
+            }
+        });
+    }
+    
+    function showSpeedVehicleReportCard(unitId, date) {
+        $.ajax({
+            // have to use synchronous here, else the function
+            // will return before the data is fetched
+            async: false,
+            url: urlGetSpeedVehicleReportCard,
+            type: "GET",
+            data: { unitId: unitId, date: date },
+            dataType: "json",
+            success: function (data) {
+                var s = []; 
+                // Can specify a custom tick Array.
+                // Ticks should match up one for each y value (category) in the series.
+                var ticks = []; //=  ['0-20','20-50','50-70','70-100'];
+                $('#speedchartVehicleReportCard').empty();
+                if (data != "") {
+                    $(data).each(function() {
+                        s.push(this.Perc);
+                        ticks.push(this.Id);
+                    });
+                } else {
+                    alert('no data found');
+                    return;
+                }
+                
+                var plot1 = $.jqplot('speedchartVehicleReportCard', [s], {
+                    // The "seriesDefaults" option is an options object that will
+                    // be applied to all series in the chart.
+                    title: 'Speed Graph', 
+                    seriesDefaults: {
+                        renderer: $.jqplot.BarRenderer,
+                        rendererOptions: { fillToZero: true },
+                        pointLabels: { show: true, location: 'e', edgeTolerance: -15 },
+                    },
+                    axes: {
+                        // Use a category axis on the x axis and use our custom ticks.
+                        xaxis: {
+                            label:'Speed',
+                            renderer: $.jqplot.CategoryAxisRenderer,
+                            ticks: ticks
+                        },
+                        yaxis: {
+                            label:'Percentage',
+                            labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+                            pad: 1.05,
+                            //padMin: 0,
+                            min: 0, max: 100
+                            //ticks: [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24]
+                            ,tickOptions: { formatString: '%.2f' }
+                        }
+                    }
+                });
+                
+            }
+        });
+    }
+</script>

@@ -1,0 +1,70 @@
+﻿<div id="StartStopReport" style="display: none">
+    <table>
+        <tr>
+            <td>Vehicle</td>
+            <td><select id="selectVehicleForStartStopReport"></select></td>
+            <td>From Date</td>
+            <td><input id="fromDateForStartStopReport" type="text" /></td>
+            <td>To Date</td>
+            <td><input id="ToDateForStartStopReport" type="text" /></td>
+        </tr>
+        <tr>
+            <td colspan="6" align="center"><input id="runVehicleReportCard" type="button" value="Run Report" onclick="runStartStopReport($('#selectVehicleForStartStopReport').val(),$('#fromDateForStartStopReport').val(),$('#ToDateForStartStopReport').val())"></td>
+        </tr>
+        <tr>
+            <td><label id="lblTitleVehicle" style="display:none">Vehicle # :</label> </td>
+            <td colspan="2"><label id="lblVehicleIdStartStop"></label></td>
+            <td><label id="lblTitleAssetType" style="display:none">Asset Type :</label></td>
+            <td colspan="2"><label id="lblAssetTypeStartStop"></label></td>
+        </tr>
+        <!--<tr><td></td></tr>-->
+    </table>
+</div>
+<table id="listStartStop"></table>
+<div id="startStopReportDiv"></div>
+<script type="text/javascript">
+    function runStartStopReport(unitid, fromdate, todate) {
+        //$("#lblTitleVehicle").show();
+        //$("#lblVehicleIdStartStop").val(unitid);
+        //$("#lblTitleAssetType").show();
+        loadGridStartStop(unitid, fromdate, todate);
+    }
+
+</script>
+
+<script language="javascript" type="text/javascript">
+    function loadGridStartStop(unitid, fromdate, todate) {
+        var colModel = [
+            //{ name: 'Id', index: 'Id', width: 100, align: 'left', sorttype: "string" },//template: dateTimeTemplate },"Plate ID",
+            { name: 'InactivityTime', index: 'InactivityTime', width: 100, align: 'left', sorttype: "string" },
+            { name: 'StartTime', index: 'StartTime', width: 160, align: 'left', template: dateTimeTemplate },
+            { name: 'StopTime', index: 'StopTime', width: 160, align: 'left', template: dateTimeTemplate },
+            { name: 'TravelTime', index: 'TravelTime', width: 120, align: 'left', sorttype: "string" },
+            { name: 'TravelDistance', index: 'TravelDistance', width: 100, align: 'left', sorttype: "string" }
+        ];
+        loadjqGrid(
+            [], "listStartStop", "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "ReportApi", action = "GetStartStopReportByUnitIdAndDate" })", { unitId: unitid, Fromdate: fromdate, Todate: todate},
+            [ "Inactivity Time", "Start Time", "Stop Time", "Travel Time", "Travel Distance"], colModel,
+            "startStopReportDiv", "Id", "asc", "", 50, _rowList, 1, 1, "Start Stop Report of Vehicle # : " + unitid, 
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                repeatitems: false,
+                userdata: "userdata"
+            },
+            undefined, undefined, false, false, function () {
+                $grid.setGridWidth(700);//$(window).width() - 360);
+                $grid.setGridHeight(400);//$(window).height() - 200);
+                //$(".ui-jqgrid-active").css('z-index', 1002);
+                $(".ui-jqgrid-active").css("left", 350).css("bottom", 100);
+                $("#" + $grid.attr("aria-labelledby")).show();
+                
+                $("#StartStopReport").dialog("close");
+            });
+    }
+
+    function loadPage() {
+    }
+</script>

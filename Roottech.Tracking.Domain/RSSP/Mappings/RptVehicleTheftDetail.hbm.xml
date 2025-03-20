@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSSP.Entities">
+  <class name="RptVehicleTheftDetail">
+    <id name="Id" />
+	  <property name="Organization" />
+	  <property name="Description" />
+	  <property name="LevelType" />
+	  <property name="OpenDate" />
+	  <property name="CloseDate" />
+	  <property name="TotDuration" />
+	  <property name="FuelTheftQty" />
+	  <property name="Longitude" />
+	  <property name="Latitude" />
+    <loader query-ref="GetRptVehicleTheftDetail"/>
+  </class>
+  <sql-query name="GetRptVehicleTheftDetail">
+    <return class="RptVehicleTheftDetail" >
+      <return-property name="Id" column="Batch#" />
+		<return-property name="Organization" column="Organization" />
+	  <return-property name="Description" column="Description" />
+      <return-property name="LevelType" column="Leveltype" />
+      <return-property name="OpenDate" column="Event_Start_Date" />
+      <return-property name="CloseDate" column="CloseDate" />
+      <return-property name="TotDuration" column="TotalDuration" />
+		<return-property name="FuelTheftQty" column="Fuel_Theft_Qty(in Ltrs)" />
+		<return-property name="Longitude" column="Longitude" />
+      <return-property name="Latitude" column="Latitude" />
+    </return>
+	  exec SP_RPT_Vehicle_Theft_Detail @FromDt = :FromDt, @ToDt = :ToDt, @Orgcode = :Orgcode, @PlateId = :PlateId, @Resource# = null, @Usercode = :UserCode, @ugrpmst# = :ugrpmst
+  </sql-query>
+</hibernate-mapping>

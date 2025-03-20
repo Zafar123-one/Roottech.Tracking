@@ -1,0 +1,43 @@
+﻿<div id="featureList" style="display: none">
+    <link href="~/Content/jquery.contextMenu.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/jquery.countdown.css" rel="stylesheet" type="text/css" />
+    <!-- @Html.Label("2 groups found in current map view")
+        <p>@Html.Label("Show All Features")</p> -->
+        
+    <div class="ampleViewHeader">Search Criteria</div>
+    <input id="showSearch-checkbox" type="checkbox" />
+    <label for="showSearch-checkbox" class="btn-showSearchAsset" id="showSearch-label">Hide</label>
+    <div class="buttons bs-example">
+        <input type="text" id="txtOrgSearch" class="themeyInputTextField" Placeholder="Search By Organization" />
+        <div class="spacer"></div>
+        <input type="text" id="txtTypeSearch" class="themeyInputTextField" Placeholder="Search By Resource Type" />
+        <div class="spacer"></div>
+        <input type="text" id="txtGroupSearch" class="themeyInputTextField" Placeholder="Search By Resource Group"/>
+        <div class="spacer"></div>
+        <input type="text" id="txtSearch" class="themeyInputTextField" Placeholder="Search By Asset" />
+        <div class="spacer"></div>
+        <input type="button" class="themeyIntputBtn" value="Filter" id="txtFilter" onclick="filterTreeView()" />
+        <input type="button" class="themeyIntputBtn" value="Clear" onclick=" clearFilterTreeView()" />
+    </div>
+    <div id="assetTreeControl">
+        <a href="?#">Collapse All</a> | <a href="?#">Expand All</a>
+        <input type="checkbox" id="chkSelectAll" class="check" title="Show All Vehicle" /><label>Show All</label>
+        <br />
+        <div class="buttons">
+            <div class="autoRefreshBox left">
+                <div class="left autoRf">
+                    <input type="text" id="txtTime" class="autoRandom" value="60" style="width: 30px" />(sec)
+                </div>
+                <div class="right autoCheck">
+                    <input type="checkbox" id="chkAutoRefresh" class="check" title="Auto Refresh" /><label>Auto Refresh</label>
+                    
+                </div>
+                
+            </div>
+            <div class="right"><div id="defaultCountdown"></div></div>
+        </div>
+    </div>
+    <ul id="assetTree" class="filetree treeview-red" style="height: 300px; overflow: auto"></ul>
+    <div id="assetTreeLoader" class="ajax-loader" style="height: 300px;position: relative;margin-left: 110px;"></div>
+</div>
+ 

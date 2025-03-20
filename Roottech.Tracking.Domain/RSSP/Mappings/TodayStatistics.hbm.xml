@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSSP.Entities">
+  <class name="TodayStatistics">
+    <id name="Id" />
+    <property name="TripConsume" />
+    <property name="FuelConsKm" />
+    <property name="TripRefuel" />
+    <property name="TripTheft" />
+    <property name="TotKm" />
+    <property name="TotRunHrs" />
+    <property name="TotParkHrs" />
+    <property name="FuelRateHr" />
+    <property name="FuelRateKm" />
+    <property name="FuelLvlEnd" />
+    <property name="AvgConsume" />
+    <property name="GridOffHrs" />
+    <loader query-ref="GetTodayStatistics"/>
+  </class>
+  <sql-query name="GetTodayStatistics">
+    <return class="TodayStatistics" >
+      <return-property name="Id" column="FuelLvl_start" />
+      <return-property name="TripConsume" column="Trip_Consume" />
+      <return-property name="FuelConsKm" column="FuelConsKm" />
+      <return-property name="TripRefuel" column="Trip_Refuel" />
+      <return-property name="TripTheft" column="Trip_Theft" />
+      <return-property name="TotKm" column="TotKm" />
+      <return-property name="TotRunHrs" column="TotRunHrs" />
+      <return-property name="TotParkHrs" column="TotParkHrs" />
+      <return-property name="FuelRateHr" column="FuelRateHr" />
+      <return-property name="FuelRateKm" column="FuelRateKm" />
+      <return-property name="FuelLvlEnd" column="FuelLvl_End" />
+      <return-property name="AvgConsume" column="AvgConsume" />
+      <return-property name="GridOffHrs" column="GridOffHrs" />
+    </return>
+    exec SP_Get_TodayStatistics_Test @UnitId = :UnitId, @OpenDt = :OpenDt, @FuelRate= :FuelRate
+  </sql-query>
+</hibernate-mapping>

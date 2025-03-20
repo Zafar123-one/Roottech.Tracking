@@ -1,0 +1,370 @@
+﻿<div id="fuelActivityReportCard" style="display: none">
+    <table class="ampleviewtable">
+        <tr>
+            <td style="text-align: right; width: 100px; padding-right: 10px;">From Date</td>
+            <td style="width: 250px"><input id="fromDateForFuelReport" type="text" style="width: 75px"/></td>
+            <td style="text-align: right; width: 100px; padding-right: 10px;">To Date</td>
+            <td style="width: 250px"><input id="toDateForFuelReport" type="text" style="width: 75px"/></td>
+        </tr>
+      <tr>
+        <td style="text-align: right; padding-right: 10px;">City</td>
+        <td><select id="cityForFuelReport" style="width: 200px"></select></td>
+        <td style="text-align: right; padding-right: 10px;">Region</td>
+        <td colspan="3"><select id="regionForFuelReport" style="width: 200px"></select></td>
+      </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px;">Site</td>
+            <td><select id="siteForFuelReport" style="width: 200px"></select></td>
+            <td style="text-align: right; padding-right: 10px;">Asset</td>
+            <td><select id="assetForFuelReport" style="width: 200px"></select></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px;">Activity Type</td>
+            <td colspan="2"><label><input type="radio" name="fuelReport" value="I" checked="checked"/>Intake</label>
+                <label><input type="radio" name="fuelReport" value="C"/>Consumption</label>
+                <label><input type="radio" name="fuelReport" value="T"/>Theft</label></td>
+            <td colspan="3" style="text-align: right">
+              <input id="btnFuelReport" type="button" value="Go" onclick="return runFuelReports();">
+              <input id="btnResetFuelReport" type="button" value="Reset" onclick="return resetFuelActivityReportCard();">
+            </td>
+        </tr>
+    </table>
+    <div id="fuelActivityLoader" style="height: 97%; position: absolute; top: 1px; width: 97%; background-color: white; display: none">
+        <div class="ajax-loader" style="height: 100%; margin-left: 50%;"></div>
+    </div>
+</div>
+<table id="listFuel" ></table>
+<div id="pagerFuel"></div>
+
+<script type="text/javascript">
+    function runFuelReports() {
+        if ($("input[name=fuelReport]:checked").val() === undefined) {
+            alert("Please select one of the reports options");
+            return false;
+        }
+        if ($("#fromDateForFuelReport").val() === "") {
+            alert("Please select any from date.");
+            $("#fromDateForFuelReport").focus();
+            return false;
+        } else if ($("#toDateForFuelReport").val() === "") {
+            alert("Please select any to date.");
+            $("#toDateForFuelReport").focus();
+            return false;
+        } else if ($("#fromDateForFuelReport").datepicker("getDate") > $("#toDateForFuelReport").datepicker("getDate")) {
+            alert("To date should be greater than from date.");
+            $("#toDateForFuelReport").focus();
+            return false;
+        } else if (($("input[name=fuelReport]:checked").val() === "C") && $("#siteForFuelReport").val() === null | $("#siteForFuelReport").val() === undefined) {
+            alert("Please select site, It's required.");
+            $("#siteForFuelReport").focus();
+            return false;
+        }
+
+        var from = $('#fromDateForFuelReport').datepicker('getDate');
+        var to = $('#toDateForFuelReport').datepicker('getDate');
+        var days = (to - from) / 1000 / 60 / 60 / 24;
+        if (days > 92) {
+            alert("The duration between dates should be three months at maximum.");
+            $("#toDateForFuelReport").focus();
+            return false;
+        }
+
+        $("#fuelActivityLoader").fadeIn({
+            complete: function() {
+                switch ($("input[name=fuelReport]:checked").val()) {
+                case "I":
+                    loadGridFuelIntake();
+                    break;
+                case "C":
+                    loadGridFuelConsumption();
+                    break;
+                case "T":
+                    loadGridFuelTheft();
+                    break;
+                default:
+                    break;
+                }
+            }
+        });
+        return true;
+    }
+
+    function loadGridFuelIntake() {
+        var colModel = [
+            { name: 'Id', index: 'Id', width: 70, align: 'right', template: integerTemplate }, //template: dateTimeTemplate },"Plate ID",
+            { name: 'SiteName', index: 'SiteName', width: 250, align: 'left', sorttype: "string" },
+            { name: 'AssetName', index: 'AssetName', width: 150, align: 'left', sorttype: "string" },
+            { name: 'RefuelType', index: 'RefuelType', width: 70, align: 'center', sorttype: "string" },
+            { name: 'OpenDt', index: 'OpenDt', width: 150, align: 'center', template: dateTimeTemplate },
+            { name: 'EndDt', index: 'EndDt', width: 150, align: 'center', template: dateTimeTemplate },
+            { name: 'TotDuration', index: 'TotDuration', width: 80, align: 'center', sorttype: "string" },
+            { name: 'Increase', index: 'Increase', width: 80, align: 'right', template: moneyTemplate, summaryType: 'sum' }
+        ];
+        var url = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ReportApi", action = "GetFuelIntakeReport"})";
+        loadjqGrid(
+            [], "listFuel", url,
+            {
+                fromDate: $("#fromDateForFuelReport").datepicker("getDate").toJSON(),
+                toDate: $("#toDateForFuelReport").datepicker("getDate").toJSON(),
+                region: $("#regionForFuelReport").val(),
+                city: $("#cityForFuelReport").val(),
+                site: $("#siteForFuelReport").val(),
+                resource: $("#assetForFuelReport").val()
+            },
+            ["Batch No.", "Site Name", "Asset Name", "Event Description", "Event Start", "Event Stop", "Total Duration", "Refueled (Ltrs)"], colModel,
+            "pagerFuel", "Id", "asc", "", 50, _rowList, 1, 1, "Fuel Intake",
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                repeatitems: false,
+                userdata: "userdata",
+                oper: "grid"
+            },
+            undefined, undefined, true, true, function() {
+                if ($grid.jqGrid("footerData").TotDuration !== "&nbsp;")
+                    return;
+                $grid.setGridWidth($(window).width() - 360);
+                $grid.setGridHeight($(window).height() - 200);
+                $(".ui-jqgrid-active").css("bottom", 60);
+                $("#" + $grid.attr("aria-labelledby")).show();
+                //-----Close Selection of Org
+                //$("#fuelActivityReportCard").dialog("close");
+            $("#fuelActivityLoader").fadeOut();
+
+                //var colSum = $grid.jqGrid('getCol', 'Increase', false, 'sum');
+                //$grid.jqGrid('footerData', 'set', { 'Increase': colSum });
+
+                var localData = $grid.jqGrid("getGridParam", "data"),
+                    totalIncrease = 0;
+
+                $.each(localData, function(index, value) {
+                    totalIncrease += parseFloat(value.Increase);
+                });
+
+                $grid.jqGrid("footerData", "set", {
+                    TotDuration: "Grand Total:",
+                    Increase: totalIncrease
+                });
+                $("#pagerFuel_excel").remove();
+
+                $grid.navButtonAdd('#pagerFuel', {
+                    caption: "",
+                    buttonicon: "ui-icon-disk",
+                    onClickButton: function() {
+                        //  Export the data from our jqGrid into a "real" Excel 2007 file
+                        ExportJQGridDataToExcel("#listFuel", "Fuel Intake.xlsx");
+                    }
+                });
+                $grid.navButtonAdd('#pagerFuel', {
+                    caption: "",
+                    buttonicon: "ui-icon-disk",
+                    title: "Export To Pdf (All)",
+                    onClickButton: function(e) {
+                        try {
+                            $grid.jqGrid("excelExport", { tag: "pdf", url: url + "Ep" + "?all=true" });
+                        } catch (e) {
+                            window.location = url + "Ep" + "?all=true&oper=pdf";
+                        }
+                    },
+                    position: "last"
+              });
+            $("#" + $grid.attr("aria-labelledby")).addClass("z-index-2000");
+          });
+        gridErrorLoaderFunction("listFuel", "fuelActivityLoader");
+    }
+
+    function loadGridFuelConsumption() {
+        var colModel = [
+            { name: 'Id', index: 'Id', width: 70, align: 'right', template: integerTemplate }, //template: dateTimeTemplate },"Plate ID",
+            { name: 'SiteCode', index: 'SiteCode', width: 190, align: 'left', sorttype: "string" },
+            { name: 'SiteName', index: 'SiteName', width: 200, align: 'left', sorttype: "string" },
+            { name: 'AssetName', index: 'AssetName', width: 150, align: 'left', sorttype: "string" },
+            { name: 'OpenDtForGroup', index: 'OpenDtForGroup', width: 1, sortable: false, hidden: true, search: false, view: false },
+            { name: 'OpenDt', index: 'OpenDt', width: 150, align: 'center', template: dateTimeTemplate },
+            { name: 'CloseDt', index: 'CloseDt', width: 150, align: 'center', template: dateTimeTemplate, summaryType: "count", summaryTpl: '<b>Total: </b>' },
+            {
+                name: 'Duration',
+                index: 'Duration',
+                width: 80,
+                align: 'center',
+                sorttype: "string",
+
+                formatter: function(cellval, opts, rwdat, act) {
+                    if (opts.rowId === "") {
+                        return $.fn.fmatter('string', GetTimeInFullByHourAndMinuteAndSecond(cellval.totalHours, cellval.totalMinutes, cellval.totalSeconds), opts, rwdat, act);
+                    } else {
+                        return $.fn.fmatter('string', cellval, opts, rwdat, act);
+                    }
+                },
+                summaryType: function(val, name, record) {
+                    if (typeof (val) === "string") {
+                        val = { totalHours: 0, totalMinutes: 0, totalSeconds: 0 };
+                    }
+                    val.totalHours += record.Hour;
+                    val.totalMinutes += record.Minute;
+                    val.totalSeconds += record.Second;
+                    return val;
+                }
+            },
+            { name: 'ConsumeQty', index: 'ConsumeQty', width: 120, align: 'right', template: moneyTemplate, summaryType: 'sum' },
+            { name: 'Second', index: 'Second', hidden: true, summaryType: "sum" },
+            { name: 'Minute', index: 'Minute', hidden: true, summaryType: "sum" },
+            { name: 'Hour', index: 'Hour', hidden: true, summaryType: "sum" }
+        ];
+        var url = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ReportApi", action = "GetFuelConsumptionReport"})";
+        loadjqGrid(
+            [], "listFuel", url,
+            {
+                fromDate: $("#fromDateForFuelReport").datepicker("getDate").toJSON(),
+                toDate: $("#toDateForFuelReport").datepicker("getDate").toJSON(),
+                region: $("#regionForFuelReport").val(),
+                city: $("#cityForFuelReport").val(),
+                site: $("#siteForFuelReport").val(),
+                resource: $("#assetForFuelReport").val()
+            },
+            ["Batch No.", "Site Code", "Site Name", "Asset Name", "Open Date", "Event Start", "Event Stop", "Total Duration", "Fuel Consumed (Ltrs)", "Second", "Minute", "Hour"], colModel,
+            "pagerFuel", "Id", "asc", "", 50, _rowList, 1, 1, "Fuel Consumption",
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                repeatitems: false,
+                userdata: "userdata"
+            },
+            undefined, undefined, true, true, function() {
+                if ($('.footrow [aria-describedby="listFuel_CloseDt"]').html() !== "&nbsp;")
+                    return;
+
+                $grid.setGridWidth($(window).width() - 360);
+                $grid.setGridHeight($(window).height() - 200);
+                $(".ui-jqgrid-active").css("bottom", 60);
+                $("#" + $grid.attr("aria-labelledby")).show();
+                //-----Close Selection of Org
+                //$("#fuelActivityReportCard").dialog("close");
+            $("#fuelActivityLoader").fadeOut();
+
+                var localData = $grid.jqGrid("getGridParam", "data"),
+                    totalConsumeQty = 0,
+                    totalSeconds = 0,
+                    totalMinutes = 0,
+                    totalHours = 0;
+
+                $.each(localData, function(index, value) {
+                    totalConsumeQty += parseFloat(value.ConsumeQty);
+                    totalSeconds += parseFloat(value.Second);
+                    totalMinutes += parseFloat(value.Minute);
+                    totalHours += parseFloat(value.Hour);
+                });
+
+                $grid.jqGrid("footerData", "set", {
+                    ConsumeQty: totalConsumeQty
+                });
+                $('.footrow [aria-describedby="listFuel_Duration"]').html(GetTimeInFullByHourAndMinuteAndSecond(totalHours, totalMinutes, totalSeconds));
+                $('.footrow [aria-describedby="listFuel_CloseDt"]').html("<b>Grand Total: </b>");
+                $("#pagerFuel_excel").remove();
+
+                $grid.navButtonAdd('#pagerFuel', {
+                    caption: "",
+                    buttonicon: "ui-icon-disk",
+                    title: "Export To Pdf (All)",
+                    onClickButton: function (e) {
+                        try {
+                            $grid.jqGrid("excelExport", { tag: "pdf", url: url + "Ep" + "?all=true" });
+                        } catch (e) {
+                            window.location = url + "Ep" + "?all=true&oper=pdf";
+                        }
+                    },
+                    position: "last"
+              });
+            $("#" + $grid.attr("aria-labelledby")).addClass("z-index-2000");
+            }, undefined, undefined, undefined,
+            true,
+            {
+                groupField: ['OpenDtForGroup'],
+                groupSummary: [true],
+                groupColumnShow: [false],
+                groupText: ['<b></b>'],
+                groupCollapse: false,
+                groupOrder: ['asc'],
+                groupDataSorted: true
+            });
+        gridErrorLoaderFunction("listFuel", "fuelActivityLoader");
+    }
+
+    function loadGridFuelTheft() {
+        var colModel = [
+            { name: 'Id', index: 'Id', width: 70, align: 'right', template: integerTemplate }, //template: dateTimeTemplate },"Plate ID",
+            { name: 'SiteName', index: 'SiteName', width: 250, align: 'left', sorttype: "string" },
+            { name: 'AssetName', index: 'AssetName', width: 150, align: 'left', sorttype: "string" },
+            { name: 'RefuelType', index: 'RefuelType', width: 70, align: 'center', sorttype: "string" },
+            { name: 'OpenDt', index: 'OpenDt', width: 150, align: 'center', template: dateTimeTemplate },
+            { name: 'EndDt', index: 'EndDt', width: 150, align: 'center', template: dateTimeTemplate },
+            { name: 'TotDuration', index: 'TotDuration', width: 80, align: 'center', sorttype: "string" },
+            { name: 'Decrease', index: 'Decrease', width: 80, align: 'right', template: moneyTemplate }
+        ];
+        var url = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ReportApi", action = "GetFuelTheftReport"})";
+        loadjqGrid(
+            [], "listFuel", url,
+            {
+                fromDate: $("#fromDateForFuelReport").datepicker("getDate").toJSON(),
+                toDate: $("#toDateForFuelReport").datepicker("getDate").toJSON(),
+                region: $("#regionForFuelReport").val(),
+                city: $("#cityForFuelReport").val(),
+                site: $("#siteForFuelReport").val(),
+                resource: $("#assetForFuelReport").val()
+            },
+            ["Batch No.", "Site Name", "Asset Name", "Event Description", "Event Start", "Event Stop", "Total Duration", "Fuel Theft (Ltrs)"], colModel,
+            "pagerFuel", "Id", "asc", "", 50, _rowList, 1, 1, "Fuel Theft",
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                repeatitems: false,
+                userdata: "userdata"
+            },
+            undefined, undefined, true, true, function() {
+                if ($grid.jqGrid("footerData").TotDuration !== "&nbsp;")
+                    return;
+
+                $grid.setGridWidth($(window).width() - 360);
+                $grid.setGridHeight($(window).height() - 200);
+                $(".ui-jqgrid-active").css("bottom", 60);
+                $("#" + $grid.attr("aria-labelledby")).show();
+                //-----Close Selection of Org
+                //$("#fuelActivityReportCard").dialog("close");
+            $("#fuelActivityLoader").fadeOut();
+
+                var localData = $grid.jqGrid("getGridParam", "data"), totalDecrease = 0;
+
+                $.each(localData, function(index, value) {
+                    totalDecrease += parseFloat(value.Decrease);
+                });
+
+                $grid.jqGrid("footerData", "set", {
+                    TotDuration: "Grand Total:",
+                    Decrease: totalDecrease
+                });
+                $("#pagerFuel_excel").remove();
+
+                $grid.navButtonAdd('#pagerFuel', {
+                    caption: "",
+                    buttonicon: "ui-icon-disk",
+                    title: "Export To Pdf (All)",
+                    onClickButton: function (e) {
+                        try {
+                            $grid.jqGrid("excelExport", { tag: "pdf", url: url + "Ep" + "?all=true" });
+                        } catch (e) {
+                            window.location = url + "Ep" + "?all=true&oper=pdf";
+                        }
+                    },
+                    position: "last"
+              });
+            $("#" + $grid.attr("aria-labelledby")).addClass("z-index-2000");
+            });
+        gridErrorLoaderFunction("listFuel", "fuelActivityLoader");
+    }
+</script>

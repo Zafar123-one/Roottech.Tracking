@@ -1,0 +1,116 @@
+﻿<div id="poiAdmin" style="display: none">
+    <table>
+        <tr><td><select id="selOrganizationByUser"></select></td></tr>
+        <tr><td><select id="selCompanyByOrg" style="display: none"></select></td></tr>
+        <tr><td><select id="selPOIType" ></select></td></tr>
+        <tr><td>
+                <input type="text" id="txtLat" placeholder="Latitude"/>
+                <input type="text" id="txtLng" placeholder="Longitude"/></td></tr>
+        <tr><td><input type="text" id="txtBuffer" placeholder="Buffer" /></td></tr>
+        <tr>
+            <td>
+                <input type="button" id="showPoiManagement" value="List POIs" style="display: none"/>
+                <input type="button" id="drawPOIMarkers" value="Display POIs on Map" onclick="drawPoibyType()" />
+                <input type="button" id="findPOI" value="Find POIs" onclick="findPOIsByLatLngAndPoiType()" />
+            </td>        
+        </tr>
+    </table>
+</div>
+<table id="listPoiAdmin"></table>
+<div id="pagerPoiAdmin"></div>
+<br /><br />
+<div id="poiImagesPlaceholder">
+    <table id="listPoiImage"></table>
+    <div id="pagerPoiImage"></div>
+
+    <br /><br />
+    <div id="poiImageUserAccessPlaceholder">
+        <table id="listPoiImageUserAccess"></table>
+        <div id="pagerPoiImageUserAccess"></div>
+    </div>
+</div>
+
+<div class="poiImage" style="display: none">
+    <img alt="poi image" />
+</div>
+
+<div id="poiAdminLoader" style="display: none; position: absolute;left: 520px;top: 50px;width: 400px;height: 200px;z-index: 999;background-color: white">
+    <div class="ajax-loader" style="margin-left: 190px;">
+        <p style="padding-top: 140px;margin-left: -84px;">Please wait, This may take a few minutes.</p>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">
+    var urlGetPoiByPoiNo = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "GetPoiByPoiNo" })";
+    var urlGetPoisbyType = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "GetAllPoisByType" })";
+
+    var urlGetCompleteLocationsByOrgCode = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "getCompleteLocationsByOrgCode" })/?orgCode=";
+    var urlGetPois = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "GetPois" })";
+    var urlGetOrganizationsByUserCode = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "GetOrganizationsByUserCode" })";
+    var urlGetCompaniesbyOrgCode = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "GetCompaniesbyOrgCode" })";
+    var urlGetPoiTypes = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "GetPoiTypes" })";
+    var urlGetCompleteLocationByOrgCodeAndBlockCode = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "getCompleteLocationByOrgCodeAndBlockCode" })";
+    var urlGetGImagePathByPoiTypeNo = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "getGImagePathByPoiTypeNo" })";
+
+    var urlEditPoi = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "EditPoi" })";
+    var urlAddPoi = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "AddPoi" })";
+    var urlDeletePoi = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "DeletePoi" })";
+
+    var urlGetPoiImagesByPoiNo = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "GetPoiImagesByPoiNo" })";
+
+    var urlEditPoiImage = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "EditPoiImage" })";
+    var urlAddPoiImage = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "AddPoiImage" })";
+    var urlDeletePoiImage = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "DeletePoiImage" })";
+
+    
+    var urlGetPoiImageAccessesByPoiImageNo = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "GetPoiImageAccessesByPoiImageNo" })";
+
+    var urlAddPoiImageAccess = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "AddPoiImageAccess" })";
+    var urlDeletePoiImageAccess = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "PoiAdminApi", action = "DeletePoiImageAccess" })";
+
+    var urlUploadFile = "@Url.Action("UploadFile")";
+
+    var poiTypes = {};
+    var users = {};
+    $("#poiAdmin").dialog({
+        height: 200,
+        width: 400,
+        show: "blind",
+        hide: "explode",
+        title: "Organization Selection for POI Management",
+        position: { my: "left+520 top+50", at: "left top"},//[400, 100],
+        autoOpen: false,
+        close: function() { clearPoiAdmin(); }
+    });
+    var target = $(this);
+    $("div.poiImage").dialog({
+        height: "auto",//$(window).height()-10,
+        width: "auto",//$(window).width()-10,
+        show: "blind",
+        hide: "explode",
+        title: "Show Image",
+        position: { my: "left top", at: "left top", of: target }, //[400, 100],
+        modal : true,
+        autoOpen: false,
+        autoResize: true
+    });
+
+    $("#showPoiAdmin").click(function () {
+        $.getScript($("#scriptPath").prop("class") + "app/ajaxfileupload.js", function () {
+            if ($("#listPoiAdmin").parents('.ui-jqgrid').css("display") == "block")
+                return;
+            else if ($("[aria-describedby='poiAdmin']").css("display") == "none")
+                $("#selOrganizationByUser").val("");
+
+            if (!$("#selOrganizationByUser option").length)
+                loadOrgByUser();
+            else {
+                if ($("#selOrganizationByUser option").length == 2) {
+                    $("#selOrganizationByUser").val($("#selOrganizationByUser option:eq(1)").val());
+                    loadCompaniesByOrg($("#selOrganizationByUser").val());
+                }
+                $("#poiAdmin").dialog("open");
+            }
+            if (!$("#selPOIType option").length) loadPOIType();
+        });
+    });
+</script>

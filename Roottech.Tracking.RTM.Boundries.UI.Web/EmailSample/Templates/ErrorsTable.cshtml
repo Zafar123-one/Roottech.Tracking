@@ -1,0 +1,74 @@
+﻿@using Roottech.Tracking.RTM.Boundries.UI.Web.Resources;
+@using System.Web.WebPages.Razor;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: "calibri", sans-serif;
+        }
+
+        .pmargin {
+            margin-top: 10px;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        th {
+            border: 1px solid black;
+            font-size: 1em;
+            text-align: left;
+            padding: 1px 10px 1px 1px;
+            background-color:orange;
+        }
+
+        td {
+            font-size: 1em;
+            text-align: left;
+            padding: 1px 10px 1px 1px;
+            background-color:lightblue;
+             border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>@Model.DisplayCount @Language.New.ToLower() @Language.Errors</h3>
+    </div>
+    <div class="pmargin">
+
+        <table>
+            <tr>
+                <th>
+                    @Language.Severity
+            </th>
+            <th>
+                @Language.Description
+            </th>
+            <th>
+                @Language.Timestamp
+            </th>
+        </tr>
+
+        @foreach (var error in @Model.ErrorList) {
+            <tr>
+                <td>
+                    @Language.GetSeverityValue(error.Severity)
+                </td>
+                <td>
+                    @Language.GetDescription(error.Description)
+            </td>
+            <td>
+                @error.LastUpdate
+        </td>
+    </tr>
+        }
+    </table>
+    <br />
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSSP.Entities">
+  <class name="RptFuelTheftDetail">
+    <id name="Id" />
+    <property name="SiteName" />
+    <property name="AssetName" />
+    <property name="RefuelType" />
+    <property name="OpenDt" />
+    <property name="EndDt" />
+    <property name="TotDuration" />
+    <property name="Decrease" />
+    <loader query-ref="GetRptFuelTheftDetail"/>
+  </class>
+  <sql-query name="GetRptFuelTheftDetail">
+    <return class="RptFuelTheftDetail" >
+      <return-property name="Id" column="BatchNo" />
+      <return-property name="SiteName" column="Site_Name" />
+      <return-property name="AssetName" column="AssetName" />
+      <return-property name="RefuelType" column="RefuelType" />
+      <return-property name="OpenDt" column="OpenDt" />
+      <return-property name="EndDt" column="EndDt" />
+      <return-property name="TotDuration" column="TotDuration" />
+      <return-property name="Decrease" column="Decrease" />
+    </return>
+    exec SP_RPT_FuelTheft_Detail_S @FromDt = :FromDt, @ToDt = :ToDt, @Region = :Region, @City = :City, @Territory = :Territory, @Site = :Site, @Resource = :Resource, @Orgcode = :Orgcode, @user_code = :UserCode
+  </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,186 @@
+﻿<div id="monthwiseStatisticsReportCard" style="display: none">
+    <table class="ampleviewtable">
+        <tr>
+            <td style="text-align: right; width: 100px; padding-right: 10px;">From Date</td>
+            <td colspan="3"><input id="monthForMonthwiseStats" type="text" style="width: 75px"/></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px;">City</td>
+            <td><select id="cityForMonthwiseStats" style="width: 200px"></select></td>
+            <td style="text-align: right; padding-right: 10px;">Region</td>
+            <td colspan="3"><select id="regionForMonthwiseStats" style="width: 200px"></select></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px;">Site</td>
+            <td><select id="siteForMonthwiseStats" style="width: 200px"></select></td>
+            <td style="text-align: right; padding-right: 10px;">Asset</td>
+            <td><select id="assetForMonthwiseStats" style="width: 200px"></select></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px;">Engine </td>
+            <td><input type="text" id="engineForMonthwiseStats" /></td>
+            <td style="text-align: right; padding-right: 10px;">Rating(KVA)</td>
+            <td><input type="text" id="ratingForMonthwiseStats" /></td>
+        </tr>
+        <tr>
+          <td colspan="4" style="text-align: right">
+            <input id="btnMonthStatsReport" type="button" value="Go" onclick="return runMonthwiseStatisticsReports();">
+            <input id="btnResetMonthStatsReport" type="button" value="Reset" onclick="return resetMonthwiseStatisticsReportCard();">
+          </td>
+
+        </tr>
+    </table>
+    <div id="monthStatsLoader" style="height: 97%; position: absolute; top: 1px; width: 97%; background-color: white; display: none">
+        <div class="ajax-loader" style="height: 100%; margin-left: 50%;"></div>
+    </div>
+    <div class="error" style="display:none;"><span></span></div>
+</div>
+<table id="listMonthwiseStats"></table>
+<div id="pagerMonthwiseStats"></div>
+
+<script type="text/javascript">
+    function runMonthwiseStatisticsReports() {
+        if ($("#monthForMonthwiseStats").val() === "") {
+            alert("Please select any month.");
+            $("#monthForMonthwiseStats").focus();
+            return false;
+        }
+        else if (isNaN( $("#ratingForMonthwiseStats").val())) {
+            alert("Rating should be numbers.");
+            $("#ratingForMonthwiseStats").focus();
+            return false;
+        }/*
+        else if ($("#siteForMonthwiseStats").val() === null | $("#siteForMonthwiseStats").val() === undefined) {
+            alert("Please select site, It's required.");
+            $("#siteForMonthwiseStats").focus();
+            return false;
+        }*/
+        $("#monthStatsLoader").fadeIn({
+            complete: function () {
+                loadGridMonthwiseStatistics();
+            }
+        });
+        return true;
+    }
+    function loadGridMonthwiseStatistics() {
+        $("#monthwiseStatisticsReportCard .error").hide();
+        var colModel = [
+            { name: 'Id', index: 'Id', width: 1, align: 'right', template: integerTemplate, hidden: true }, //template: dateTimeTemplate },"Plate ID",
+            { name: 'RegionName', index: 'RegionName', width: 80, align: 'left', sorttype: "string" },
+            { name: 'CityName', index: 'CityName', width: 80, align: 'left', sorttype: "string" },
+            { name: 'SiteName', index: 'SiteName', width: 100, align: 'left', sorttype: "string" },
+            { name: 'AssetName', index: 'AssetName', width: 150, align: 'left', sorttype: "string" },
+            { name: 'DgCap', index: 'DgCap', width: 80, align: 'right', template: moneyTemplate },
+            { name: 'OpenDt', index: 'OpenDt', width: 80, align: 'center', sorttype: "string" },
+            { name: 'FuelOpening', index: 'FuelOpening', width: 80, align: 'right', template: moneyTemplate },
+            { name: 'Refuel', index: 'Refuel', width: 80, align: 'right', template: moneyTemplate },
+            { name: 'Consume', index: 'Consume', width: 80, align: 'right', template: moneyTemplate },
+            { name: 'Theft', index: 'Theft', width: 80, align: 'right', template: moneyTemplate },
+            { name: 'FuelClosing', index: 'FuelClosing', width: 80, align: 'right', template: moneyTemplate },
+            {
+                name: 'EdrFuelClosing', index: 'EdrFuelClosing', width: 80, align: 'right', template: moneyTemplate,
+                formatter: function (cellvalue, options, rowObject) {
+                    return $.fmatter.util.NumberFormat(rowObject.FuelOpening + rowObject.Refuel - rowObject.Consume - rowObject.Theft, $.jgrid.formatter.currency);
+                }
+            },
+            {
+                name: 'StabMargin', index: 'StabMargin', width: 80, align: 'right', template: moneyTemplate,
+                formatter: function (cellvalue, options, rowObject) {
+                    return $.fmatter.util.NumberFormat(rowObject.FuelClosing - (rowObject.FuelOpening + rowObject.Refuel - rowObject.Consume - rowObject.Theft), $.jgrid.formatter.currency);
+                }
+            },
+            {
+                name: 'RunningHour',
+                index: 'RunningHour',
+                width: 80,
+                align: 'center',
+                sorttype: "string",
+
+                formatter: function (cellval, opts, rwdat, act) {
+                    if (opts.rowId === "") {
+                        return $.fn.fmatter('string', GetTimeInFullByHourAndMinuteAndSecond(0, 0, cellval.totalSeconds), opts, rwdat, act);
+                    } else {
+                        return $.fn.fmatter('string', GetTimeInFullByHourAndMinuteAndSecond(0,0, cellval), opts, rwdat, act);
+                    }
+                },
+                summaryType: function (val, name, record) {
+                    if (typeof (val) === "string") val = { totalSeconds: 0 };
+                    val.totalSeconds += record.Second;
+                    return val;
+                }
+            },
+            { name: 'AvgRun', index: 'AvgRun', width: 80, align: 'right', template: moneyTemplate, summaryType: "sum" }
+        ];
+        var url = "@Url.HttpRouteUrl("Stationary_defaultApi", new {controller = "ReportApi", action = "GetMonthwiseStatisticsReport" })";
+        loadjqGrid(
+            [], "listMonthwiseStats", url,
+            {
+                month: $("#monthForMonthwiseStats").val(),
+                region: $("#regionForMonthwiseStats").val(),
+                city: $("#cityForMonthwiseStats").val(),
+                site: $("#siteForMonthwiseStats").val(),
+                resource: $("#assetForMonthwiseStats").val(),
+                engineMake: $("#engineForMonthwiseStats").val(),
+                rating: $("#ratingForMonthwiseStats").val()
+            },
+            ["Unit Id", "Region Name", "City Name", "Site Name", "Asset Name", "Rating(KVA)", "Month", "Month Opening", "Month Refuel", "Month Consumption", "Month Theft", "Closing(Ltrs)", "EDR Closing (Ltrs)", "Stab Margin(+/- Ltrs)", "Month Run Hours", "Avg Cons Ltr/Hr"], colModel,
+            "pagerMonthwiseStats", "Id", "asc", "", 50, _rowList, 1, 1, "Monthwise Statistics",
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                repeatitems: false,
+                userdata: "userdata",
+                oper: "grid"
+            },
+            undefined, undefined, true, true, function () {
+                if ($('.footrow [aria-describedby="listMonthwiseStats_FuelClosing"]').html() !== "&nbsp;")
+                    return;
+
+                $grid.setGridWidth($(window).width() - 120);
+                $grid.setGridHeight($(window).height() - 200);
+                $(".ui-jqgrid-active").css("bottom", 60);
+                $("#" + $grid.attr("aria-labelledby")).show();
+                //-----Close Selection of Org
+                //$("#monthwiseStatisticsReportCard").dialog("close");
+              $("#monthStatsLoader").fadeOut();
+                
+                var localData = $grid.jqGrid("getGridParam", "data"),
+                    totalAvgRun = 0, totalSeconds = 0;
+
+                $.each(localData, function (index, value) {
+                    totalSeconds += parseInt(value.RunningHour);
+                    totalAvgRun += parseFloat(value.AvgRun);
+                });
+
+                $grid.jqGrid("footerData", "set", {
+                    AvgRun: totalAvgRun
+                });
+                $('.footrow [aria-describedby="listMonthwiseStats_RunningHour"]').html(GetTimeInFullByHourAndMinuteAndSecond(0, 0, totalSeconds));
+                $('.footrow [aria-describedby="listMonthwiseStats_FuelClosing"]').html("<b>Grand Total: </b>");
+
+                $("#pagerMonthwiseStats_excel").remove();
+                $("#pagerMonthwiseStats_excel_all").remove();
+
+                $grid.navButtonAdd('#pagerMonthwiseStats', {
+                    caption: "",
+                    buttonicon: "ui-icon-disk",
+                    onClickButton: function () {
+                        //  Export the data from our jqGrid into a "real" Excel 2007 file
+                        ExportJQGridDataToExcel("#listMonthwiseStats", "Monthwise Statistics.xlsx");
+                    }
+              });
+            $("#" + $grid.attr("aria-labelledby")).addClass("z-index-2000");
+            });
+        gridErrorLoaderFunction("listMonthwiseStats", "monthStatsLoader");
+
+        $("#listMonthwiseStats").jqGrid('setGridParam', {
+            loadError: function (xhr, st, err) {
+                $("#monthwiseStatisticsReportCard .error").html("There is an error while fetching data for selected criteria. " + xhr.statusText);
+                $("#monthwiseStatisticsReportCard .error").show();
+                $("#monthStatsLoader").hide();
+            }
+        });
+    }
+</script>

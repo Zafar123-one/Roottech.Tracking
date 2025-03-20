@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="StartStopReport">
+    <id name="Id" />
+    <property name="InactivityTime" />
+    <property name="StartTime" />
+    <property name="StopTime" />
+    <property name="TravelTime" />
+    <property name="TravelDistance" />
+    <loader query-ref="GetStartStopReport"/>
+  </class>
+  <sql-query name="GetStartStopReport">
+    <return class="StartStopReport" >
+      <return-property name="Id" column="PlateID" />
+      <return-property name="InactivityTime" column="InactivityTime" />
+      <return-property name="StartTime" column="StartTime" />
+      <return-property name="StopTime" column="StopTime" />
+      <return-property name="TravelTime" column="TravelTime" />
+      <return-property name="TravelDistance" column="TravelDistance" />
+    </return>
+    exec sp_Rpt_getStartStop @UnitID = :UnitID, @FromDate= :FromDate, @ToDate= :ToDate
+  </sql-query>
+</hibernate-mapping>

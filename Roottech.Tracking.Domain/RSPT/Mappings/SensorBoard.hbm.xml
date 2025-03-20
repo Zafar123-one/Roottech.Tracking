@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="SensorBoard">
+    <id name="Id" />
+    <property name="InputValues" />
+    <property name="ActualValue" />
+    <loader query-ref="GetSensorBoard"/>
+  </class>
+  <sql-query name="GetSensorBoard">
+    <return class="SensorBoard" >
+      <return-property name="Id" column="Id" />
+      <return-property name="InputValues" column="InputValues" />
+      <return-property name="ActualValue" column="ActualValue" />
+    </return>
+    exec usp_getDAInputVals @AssetNo = :AssetNo
+  </sql-query>
+</hibernate-mapping>

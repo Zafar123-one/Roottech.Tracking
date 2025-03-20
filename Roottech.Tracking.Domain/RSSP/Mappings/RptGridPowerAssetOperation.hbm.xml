@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSSP.Entities">
+  <class name="RptGridPowerAssetOperation">
+    <composite-id name="Id" class="RptGridPowerAssetOperationIdentifier">  
+        <key-property name="AssetBatchNo" column="Batch#" />  
+        <key-property name="GridBatchNo" column="GridBatchNo" />  
+        <key-property name="TotalDuration" column="TotalDuration" />
+    </composite-id> 
+    <property name="RegionName" />
+    <property name="CityName" />
+    <property name="SiteName" />
+    <property name="AssetName" />
+    <property name="AssetOpenDt" />
+    <property name="AssetCloseDt" />
+    <property name="AssetTotalDuration" />
+    <property name="AssetHour" />
+    <property name="AssetMinute" />
+    <property name="AssetSecond" />
+    <property name="GridResourceNo" />
+    <property name="GridOpenDt" />
+    <property name="GridCloseDt" />
+    <property name="GridHour" />
+    <property name="GridMinute" />
+    <property name="GridSecond" />
+    <loader query-ref="GetRptGridPowerAssetOperation"/>
+  </class>
+  <sql-query name="GetRptGridPowerAssetOperation">
+    <return class="RptGridPowerAssetOperation" >
+      <return-property name="Id">
+          <return-column name="Batch#" />
+          <return-column name="GridBatchNo" />
+          <return-column name="TotalDuration" />
+      </return-property>
+      <return-property name="RegionName" column="RegionName" />
+      <return-property name="CityName" column="CityName" />
+      <return-property name="SiteName" column="Site_Name" />
+      <return-property name="AssetName" column="AssetName" />
+      <return-property name="AssetOpenDt" column="OpenDt" />
+      <return-property name="AssetCloseDt" column="CloseDt" />
+      <return-property name="AssetTotalDuration" column="AssetTotalDuration" />
+      <return-property name="AssetHour" column="AssetHr" />
+      <return-property name="AssetMinute" column="AssetMin" />
+      <return-property name="AssetSecond" column="AssetSS" />
+      <return-property name="GridResourceNo" column="Resource#" />
+      <return-property name="GridOpenDt" column="EventStart" />
+      <return-property name="GridCloseDt" column="EventStop" />
+      <return-property name="GridHour" column="DevHH" />
+      <return-property name="GridMinute" column="DevMM" />
+      <return-property name="GridSecond" column="DevSS" />
+    </return>
+    exec SP_Rpt_GridPower_AssetOperation @fromdate = :FromDt,@todate = :ToDt,@Region = :Region,@City = :City,@Territory = :Territory,@SiteCode = :Site,@Orgcode = :Orgcode,@Resource = :Resource,@Status = :Status,@levelTYpe=:LevelType
+  </sql-query>
+</hibernate-mapping>

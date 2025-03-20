@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.RSPT.Entities">
+  <class name="MonthlyAmpleView">
+    <id name="Id" />
+    <property name="Opening_Fuel" />
+    <property name="OpenMile" />
+    <property name="Refuel" />
+    <property name="Theft" />
+    <property name="Consume" />
+    <property name="totRuninghr" />
+	  
+    <property name="TotalMileage" />
+	<property name="TotalKM" />
+	<property name="Avgkmltr" />
+	<property name="IdleHours" />
+	<property name="CompRunHr" />
+	<property name="Avg_Consum" />
+	<property name="closing" />
+	<property name="netfuel" />
+	<property name="CloseNetFuel" />
+	<property name="BlQty" />
+	<property name="FuelReturn" />
+	<property name="Avg_Consumption_Mile" />
+	<property name="Avg_Consumption_KM" />
+	<property name="Consume1" />
+                                                                                         
+	  <loader query-ref="GetMonthlyAmpleView"/>
+  </class>
+  <sql-query name="GetMonthlyAmpleView">
+    <return class="MonthlyAmpleView" >
+      <return-property name="Id" column="Id" />
+      <return-property name="Opening_Fuel" column="Opening_Fuel" />
+      <return-property name="OpenMile" column="OpenMile" />
+      <return-property name="Refuel" column="Refuel" />
+      <return-property name="Theft" column="Theft" />
+      <return-property name="Consume" column="Consume" />
+      <return-property name="totRuninghr" column="totRuninghr" />
+      
+      <return-property name="TotalMileage" column="TotalMileage" />
+      <return-property name="TotalKM" column="TotalKM" />
+      <return-property name="Avgkmltr" column="Avgkmltr" />
+      <return-property name="IdleHours" column="IdleHours" />
+      <return-property name="CompRunHr" column="CompRunHr" />
+      <return-property name="Avg_Consum" column="Avg_Consum" />
+      <return-property name="closing" column="closing" />
+      <return-property name="netfuel" column="netfuel" />
+      <return-property name="CloseNetFuel" column="CloseNetFuel" />
+      <return-property name="BlQty" column="BlQty" />
+      <return-property name="FuelReturn" column="FuelReturn" />
+      <return-property name="Avg_Consumption_Mile" column="Avg_Consumption_Mile" />
+      <return-property name="Avg_Consumption_KM" column="Avg_Consumption_KM" />
+      <return-property name="Consume1" column="Consume1" />
+    </return>
+    exec usp_AmpleViewMontlyStatus @AssetNo = :AssetNo, @Year = :Year, @month = :month
+  </sql-query>
+</hibernate-mapping>

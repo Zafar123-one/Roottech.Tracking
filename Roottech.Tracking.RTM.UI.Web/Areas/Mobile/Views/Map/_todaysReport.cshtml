@@ -1,0 +1,52 @@
+﻿<table id="list"></table>
+<div id="pager"></div>
+<script language="javascript" type="text/javascript">
+    var urlTreeView = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "VehicleApi", action = "getTreeView" })";
+    var urlLastCdr = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "VehicleApi", action = "getLastCdr" })";
+    var urlAmpleViewInfo = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "VehicleApi", action = "getVehicleAmpleView" })";
+    var urlAmpleViewCurrentStatus = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "VehicleApi", action = "getCurrentStatusAmpleView" })";
+    var urlAmpleViewLastEvent = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "VehicleApi", action = "getLastEventAmpleView" })";
+    var urlAmpleViewMonthly = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "VehicleApi", action = "getMonthlyAmpleView" })";
+    var urlAmpleViewFleetInfo = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "VehicleApi", action = "getFleetInfoAmpleView" })";
+    var urlSensorBoard = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "VehicleApi", action = "getSensorBoard" })";
+    var urlAssetsImage = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "VehicleApi", action = "getAssetsImage" })";
+    var urlCurrentStatus = "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "VehicleApi", action = "getCurrentStatus" })";
+    
+    function loadGrid(assetNo, assetName) {
+        var colModel = [
+            { name: 'RTCDTTM', index: 'RTCDTTM', width: 125, align: 'left', template: dateTimeTemplate },
+            { name: 'DI1', index: 'DI1', width: 50, align: 'left', sorttype: "string" },
+            { name: 'DI2', index: 'DI2', width: 50, align: 'left', sorttype: "string" },
+            { name: 'DI3', index: 'DI3', width: 50, align: 'left', sorttype: "string" },
+            { name: 'DI4', index: 'DI4', width: 50, align: 'left', sorttype: "string" },
+            { name: 'DI5', index: 'DI5', width: 50, align: 'left', sorttype: "string" },
+            { name: 'DI6', index: 'DI6', width: 50, align: 'left', sorttype: "string" },
+            { name: 'Speed', index: 'Speed', width: 50, align: 'left', template: numberTemplate},
+            { name: 'Mileage', index: 'Mileage', width: 50, align: 'left', template: numberTemplate },
+            { name: 'Qty', index: 'Qty', width: 50, template: numberTemplate },
+            { name: 'Qty1', index: 'Qty1', width: 50, template: numberTemplate }
+        ];
+        loadjqGrid(
+            [], "list", "@Url.HttpRouteUrl("Mobile_defaultApi", new { controller = "ReportApi", action = "GetTodaysReport" })", { assetNo: assetNo },
+            ["CDR Date Time", "Digital Inputs # 1", "Digital Inputs # 2", "Digital Inputs # 3", "Digital Inputs # 4", "Digital Inputs # 5", "Digital Inputs # 6", "Speed","Mileage","Quantity", "Quantity-1"], colModel,
+            "pager", "RTCDTTM", "asc", "", 50, _rowList, 1, 1, "Today's Report of " + assetName, 
+            {
+                root: "rows",
+                page: "page",
+                total: "total",
+                records: "records",
+                repeatitems: false,
+                userdata: "userdata"
+            }, undefined, undefined, false, false, function () {
+                $grid.setGridWidth($(window).width() - 360);
+                $grid.setGridHeight($(window).height() - 200);
+                //$(".ui-jqgrid-active").css('z-index', 1002);
+                //$("#pager_left").removeAttr("style");
+                $(".ui-jqgrid-active").css("left", 350).css("bottom", 100);
+                $("#" + $grid.attr("aria-labelledby")).show();
+            });
+    }
+        
+    function loadPage() {
+    }
+</script>

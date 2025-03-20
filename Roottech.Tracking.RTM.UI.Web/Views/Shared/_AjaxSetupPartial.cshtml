@@ -1,0 +1,37 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).ajaxStart(function () {
+            $("#main").css({ position: "absolute" });
+            $("#dvloader").show();
+        });
+        $(document).ajaxStop(function () {
+            $("#main").removeAttr("style");
+            $('#dvloader').hide();
+        });
+        $.ajaxSetup({
+            url: location.href,
+            type: "POST",
+            dataType: "json",
+            //contentType: "application/json; charset=utf-8",
+            cache: false,
+            error: function (x, e) {
+                if (x.status == 550)
+                    alert("550 Error Message");
+                else if (x.status == "403")
+                    alert("403. Not Authorized");
+                else if (x.status == "500")
+                    alert("500. Internal Server Error");
+                else
+                    alert("Error..." + x.readyState + " " + x.status + " " + e.msg + " " + e + " \n or may be you need to reselect the client.");
+            },
+            success: function (result) {
+                if (result == null) return;
+                if (result.success == undefined) return;
+                if (result.success == true) {
+                    viewModel.dirtyReset();
+                    alert("The changes have been made successfully");
+                } else alert("The changes is not valid");
+            }
+        });
+    });
+</script>

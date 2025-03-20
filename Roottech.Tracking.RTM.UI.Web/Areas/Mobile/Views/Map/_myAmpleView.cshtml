@@ -1,0 +1,272 @@
+﻿<div id="ampleView" style="background-color:whitesmoke; height:640px; display:none">
+    <div>
+        <table style="font-size:8pt">
+            <tr>
+                <td colspan="8" style="text-align:center"> Auto Refresh <input type="checkbox"/> </td>
+            </tr>
+        </table>
+    </div>
+    <table>
+        <tr>
+            <td>
+                <div class="ampleViewCurveDiv">
+                    <table style="font-size:8pt;width:100%" >
+        
+                        <tr>
+                            <td colspan="8" class="ampleViewHeader" >D-Asset </td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:130px; text-align:right">Plate #</td>
+                            <td style="width:90px; text-align:left"><label id="txtPlateId" style="font-weight:bold; width:80px" /></td>
+                            <td style="width:150px; text-align:right">Fleet #</td>
+                            <td style="width:120px; text-align:left"><label id="txtFleetId" style="font-weight:bold; width:100px" /></td>
+                            <td style="width:150px; text-align:right">Name</td>
+                            <td style="width:120px; text-align:left"><label id="txtName" style="font-weight:bold; width:100px" /></td>
+                            <td style="width:20px"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:130px; text-align:right">Depot</td>
+                            <td style="width:150px; text-align:left" colspan="2"><label id="txtDepot" style="font-weight:bold;width:80px"></label>
+                              <span style="float:right"> Usage </span></td>
+                            <td style="width:120px; text-align:left" colspan="2"><label id="txtUsage" style="font-weight:bold; width:100px"></label>
+                                <span style="float:right"> Type </span></td>
+                            <td style="width:120px; text-align:left"><label id="txtType" style="font-weight:bold; width:100px"   /></td>
+                            <td style="width:20px"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:130px; text-align:right">Reg Date</td>
+                            <td style="width:90px; text-align:left"><label id="txtRegDate"   style="font-weight:bold; width:80px" /></td>
+                            <td style="width:150px; text-align:right">Driver Name</td>
+                            <td style="width:100px; text-align:left"><label id="txtDriverName"   style="font-weight:bold; width:100px"/></td>
+                            <td style="width:150px; text-align:right">Cell #</td>
+                            <td style="width:120px; text-align:left"><label id="txtCellNo"   style="font-weight:bold; width:100px"/></td>
+                            <td style="width:20px"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:130px; text-align:right">FMS Actv Date</td>
+                            <td style="width:90px; text-align:left"><label id="txtActDate" style="font-weight:bold; width:80px"/></td>
+                            <td style="width:150px; text-align:right">Last Service Start</td>
+                            <td style="width:100px; text-align:left"><label id="txtLastServiceStart"   style="font-weight:bold; width:100px"/></td>
+                            <td style="width:150px; text-align:right">Last Service Stop</td>
+                            <td style="width:120px; text-align:left"><label id="txtLastServiceStop"   style="font-weight:bold; width:100px"/></td>
+                            <td style="width:20px"></td>
+                        </tr>
+                    </table>     
+                </div>
+                <div class="spacer"></div>
+                <div class="ampleViewCurveDiv">
+                    <table style="font-size:8pt;width:100%" >
+        
+                        <tr>
+                            <td colspan="8" class="ampleViewHeader" style="width:100%;">D-Status (Current) </td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:130px; text-align:right">Event #</td>
+                            <td style="width:90px; text-align:left"><label id="txtEvent"   style="font-weight:bold; width:80px"/></td>
+                            <td style="width:150px; text-align:right">Site/Route</td>
+                            <td style="width:150px; text-align:left" colspan="2"><label id="txtSite" style="font-weight:bold; width:100px"></label> <span style="float:right">Activity</span></td>
+                            
+                            <td style="width:120px; text-align:left"><label id="txtActivity"   style="font-weight:bold; width:100px"/></td>
+                            <td style="width:20px"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:130px; text-align:right">From Time</td>
+                            <td style="width:90px; text-align:left" colspan="2"><label id="txtFromTime"   style="font-weight:bold; width:80px"></label><span style="float:right"> To Time </span></td>
+                            <td style="width:120px; text-align:left" colspan="2"><label id="txtToTime"   style="font-weight:bold; width:100px"></label><span style="float:right"> Total Duration </span></td>
+                            <td style="width:120px; text-align:left"><label id="txtTotDuration"   style="font-weight:bold; width:100px"/></td>
+                            <td style="width:20px"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:130px; text-align:right">From Mileage</td>
+                            <td style="width:90px; text-align:left"><label id="txtFromMileage" style="font-weight:bold; width:80px"/></td>
+                            <td style="width:150px; text-align:right">Current Mileage</td>
+                            <td style="width:100px; text-align:left"><label id="txtCurrentMileage"   style="font-weight:bold; width:100px"/></td>
+                            <td style="width:150px; text-align:right">Net Mileage & KM</td>
+                            <td style="width:120px; text-align:left"><label id="txtNetMileage"   style="font-weight:bold; width:60px" /> / <label id="txtNetKilo" style="font-weight:bold; width:60px"/> </td>
+                            <td style="width:20px"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:130px; text-align:right">Fuel Opening Balance</td>
+                            <td style="width:90px; text-align:left"><label id="txtCOpenFuel"   style="font-weight:bold; width:80px"/></td>
+                            <td style="width:150px; text-align:right">Current Fuel Balance</td>
+                            <td style="width:100px; text-align:left"><label id="txtCCurrentFuel"   style="font-weight:bold; width:100px"/></td>
+                            <td style="width:150px; text-align:right">Net Fuel (+/-)</td>
+                            <td style="width:120px; text-align:left"><label id="txtCNetFuel"   style="font-weight:bold; width:100px"/></td>
+                            <td style="width:20px"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:130px; text-align:right">Max Speed (Kmph)</td>
+                            <td style="width:90px; text-align:left"><label id="txtMaxSpeed"   style="font-weight:bold; width:80px"/></td>
+                            <td style="width:150px; text-align:right">Idle Hours</td>
+                            <td style="width:100px; text-align:left"><label id="txtIdleHours"   style="font-weight:bold; width:100px"/></td>
+                            <td style="width:150px; text-align:right">Battery</td>
+                            <td style="width:120px; text-align:left"><label id="txtBattery"   style="font-weight:bold; width:100px"/></td>
+                            <td style="width:20px"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:150px; text-align:right">Project</td>
+                            <td style="width:120px; text-align:left" colspan="2"><label   id="txtProject" style="font-weight:bold; width:100px"></label> <span style="float:right"> Trip #</span> </td>
+                            <td style="width:90px; text-align:left"><label id="txtTripNo"   style="font-weight:bold; width:80px"/></td>
+                            <td style="width:150px; text-align:right">Trip Status</td>
+                            <td style="width:100px; text-align:left"><label id="txtTripStatus" style="font-weight:bold; width:100px"/></td>
+                            
+                            <td style="width:20px"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:130px; text-align:right">EDD</td>
+                            <td style="width:90px; text-align:left"><label   id="txtEDD" style="font-weight:bold; width:80px"/></td>
+                            <td style="width:150px; text-align:right">ADD</td>
+                            <td style="width:100px; text-align:left"><label   id="txtADD" style="font-weight:bold; width:100px"/></td>
+                            <td style="width:150px; text-align:right">EDA</td>
+                            <td style="width:120px; text-align:left"><label   id="txtEDA" style="font-weight:bold; width:100px"/></td>
+                            <td style="width:20px"></td>
+                        </tr>
+                    </table>     
+                </div>
+                <div class="spacer"></div>
+                <div class="ampleViewCurveDiv" style="height:125px">
+                    <div class="ampleViewHeader">D-Fuel Status</div>
+                    <table id="listLastEvent" class="myTable"></table>
+                    <div id="pagerLastEvent" >
+            
+                    </div>
+                </div>
+                <div class="spacer"></div>
+                <div class="ampleViewCurveDiv">
+                  @*  <table style="font-size:8pt; width:100%" >
+        
+                        <tr>
+                            <td colspan="8" class="ampleViewHeader">D-Month Summary </td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:130px; text-align:right">Fuel Opening</td>
+                            <td style="width:90px; text-align:left"><label id="txtMOpenFuel"    style="font-weight:bold"  value="" width="80px"/></td>
+                            <td style="width:150px; text-align:right">Opening Mileage</td>
+                            <td style="width:120px; text-align:left"><label id="txtMOpenMileage" style="font-weight:bold"  value="" width="100px"/></td>
+                            <td style="width:150px; text-align:right">Total Mileage</td>
+                            <td style="width:120px; text-align:left"><label   id="txtMTotalMileage" style="font-weight:bold"  value="" width="100px"/></td>
+                            <td style="width:20px"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:130px; text-align:right">Total Refuel</td>
+                            <td style="width:90px; text-align:left"><label   id="txtTotalRefuel" style="font-weight:bold"  value="" width="80px"/></td>
+                            <td style="width:150px; text-align:right">Total Fuel Consumed</td>
+                            <td style="width:120px; text-align:left"><label   id="txtTotalConsumed" style="font-weight:bold"  value="" width="100px"/></td>
+                            <td style="width:150px; text-align:right">Total Fuel Theft</td>
+                            <td style="width:120px; text-align:left"><label   id="txtTotalTheft" style="font-weight:bold"  value="" width="100px"/></td>
+                            <td style="width:20px"></td>
+                        </tr>
+                        <tr>
+                            <td style="width:20px"></td>
+                            <td style="width:130px; text-align:right">Total Run Hours</td>
+                            <td style="width:90px; text-align:left"><label   id="txtTotalRunHours" style="font-weight:bold"  value="" width="80px"/></td>
+                            <td style="width:150px; text-align:right">AvCons.M & K</td>
+                            <td style="width:120px; text-align:left"><label   id="txtAvConM" style="font-weight:bold; width:61px"  value="" /> / <label id="txtAvConK" style="font-weight:bold;width:61px"  value="" /> </td>
+                
+                            <td style="width:150px; text-align:right"></td>
+                            <td style="width:100px; text-align:left"></td>
+                            <td style="width:20px"></td>
+                        </tr>
+                        
+                    </table> *@
+                </div>                
+            </td>
+            <td style="vertical-align:top">
+                <div>
+                    <div class="ampleViewCurveDiv">
+                        <div class="ampleViewHeader"> Fuelometer </div>
+                        <table>
+                            <tr>
+                                <td style="font-weight:bold; text-align:right">
+                                    Fuel Capacity
+                                </td>
+                                <td style="font-weight:bold; text-align:left">
+                                    <label id="lblTotalCapacity"> 90 </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight:bold; text-align:right">
+                                    Current Fuel
+                                </td>
+                                <td style="font-weight:bold; text-align:left">
+                                    <label id="lblCurrentFuel"></label>
+                                </td>
+                            </tr>
+                        </table>
+                        <canvas id="fuelometerGuage" style="width:264px;"></canvas>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+                @*<div> Current Fuel : <label id="lblCurrentFuel"></label></div>*@
+                <div class="spacer"></div>
+                <div class="ampleViewCurveDiv">
+                    <div class="ampleViewHeader"> <a id="lnkTripBoard" href="#" class="myAchor" >D - Trip Board</a> </div>
+                    <div id="divTripBoard" style="display:none">
+                        <table style="font-size:8pt;" class="myTable">
+                            <tr>
+                                <td>Total Fuel Consumption</td>
+                                <td><label style="font-weight:bold;width:50px" /></td>
+                            </tr>
+                            <tr>
+                                <td>Fuel Level at Trip Start</td>
+                                <td><label style="font-weight:bold;width:50px" /></td>
+                            </tr>
+                            <tr>
+                                <td>Fuel Level at Trip Finished</td>
+                                <td><label style="font-weight:bold;width:50px" /></td>
+                            </tr>
+                            <tr>
+                                <td>Fuel Consumption / KM</td>
+                                <td><label style="font-weight:bold;width:50px" /></td>
+                            </tr>
+                            <tr>
+                                <td>Total Refuel Volume</td>
+                                <td><label style="font-weight:bold;width:50px" /></td>
+                            </tr>
+                            <tr>
+                                <td>Total Drain Volume</td>
+                                <td><label style="font-weight:bold;width:50px" /></td>
+                            </tr>
+                            <tr>
+                                <td>Fuel Rate / Hr</td>
+                                <td><label style="font-weight:bold;width:50px" /></td>
+                            </tr>
+                            <tr>
+                                <td>Fuel Rate / KM</td>
+                                <td><label style="font-weight:bold;width:50px" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+                <div class="ampleViewHeader"><a id="lnkImageGallery" href="#" class="myAchor" >Image Gallery</a></div>
+                
+                @*<div class="spacer"></div>
+                <div class="ampleViewHeader"> Quick Links</div>*@
+                <div class="spacer"></div>
+                <div class="ampleViewCurveDiv">
+                    <div class="ampleViewHeader"><a id="lnkSensorBoard" href="#" class="myAchor" > Sensor Board </a></div>
+                    <div id="divSensorBoard">
+                        <table style="font-size:8pt;" id="listSensorBoard" class="myTable"></table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+

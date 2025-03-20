@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Roottech.Tracking.Domain" namespace="Roottech.Tracking.Domain.SMIM.Entities">
+  <class name="OrganizationsByUserCode">
+    <id name="Id" />
+    <property name="Description" />
+    <loader query-ref="GetOrganizationsByUserCode"/>
+  </class>
+  <sql-query name="GetOrganizationsByUserCode">
+    <return class="OrganizationsByUserCode" >
+      <return-property name="Id" column="OrgCode" />
+      <return-property name="Description" column="DSCR" />
+    </return>
+    exec dbo.sp_LOV_Organizations_By_User_Code @User_Code = :User_Code
+  </sql-query>
+  <sql-query name="GetOrganizationsModWise">
+    <return class="OrganizationsByUserCode" >
+      <return-property name="Id" column="OrgCode" />
+      <return-property name="Description" column="DSCR" />
+    </return>
+    exec SP_GetOrganization_ModWise @Title='RTM',@User_Code=:User_Code,@AppType=:AppType
+  </sql-query>
+</hibernate-mapping>
